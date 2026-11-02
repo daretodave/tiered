@@ -38,9 +38,10 @@ line goes; each line is a lock that times out:
 `- **<NN.k>** · <reason> · since: <date> · until: <date or
 condition> · max_age: 14d`, an optional `· fallback: release`):
 
-- (none yet)
+- 48 · auto-promoted, veto until 2026-11-03 (#832) · max_age: 1d · fallback: release
 
 ## Specs
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
+| 48 | Stat-tile value/caption literal-duplicate guard | [48-stat-tile-caption-literal-duplicate-guard.md](48-stat-tile-caption-literal-duplicate-guard.md) | Held (veto window) | Not chunked yet. |

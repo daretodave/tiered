@@ -1182,246 +1182,6 @@ naked-and-afraid pair — the instance rate has not slowed. Net since filing
 shows. Score held at 8.3 (ceiling); now **65 days unpromoted**, still the
 second-highest-scored unpromoted candidate in the file behind only #28.
 
-### [ ] [score 8.7] Stat-tile value/caption literal-duplicate invariant
-- kind: guard
-- proposed: 2026-07-08, v1 candidate #28 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
-
-**Score:** 8.7 (impact: 8, ease: 9 → 7.2 base + 1.5 signal multiplicity — a single
-critique finding that was itself already systemic across 139 files/22 shows, same
-root-cause family as candidate #25; multiplicity bonus raised at pass 49 by a second,
-independently-discovered defect shape on one of the six pairs this candidate already
-proposes to gate; raised again at pass 57 by a third defect shape — cross-tile
-restatement, not just same-pair; raised again at pass 58 by five simultaneous fresh
-instances in one critique pass, across four different shows, on both the exact-pair
-and cross-tile shapes this candidate already names)
-**Source pass:** 48 (reinforced pass 49, reinforced again pass 56, 57, 58, 69)
-**Filed:** 2026-07-08 (reinforced 2026-07-09, 2026-07-16, 2026-07-22, 2026-07-26,
-2026-09-06)
-**Pass-69 reinforcement (six weeks unreinforced, two more confirmed instances):**
-critique pass-152 (2026-09-05) found two independent same-pair instances the six-
-pair scope sketch already names: `dragrace-uk/season/series-7` (the Pinewood
-filming location restated across the eyebrow, the FILMED value, and the FILMED
-caption — a three-way same-fact restatement, not just the documented two-field
-pair) and `jersey-shore/season/the-final-season` (the FILMED caption bare-restating
-its own location value one field above it, the exact same-pair shape closed on
-hells-kitchen/queer-eye/rhony months ago, recurring on a show not yet touched by
-the drain). Both were resolved reactively the same day via the standing
-`plan/AUDIT.md` season-fill-drain row's content-gap side-drain — the same
-"reactive, never structural" pattern this candidate has documented since pass 48.
-41 days since the last reinforcement (pass-58, 2026-07-26) despite the pending
-queue continuing to surface fresh instances every few critique passes; still the
-highest-scored unpromoted candidate in the file (8.7) and now **59 days
-unpromoted** (filed 2026-07-08). No new sub-shape this pass — the existing six-pair
-scope sketch already covers both instances found. Standing recommendation
-unchanged: ripe for `/oversight` promotion.
-**Pass-58 reinforcement (five fresh instances in a single critique pass, pass-104):**
-still zero pre-ship gate, and the defect class keeps landing on newly-authored or
-newly-promoted content exactly as predicted. All five are currently Pending in
-`plan/CRITIQUE.md` at this filing: (1) Big Brother S27 "A Summer Of Mystery" —
-`format_summary` ("16 houseguests + a mystery 17th slot") restates the adjacent
-`cast_size_caption`'s headcount instead of describing the season's actual twist
-stack — the exact `cast_size`/`format_summary` cross-tile shape, on a show already
-touched by this candidate's #508 fix on a different pair; (2) Top Chef "Carolinas" —
-`filming_caption` and `format_caption` both restate the same three city names in
-reordered phrasing, the same `location`/`format_summary` cross-tile shape pass-93
-already reinforced this candidate with, recurring on a fresh show; (3) Perfect
-Match S4 — `format_summary` restates `cast_size`'s exact headcount fact, a third
-independent instance of the identical cross-tile shape now confirmed on three
-unrelated shows (Bachelor S28 #464, Big Brother S27 above, Perfect Match S4); (4)
-Love Island UK "Summer 2025" — `episodes_caption` bare-restates its own `ep_count`
-value with zero added fact, the same same-pair shape the six-pair scope sketch
-below already lists for `ep_count`/`episodes_caption`; (5) Chopped "The Four-
-Ingredient Standard" — `premiere_caption` restates the page eyebrow's network +
-air-window one line above, the identical `premiere_date`/`premiere_caption` +
-eyebrow shape pass-56 first reinforced this candidate with (Chopped S4), now
-recurring on a different Chopped season. Ninth consecutive expand pass (48, 49,
-56, 57, 58) to find live evidence of this exact defect class recurring on
-freshly-shipped or freshly-promoted content; still zero instances caught pre-ship
-by a gate, and this pass alone found five — the highest single-pass count yet,
-confirming the six-pair scope sketch below (unchanged since pass 49) is already
-sized correctly for the recurring shapes and does not need to be widened further,
-only shipped.
-**Pass-57 reinforcement (new sub-shape — cross-tile, not just same-pair):** critique
-pass-95 found `/shows/the-real-world/season/go-big-or-go-home`'s `episodes_caption`
-doing double duty as a defect: it restates its own EPISODES tile's "12" value (a clean
-instance of the `ep_count`/`episodes_caption` pair already named in this candidate's
-six-pair scope sketch) *and* it separately duplicates "the Gold Spike" from the
-FILMED tile's `filming_caption` two tiles up in the same stat rail — a cross-tile
-restatement dimension the current scope sketch's same-pair-only check would not catch.
-Still Pending in `plan/CRITIQUE.md` as of this filing. Separately, pass-90's Chopped
-Season 4 PREMIERED/eyebrow instance (noted at pass-56) remains unfixed — confirmed
-still Pending, no new information beyond persistence. Seventh consecutive expand pass
-(48, 49, 56, 57 explicitly; the intervening passes found no new instance to report) to
-find live evidence of this defect class recurring on freshly-shipped or freshly-
-promoted content, still zero instances caught pre-ship by a gate.
-**Pass-56 reinforcement:** two more independent instances surfaced by critique passes
-90 and 93, both still Pending in `plan/CRITIQUE.md` at this filing. Critique pass-90
-found Chopped Season 4's PREMIERED caption restating the eyebrow's network + air-window
-verbatim — explicitly the *same defect class the pass-87 #540 finding already fixed on
-Chopped Season 1*, but S4 was promoted into the canon afterward and shipped with the
-identical unfixed pattern, proving new content keeps re-introducing this gap exactly as
-predicted. Critique pass-93 found Top Chef Carolinas' FILMED and FORMAT captions both
-restating the same three city names in slightly different order — a fresh pair-level
-instance the scope sketch's six-pair list already covers (`format_summary`/
-`format_caption`). Partial, uncoordinated progress has also landed organically since
-this candidate's last reinforcement: issue #551 (pass-89) shipped a narrower
-`filming-caption-distinct.test.ts` corpus-wide scan for the bare "Filmed in <location>"
-restatement shape specifically — proof the generalized six-pair helper this candidate
-proposes is buildable and cheap, but the ad hoc per-defect-shape tests keep shipping
-one field at a time instead of the single reusable gate, so newly-authored pairs
-(PREMIERED/eyebrow, FILMED/FORMAT) keep landing unguarded. Still zero of the recurring
-instances caught pre-ship by a gate.
-**Pass-49 reinforcement:** the `cast_size`/`cast_size_caption` pair — one of the six
-value/caption pairs this candidate's scope sketch already lists for gating — proved
-the risk live this window: issue #508 (CLOSED, commit fdc59fa) found the CAST SIZE
-caption on three separate freshly-drained pages (The Apprentice, America's Next Top
-Model finale, RHONJ S14) restating the raw headcount as a re-spelled word plus a
-generic era adjective ("18 players" / "18 contestants, founding era") rather than
-describing composition — the *third* confirmed instance of this specific sub-pattern
-(critique pass-67 first flagged it, pass-81 reinforced it, this window closed all
-three outstanding files). The fix commit's own message noted explicitly: "the
-content:check invariant proposal remains unshipped (deferred, not required for this
-fix)" — the gap this candidate exists to close is still open and just cost a third
-reactive fix. **Important scope note:** this sub-pattern is *not* caught by the
-scope sketch's current exact-string-equality check — "18 players" and "18
-contestants, founding era" are not identical strings, only a re-spelled digit
-padded with a generic adjective. The gate as scoped would still miss this shape;
-either add a second, looser check specifically for the `cast_size`/`cast_size_caption`
-pair (caption reduces to the value's digit spelled as a word plus ≤1 generic modifier
-word, with no other substantive composition detail) alongside the exact-equality
-check for the other five pairs, or note the gap explicitly so `/oversight` scopes
-the phase to cover both shapes rather than shipping a gate that would have missed
-this window's own instance.
-**Source signals:**
-- Critique pass-78 [MED] `/shows/shark-tank/season/season-1` (and 132 other files
-  catalog-wide) — the FILMED stat tile's value (`location`) and caption
-  (`filming_caption`) rendered as the identical string twice instead of a
-  value/gloss pair, e.g. `location: "Culver City, California"` /
-  `filming_caption: "Culver City, California"`. A catalog-wide grep at filing time
-  found 133 season files across 22 shows with this exact defect; a fresh grep at
-  fix-time (this window) found 139 (6 more from catalog growth in the interim).
-  Filed as issue #498. **Just fully drained this window** — 6 batches across 6
-  ticks (the first batches shipped before pass 47, this window shipped batches
-  3 through 6, closing the final 89 files across every remaining show). A fresh
-  catalog-wide grep at drain-completion confirms zero remaining
-  `location === filming_caption` duplicates (commit b616754).
-- The finding explicitly names its own root cause as identical to two defects
-  candidate #25 already targets: "the same shape of systemic content-authoring gap
-  as the Big Brother canon.md duplication (issue #488) and Love Island UK
-  rationale duplication (issue #459)" — content authored without checking a
-  sibling field for restated argument/fact, producing literal or near-verbatim
-  duplication. Candidate #25 covers the canon-rationale/season-body pair (fuzzy
-  n-gram echo, cross-file); this defect is the exact-string-equality case
-  (`location`/`filming_caption`, same file) — narrower to detect, but the same
-  underlying discipline gap.
-- The drain shipped with **no accompanying content-check invariant**, unlike the
-  sibling `meth_who_p` / `meth_how_*` / `meth_when_*` plural-editor-voice defect
-  (issues #329/#357), which got a `collectCanonMethWhoPluralEditorIssues` /
-  `collectCanonMethSiblingsPluralEditorIssues` gate wired to `pnpm content:check`
-  immediately after its own drain, at strict floor-0. This drain has no equivalent
-  — the very next new show a content-curator authors (guaranteed under bearings
-  Rule 1's perpetual show-coverage mandate) can silently reintroduce the identical
-  139-file-scale defect, unnoticed until a future critique pass happens to look.
-- Verified directly (this expand pass) that the risk isn't hypothetical for the
-  other five schema-sibling value/caption pairs sharing the exact same shape
-  (`format_summary`/`format_caption`, `cast_size`/`cast_size_caption`,
-  `premiere_date`/`premiere_caption`, `ep_count`/`episodes_caption`,
-  `host`/`host_caption`, all defined in `src/content/schemas.ts:129-171`): a
-  catalog-wide scan across all `content/shows/*/seasons/*.md` files found **zero**
-  current literal duplicates on any of the other five pairs, meaning a gate could
-  ship at strict floor-0 across all six pairs immediately, with no lax/warn period
-  needed and no false positives to tune out first.
-- Issue #508 (CLOSED, pass 49) — the `cast_size`/`cast_size_caption` pair, three
-  files (The Apprentice S5, ANTM S24 "the finale", RHONJ S14 "the new chapter"), a
-  paraphrase-restate rather than exact-string duplicate ("18 players" /
-  "18 contestants, founding era" — the caption re-spells the digit and tacks on a
-  generic era adjective instead of describing composition). Third confirmed instance
-  of this specific sub-pattern (pass-67, reinforced pass-81, closed this window,
-  commit fdc59fa). Confirms the risk this candidate flags is not confined to the
-  `location`/`filming_caption` pair alone — it recurs on other pairs in the same
-  six-field family, in a shape (paraphrase, not literal duplicate) the current scope
-  sketch's exact-equality check would not catch. See the pass-49 reinforcement note
-  above for the scope implication.
-**Why:** This is exactly the pattern `/expand` exists to catch: a defect class just
-proved expensive to fix reactively (6 ticks, 139 files, one field pair) with a
-root cause the codebase already has *two* precedents for gating
-(`collectCanonMethWhoPluralEditorIssues` for the analogous voice-drift class;
-candidate #25 for the analogous cross-file echo class) — yet this specific
-drain shipped without the same treatment. Adding the gate now, while the pair is
-freshly at zero across the whole catalog, is far cheaper than waiting for a
-second 139-file drain to accumulate before someone notices the gap again.
-Generalizing to all six value/caption pairs (rather than just `filming_caption`)
-costs almost nothing extra — the check is a single reusable helper parameterized
-by field-pair name — and pre-empts the other five pairs from ever accumulating
-the same debt as new shows are scaffolded going forward.
-**Scope sketch:**
-- New `collectStatTileCaptionLiteralDuplicateIssues()` in `scripts/content-check.ts`
-  (sibling to the existing `collectCanonMethWhoPluralEditorIssues` /
-  `collectThemedEntryVerbatimPhraseEchoIssues` helpers): for each season file,
-  iterate the six value/caption field pairs and flag any pair where the caption
-  is identical (case-insensitive, trimmed) to the raw value's string form.
-- **Added pass-49:** a second, narrower helper (or a second mode on the same
-  helper) for the `cast_size`/`cast_size_caption` pair specifically — flag when the
-  caption reduces to the value's digit spelled out as a word (e.g. `18` →
-  `"eighteen"`/`"18"`) followed by at most one short generic modifier phrase (an
-  era/founding/final-season adjective) with no other composition detail. This
-  covers the paraphrase-restate shape issue #508 proved recurs on this pair; the
-  exact-equality check alone would not have caught any of its three instances.
-  Scope this as a targeted addition to `cast_size` only unless a catalog scan (at
-  phase-ship time) finds the same paraphrase shape on the other five pairs too.
-- Wire both checks into `collectFailures()` at **strict floor-0** immediately (no
-  lax/warn period needed — confirmed zero current violations across all six pairs
-  via this pass's catalog scan; #508's three instances were fixed this same window,
-  so a fresh scan at ship time should also read zero for the paraphrase check).
-- Colocated unit tests in `src/content/__tests__/content-check.test.ts`: a
-  synthetic season file with `location === filming_caption` (should flag), one
-  with each of the other five pairs duplicated (should flag, one case per pair),
-  one with a `cast_size_caption` that paraphrase-restates the digit (should flag,
-  mirroring the #508 real-corpus shape), one with legitimately distinct
-  value/caption pairs (should not flag), and one passing at the live catalog
-  post-check (asserts zero issues, mirroring the #357 test pattern).
-- `content-curator` brief update: document the six value/caption pairs and the
-  "caption must add information the raw value doesn't carry" convention, mirroring
-  the existing candidate #20/#25 pattern of pairing a structural check with
-  curator-guidance documentation.
-**Estimated phases:** 1 (small, self-contained — one new content-check helper
-+ colocated tests + a curator-brief note; no schema or component change, no e2e
-fixture row owed since content-check runs at build/verify time, not per-route).
-**Conflicts:** none. Complements candidate #25 (same root-cause family, different
-detection mechanic and field scope — see pass-48 reinforcement note on #25 above).
-`/oversight` may bundle both into one "content de-duplication invariants" phase or
-promote independently; this candidate has no dependency on #25 shipping first.
-
-**Update (expand pass 66, 2026-08-23, cloud march):** critique pass 137
-(2026-08-23, same-day) found a fresh instance that names this candidate's
-exact gap directly rather than requiring inference: `/shows/rhoa/season/
-the-clean-slate`'s single headline fact ("zero returning anchors") is
-restated near-verbatim in three fields on one page — `format_caption`
-("Zero returning anchors for the first time in franchise history"), the
-markdown body's closing sentence, and `canon.md`'s slot-16 rationale. The
-finding's own text states: "the site already guards against this exact
-defect class for `episodes_caption` and `cast_size_caption`
-(`collectEpisodesCaptionBareRestatementIssues` /
-`collectCastSizeCaptionBareRestatementIssues` in
-`src/content/__tests__/content-check.test.ts`), but `format_caption` has
-no equivalent check, so this instance shipped uncaught." That is this
-candidate's six-pair scope sketch's exact framing, one gap short of
-complete: `format_caption` sits alongside `location`/`filming_caption`
-and the other five named pairs as a caption field with no bare-
-restatement gate. Whether `format_caption`'s counterpart value is
-`format_summary` (as used in earlier BB S27/Bachelor S28 instances
-already logged above) or format has no single paired value and needs a
-cross-field check against body/canon.md instead (as this instance shows)
-is worth resolving at ship time — the finding suggests the latter is
-also needed, since the duplication here isn't against an adjacent stat
-value but against the body and `canon.md` prose, which is closer to
-candidate #25's shape than a same-tile value/caption pair. Recommend the
-scope sketch explicitly fold in a `format_caption`-vs-body/canon.md check
-alongside the six value/caption pairs when this ships, since evidence
-now shows the same field triggers both defect classes this file
-separately tracks (#25 and #28). Score unchanged at 8.7 (ceiling); no
-change to estimated phases.
-
 ### [ ] [score 6.4] Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger
 - kind: guard
 - proposed: 2026-07-09, v1 candidate #29 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
@@ -1690,64 +1450,6 @@ gap table the row tracks already lives) rather than only moving
 `[x]`-closed rows out. Not filing as a separate candidate — this is
 an implementation-scope refinement of #29, not a different problem.
 
-### [ ] [score 6.6] Inline partial-canon coverage disclosure — ranking-list coverage note
-- kind: product
-- proposed: 2026-06-21, v1 candidate #20 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
-
-**Score:** 6.6 (impact: 7, ease: 8 → 5.6 base + 1.0 signal multiplicity)
-**Source pass:** 38
-**Filed:** 2026-06-21
-**Source signals:**
-- Critique pass-58 [MED] /shows/survivor-australia — "Five seasons in" methodology copy
-  vs "12 SEASONS AIRED" stat strip; a scan-reader sees 12 in the hero and then counts
-  5 entries in the ranking list with no inline explanation.
-- Critique pass-58 [MED] /shows/love-is-blind — "all five seeded seasons" methodology
-  copy vs "10 SEASONS AIRED"; the word "all" implies no remaining seasons.
-- Critique pass-59 [MED] /shows/dancing-with-the-stars — "covers the full run" methodology
-  copy vs "ALL 16" era counter and "34 SEASONS AIRED"; the strongest case of the class.
-- Critique pass-62 [MED] /shows/rhobh — partial canon (5 of 15 seasons); no inline signal
-  near the ranking list; methodology disclosure is buried below the fold.
-- Critique pass-62 [MED] /shows/masterchef-australia — partial canon (5 of 16 seasons);
-  same structural absence as RHOBH.
-- Pass-40 reinforcement (this pass): /shows/survivor-australia — methodology "Five
-  seasons in..." vs "12 SEASONS AIRED" stat strip; same class, 6th distinct show.
-- Signal multiplicity: 6 shows, 5 critique passes, same structural gap. Class grows as
-  new shows are added with partial canons — the catalog will not stop at 6 cases.
-
-**Why:** Every show whose canon covers fewer seasons than the total aired count has the
-same gap: a scan-reader who sees "12 SEASONS AIRED" (or 15, or 16, or 34) in the hero
-stat strip and then counts 5 entries in the ranking list has no inline explanation. The
-methodology section clarifies — but it requires scrolling past the stat strip and the
-partial ranking list itself. The partial-canon state is permanent for every new show
-until its drain completes; the class will keep growing. The fix is a small conditional
-render in the `ShowRanking` component: when `canon.entries.length < show.seasons`,
-display a one-line note above the ranking list — e.g. "Seasons 1–5 reviewed so far.
-More being added." — so the disclosure is in context, visible to any scan-reader who
-sees the list. This is distinct from the content fixes to individual `meth_who_p` fields
-(candidate #21 handles those); the inline note is a UI component change that covers all
-partial-canon shows automatically without per-show content authoring.
-
-**Scope sketch:**
-- `src/components/canon/ShowRanking.tsx` (or equivalent show-page ranking component):
-  add a conditional `<p className="coverage-note">` that renders when
-  `canon.entries.length < show.seasons` — something like "Reviewing seasons 1–N of M.
-  More coming." Exact copy matches the site's plain-spoken register; no exclamation
-  point; exact wording at fix-time.
-- Colocated test: renders the note when partial; renders nothing when canon is complete
-  (`entries.length === show.seasons`); correct N and M substitution.
-- e2e: one of the partial-canon show pages (e.g. `/shows/survivor-australia`) asserts
-  the coverage note is present; one complete-canon show page asserts it is absent.
-- Spoiler P0 intact — coverage note is structural; references only season counts, never
-  outcomes or rankings.
-- `content-curator` brief update: document the note so curators don't duplicate it in
-  `meth_who_p` text (the UI handles the disclosure, so methodology prose can drop the
-  coverage-count sentence).
-
-**Estimated phases:** 1.
-**Conflicts:** Complementary to candidate #21 (meth_who_p content gate). Independent fix
-paths: #20 is the product-visible component addition; #21 is the authoring-discipline gate.
-Both should land; #20 is higher urgency (reader-visible today on 5+ shows).
-
 ### [ ] [score 5.5] meth_who_p misleading-completeness guard + content-check gate
 - kind: guard
 - proposed: 2026-06-21, v1 candidate #21 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
@@ -1913,54 +1615,6 @@ exact shape; this is a clean, low-risk extension, not a new pattern.
 **Estimated phases:** 1.
 **Conflicts:** None. No URL change, no schema change, no UI change — content-only +
 one content-check invariant, same shape as candidates #12/#17/#22.
-
-### [ ] [score 6.6] Signed-in header handle affordance — profile link + sign-out popover
-- kind: product
-- proposed: 2026-06-17, v1 candidate #18 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
-
-**Score:** 6.6 (impact: 7, ease: 8 → 5.6 base + 1.0 signal multiplicity)
-**Source pass:** 35
-**Filed:** 2026-06-17
-**Source signals:**
-- Critique pass-48 [MED] [authed] — the `@e2e` handle renders as a bare
-  text token in the header on every authed page (desktop + mobile); no
-  `href`, no caret, no pointer cursor. A returning member has no in-header
-  path to `/u/<handle>` and no way to sign out; the handle reads as a
-  status label rather than a control.
-- Signal multiplicity: complements candidate #16 (/u/[handle] record zone)
-  — both findings confirm Phase 36 shipped the auth-read reflection but
-  not the auth-affordance layer.
-
-**Why:** Phase 36 (`[x]`) wired the auth-aware chrome (header reads
-`/api/auth/me` and renders `@handle` when signed in). What it did not
-ship is the affordance: the handle is a bare `<span>`-equivalent with
-no link, no popover, no sign-out route. A returning member landing on any
-page has to type `/u/<handle>` manually to reach their record, and has no
-in-page sign-out. The fix is scoped to a single component (the `<AuthState>`
-header island, likely `src/components/chrome/Header.tsx` or
-`src/components/chrome/AuthState.tsx` — verify at fix-time): wrap the
-handle in `<a href="/u/<handle>">`, add a minimal two-entry dropdown
-(`Your record →` + `Sign out →` via `/api/auth/logout`). The popover
-anchors a small caret next to the handle so the affordance reads as a
-control. No URL contract change; no schema change; no new route (the logout
-endpoint and `/u/[handle]` already exist per the locked URL contract).
-
-**Scope sketch:**
-- `src/components/chrome/AuthState.tsx` (or equivalent — verify at fix-time):
-  wrap rendered handle in `<a href="/u/${handle}">`. Add a popover/dropdown
-  anchor (small caret) with two items: `Your record` (`href="/u/${handle}"`)
-  and `Sign out` (`href="/api/auth/logout"`). Keep the popover intentionally
-  minimal — no settings link (not a shipped route), no avatar/icon.
-- Colocated test: authed state renders an anchor with correct `href` + a
-  popover trigger with `Sign out` item; anon state renders neither (prevents
-  authed chrome leaking to anon, per pass-1 #5 closure class).
-- e2e: the authed pass for any captured URL asserts the header handle is
-  a link element, not a bare text token.
-- Spoiler P0 intact — chrome affordance only; no verdict change.
-
-**Estimated phases:** 1.
-**Conflicts:** None. Complementary to #16 (profile record zone). No URL
-change, no schema change, no new page family.
 
 ### [ ] [score 5.5] Chrome revised-date source-of-record: `lastRevised(scope)` helper
 - kind: guard
@@ -3285,6 +2939,11 @@ do not re-score it independently — track #06.
 <!-- Same format with **Promoted in:** <oversight commit hash>
      and **Build-plan row:** <link to row in plan/README.md> -->
 
+### [promoted 2026-11-02 → spec 48] [score 8.7] Stat-tile value/caption literal-duplicate invariant
+- promoted: 2026-11-02, auto (expand pass depth-promotion), veto #832
+
+**Build-plan row:** Spec 48 — Stat-tile value/caption literal-duplicate guard (`plan/README.md`)
+
 ### 12. Brand-spelling discipline (lax→strict invariant for `tiered.tv` wordmark)
 **Promoted in:** oversight 2026-06-11 (build plan re-exhausted; all three pending candidates promoted at once, user-approved).
 **Build-plan row:** Phase 44 - Brand-spelling discipline (lax-to-strict BRAND_SPELLING_STRICT invariant) (`plan/README.md`)
@@ -3444,6 +3103,44 @@ content authoring gap from shipping. Independent and complementary.
 
 <!-- Same format with **Rejected at:** <oversight commit hash>
      and **Reason:** <why> -->
+
+### 18. Signed-in header handle affordance — profile link + sign-out popover
+**Reason:** Reality-checked during the 2026-11-02 march Step 0 depth
+promotion before writing it as a spec (`node scripts/plan/promote.mjs
+due` picked it at score 6.6). Already shipped: `HeaderView.tsx` renders
+the signed-in handle as a `site-header-user-trigger` button
+(`aria-haspopup`, `aria-expanded`, `aria-controls`, `data-profile-href`)
+that discloses a `role="menu"` panel with "Your record" (`/u/<handle>`)
+and "Sign out" (`/auth/logout`) on both desktop and mobile — commits
+`5435b96` (mobile chevron menu) and `f2f53dd` (extended to desktop,
+closing #384). This candidate was itself a duplicate of the same
+critique-pass-48 finding `fcead6e3` already closed `[x]` in
+`plan/CRITIQUE.md` as "verified no-defect" on 2026-07-04, re-surfaced
+into Pending by the v1→v2 kit migration (2026-10-27) without a
+reality-check against the migration's own carry-over. Colocated
+(`HeaderView.test.tsx`) and e2e (`authed-example.spec.ts`,
+`user-profile.spec.ts`, `comment-read.spec.ts`) coverage already pins
+the contract. Nothing to ship; rejecting rather than promoting a spec
+for work that is already live.
+**Rejected at:** march 2026-11-02 (Step 0 depth promotion).
+
+### 20. Inline partial-canon coverage disclosure — ranking-list coverage note
+**Reason:** Reality-checked during the same 2026-11-02 march Step 0 pass
+(`promote.mjs due` picked it next, score 6.6, after #18 above was
+rejected). Already shipped: `CanonEraToolbar.tsx` renders a
+`.cp-coverage-note` (`data-testid="canon-coverage-note"`) — "N more
+season(s) aired — ranking in progress." — whenever `airedSeasons` (from
+`show.seasons`) exceeds the ranked `total`, generalizing across every
+partially-drained show, not just the cited examples. Shipped
+2026-07-10 in commit `44a1a9c7` ("surface a coverage note when a
+show's aired seasons outpace its ranked canon"), filed via critique
+pass-79 and picked by `/iterate` directly (#526) — this candidate
+(filed 2026-06-21, pre-dating that fix) was never reconciled against
+it and the v1→v2 kit migration (2026-10-27) carried it into Pending
+unchanged. Colocated test coverage already pins the conditional
+render. Nothing to ship; rejecting rather than promoting a spec for
+work that is already live.
+**Rejected at:** march 2026-11-02 (Step 0 depth promotion).
 
 ### 05. Critique-harness repair (anon clean-profile + authed cookie-injection)
 **Reason:** Reviewed live during the 2026-05-17 oversight pass at user request. Neither blocker reproduces: a fresh Chrome MCP tab group is genuinely logged-out (anon pass clean), and on that clean profile `document.cookie`-injecting `CRITIQUE_SESSION_COOKIE` as `__session` is accepted by the server (`/api/auth/me` → `signedIn:true`; chrome shows `@e2e / Sign out`). No code or environment change was needed — the 2026-05-16 `httpOnly` reasoning was wrong for a clean profile. Working harness contract recorded in `plan/bearings.md` → "Critique cadence" and the two `CRITIQUE.md` rows moved to Done. Nothing to ship; closing rather than promoting.
