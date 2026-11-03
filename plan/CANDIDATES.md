@@ -18,16 +18,6 @@
 - generator: digest · filed 2026-10-31
 - SHIPPED 2026-11-01 (local session, built directly): `countRows()` moved to `scripts/lib/plan-rows.mjs`, now counts both `### [..]` headings and top-level `- [..]` bullets (skipping `[x]` and rows inside HTML-comment templates) for every call site; CRITIQUE/CANDIDATES counts unchanged (71/22), AUDIT reads 7 instead of 0. Tests: `scripts/__tests__/plan-rows.test.mjs`.
 
-### [ ] [score 6.0] Graduated spoiler-risk labeling instead of a binary spoiler flag
-- kind: product
-- proposed: 2026-10-27 (research)
-- source signals: field (2026-10-27): Some entertainment coverage grades a piece's spoiler risk on a scale tied to how far behind a reader might be, rather than a single binary spoiler/no-spoiler toggle.
-- rationale: tiered.tv's whole premise is spoiler-safe coverage, currently enforced as a binary content-check gate (outcome language blocked outright). A graduated framing — e.g. distinguishing 'safe even mid-season' from 'safe only once a season has aired a few episodes' — is a pattern worth weighing against the current all-or-nothing gate, though the editorial voice may already prefer the simpler binary for…
-- proposed scope: No code implied yet — a candidate for /oversight to weigh against the existing spoiler-discipline P0 gate (content-check's outcome-language blocklist) before any scope is sketched; the binary gate may already be the deliberately simpler, more trustworthy choice.
-- estimated chunks: unknown until specced
-- conflicts: none known.
-- generator: research · filed 2026-10-27
-
 ### [ ] [score 5.0] Show-page ISR + client-hydrated ranking widget — stop forcing the whole page off the CDN edge for one live number
 - kind: product
 - proposed: 2026-09-26, v1 candidate #41 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
@@ -2938,6 +2928,11 @@ do not re-score it independently — track #06.
 
 <!-- Same format with **Promoted in:** <oversight commit hash>
      and **Build-plan row:** <link to row in plan/README.md> -->
+
+### [promoted 2026-11-03 → spec 49] [score 6.0] Graduated spoiler-risk labeling instead of a binary spoiler flag
+- promoted: 2026-11-03, auto (expand pass depth-promotion), veto #834
+
+**Build-plan row:** Spec 49 — Graduated spoiler-risk hold for the flagged-comment queue (`plan/README.md`)
 
 ### [promoted 2026-11-02 → spec 48] [score 8.7] Stat-tile value/caption literal-duplicate invariant
 - promoted: 2026-11-02, auto (expand pass depth-promotion), veto #832

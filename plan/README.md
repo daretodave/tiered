@@ -39,9 +39,11 @@ line goes; each line is a lock that times out:
 condition> · max_age: 14d`, an optional `· fallback: release`):
 
 - 48 · auto-promoted, veto until 2026-11-03 (#832) · max_age: 1d · fallback: release
+- 49 · auto-promoted, veto until 2026-11-04 (#834) · max_age: 1d · fallback: release
 
 ## Specs
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
 | 48 | Stat-tile value/caption literal-duplicate guard | [48-stat-tile-caption-literal-duplicate-guard.md](48-stat-tile-caption-literal-duplicate-guard.md) | Held (veto window) | Not chunked yet. |
+| 49 | Graduated spoiler-risk hold for the flagged-comment queue | [49-graduated-spoiler-risk-mod-hold.md](49-graduated-spoiler-risk-mod-hold.md) | Held (veto window) | Not chunked yet. |
