@@ -1,15 +1,14 @@
-import { auth0 } from '@/lib/auth0'
 import { HeaderView } from './HeaderView'
-import { headerUserFromSession } from './headerUser'
 
 type HeaderProps = {
   tinted?: boolean
 }
 
-export async function Header({ tinted = false }: HeaderProps) {
-  const session = await auth0.getSession().catch(() => null)
-  const user = headerUserFromSession(
-    session?.user as Record<string, unknown> | undefined,
-  )
-  return <HeaderView tinted={tinted} user={user} />
+// The header renders into static/ISR pages. Reading the Auth0 session
+// here (cookies) forced every page that mounts the header to render
+// per request, which dominated the team's Vercel CPU usage. The auth
+// island inside HeaderView resolves the viewer via GET /api/auth/me
+// on mount instead.
+export function Header({ tinted = false }: HeaderProps) {
+  return <HeaderView tinted={tinted} user={null} />
 }

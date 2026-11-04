@@ -335,33 +335,57 @@ describe('middleware — Secure attribute is NODE_ENV-conditional', () => {
   })
 })
 
-describe('middleware — config.matcher static-asset exclusions', () => {
-  it('exports a matcher array with exactly one pattern', () => {
-    expect(Array.isArray(config.matcher)).toBe(true)
-    expect(config.matcher).toHaveLength(1)
+describe('middleware — season ?view= redirect (moved out of the page so it can stay static)', () => {
+  it('308s a season URL carrying ?view= to the clean season URL', async () => {
+    const res = await middleware(
+      makeRequest('/shows/survivor/season/the-tribe-has-spoken', { search: '?view=community' }),
+    )
+    expect(res.status).toBe(308)
+    expect(res.headers.get('location')).toBe('http://localhost/shows/survivor/season/the-tribe-has-spoken')
+    expect(middlewareMock).not.toHaveBeenCalled()
   })
 
-  it('excludes Next internals so middleware does not run on the build pipeline', () => {
-    const pattern = config.matcher[0]!
-    // The two `_next/*` carve-outs are the load-bearing performance
-    // contract — a regression would run Auth0 + anon-cookie logic on
-    // every JS chunk + image in the page bundle.
-    expect(pattern).toContain('_next/static')
-    expect(pattern).toContain('_next/image')
+  it('does not redirect a season URL without ?view=', async () => {
+    const res = await middleware(makeRequest('/shows/survivor/season/the-tribe-has-spoken'))
+    expect(res.status).not.toBe(308)
   })
 
-  it('excludes the standard static-asset extensions a browser fetches outside the SPA shell', () => {
-    const pattern = config.matcher[0]!
-    expect(pattern).toContain('favicon\\.ico')
-    expect(pattern).toContain('.svg')
-    expect(pattern).toContain('.png')
-    expect(pattern).toContain('.ico')
-    expect(pattern).toContain('.json')
-    expect(pattern).toContain('.txt')
+  it('does not redirect the show page ?view=community (a real client-side toggle)', async () => {
+    const res = await middleware(makeRequest('/shows/survivor', { search: '?view=community' }))
+    expect(res.status).not.toBe(308)
+  })
+})
+
+describe('middleware — config.matcher stays narrow (CPU budget)', () => {
+  const sources = config.matcher.map((m) => (typeof m === 'string' ? m : m.source))
+
+  it('covers the Auth0 routes and the API', () => {
+    expect(sources).toContain('/auth/:path*')
+    expect(sources).toContain('/api/:path*')
   })
 
-  it('the pattern is a valid regex (Next.js compiles it; a syntax error would 500 the whole site)', () => {
-    const pattern = config.matcher[0]!
-    expect(() => new RegExp(pattern)).not.toThrow()
+  it('covers every retired-path redirect handled in the function body', () => {
+    expect(sources).toContain('/search')
+    expect(sources).toContain('/themes/the-command-held-for-nine-seasons-then-didnt')
+    expect(sources).toContain('/themes/same-castle-different-clock-every-winter')
+    expect(sources).toContain('/shows/americas-got-talent/season/the-panel-in-stride')
+    expect(sources).toContain('/shows/americas-got-talent/season/the-long-third-year')
+  })
+
+  it('only matches season pages when a view query is present', () => {
+    const season = config.matcher.find(
+      (m) => typeof m !== 'string' && m.source === '/shows/:show/season/:slug',
+    )
+    expect(season).toEqual({
+      source: '/shows/:show/season/:slug',
+      has: [{ type: 'query', key: 'view' }],
+    })
+  })
+
+  it('has no catch-all pattern that would run on every page view', () => {
+    for (const src of sources) {
+      expect(src.startsWith('/((?!')).toBe(false)
+      expect(src).not.toBe('/:path*')
+    }
   })
 })

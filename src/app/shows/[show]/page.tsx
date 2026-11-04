@@ -25,19 +25,16 @@ import { pickMovers } from '@/lib/community/live'
 import { FeaturedThemes } from '@/components/featured-themes/FeaturedThemes'
 import type { Season, Show } from '@/content'
 
-// Phase 35 stage 3: the consolidated show page reads the live,
-// Supabase-derived community ranking (getCommunityRanking) at render.
-// A statically prerendered page would bake the canon-mirror fallback
-// at build time and never reflect votes on refresh — that staleness
-// IS the user-reported "refresh always shows 0" bug (the same
-// reasoning the stage-1 commit used to keep /api/ranking dynamic
-// rather than ISR). Render per request; the aggregate is a cheap
-// indexed SUM and the canon-mirror still serves on any DB failure
-// (always-working rule).
-export const dynamic = 'force-dynamic'
+// Phase 35 stage 3 read the live community ranking per request so
+// votes were never baked at build time. That made every show-page hit
+// a full server render and dominated the team's Vercel CPU. ISR keeps
+// the ranking fresh within the revalidate window (the ranking itself
+// only recomputes weekly) while serving from the CDN. The
+// ?view=community toggle is resolved client-side by CanonTabSwitch,
+// so the page no longer reads searchParams.
+export const revalidate = 300
 
 type Params = { show: string }
-type Search = { view?: string }
 
 export function generateStaticParams(): Params[] {
   return getAllShows().map((show) => ({ show: show.slug }))
@@ -45,10 +42,8 @@ export function generateStaticParams(): Params[] {
 
 export async function generateMetadata({
   params,
-  searchParams,
 }: {
   params: Params
-  searchParams?: Promise<Search>
 }): Promise<Metadata> {
   const show = getShow(params.show)
   if (!show) {
@@ -57,25 +52,6 @@ export async function generateMetadata({
       description: '',
       path: `/shows/${params.show}`,
       noIndex: true,
-    })
-  }
-  const sp = (await searchParams) ?? {}
-  // CRITIQUE pass 104/105 HIGH: the consolidated show page (phase 33)
-  // renders two distinct views off one route via `?view=community`,
-  // but metadata never varied by that param — every visitor to the
-  // community vote table got the canon page's title, describing
-  // content the page wasn't showing them. Title/description vary by
-  // view; the canonical does not — pass 151/156 HIGH found the
-  // self-referential `?view=community` canonical conflicting with the
-  // canon branch's clean-URL canonical below, presenting crawlers two
-  // canonical documents for one client-side toggle state. Both
-  // branches now fold to the same clean base URL.
-  if (sp.view === 'community') {
-    return buildMetadata({
-      title: `${show.name} — community rank`,
-      description: `See how tiered.tv readers are voting on every ${show.name} season, no spoilers.`,
-      path: `/shows/${show.slug}`,
-      image: `/shows/${show.slug}/opengraph-image`,
     })
   }
   return buildMetadata({
@@ -109,19 +85,15 @@ function descriptionFor(show: Show): string {
 
 export default async function ShowHomePage({
   params,
-  searchParams,
 }: {
   params: Params
-  searchParams?: Promise<Search>
 }) {
   const show = getShow(params.show)
   if (!show) notFound()
   const seasons = getAllSeasons(show.slug)
   const canon = getCanon(show.slug)
 
-  const sp = (await searchParams) ?? {}
-  const initialView: 'canon' | 'community' =
-    sp.view === 'community' ? 'community' : 'canon'
+  const initialView = 'canon' as const
 
   const seasonByNumber = new Map<number, Season>()
   for (const s of seasons) seasonByNumber.set(s.number, s)

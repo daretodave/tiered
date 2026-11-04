@@ -149,74 +149,13 @@ describe('generateMetadata — known show', () => {
   })
 })
 
-// CRITIQUE pass 104/105 HIGH: the consolidated show page (phase 33)
-// serves the canon ranking and the community vote table off the same
-// route, distinguished only by `?view=community`. Metadata never read
-// that param, so every community-view visitor (and every crawler) got
-// the canon page's title and a canonical pointing at the plain
-// /shows/<slug> URL — confirmed systemic across two shows' community
-// pages at critique pass 105.
-describe('generateMetadata — community view (?view=community)', () => {
-  it('titles the community view distinctly from the canon view', async () => {
-    getShowMock.mockReturnValue(makeShow({ name: 'Survivor', slug: 'survivor' }))
-    const meta = await generateMetadata({
-      params: { show: 'survivor' },
-      searchParams: Promise.resolve({ view: 'community' }),
-    })
-    expect(meta.title).toBe('Survivor — community rank')
-  })
-
-  // CRITIQUE pass 151/156 HIGH: a self-referential ?view=community
-  // canonical conflicted with the canon branch's clean-URL canonical,
-  // presenting crawlers two canonical documents for one client-side
-  // toggle state (confirmed systemic across masterchef and
-  // naked-and-afraid). The community view keeps its own title/
-  // description but now folds its canonical back to the clean base
-  // URL, matching the canon view.
-  it('folds the community view canonical back to the clean base URL, matching the canon view', async () => {
-    getShowMock.mockReturnValue(makeShow({ slug: 'top-chef' }))
-    const meta = await generateMetadata({
-      params: { show: 'top-chef' },
-      searchParams: Promise.resolve({ view: 'community' }),
-    })
-    expect(meta.alternates?.canonical).toBe('https://tiered.tv/shows/top-chef')
-  })
-
-  // CRITIQUE pass 107 MED: the pass-104/105 title/canonical fix above
-  // never threaded an `image` argument through the community branch,
-  // so buildMetadata's default-image fallback fired and a shared
-  // community-view link rendered the generic sitewide card instead of
-  // the show's own tinted OG image (already correct on the canon view,
-  // see the pass-69 test above).
-  it('points the community view OG image at the same per-show opengraph-image route as the canon view', async () => {
-    getShowMock.mockReturnValue(makeShow({ slug: 'top-chef' }))
-    const meta = await generateMetadata({
-      params: { show: 'top-chef' },
-      searchParams: Promise.resolve({ view: 'community' }),
-    })
-    expect(meta.openGraph?.images).toEqual([
-      { url: 'https://tiered.tv/shows/top-chef/opengraph-image' },
-    ])
-    expect(meta.twitter?.images).toEqual(['https://tiered.tv/shows/top-chef/opengraph-image'])
-  })
-
-  it('leaves the canon view untouched when no view param is present', async () => {
-    getShowMock.mockReturnValue(makeShow({ name: 'Survivor', slug: 'survivor' }))
-    const meta = await generateMetadata({
-      params: { show: 'survivor' },
-      searchParams: Promise.resolve({}),
-    })
-    expect(meta.title).toBe('Survivor — the canon, no spoilers')
-    expect(meta.alternates?.canonical).toBe('https://tiered.tv/shows/survivor')
-  })
-
-  it('leaves the canon view untouched for any non-community view value', async () => {
-    getShowMock.mockReturnValue(makeShow({ name: 'Survivor', slug: 'survivor' }))
-    const meta = await generateMetadata({
-      params: { show: 'survivor' },
-      searchParams: Promise.resolve({ view: 'canon' }),
-    })
-    expect(meta.title).toBe('Survivor — the canon, no spoilers')
+// The show page is static/ISR now (reading the query string forced a
+// per-request render and dominated Vercel CPU). ?view=community is a
+// client-side toggle, so metadata no longer varies by it; the canonical
+// was already the clean base URL for both views.
+describe('generateMetadata — static (no query-string variance)', () => {
+  it('does not accept searchParams — the route must stay static', () => {
+    expect(generateMetadata.length).toBeLessThanOrEqual(1)
   })
 })
 
