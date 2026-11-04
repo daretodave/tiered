@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-10-27 | next due 2026-11-03 |
+| season-sweep | 7 days | 2026-11-04 | next due 2026-11-11 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,47 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Sweep, 2026-11-04 tick (cloud march; seventeenth full sweep, 18 days
+since the clock's own last-stamped 2026-10-27 — 6 `scout` batches,
+≤12 shows each, covered all 68 catalogued shows, cross-grepped against
+the filesystem — clean, every frontmatter `seasons:` count equals its
+filed-season-file count).** One genuinely new, first-time confirmation:
+`big-brother` — CBS renewed for **Seasons 29 and 30 simultaneously**,
+announced by Julie Chen Moonves at the Season 28 finale on 2026-10-01
+(TVInsider, EntertainmentNow); no cast or premiere date for either yet.
+Distinct from the 2026-07-something false positive that mislabeled
+Season 28's own premiere date as "Season 29" — this is a dated
+post-finale double-renewal, the same confirmed-but-unaired pattern used
+for every other starred row. Added as `big-brother | 28/30 | 2*` below.
+
+**Everything else reconfirmed, not reopened.** `chopped`'s recurring
+third-party "Season 63/64" indexing artifact resurfaced via Moviefone/
+TheTVDB again — Food Network's own 62-season numbering stays
+authoritative, closed since 2026-07-16. `survivor-australia`'s "S13
+Australia V The World / S14 Redemption" numbering collision resurfaced
+again — both titles and premiere dates (2025-08-17 / 2026-02-23) match
+already-filed `11-australia-v-the-world.md` / `12-redemption.md` under
+this catalog's Network 10 numbering; resolved since 2026-07-19.
+`bachelorette` Season 22 stays pulled-from-air limbo, unresolved since
+first flagged. `americas-next-top-model` Cycle 25 is still a Tyra Banks
+tease only, no network confirmation — stays excluded. The three rows the
+2026-10-31 drain tick flagged as stale-starred and already-premiered —
+`shark-tank` S18 (2026-09-30), `rhoslc` S7 (2026-09-16), `dragrace-uk` S8
+(2026-09-03, finale ~2026-11-05) — remain unfiled and immediately
+actionable for the next Rule 2 pick; this sweep does not re-litigate
+them, just confirms none have been picked yet.
+
+**Count note (flagged, not reconciled this tick).** The physical table
+below counted 32 rows / 33 gap-slots before this tick's edit (31 rows at
+`1*` + `american-ninja-warrior` at `2*`), one slot under the 2026-10-31
+log line's narrated "32 shows / 34 gap-slots." Not re-derived here —
+flagging for a future audit tick to walk the table row-by-row against
+the log rather than trusting either number blind, the same drift class
+called out repeatedly elsewhere in this file. After this tick's
+`big-brother` addition: **33 shows / 35 gap-slots** by physical count.
+
+---
 
 **Rule 2 drain, 2026-10-31 tick (cloud march, second this day): hells-kitchen
 24/26 → 25/26, gap narrows from 2\* to 1\*.** Picked off the prior tick's own
@@ -1881,6 +1922,7 @@ new-show creation is locked to the biweekly show-add clock.
 | traitors | 5/6 | 1* |
 | survivor | 51/52 | 1* |
 | below-deck-mediterranean | 11/12 | 1* |
+| big-brother | 28/30 | 2* |
 
 **Table correction, 2026-08-28 tick (cloud march):** `married-at-
 first-sight`'s row (carried at `19/20, 1*` since the 2026-08-23
@@ -3715,3 +3757,4 @@ No calendar or gap-table action.
 | 2026-10-27 | Rule 2 drain, not a sweep (amazing-race S39 — filed provisional/premise-only while airing, gap-slot removed) | 37 |
 | 2026-10-27 | Rule 2 drain, not a sweep (the-voice S22-S30 corrected per issue #762 — real S28/S29 filed, S30 filed provisional while airing, gap-slot removed) | 36 |
 | 2026-10-31 | Rule 2 drain, not a sweep (bake-off S17 — fully filed, gap-slot removed; also flagged shark-tank/rhoslc/dragrace-uk/hells-kitchen as stale-starred, already-premiered rows for the next drain pick) | 32 shows / 34 gap-slots |
+| 2026-11-04 | 2 (seventeenth full sweep; big-brother S29+S30 double-renewal [2 slots], first-time confirmation, distinct from the earlier S28-premiere misattribution false positive; chopped S63/S64, survivor-australia numbering, bachelorette S22, and americas-next-top-model Cycle 25 all reconfirmed as known non-gaps, not reopened; physical table recount found 33 gap-slots pre-edit, one under this log's own narrated 34 — flagged, not reconciled) | 33 shows / 35 gap-slots (physical count; narrated count carries an unreconciled 1-slot drift) |
