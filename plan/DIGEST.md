@@ -1,235 +1,158 @@
-# DIGEST — 2026-11-01
+# DIGEST — 2026-11-04
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-**A local `/oversight` session did more in one sitting than most
-weeks of loop ticks: three open HIGH critique findings closed,
-one needs-user-call cleared with a workflow-file fix, two
-needs-user-call content questions resolved with real editorial
-calls, one new spec built and shipped end-to-end, one real
-instrument bug fixed, and three plan ledgers trimmed by
-roughly 2.4MB combined.** Ten commits landed since last night's
-digest — nine from a local session (08:53-09:54 local time) and
-one cloud `march` tick (critique pass 194, 13:54-14:08 UTC) sitting
-in between them. The local session: shipped spec 47 (canon
-tier-blurb gate, `content-check` strict) ahead of its own veto
-window at the owner's explicit request; fixed `quota.mjs` to
-recognize the plain-text "out of usage" error (closing the HIGH
-`[needs-user-call]` row that's sat open since 2026-10-19 — the
-4-day cloud-loop outage backoff gap); fixed `pulse.mjs`'s
-AUDIT-pending counter (the bug last night's digest surfaced, now
-reading 5 instead of a silent 0); resolved both open needs-user
-content calls (Naked and Afraid's off-by-one season numbering —
-turned out to be a genuine PSR S4 claim needing its own new LOW
-row, not a numbering bug; The Apprentice S5 rewritten as "The
-Open Draft" after scout research confirmed it was NYC-based, not
-LA); closed the rhoc-homecoming and canouan HIGHs flagged two
-nights running; and adopted an upstream nexus kit update
-(`ca3c79f`) that retunes the promotion valve — `promote_after_days`
-7 (was 21), `promote_queue_depth` 2 (was 0, now live for
-`/march` itself), `promote_prefer: product`. The one cloud tick
-(critique pass 194) filed a HIGH (hells-kitchen's canon
-methodology text still said "twenty-four seasons" against a
-"25 SEASONS IN CANON" header) that a follow-up local commit
-closed the same morning. Three of today's four scheduled `march`
-runs no-opped on the same cause: `seven_day` quota utilization
-(0.84, 0.84, then 0.89) at or above the 0.8 scheduled-run
-ceiling — worth watching, not yet acting on. Breadth is green
-(latest `e2e-full` passed, though against last night's digest
-commit — today's nine-commit local session hasn't had a fresh
-nightly run yet). Deploy is green at HEAD `94a602dc`.
+**A multi-day quota outage swallowed two scheduled digest ticks
+(2026-11-02, 2026-11-03) and most of the loop's `march` ticks in
+between — this digest covers the full three-day gap since
+2026-11-01.** `night.yml`'s own quota gate (the governor built
+2026-10-26, hardened 2026-11-01) did exactly what it's designed to
+do: both nights read `seven_day` utilization at `1` (rejected) and
+skipped cleanly rather than burning a CI run rediscovering the same
+exhausted state — the digest itself just never got written, so
+"quiet" went unreported for two nights running. Eight of the
+fourteen `march` ticks since 2026-11-01 21:09 were the same
+quota-paused no-op; the other six shipped seven commits total:
+two depth-promotions (specs 48 and 49, both written straight to
+Held behind a veto window), then a burst this afternoon
+(15:47–16:42 UTC) once quota cleared — a veto-window release
+(spec 48 → Ready), the weekly season sweep (1 new season found,
+gap now 35), critique pass 195 (1 LOW finding, three
+reader-proposed findings correctly self-rejected against the
+documented VotePair spec and CLAUDE.md's blurb format), a
+mirror-orphan refill (issue #830 had no plan row, now does), and
+spec 48's chunk plan (5 S-sized chunks, ready to build). Quota is
+healthy now — `0.03` utilization, resets 2026-11-09. Breadth is
+green on the latest `e2e-full` (2026-11-04 02:54–03:23 UTC, before
+today's afternoon commits — not yet re-verified against them, per
+its own daily cadence). Deploy is green at HEAD `a5c54e9c`. No
+open `[needs-user-call]` rows, no open user issues, nothing to
+escalate. The one real signal worth a human's attention: the
+candidate queue is badly silted — all 16 pending candidates are
+over 21 days old, the oldest is 175 days old, and the
+highest-scored one (8.3, a canon-rationale/season-body
+verbatim-echo gate) already matches the single largest pattern in
+the 72-row CRITIQUE backlog. See Needs you.
 
 ## While you were out
 
 | when (UTC) | verb | outcome |
 |---|---|---|
-| 11-01 02:08–02:11 | march | no-op, honestly reported: `quota` (seven_day utilization 0.84 ≥ 0.8 scheduled-run ceiling) |
-| 11-01 08:53–09:54 (local, 9 commits) | oversight | success — spec 47 shipped, 3 open HIGH critique findings closed, 1 HIGH + 2 content needs-user-call rows resolved, pulse.mjs + quota.mjs fixed, nexus kit `ca3c79f` adopted, plan ledgers trimmed ~2.4MB |
-| 11-01 09:47–09:50 | march | no-op, honestly reported: `quota` (seven_day utilization 0.84 ≥ 0.8 scheduled-run ceiling) |
-| 11-01 13:54–14:08 | march | success — critique pass 194 shipped (3 findings: 1 HIGH, 0 MED, 2 LOW) |
-| 11-01 16:47–16:50 | march | no-op, honestly reported: `quota` (seven_day utilization 0.89 ≥ 0.8 scheduled-run ceiling) |
+| 11-01 21:09–21:12 | march | no-op, honestly reported: `quota` (paused: weekly quota until 2026-11-02T08:00Z, issue #831) |
+| 11-02 01:03–07:41 (2 ticks) | march | no-op, honestly reported: `quota` (same pause, issue #831) |
+| 11-02 17:27–17:47 | march | success — depth promotion: spec 48 written (stat-tile value/caption literal-duplicate guard), Held behind veto window (#832) |
+| 11-02 (night) | digest | **skipped** — quota gate read `seven_day` 1 (rejected), paused until 2026-11-03T08:00Z (issue #833) |
+| 11-03 00:04–06:45 (2 ticks) | march | no-op, honestly reported: `quota` (pause carried over, issue #833) |
+| 11-03 14:41–14:58 | march | success — depth promotion: spec 49 written (graduated spoiler-risk mod-hold), Held behind veto window (#834) |
+| 11-03 (night) | digest | **skipped** — quota gate read `seven_day` 1 (rejected), paused until 2026-11-04T08:00Z (issue #835) |
+| 11-03 20:39–20:42 | march | no-op, honestly reported: `quota` (pause carried over, issue #835) |
+| 11-04 00:55–07:30 (2 ticks) | march | no-op, honestly reported: `quota` (pause carried over, issue #835) |
+| 11-04 15:47–16:25 | march | success — veto sweep released spec 48 (Ready); weekly season sweep (1 new season found, gap 35) |
+| 11-04 16:07–16:34 | march | success — critique pass 195 (1 finding: 0 HIGH, 0 MED, 1 LOW; 3 reader-proposed findings self-rejected) |
+| 11-04 16:18–16:35 | march | success — mirror-orphan refill (issue #830 → `plan/AUDIT.md` row) |
+| 11-04 16:32–16:42 | march | success — chunked spec 48 (5 chunks, all S, covering A1–A7) |
 
 ## Shipped
 
-- **Engineering (1 spec + 3 fixes):** spec 47 — canon tier-blurb
-  gate (`scripts/content-check.ts`, `CANON_TIER_BLURB_STRICT`): a
-  visible tier band whose fallback text equals its fixed headline
-  (today's S tier) now fails `content:check`, same for a visible A
-  band missing `tier_a_blurb`; tier headlines moved to
-  `src/lib/canon/tier-bands.ts` so the gate compares real strings;
-  backfilled `tier_a_blurb` on five shows. Built ahead of the
-  auto-promoted candidate's own veto window (#829, closed same
-  day) at the owner's request — one open follow-up left
-  deliberately ungated: three 31+-entry canons (chopped,
-  dancing-with-the-stars, the-real-world) render a C band with no
-  `tier_c_blurb`. `scripts/cloud/quota.mjs` gained
-  `capFromText()`/`capResetAt()` to recognize the plain-text
-  "out of (extra) usage · resets <time> (UTC)" result that the
-  structured `seven_day` reader never caught — this is what let
-  the 2026-10-15–10-19 outage burn 26 consecutive failed `march`
-  ticks rediscovering the same exhausted state; `night.yml` gained
-  the same governor it never had. `scripts/pulse.mjs`'s
-  `countRows()` moved to `scripts/lib/plan-rows.mjs`, now counts
-  both `### [...]`-heading and `- [...]`-dash-bullet Pending rows
-  (AUDIT reads 5 instead of 0). A fourth fix kept the e2e
-  per-commit gate flat and reset the local stack cleanly on
-  Windows.
-- **Content (2 needs-user-call resolutions + 1 critique-HIGH
-  batch):** Naked and Afraid's premiere dates corrected (15 of 19
-  were wrong) — the earlier numbering question turned out to be a
-  genuine new finding, not an off-by-one bug (filed as a new LOW
-  AUDIT row on the S4 PSR claim). The Apprentice S5 retitled "The
-  Open Draft" and rewritten NYC-based (not LA) per scout-verified
-  Wikipedia/pogdesign/Cornell Sun sourcing — legacy slug 308s.
-  Hells-kitchen's canon methodology text corrected to "twenty-five
-  seasons" (critique pass 194 HIGH, closed same morning). rhoc's
-  homecoming eyebrow/body gap-count mismatch and
-  below-deck-down-under's four-times-restated canouan facts both
-  rewritten (both HIGHs open two nights running — see last night's
-  digest).
-- **Plan hygiene:** `plan/CANDIDATES.md` 482→226KB (header
-  trimmed, 55 pass-note comments + 1 digest comment stripped, 13
-  Promoted/Rejected rows older than 30 days condensed, all 21
-  then-Pending rows tagged `kind:`); `plan/AUDIT.md` 1300→178KB
-  (240 Done rows closed before 2026-10-02 deleted, the standing
-  season-fill row's 740 progress notes trimmed to the latest 3 +
-  a pointer); `plan/CRITIQUE.md` 906→177KB (5,136 lines of pass
-  narrative cut to four header lines, 187 Done rows before
-  2026-10-02 deleted) — zero open-row counts changed by any of
-  this (5 / 71 pending before and after their respective trims).
-- **Candidate pulse.mjs fix** (filed as a candidate last night,
-  score 5.4) was built directly rather than left pending.
+- **Plan (2 specs written, 1 released, 1 chunked):** spec 48
+  (stat-tile value/caption literal-duplicate guard, score 8.7 —
+  two of six pairs already guarded, the other four
+  location/filming, premiere_date/caption, format/caption,
+  host/caption now scoped) and spec 49 (graduated spoiler-risk
+  mod-hold — a flagged comment on a season ended >30 days ago
+  auto-resolves to published instead of waiting on a human
+  forever; the block tier stays a permanent binary gate per
+  agents.md §7) both landed as depth-promotions, each immediately
+  Held behind its own veto window. Spec 48's veto window closed
+  today — released to Ready, then chunked into 5 S-sized chunks
+  (A1–A7 scope) with 4 build-time decisions pre-resolved. Spec 49
+  (#834) is still in its veto window, due to release 2026-11-04
+  (today), `fallback: release`.
+- **Content ops:** the weekly season sweep found 1 new season,
+  widening the `plan/CADENCE.md` gap table to 35.
+- **Critique:** pass 195 walked the home/shows/lists/survivor
+  surfaces (desktop + mobile), filed 1 LOW, and correctly
+  self-rejected three reader-proposed findings that contradicted
+  documented spec (VotePair's net-votes-only design, the
+  show-hero blurb format in CLAUDE.md) or would have fabricated
+  data.
+- **Plan hygiene:** 1 mirror-orphan refill — issue #830 (opened by
+  a prior `/iterate` mirror, 2026-10-31) had no corresponding row
+  in any plan file, so no pass would ever see it; now filed as a
+  LOW `plan/AUDIT.md` row.
 
 ## Queues now
 
-- **plan:** 0 specs, 0 chunks left, 0 held — unchanged (spec 47
-  shipped and archived the same session it was built).
-- **plan/AUDIT.md:** 5 pending (now reading correctly —
-  `pulse.mjs` fix, see Shipped): 1 standing MED (season-fill,
-  always-open by design), 1 new LOW (Naked and Afraid's S4 "PSR
-  formalized" claim plus three sibling founding-era-language
-  issues, filed today), 1 LOW (themed-list SERP-truncation
-  budget, parked for oversight), 1 LOW (`YEAR_TENURE_RE` teen-number
-  blind spot, scoped-but-not-simple), 1 LOW (heartbeat
-  false-positive alert, #806). The HIGH `[needs-user-call]`
-  usage-cap row that was invisible to every digest since
-  2026-10-19 is now resolved (see Shipped) — 0 open
-  `[needs-user-call]` rows remain in this file.
-- **plan/CRITIQUE.md:** 71 pending (0 HIGH / 41 MED / 30 LOW),
-  last pass 194 (commit 37bc90d4 per the file header, filed
-  13:54-14:08 UTC today). All three HIGHs open at last night's
-  digest (hells-kitchen methodology, rhoc homecoming, canouan
-  restatement) are now closed. 0 `[needs-user-call]`-tagged rows.
-- **plan/CANDIDATES.md:** 20 pending (down from 22 — one shipped
-  directly, one promoted to spec 47). 19 of 20 are >21 days old
-  (down from 21 of 22), oldest 172d (`Newsletter subscribe` filed
-  2026-05-14). **Candidate cap: 15 (current 20, 5 over) — the cap
-  valve (`promote.mjs cap`) has 5 of 5 over-cap rows due for a
-  stale cut (lowest-scoring, 60+ days old): the newsletter-embed
-  row (171d), the `/u/[handle]` stat-chip scaffold (139d), the
-  `/shows` B-tier filter (113d), the cloud-outage-fallback row
-  (73d, now largely superseded by today's quota.mjs fix), and the
-  `lastRevised(scope)` helper (137d) — not yet cut (no `--write`
-  run since the last digest; `promote.mjs cuts --since 2026-10-31`
-  → none).** Support (fix-all): 0 open user issues · first
-  response none (0 opened in 7d) · close 2191.2h mean (6 closed
-  in 7d).
-- **`Promote: aged` revalued today** (nexus adopt `ca3c79f`):
-  `promote_after_days` 21→7, `promote_queue_depth` 0→2 (so
-  `/march` itself, not just `/expand`, can now promote, once the
-  roadmap carries fewer than 2 open specs — it carries 0),
-  `promote_prefer: product`. Under the new knobs, 7 Pending rows
-  clear the floor (6.0) and the 7-day age bar; `promote.mjs due`
-  ranks the sole eligible `kind: product` row
-  (`Signed-in header handle affordance`, score 6.6, 137d) ahead
-  of three higher-scoring `kind: guard` rows (8.7, 8.3, 7.5) per
-  the new `prefer: product` rule, and returns `ask`, not `pick`,
-  from this cloud checkout (no `.owner` marker — the intended
-  trust boundary). **auto-promoted none, 7 awaiting.**
-- **Open `triage:needs-user` / `loop:do`:** 0 across both labels.
-- **data/BACKLOG.md:** no data-layer backlog file exists.
-- **Deploy:** ready at HEAD `94a602dc`.
-- **plan/CADENCE.md gap table:** 32 shows / 33 gap-slots (per the
-  standing AUDIT row's own progress log; the table's own last
-  dated row, 2026-10-31, is one tick behind at 34 — unchanged
-  today, no Rule 2 drain landed in this window). Three rows
-  remain immediately actionable: `shark-tank` (S18, est_year 2009),
-  `dragrace-uk` (S8, est_year 2019), `rhoslc` (S7, est_year 2020) —
-  all gap=1, tier B, tie-broken oldest-`est_year`-first.
-- **plan/LISTS.md Rule 3 review-due:** 22 lists ≥90 days since
-  last review (cutoff 2026-08-03) — unchanged from last night's
-  count; oldest is `the-schedule-didnt-ask-permission` (last
-  reviewed 2026-08-01).
-- **Breadth (`e2e-full`):** green — latest run
-  (2026-11-01T01:51–02:19Z) passed against headSha `94b4ee7b`
-  (last night's digest commit); read via `gh run list`, not
-  re-run, per the standing rule. Today's nine-commit local session
-  and the one cloud critique commit haven't been covered by a
-  fresh nightly run yet — expected, `e2e-full` runs on its own
-  daily cadence.
-- **seven_day utilization:** 0.89 cached (`allowed_warning`,
-  resets 2026-11-02T08:00:00Z) — climbing across today's three
-  live quota reads (0.84 → 0.84 → 0.89), each one above the 0.8
-  scheduled-run ceiling and each one correctly no-opping its
-  `march` tick rather than running hot. Not yet a `[needs-user-call]`:
-  the gate is doing exactly what it's designed to do.
-- **Motion:** 26 shipped last full week (W43) vs. floor 9.5 —
-  `ok`; 36 shipped so far this week (W44), already well past the
-  floor (today's 9-commit local session is most of that jump).
+- **plan:** 2 specs — 48 Ready (5 chunks left), 49 Held (veto
+  until today, #834). 0 chunks held.
+- **plan/AUDIT.md:** 6 pending (was 5 last digest, +1
+  mirror-orphan today): 1 standing MED (season-fill drain,
+  always-open by design), 1 LOW (Naked and Afraid S4 PSR-claim +
+  founding-era-language siblings), 1 LOW (themed-list SERP-budget,
+  parked for oversight), 1 LOW (`YEAR_TENURE_RE` teen-number blind
+  spot, scoped-but-not-simple), 1 LOW (heartbeat false-positive
+  alert, #806), 1 LOW (mirror-orphan #830, new today).
+- **plan/CRITIQUE.md:** 72 pending (was 71), last pass 2h ago
+  (pass 195). 0 HIGH, 41 MED, 31 LOW. The single largest MED
+  pattern (sampled 10 of 41): near-verbatim fact restatement
+  across a page's own sections — rhoc's homecoming eyebrow/lede/
+  body/take, bachelor's grant-ellis episode-count, love-is-blind's
+  boston canon/body, two theme catalogs, big-brother's time-trip
+  milestone, amazing-race's family-edition canon/body, survivor-51.
+  This is the exact shape of the already-pending #25 candidate
+  below.
+- **candidates:** 16 pending (16 >21d), oldest 175d. Support:
+  0 open user issues · first response none (0 opened in 7d) ·
+  close none in 7d.
 
 ## Needs you
 
-- **oversight needed: candidate queue silting (19 pending >21d,
-  oldest 172d).** Mechanically unchanged in shape from last night
-  despite today's big session — the session retuned the promotion
-  machinery (knobs, nexus kit) and shipped two candidates out of
-  the queue, but didn't triage the aged backlog itself. Given
-  today's revised `Promote: aged` knobs (7d age bar, `floor` 6.0,
-  `prefer: product`) already surface a ranked, scored shortlist —
-  7 eligible, top pick `Signed-in header handle affordance`
-  (score 6.6) — the next `/oversight` session has a live
-  pick ready rather than a cold read of the queue.
-- **5 `plan/CANDIDATES.md` rows are due for the cap's stale cut**
-  (`promote.mjs cap`, no `--write` run yet — see Queues now for
-  the list). Mechanical and low-stakes; either let the next
-  `/march`/`/expand` tick apply it or review the 5 by hand first
-  (the cloud-outage-fallback row in particular may now be
-  partially moot given today's `quota.mjs` fix).
-- **Three 31+-entry canons (chopped, dancing-with-the-stars,
-  the-real-world) render a C tier band with no `tier_c_blurb`** —
-  spec 47's own commit flagged this as a deliberate, not-yet-gated
-  gap, distinct from the S/A gate it shipped. Worth a look before
-  it's forgotten as "already handled."
-- No `escalate #N` rows (0 open user issues), no blocked specs
-  (`Held` lane empty), no open needs-user issues, no `motion
-  stalled` (this week already clears the floor by a wide margin),
-  no `rotate` rows (0 secret-audit events; cloud run, check
-  skipped anyway).
+- **oversight needed: candidate queue silting (16 pending >21d,
+  oldest 175d).** Every single pending candidate is already past
+  the 21-day mark; none has moved since before the v1→v2 kit
+  migration folded them into Pending on 2026-10-27. The
+  highest-scored (8.3, "Canon-rationale/season-body verbatim-
+  argument echo gate," filed 2026-07-06 as v1 #25) would directly
+  address the dominant CRITIQUE MED pattern above — 10+ sampled
+  instances across 6+ shows, all variations of the same
+  restatement defect a formal gate would catch at author time
+  instead of one `/iterate` pick at a time.
+- Promote: aged — auto-promoted none, 1 awaiting (spec 49, #834,
+  due to release today).
+- No `cut` lines (`promote.mjs cuts --since 2026-11-01` returned
+  none).
+- No motion-stalled line — `pulse.mjs --motion` reads `ok` (36
+  shipped last full week vs. 19.5 baseline, well above the 9.75
+  floor), even though 0 ship-grade units have landed so far this
+  week — the quota outage ate the first three days of it and the
+  week isn't over.
+- No `rotate` lines — `secrets.mjs audit` read 0 events.
+- No blocked rows, no open `[needs-user-call]` rows, no
+  `triage:needs-user` / `loop:do` issues, nothing to escalate.
 
 ## Today's intent
 
-1. Rule 2 has three ready picks, unchanged from two nights ago:
-   `shark-tank` (S18, est_year 2009) first, then `dragrace-uk`
-   (S8, 2019), then `rhoslc` (S7, 2020) — all gap=1, tier B.
-2. The candidate-cap's 5 stale-cut rows (see Needs you) are a
-   clean, mechanical `/expand` or `/march` pickup if Rule 2/Rule 3
-   both fall through.
-3. At the next local `/oversight` session: the candidate queue's
-   7 now-eligible rows under the retuned `Promote: aged` knobs are
-   ready for a real pick (top: `Signed-in header handle
-   affordance`, score 6.6); the chopped/DWTS/real-world C-band
-   blurb gap from spec 47 is a small, scoped follow-up; and the
-   climbing `seven_day` quota reading (0.84→0.89 today) is worth a
-   glance even though the gate is behaving correctly.
+Next ready work: spec 48's first chunk (A1, the stat-tile
+value/caption literal-duplicate guard — location/filming_caption
+checked by near-equality, the remaining three pairs lax/strict
+decided fresh at build time). Spec 49 should release out of its
+veto window today if nobody vetoes #834. Top standing finding:
+the season-fill drain row (MED, score 4.5) — always-open by
+design, next drain tick has shark-tank, rhoslc, and dragrace-uk
+immediately actionable (all already premiered, unfiled). Top
+non-standing finding: any of the CRITIQUE restatement MEDs — but
+the candidate queue silting note above is the more leveraged
+fix, since one gate closes many of them at once.
 
 ## Tuning proposals
 
-- None filed tonight — today's local `/oversight` session already
-  absorbed the open tuning question from last night's digest
-  (the `pulse.mjs` AUDIT counter) by building it directly, and
-  retuned the promotion valve itself (nexus kit `ca3c79f`) rather
-  than leaving it as a candidate. No new mistuned gate surfaced in
-  tonight's pulse.
+None filed this tick. The one gate-tuning signal worth flagging —
+CRITIQUE's restatement-MED pattern needs a formal content-check
+gate, not another one-off fix — already has a filed, well-scored
+candidate (#25, 8.3) sitting in Pending; writing a second proposal
+for the same fix would just add to the silting this digest is
+already flagging. The actionable move is promotion, not a new
+candidate — that's `/oversight`'s call, not this skill's.
