@@ -126,3 +126,12 @@
 - [ ] [MED] post-finale ranking-shift note owed for americas-got-talent season 21 (finale aired 2026-09-23) — write the spoiler-safe shift note and adjust canonical_position if the editorial rationale warrants it (category: content-gaps, source: self, score: 4.5) <!-- finale-shift:americas-got-talent:21 -->
 - [ ] [MED] post-finale ranking-shift note owed for masterchef season 16 (finale aired 2026-09-17) — write the spoiler-safe shift note and adjust canonical_position if the editorial rationale warrants it (category: content-gaps, source: self, score: 4.5) <!-- finale-shift:masterchef:16 -->
 
+### [mirror #830] [LOW] "content: review batch — Rule 3 lists" — mirrored issue with no plan row
+- category: content
+- impact: 4
+- ease: 5
+- evidence: issue #830 (loop:opened, source:audit, severity:low) opened 2026-10-31 by /iterate's mirror; no row in plan/AUDIT.md, plan/CANDIDATES.md or plan/CRITIQUE.md names it, so no pass would see it.
+- issue: #830
+- next: /iterate picks it like any row; if already fixed on main, close #830 citing the commit
+- generator: mirror-orphan · filed 2026-11-04
+
