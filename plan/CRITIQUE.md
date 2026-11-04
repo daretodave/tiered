@@ -1,10 +1,19 @@
 # CRITIQUE
 
-> Last pass: 2026-11-01 at commit 37bc90d4
-> Pass count: 194
+> Last pass: 2026-11-04 at commit bf601dc4
+> Pass count: 195
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 
 ## Pending
+
+### [LOW] [anon] /shows/survivor and /shows — "revised" stat carries the identical label-free word on two pages with two different dates, reading as inconsistent to a reader moving between them
+- pass: 195 (commit bf601dc4)
+- viewport: desktop
+- category: comprehension
+- observation: The `/shows` catalog hero shows "November 2026 / Shows revised" (the catalog index's own refresh date) while Survivor's own show page shows "September 2026 / Canon revised" (that show's canon refresh date). The two labels are already distinct strings, but both render as a bare month-year under a one-word-different caption with no gloss explaining that one tracks the whole catalog and the other tracks a single show's ranking — a reader who notices the two-month gap between pages has no on-page cue it's intentional, not stale data.
+- evidence: `/shows` stat tile: `data-testid="shows-hero-canon-revised"` → "November 2026" under caption "Shows revised". `/shows/survivor` stat tile: "September 2026" under caption "Canon revised".
+- suggested fix: Add a short title/aria gloss to each stat (e.g. "Shows revised — when a show last joined or changed tier" vs. "Canon revised — when this show's season ranking last changed") so the two dates read as measuring different things, not one page being stale.
+- source: walk
 
 ### [LOW] [anon] /shows/hells-kitchen/season/the-anniversary-class — the under-25-cast/anniversary-trim premise is restated near-verbatim across four fields on the same page
 
