@@ -148,4 +148,8 @@ strict are all resolved above.
 
 Measure: 7 open · 0 closed · next A8
 
-Not chunked yet.
+- [ ] **48.1** Filming-caption restatement guard (`location`/`filming_caption`) · S · closes A1 · partial A5, A6 · needs —
+- [ ] **48.2** Premiere-caption restatement guard (`premiere_date`/`premiere_caption`, exact ISO-string match) · S · closes A2 · partial A5, A6 · needs —
+- [ ] **48.3** Format-caption restatement guard (`format_summary`/`format_caption`, same-tile pair only) · S · closes A3 · partial A5, A6 · needs —
+- [ ] **48.4** Host-caption restatement guard (`host`/`host_caption`); closes the lax/strict wiring and colocated-test coverage once all four pairs are in `collectFailures()` · S · closes A4, A5, A6 · needs 48.1, 48.2, 48.3
+- [ ] **48.5** `content-curator`'s brief documents the four-pair convention · S · closes A7 · needs 48.4
