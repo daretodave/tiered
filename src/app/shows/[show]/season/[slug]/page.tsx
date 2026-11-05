@@ -40,16 +40,13 @@ import {
 } from '@/lib/seo'
 import { resolveSeasonSlugAlias } from '@/lib/season/slug-aliases'
 import { seasonWatchOrderLine } from '@/lib/season/watch-order'
+import { auth0 } from '@/lib/auth0'
+import { headerUserFromSession } from '@/components/chrome/headerUser'
 import { numberToWords } from '@/lib/show-tenure'
 import { readVote } from '@/lib/supabase/server'
 
 type Params = { show: string; slug: string }
-
-// Static + ISR: the page used to read the Auth0 session and the query
-// string, which forced a full server render per request and dominated
-// the team's Vercel CPU. Vote/comment islands resolve the viewer on
-// mount; the stray ?view= redirect lives in middleware.
-export const revalidate = 300
+type Search = { view?: string }
 
 export function generateStaticParams(): Params[] {
   const out: Params[] = []
@@ -543,13 +540,14 @@ const DIGIT_PARAM_RE = /^\d+$/
 // from a show-page share link (or hand-typed) rendered byte-identical
 // content with no error and no indication the param did nothing,
 // confirmed reproducible on three separate shows across three passes.
-// Redirect it away rather than leave it as a silent no-op. The redirect
-// lives in src/middleware.ts (matched on the `view` query) so this page
-// can stay static.
+// Redirect it away rather than leave it as a silent no-op, matching
+// the digit-form/alias redirects below.
 export default async function SeasonPage({
   params,
+  searchParams,
 }: {
   params: Params
+  searchParams?: Promise<Search>
 }) {
   const show = getShow(params.show)
   if (!show) notFound()
@@ -581,6 +579,22 @@ export default async function SeasonPage({
     notFound()
   }
 
+  const sp = (await searchParams) ?? {}
+  if (sp.view != null) {
+    permanentRedirect(`/shows/${show.slug}/season/${season.slug}`)
+  }
+
+  // Critique pass-84 HIGH: this route is dynamically rendered per
+  // request (the shared Header's session read forces it — see
+  // src/components/chrome/Header.tsx), so the auth state is
+  // available here synchronously. Resolve it once and seed
+  // VoteRowHead / VotePair / CommentThreadLive with it instead of
+  // letting them default to the anon shell and repair on hydration.
+  const session = await auth0.getSession().catch(() => null)
+  const authUser = headerUserFromSession(
+    session?.user as Record<string, unknown> | undefined,
+  )
+  const initialSignedIn = authUser != null
 
   const seasons = getAllSeasons(show.slug)
   const themes = getAllThemes()
@@ -694,6 +708,7 @@ export default async function SeasonPage({
                 <VoteRowHead
                   targetType="season"
                   targetId={seasonTargetId}
+                  initialSignedIn={initialSignedIn}
                 />
               }
               voteSlot={
@@ -702,6 +717,7 @@ export default async function SeasonPage({
                   targetType="season"
                   targetId={seasonTargetId}
                   subject={`${show.name} ${season.title}`}
+                  initialSignedIn={initialSignedIn}
                 />
               }
               shieldLines={shieldLines}
@@ -789,6 +805,8 @@ export default async function SeasonPage({
               targetType="season"
               targetId={seasonTargetId}
               signInHref={`/sign-in?return=/shows/${show.slug}/season/${season.slug}`}
+              initialSignedIn={initialSignedIn}
+              initialHandle={authUser?.handle ?? null}
             />
           </aside>
         </div>

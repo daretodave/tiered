@@ -22,8 +22,6 @@ import {
 // first comment, when we have an RPC + service-role context to
 // insert without RLS friction (see migration 20260513000001_sessions).
 
-const SEASON_PATH_RE = /^\/shows\/[^/]+\/season\/[^/]+$/
-
 export async function middleware(request: NextRequest): Promise<NextResponse> {
   // Phase 29 — /search retired in favor of the cmd+K overlay.
   // Permanent redirect so external links land somewhere sensible.
@@ -93,19 +91,6 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     return NextResponse.redirect(url, 308)
   }
 
-  // CRITIQUE pass-151/156/171 MED: a stray ?view= on a season page is
-  // a silent no-op (season pages have one view). It used to redirect
-  // from inside the page, which forced the page dynamic; it lives here
-  // now so season pages stay static. Matched via config.matcher `has`.
-  if (
-    SEASON_PATH_RE.test(request.nextUrl.pathname) &&
-    request.nextUrl.searchParams.has('view')
-  ) {
-    const url = request.nextUrl.clone()
-    url.search = ''
-    return NextResponse.redirect(url, 308)
-  }
-
   const auth0Response = await auth0.middleware(request)
 
   // Auth-route paths return a redirect / 200 directly — don't stamp
@@ -133,28 +118,9 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 }
 
 export const config = {
-  // Narrow on purpose. This used to match every page, which ran the
-  // Auth0 SDK (cookie decrypt) and stamped a cookie on every page view
-  // and crawler hit: no page response was cacheable and middleware
-  // was a large share of the team's Vercel CPU. Now it runs only where
-  // it does work:
-  //  - /auth/* — the Auth0 SDK routes.
-  //  - /api/* — session rolling + anon-cookie issuance. The header's
-  //    auth island calls /api/auth/me on every page mount, so a
-  //    visitor holds a tiered_anon_id before their first vote/comment.
-  //  - the retired /search and slug redirects below.
-  //  - a season page carrying ?view= (redirected away).
+  // Skip Next internals + static assets. Everything else (pages,
+  // API routes, auth routes) flows through.
   matcher: [
-    '/auth/:path*',
-    '/api/:path*',
-    '/search',
-    '/themes/the-command-held-for-nine-seasons-then-didnt',
-    '/themes/same-castle-different-clock-every-winter',
-    '/shows/americas-got-talent/season/the-panel-in-stride',
-    '/shows/americas-got-talent/season/the-long-third-year',
-    {
-      source: '/shows/:show/season/:slug',
-      has: [{ type: 'query', key: 'view' }],
-    },
+    '/((?!_next/static|_next/image|favicon\\.ico|.*\\.svg$|.*\\.png$|.*\\.ico$|.*\\.json$|.*\\.txt$).*)',
   ],
 }
