@@ -1,10 +1,30 @@
 # CRITIQUE
 
-> Last pass: 2026-11-04 at commit bf601dc4
-> Pass count: 195
+> Last pass: 2026-11-05 at commit 2051a05b
+> Pass count: 196
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 
 ## Pending
+
+### [MED] [anon] /shows/survivor?view=community (mobile) — the community/canon tab state renders byte-identical to the canon view, so a mobile reader can't tell the switch worked
+
+- pass: 196 (commit 2051a05b)
+- viewport: mobile
+- category: navigation
+- observation: On desktop (1280x800), `/shows/survivor` and `/shows/survivor?view=community` render visibly distinct above-the-fold copy at the same scroll position (canon: "One editor's ranking... The community argues back in the next tab."; community: "Each season carries a yes/no vote... Updated every Thursday at 9pm ET."). At 390x844 the two URLs produce a byte-for-byte identical screenshot — the tab switch that's legible on desktop is invisible on mobile until the reader scrolls past the fold. Server-fetched HTML for both URLs already contains both panels' copy in the raw response (the switch is a client-side/CSS toggle, not a different SSR payload), so the defect is specifically in how the mobile layout surfaces which panel is active, not a missing route.
+- evidence: `md5sum .nexus/walk/2026-11-05T18-36-42-666Z/url--mobile--shows-survivor.png .nexus/walk/2026-11-05T18-36-42-666Z/url--mobile--shows-survivor-view-community.png` → both `6e31fb54465cc363318f99db41d61224`; desktop equivalents differ in visible body copy at the same scroll position.
+- suggested fix: Surface a visible tab/active-state indicator (e.g. a "Canon | Community" pill) near the top of the mobile layout so the view switch is confirmed without scrolling, matching the desktop experience.
+- source: walk
+
+### [LOW] [anon] /shows/survivor/season/heroes-vs-villains — the anonymous vote widget's "counts more once you sign in" copy doesn't say what an anonymous vote actually does
+
+- pass: 196 (commit 2051a05b)
+- viewport: desktop
+- category: comprehension
+- observation: The vote widget reads "CAST A VOTE / COUNTS MORE ONCE YOU SIGN IN" next to a live vote counter and up/down arrows. "Counts more" is vague mechanics-speak — it doesn't tell a first-time, signed-out reader whether their vote counts at all, counts as a fraction, or risks being overwritten, which is exactly the information they'd need to decide whether casting an anonymous vote is worth it.
+- evidence: Rendered page (confirmed via `curl https://tiered.tv/shows/survivor/season/heroes-vs-villains`): "Cast a vote" / "counts more once you sign in" directly above the vote counter.
+- suggested fix: Replace with a concrete statement, e.g. "Anonymous votes count once per session — sign in to make yours permanent," so the signed-out reader knows what they're trading off.
+- source: walk
 
 ### [LOW] [anon] /shows/survivor and /shows — "revised" stat carries the identical label-free word on two pages with two different dates, reading as inconsistent to a reader moving between them
 - pass: 195 (commit bf601dc4)
