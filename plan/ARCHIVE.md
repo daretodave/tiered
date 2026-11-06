@@ -65,3 +65,4 @@
 - 2026-06-12 · 46 · Colocated-test coverage gate extended to `src/app/**` · 2e359ba0
 - 2026-11-01 · 47 · spec complete: Canon tier-blurb gate (CANON_TIER_BLURB_STRICT + 6 `tier_a_blurb` backfills, #829) · d9af2506
 - 2026-11-06 · 48.1 · Filming-caption bare location restatement is now detected (lax) · d392ab69..d392ab69
+- 2026-11-06 · 48.2 · Premiere-caption bare date restatement is now detected (strict) · fb52b351..fb52b351
