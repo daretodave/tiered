@@ -120,9 +120,6 @@ six value/caption fields already exist in `src/content/schemas.ts`
 
 ## Acceptance
 
-- **A3** `collectFormatCaptionBareRestatementIssues()` flags any
-  season where `format_caption` bare-restates `format_summary`
-  (same-tile pair only — not the pass-137 body/canon.md shape).
 - **A4** `collectHostCaptionBareRestatementIssues()` flags any
   season where `host_caption` bare-restates `host`.
 - **A5** All four checks wired into `collectFailures()` with an
@@ -142,8 +139,7 @@ strict are all resolved above.
 
 ## Chunks
 
-Measure: 5 open · 2 closed · next A8
+Measure: 4 open · 3 closed · next A8
 
-- [ ] **48.3** Format-caption restatement guard (`format_summary`/`format_caption`, same-tile pair only) · S · closes A3 · partial A5, A6 · needs —
-- [ ] **48.4** Host-caption restatement guard (`host`/`host_caption`); closes the lax/strict wiring and colocated-test coverage once all four pairs are in `collectFailures()` · S · closes A4, A5, A6 · needs 48.3
+- [ ] **48.4** Host-caption restatement guard (`host`/`host_caption`); closes the lax/strict wiring and colocated-test coverage once all four pairs are in `collectFailures()` · S · closes A4, A5, A6 · needs —
 - [ ] **48.5** `content-curator`'s brief documents the four-pair convention · S · closes A7 · needs 48.4
