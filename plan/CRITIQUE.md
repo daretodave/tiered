@@ -1,10 +1,30 @@
 # CRITIQUE
 
-> Last pass: 2026-11-05 at commit 2051a05b
-> Pass count: 196
+> Last pass: 2026-11-06 at commit 3101859c
+> Pass count: 197
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 
 ## Pending
+
+### [MED] [anon] /shows/survivor — the hero tagline narrates in first person while the canon/community explainer directly below it narrates in third person
+
+- pass: 197 (commit 3101859c)
+- viewport: desktop
+- category: voice
+- observation: The show hero reads "...has spent twenty-six years rediscovering what it is. I've ranked every single one." (`tagline` in `content/shows/survivor.md`) in first person. Scrolling to the canon/community explainer immediately below it, the same page switches to third person: "One editor's ranking, written by an editor who has rewatched every season at least twice. The community argues back in the next tab." (`src/components/canon/ShowRanking.tsx`). The narrator identity flips from "I" to "an editor" within the same above-the-fold view, on the site's flagship show.
+- evidence: `.nexus/walk/2026-11-06T18-35-30-888Z/url--desktop--shows-survivor.png` (hero: "I've ranked every single one"); `src/components/canon/ShowRanking.tsx:101` ("written by an editor who has rewatched").
+- suggested fix: Pick one narrator voice for the show-page template — either rewrite the per-show `tagline` fields to drop first person (matching the shared third-person "editor" framing), or rewrite `ShowRanking.tsx`'s explainer copy to first person so it doesn't contradict the hero it sits directly beneath.
+- source: walk
+
+### [LOW] [anon] /shows/survivor/season/heroes-vs-villains — the word "Filmed" appears twice within the first screen, once in the eyebrow and once as a stat-tile key
+
+- pass: 197 (commit 3101859c)
+- viewport: desktop
+- category: comprehension
+- observation: The eyebrow reads "Aired winter–spring 2010 · Filmed in Samoa" (`eyebrow` field, `content/shows/survivor/seasons/20-heroes-vs-villains.md`), and the stat-tile row directly below it carries a tile keyed "Filmed" with value "Upolu, Samoa" (`{ key: 'Filmed', value: season.location, ... }`, `src/app/shows/[show]/season/[slug]/page.tsx:218`). The tile does add the specific island name, but reusing the identical word "Filmed" right under a sentence that already said "Filmed in Samoa" reads as an echo rather than new information. Not a catalog-wide pattern: only 112 of 1031 season eyebrows mention "Filmed" at all, so this is a page-specific overlap, not an established convention.
+- evidence: `.nexus/walk/2026-11-06T18-35-30-888Z/url--desktop--shows-survivor-season-heroes-vs-villains.png`; `content/shows/survivor/seasons/20-heroes-vs-villains.md` line 12; `src/app/shows/[show]/season/[slug]/page.tsx:218`.
+- suggested fix: Relabel the stat tile key from "Filmed" to "Location" (it already renders `season.location`), which removes the echo on every season page without touching the smaller set of eyebrows that happen to mention filming.
+- source: walk
 
 ### [MED] [anon] /shows/survivor?view=community (mobile) — the community/canon tab state renders byte-identical to the canon view, so a mobile reader can't tell the switch worked
 
