@@ -1,126 +1,125 @@
-# DIGEST — 2026-11-05
+# DIGEST — 2026-11-06
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-**Today's commits were all direct/local — none of the day's four
-landed commits came from an autonomous `march` tick; the loop's own
-ticks rode along as no-ops, confirming a HEAD a human had already
-moved.** All four commits since last digest (`c0d6d584`, `32718757`,
-`bb6217f4`, `2051a05b`) carry David Rehmat's authorship, not
-`claude[bot]`. The sequence: a perf change landed (show/season pages
-forced static, middleware narrowed) → the nightly `E2E_FULL=1` crawl
-caught two real regressions in it a few hours later (a duplicated
-`Location` header on season alias/digit redirects, and the
-community-view 308 landing on the wrong tab) and auto-filed issue
-#837 → the perf commit was reverted outright before this digest ran,
-so HEAD is clean and no fix is owed, only housekeeping (closing
-#837). Separately, a quota-gate bug got fixed (a reading whose
-7-day window had reset was being dropped instead of refreshed on a
-skipped tick), and spec 49's veto window closed, releasing it to
-Ready. Quota is healthy (`0.03` utilization, resets 2026-11-09).
-Candidate queue silting is unchanged and worsening in relative terms:
-still all 16 pending over 21 days old, oldest now 176 days, and the
-pending cap (15) is now exceeded by one — the next `/expand` pass's
-cap valve will cut the lowest-scored row (Newsletter subscribe,
-score 3.0) automatically. Deploy state wasn't checked this tick — the
-cloud carve-out for digest explicitly waives the deploy gate, and
-`deploy:check` hung with no output (likely no network egress to the
-Vercel API from this sandbox), so it was killed rather than run to
-its 10-minute timeout. See Needs you for the open items.
+**A quiet 23 hours — one substantive commit, one issue closed, nothing
+else moved.** Since last digest (`3e4bc259`, 2026-11-05 18:20Z), only
+`3cb77b83` landed (2026-11-05 18:41Z, local): the phase-39 finale gate
+caught love-is-blind season 11's 2026-11-04 finale with no shift note
+yet, filed the standing content-gaps row to `plan/AUDIT.md`, and the
+same tick ran a fresh CRITIQUE pass (196, +1 MED mobile tab-switch
+finding on `/shows/survivor?view=community`, +1 LOW vague vote-copy
+finding on the Heroes vs. Villains season page). Every `march` tick
+since (2026-11-05 23:35, 2026-11-06 03:42, 2026-11-06 11:36) was a
+no-op on HEAD — except the last one, which wasn't idle: it closed
+issue #837 ("Nightly e2e-full failed") citing the `32718757` revert
+and the following night's green e2e-full run, clearing the one
+housekeeping item flagged in last digest's **Needs you**. The nightly
+`e2e-full` run itself (2026-11-06 03:11–03:45) came back **green**,
+confirming the revert holds and the perf regression is fully behind
+us. Quota is healthy (`0.07` utilization, resets 2026-11-09). One
+stale-label wrinkle surfaced while cross-checking the plan table:
+`plan/README.md`'s Specs table still prints spec 49 as "Held (veto
+window)" even though the veto sweep (`2051a05b`, 2026-11-05) cleared
+its Held-lane entry to `(none)` — the gate itself is released (pulse
+reads `0 held`), only the Status *column text* didn't get updated in
+the same commit. Noting it here rather than touching it — see Needs
+you. Candidate queue silting is otherwise unchanged: still 16
+pending, all but the newest (one row proposed 2026-10-31) over 21
+days old, oldest now 177d, and the queue remains 1 over its 15-item
+pending cap (`promote.mjs cap` confirms the same cut target as last
+night: "Newsletter subscribe," score 3.0, 176d — still sitting there
+unwritten, `sweep` and `cuts` both read clean).
 
 ## While you were out
 
 | when (UTC) | verb | outcome |
 |---|---|---|
-| 11-04 19:37 | commit (local) | `c0d6d584` — perf: show/season pages forced static, middleware narrowed |
-| 11-04 21:50, 11-05 02:21, 11-05 09:53 | march | success, no-op — HEAD already at `c0d6d584`, nothing new to ship |
-| 11-05 03:10–03:48 | e2e-full (nightly) | **red** against `c0d6d584` — season alias/digit redirects intermittently double the `Location` header once ISR's fallback cache warms a non-pregenerated param; community-page 308 lands but `CanonTabSwitch` races `?view=` and shows the wrong tab. Auto-filed issue #837 |
-| 11-05 10:16 | commit (local) | `32718757` — reverts `c0d6d584` outright; both regressions are races not worth patching around on this perf shape |
-| 11-05 13:53 | commit (local) | `bb6217f4` — fix: quota gate dropped a reading whose 7-day window had reset; skipped ticks weren't refreshing it |
-| 11-05 17:58 | march | success, no-op — HEAD already at `bb6217f4` |
-| 11-05 18:07 | commit (local) | `2051a05b` — plan: veto sweep released spec 49 to Ready (veto window closed clean) |
-| 11-05 18:12 | march (chain) | in progress as of this writing; HEAD still `2051a05b` |
+| 11-05 18:41 | commit (local) | `3cb77b83` — finale gate: filed love-is-blind S11 shift-note row to AUDIT; CRITIQUE pass 196 (+1 MED, +1 LOW) |
+| 11-05 23:35 | march | success, no-op — HEAD already at `3cb77b83` |
+| 11-06 03:11–03:45 | e2e-full (nightly) | **green** against `3cb77b83` — confirms the `32718757` revert holds, no regression |
+| 11-06 03:42 | march | success, no-op — HEAD unchanged |
+| 11-06 11:36–11:43 | march (triage) | success — no commit, but closed issue #837 citing the revert + the green nightly run |
 
 ## Shipped
 
-Nothing shipped by the loop itself today — every landed commit above
-was local/direct. The loop's contribution was entirely no-ops riding
-along on a HEAD it didn't move, plus the nightly breadth check doing
-its job (catching the perf regression before any `march` tick had to
-deal with it — it was already gone by revert before this digest ran).
+Nothing code-shipped by the loop today beyond last night's finale-gate
+note (already covered above, landed just after the last digest). The
+day's one loop contribution was housekeeping: closing #837 now that
+the revert's held for a full night's breadth check.
 
 ## Queues now
 
-- **plan:** 2 specs, both Ready — 48 (5 chunks left) and 49 (just
-  released from its veto window). 0 chunks held.
-- **plan/AUDIT.md:** 6 pending (unchanged) + 1 new resolved-on-filing
-  row for the e2e-full breadth failure (filed `[x]`, already fixed by
-  the revert — see Needs you for the one housekeeping item it left
-  open). Pending breakdown unchanged from last digest: 1 standing MED
-  (season-fill drain, always-open by design), 5 LOW.
-- **plan/CRITIQUE.md:** 72 pending (unchanged), last pass 2026-11-04
-  (pass 195, ~42h ago — no new pass since). 0 HIGH, 41 MED, 31 LOW.
-- **candidates:** 16 pending (16 >21d), oldest 176d — **1 over the
-  15-item pending cap** (`promote.mjs cap` confirms: would cut
-  "Newsletter subscribe (Buttondown embed)," score 3.0, age 175d, on
-  the next `--write` run). `promote.mjs sweep` is clean (nothing
-  due for aged auto-promotion this tick) and `cuts --since 2026-11-04`
-  returned none (no cut has actually executed yet). Support:
-  1 open user issue · first response none (1 opened in 7d) · close
-  none in 7d.
+- **plan:** 2 specs — 48 (Ready, 5 chunks left) and 49 (veto window
+  cleared per the Held lane, but the Specs table still labels it
+  "Held (veto window)" — see Needs you). 0 chunks held.
+- **plan/AUDIT.md:** 6 pending (unchanged: 1 standing MED season-fill
+  drain, 5 LOW) + 15 non-counted standing finale-shift rows (tracked
+  via inline HTML-comment markers, outside `/iterate`'s pending count
+  by design) — love-is-blind S11 is the newest of those, filed last
+  night, not yet drained.
+- **plan/CRITIQUE.md:** 74 pending (0 HIGH, 42 MED, 32 LOW), last
+  pass 2026-11-05 (pass 196, ~42h ago by date granularity — actually
+  ~23h by commit timestamp) — the two rows added last night are
+  counted in the totals above.
+- **candidates:** 16 pending (16 >21d by proposed-date, though one
+  row is dated 2026-10-31 and reads as a digest-filed tuning note
+  rather than a fresh-clock candidate), oldest 177d — still 1 over
+  the 15-item pending cap. `promote.mjs sweep` clean (nothing due
+  for aged auto-promotion), `cuts --since 2026-11-05` returned none.
+  Support: 0 open user issues · first response 31.9h mean (1 of 1
+  opened in 7d) · close 31.9h mean (1 closed in 7d).
 
 ## Needs you
 
 - **oversight needed: candidate queue silting (16 pending >21d,
-  oldest 176d).** Unchanged from last digest — nothing has moved
-  since the v1→v2 migration folded them into Pending on 2026-10-27.
-  New wrinkle tonight: the queue is now 1 over its 15-item pending
-  cap, so the next `/expand` pass will auto-cut the lowest-scored row
-  (Newsletter subscribe, score 3.0) rather than a human choosing what
-  goes. The highest-scored pending candidate (8.3, "Canon-rationale/
-  season-body verbatim-argument echo gate," filed 2026-07-06) still
-  directly addresses CRITIQUE's dominant MED pattern (restatement
-  across a page's own sections) and is the strongest promotion
-  candidate if `/oversight` wants to act on one thing tonight.
-- **Housekeeping: issue #837 ("Nightly e2e-full failed") is still
-  open and unlabeled**, even though its underlying regression was
-  already reverted (`32718757`) hours before this digest ran. No
-  comment links the two. Next `/triage` tick (or a direct close)
-  should close #837 citing `32718757` — filed as an `[x]`-resolved
-  row in `plan/AUDIT.md` for the record, but the GitHub issue itself
-  still needs closing.
-- Promote: aged — `sweep` reads clean, 0 awaiting (spec 49 already
-  released today per the veto-sweep commit above, not awaiting
-  anymore).
-- No `cut` lines — `promote.mjs cuts --since 2026-11-04` returned
-  none (the 1-over-cap state above hasn't been written yet).
+  oldest 177d).** Unchanged in substance from last digest — the
+  15-item pending cap is still exceeded by one, and the next
+  `/expand` pass will auto-cut the lowest-scored row ("Newsletter
+  subscribe," score 3.0, 176d) unless a human intervenes first. The
+  strongest promotion candidate is still the highest-scored pending
+  row (8.3, "Canon-rationale/season-body verbatim-argument echo
+  gate," filed 2026-07-06) — it directly addresses CRITIQUE's
+  dominant MED pattern (restatement across a page's own sections).
+- **Stale status label on spec 49.** `plan/README.md`'s Specs table
+  still reads "Held (veto window)" for row 49, but the veto-sweep
+  commit (`2051a05b`) already cleared its entry from the Held lane to
+  `(none)` and `pulse.mjs` confirms `0 held`. The gate is actually
+  open; only the table's Status cell text is stale. Low stakes (the
+  Held lane, not the Status column, is what actually gates a pick),
+  but worth a one-line fix the next time anyone touches that file —
+  flagging rather than touching it per this skill's notes-only rail.
+- Promote: aged — `sweep` reads clean, 0 awaiting.
+- No `cut` lines — `cuts --since 2026-11-05` returned none (the
+  1-over-cap state hasn't actually been written yet).
 - No motion-stalled line — `pulse.mjs --motion` reads `ok` (36
   shipped last full week vs. 19.5 baseline, well above the 9.75
   floor; 1 so far in 2026-W45).
 - No `rotate` lines — `secrets.mjs audit` read 0 events.
 - No blocked rows, no open `[needs-user-call]` rows, no
-  `triage:needs-user` / `loop:do` issues, nothing else to escalate.
+  `triage:needs-user` / `loop:do` issues open, nothing else to
+  escalate.
 
 ## Today's intent
 
 Next ready work: spec 48's first chunk (A1, stat-tile value/caption
-literal-duplicate guard) or spec 49's first chunk, both Ready with no
-chunks held. Top standing finding: the season-fill drain row (MED,
-score 4.5) — shark-tank, rhoslc, and dragrace-uk remain immediately
-actionable from the last drain tick's own flag. Top non-standing
-finding: either of the two housekeeping items above (closing #837,
-or letting `/expand` run its cap valve) — both are quick and
-unblock a cleaner queue state before the silted-candidate oversight
-conversation happens.
+literal-duplicate guard) — 5 chunks left, 0 held, nothing blocking a
+pick. Spec 49 is also actually free to pick despite its stale table
+label (see Needs you). Top standing finding: the season-fill drain
+row (MED, score 4.5) — shark-tank, rhoslc, and dragrace-uk remain
+immediately actionable from the last drain tick's own flag. Top
+non-standing finding: the love-is-blind S11 shift-note row filed last
+night (MED, score 4.5), now the newest of the 15 standing finale-shift
+rows waiting on a content-gap dispatch.
 
 ## Tuning proposals
 
 None filed this tick. The candidate-queue silting is the same
-unresolved signal as last digest (and the one before it) — still no
-new tuning to propose beyond what's already sitting in Pending
-(candidate #25, score 8.3, already covers the CRITIQUE pattern) and
-still `/oversight`'s call to promote, not this skill's to re-flag
-with a fresh candidate.
+unresolved signal as the last several digests — still no new tuning
+to propose beyond what's already sitting in Pending (candidate #25,
+score 8.3, already covers the CRITIQUE pattern) and still
+`/oversight`'s call to promote, not this skill's to re-flag with a
+fresh candidate.
