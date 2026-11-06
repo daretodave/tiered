@@ -2428,6 +2428,47 @@ export function collectPremiereCaptionBareRestatementIssues(): Failure[] {
   return issues
 }
 
+// Spec 48/chunk 48.3: the sibling defect to episodes_caption,
+// cast_size_caption, and filming_caption bare-restatement above, on
+// the FORMAT stat tile's `format_summary`/`format_caption` pair.
+// `format_summary` is free text (a format description), not a number
+// and not a date, so this mirrors the `location`/`filming_caption`
+// check's opener-only semantics (trim + case-fold, then `startsWith`)
+// rather than the numeric-regex or date-`includes` siblings. Note
+// this covers only the same-tile value/caption pair — the pass-137
+// `format_caption` vs. body/canon.md cross-field echo is a different
+// defect shape (prose-echo, not same-tile restatement) and is
+// explicitly out of scope per this spec's Decisions section. A fresh
+// catalog scan at chunk-build time found 1 of 1025
+// format_summary/format_caption pairs tripping this invariant
+// (bake-off/08-channel-4-reset) — ships LAX during the corpus drain,
+// mirroring the episodes_caption/cast_size_caption/filming_caption
+// precedent rather than joining the zero-violation premiere_caption
+// sibling; the toggle in main() below warns instead of failing, and
+// a future `/ship-content` drain tick flips
+// FORMAT_CAPTION_BARE_RESTATEMENT_STRICT to true once the corpus is
+// at zero. See plan/48-stat-tile-caption-literal-duplicate-guard.md.
+function isFormatCaptionBareRestatement(formatSummary: string, caption: string): boolean {
+  const trimmed = caption.trim().toLowerCase()
+  return trimmed.startsWith(formatSummary.trim().toLowerCase())
+}
+
+export function collectFormatCaptionBareRestatementIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    for (const season of getAllSeasons(show.slug)) {
+      if (!season.format_summary || !season.format_caption) continue
+      if (!isFormatCaptionBareRestatement(season.format_summary, season.format_caption)) continue
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      issues.push({
+        file: seasonFile,
+        message: `format_caption "${season.format_caption}" opens by restating the FORMAT stat tile's own value (${season.format_summary}) instead of adding a distinct fact — the same defect class as the resolved episodes_caption/cast_size_caption/filming_caption/premiere_caption drains, on a sibling pair those checks don't cover. Rewrite to lead with a genuinely new detail (a structural twist, a franchise-first, a rules change) the way the corpus's clean examples already do (e.g. naming what makes the format distinct this season instead of restating its label). See plan/48-stat-tile-caption-literal-duplicate-guard.md.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-47 MED (issue #394): the home featured-cover
 // `card_tagline` and `/shows/<show>` hero `tagline` are read in
 // sequence on the canonical home → /shows/<show> click path
@@ -3575,6 +3616,23 @@ function main(): number {
     failures.push(...premiereCaptionBareRestatementIssues)
   } else {
     for (const issue of premiereCaptionBareRestatementIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Spec 48/chunk 48.3: ships LAX during the corpus drain — 1 of
+  // 1025 format_summary/format_caption pairs tripped this invariant
+  // at filing (bake-off/08-channel-4-reset). A future drain tick
+  // flips FORMAT_CAPTION_BARE_RESTATEMENT_STRICT to true once the
+  // corpus is at zero, mirroring the filming_caption/cast_size_caption
+  // lax→strict precedent.
+  const FORMAT_CAPTION_BARE_RESTATEMENT_STRICT = false
+  const formatCaptionBareRestatementIssues =
+    collectFormatCaptionBareRestatementIssues()
+  if (FORMAT_CAPTION_BARE_RESTATEMENT_STRICT) {
+    failures.push(...formatCaptionBareRestatementIssues)
+  } else {
+    for (const issue of formatCaptionBareRestatementIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

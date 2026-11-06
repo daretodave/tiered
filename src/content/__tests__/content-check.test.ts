@@ -28,6 +28,7 @@ import {
   collectEpisodesCaptionBareRestatementIssues,
   collectFailures,
   collectFilmingCaptionBareRestatementIssues,
+  collectFormatCaptionBareRestatementIssues,
   collectHomeNarratorVoiceIssues,
   collectPremiereCaptionBareRestatementIssues,
   findBrandSpellingMatches,
@@ -6805,6 +6806,80 @@ describe('content-check — premiere_caption bare premiere_date restatement (spe
     setContentRoot(null)
     __resetContentCache()
     expect(collectPremiereCaptionBareRestatementIssues()).toEqual([])
+  })
+})
+
+describe('content-check — format_caption bare format_summary restatement (spec 48/chunk 48.3)', () => {
+  let tmp: string
+
+  function makeSeasonWithFrontmatter(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    fm: Record<string, string>,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    const fmLines = Object.entries(fm)
+      .map(([k, v]) => `${k}: ${v}`)
+      .join('\n')
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\nnumber: ${n}\n${fmLines}\n---\n\n${sixtyWords}\n`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-format-caption-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a caption that opens by restating the literal format_summary value ("Blind auditions · some new fact")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      format_summary: '"Blind auditions"',
+      format_caption: '"Blind auditions · some new fact"',
+    })
+    const issues = collectFormatCaptionBareRestatementIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/seasons/01-season-one.md')
+    expect(issues[0]!.message).toMatch(/restating the FORMAT stat tile/)
+  })
+
+  it('does NOT flag a legitimately distinct caption ("A rules change moved the finale to a live vote")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      format_summary: '"Blind auditions"',
+      format_caption: '"A rules change moved the finale to a live vote"',
+    })
+    expect(collectFormatCaptionBareRestatementIssues()).toEqual([])
+  })
+
+  it('does not flag a season with no format_caption authored', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      format_summary: '"Blind auditions"',
+    })
+    expect(collectFormatCaptionBareRestatementIssues()).toEqual([])
   })
 })
 
