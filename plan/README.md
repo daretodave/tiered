@@ -44,5 +44,5 @@ condition> · max_age: 14d`, an optional `· fallback: release`):
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
-| 48 | Stat-tile value/caption literal-duplicate guard | [48-stat-tile-caption-literal-duplicate-guard.md](48-stat-tile-caption-literal-duplicate-guard.md) | Ready | 5 left |
+| 48 | Stat-tile value/caption literal-duplicate guard | [48-stat-tile-caption-literal-duplicate-guard.md](48-stat-tile-caption-literal-duplicate-guard.md) | Ready | 4 left |
 | 49 | Graduated spoiler-risk hold for the flagged-comment queue | [49-graduated-spoiler-risk-mod-hold.md](49-graduated-spoiler-risk-mod-hold.md) | Held (veto window) | Not chunked yet. |

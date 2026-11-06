@@ -120,8 +120,6 @@ six value/caption fields already exist in `src/content/schemas.ts`
 
 ## Acceptance
 
-- **A1** `collectFilmingCaptionBareRestatementIssues()` flags any
-  season where `filming_caption` bare-restates `location`.
 - **A2** `collectPremiereCaptionBareRestatementIssues()` flags any
   season where `premiere_caption` bare-restates `premiere_date`.
 - **A3** `collectFormatCaptionBareRestatementIssues()` flags any
@@ -146,10 +144,9 @@ strict are all resolved above.
 
 ## Chunks
 
-Measure: 7 open · 0 closed · next A8
+Measure: 6 open · 1 closed · next A8
 
-- [ ] **48.1** Filming-caption restatement guard (`location`/`filming_caption`) · S · closes A1 · partial A5, A6 · needs —
 - [ ] **48.2** Premiere-caption restatement guard (`premiere_date`/`premiere_caption`, exact ISO-string match) · S · closes A2 · partial A5, A6 · needs —
 - [ ] **48.3** Format-caption restatement guard (`format_summary`/`format_caption`, same-tile pair only) · S · closes A3 · partial A5, A6 · needs —
-- [ ] **48.4** Host-caption restatement guard (`host`/`host_caption`); closes the lax/strict wiring and colocated-test coverage once all four pairs are in `collectFailures()` · S · closes A4, A5, A6 · needs 48.1, 48.2, 48.3
+- [ ] **48.4** Host-caption restatement guard (`host`/`host_caption`); closes the lax/strict wiring and colocated-test coverage once all four pairs are in `collectFailures()` · S · closes A4, A5, A6 · needs 48.2, 48.3
 - [ ] **48.5** `content-curator`'s brief documents the four-pair convention · S · closes A7 · needs 48.4
