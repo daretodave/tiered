@@ -120,15 +120,6 @@ six value/caption fields already exist in `src/content/schemas.ts`
 
 ## Acceptance
 
-- **A4** `collectHostCaptionBareRestatementIssues()` flags any
-  season where `host_caption` bare-restates `host`.
-- **A5** All four checks wired into `collectFailures()` with an
-  explicit lax/strict toggle per pair, decided from a fresh catalog
-  scan at build time.
-- **A6** Colocated tests in `src/content/__tests__/content-check.test.ts`
-  cover each pair: a duplicate instance (flags), a legitimately
-  distinct pair (doesn't flag), and a live-catalog zero-issues
-  assertion for any pair shipped strict.
 - **A7** `content-curator`'s brief documents the four-pair
   convention so new season authoring doesn't reintroduce the class.
 
@@ -139,7 +130,6 @@ strict are all resolved above.
 
 ## Chunks
 
-Measure: 4 open · 3 closed · next A8
+Measure: 1 open · 6 closed · next A8
 
-- [ ] **48.4** Host-caption restatement guard (`host`/`host_caption`); closes the lax/strict wiring and colocated-test coverage once all four pairs are in `collectFailures()` · S · closes A4, A5, A6 · needs —
-- [ ] **48.5** `content-curator`'s brief documents the four-pair convention · S · closes A7 · needs 48.4
+- [ ] **48.5** `content-curator`'s brief documents the four-pair convention · S · closes A7 · needs —
