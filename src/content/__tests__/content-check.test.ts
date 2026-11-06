@@ -27,6 +27,7 @@ import {
   collectEditorialFirstPersonIssues,
   collectEpisodesCaptionBareRestatementIssues,
   collectFailures,
+  collectFilmingCaptionBareRestatementIssues,
   collectHomeNarratorVoiceIssues,
   findBrandSpellingMatches,
   collectSeasonEyebrowCalendarIssues,
@@ -6633,6 +6634,90 @@ describe('content-check — cast_size_caption bare cast_size restatement (critiq
       cast_size: '12',
     })
     expect(collectCastSizeCaptionBareRestatementIssues()).toEqual([])
+  })
+})
+
+describe('content-check — filming_caption bare location restatement (spec 48)', () => {
+  let tmp: string
+
+  function makeSeasonWithFrontmatter(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    fm: Record<string, string>,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    const fmLines = Object.entries(fm)
+      .map(([k, v]) => `${k}: ${v}`)
+      .join('\n')
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\nnumber: ${n}\n${fmLines}\n---\n\n${sixtyWords}\n`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-filming-caption-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a caption that opens by restating the literal location value ("Los Angeles · some new fact")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      location: '"Los Angeles"',
+      filming_caption: '"Los Angeles · some new fact"',
+    })
+    const issues = collectFilmingCaptionBareRestatementIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/seasons/01-season-one.md')
+    expect(issues[0]!.message).toMatch(/restating the FILMED stat tile/)
+  })
+
+  it('does NOT flag a legitimately distinct caption ("A soundstage built in six weeks")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      location: '"Los Angeles"',
+      filming_caption: '"A soundstage built in six weeks"',
+    })
+    expect(collectFilmingCaptionBareRestatementIssues()).toEqual([])
+  })
+
+  it('does NOT flag a caption where the location appears later, not as the opener ("Volcanic terrain, shot entirely in Iceland")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      location: '"Iceland"',
+      filming_caption: '"Volcanic terrain, shot entirely in Iceland"',
+    })
+    expect(collectFilmingCaptionBareRestatementIssues()).toEqual([])
+  })
+
+  it('does not flag a season with no filming_caption authored', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      location: '"Los Angeles"',
+    })
+    expect(collectFilmingCaptionBareRestatementIssues()).toEqual([])
   })
 })
 

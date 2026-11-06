@@ -2361,6 +2361,44 @@ export function collectCastSizeCaptionBareRestatementIssues(): Failure[] {
   return issues
 }
 
+// Spec 48/chunk 48.1: the sibling defect to episodes_caption and
+// cast_size_caption bare-restatement above, on the FILMED stat tile's
+// `location`/`filming_caption` pair. Unlike `ep_count`/`cast_size`,
+// `location` is free text (a city/region name), not a number, so there
+// is no leading-numeral to anchor a regex on — the check instead asks
+// whether the caption, trimmed and case-folded, opens on the location
+// string itself (exact or near-exact match), mirroring the opener-only
+// semantics of the two numeric siblings without borrowing their
+// numeral regex. A fresh catalog scan at chunk-build time found 106 of
+// 660 location/filming_caption pairs tripping this invariant (repeat
+// offenders: masked-singer, the-voice, the-challenge, rhony,
+// top-chef), mirroring the cast_size_caption precedent closely enough
+// (129/711 → LAX) to ship LAX here too — the toggle in main() below
+// warns instead of failing; subsequent `/ship-content` drain ticks
+// rotate one show's filming_caption at a time, and a future tick
+// flips FILMING_CAPTION_BARE_RESTATEMENT_STRICT to true once the
+// corpus is at zero. See plan/48-stat-tile-caption-literal-duplicate-guard.md.
+function isFilmingCaptionBareRestatement(location: string, caption: string): boolean {
+  const trimmed = caption.trim().toLowerCase()
+  return trimmed.startsWith(location.trim().toLowerCase())
+}
+
+export function collectFilmingCaptionBareRestatementIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    for (const season of getAllSeasons(show.slug)) {
+      if (!season.location || !season.filming_caption) continue
+      if (!isFilmingCaptionBareRestatement(season.location, season.filming_caption)) continue
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      issues.push({
+        file: seasonFile,
+        message: `filming_caption "${season.filming_caption}" opens by restating the FILMED stat tile's own value (${season.location}) instead of adding a distinct fact — the same defect class as the resolved episodes_caption/cast_size_caption drains, on a sibling pair those checks don't cover. Rewrite to lead with a genuinely new detail (a production constraint, a weather/terrain fact, a studio/soundstage note) the way the corpus's clean examples already do (e.g. naming what happened there instead of where it is — "A soundstage built in six weeks"). See plan/48-stat-tile-caption-literal-duplicate-guard.md.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-47 MED (issue #394): the home featured-cover
 // `card_tagline` and `/shows/<show>` hero `tagline` are read in
 // sequence on the canonical home → /shows/<show> click path
@@ -3476,6 +3514,24 @@ function main(): number {
     failures.push(...castSizeCaptionBareRestatementIssues)
   } else {
     for (const issue of castSizeCaptionBareRestatementIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Spec 48/chunk 48.1: ships LAX during the corpus drain — 106 of
+  // 660 location/filming_caption pairs tripped this invariant at
+  // filing (repeat offenders: masked-singer, the-voice, the-challenge,
+  // rhony, top-chef). Drain ticks rotate one show's filming_caption at
+  // a time, mirroring the cast_size_caption lax→strict precedent; a
+  // future tick flips FILMING_CAPTION_BARE_RESTATEMENT_STRICT to true
+  // once the corpus is at zero.
+  const FILMING_CAPTION_BARE_RESTATEMENT_STRICT = false
+  const filmingCaptionBareRestatementIssues =
+    collectFilmingCaptionBareRestatementIssues()
+  if (FILMING_CAPTION_BARE_RESTATEMENT_STRICT) {
+    failures.push(...filmingCaptionBareRestatementIssues)
+  } else {
+    for (const issue of filmingCaptionBareRestatementIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
