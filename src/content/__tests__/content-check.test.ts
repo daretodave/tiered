@@ -29,6 +29,7 @@ import {
   collectFailures,
   collectFilmingCaptionBareRestatementIssues,
   collectHomeNarratorVoiceIssues,
+  collectPremiereCaptionBareRestatementIssues,
   findBrandSpellingMatches,
   collectSeasonEyebrowCalendarIssues,
   collectSeasonSectionShapeSubheadIssues,
@@ -6718,6 +6719,92 @@ describe('content-check — filming_caption bare location restatement (spec 48)'
       location: '"Los Angeles"',
     })
     expect(collectFilmingCaptionBareRestatementIssues()).toEqual([])
+  })
+})
+
+describe('content-check — premiere_caption bare premiere_date restatement (spec 48/chunk 48.2)', () => {
+  let tmp: string
+
+  function makeSeasonWithFrontmatter(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    fm: Record<string, string>,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    const fmLines = Object.entries(fm)
+      .map(([k, v]) => `${k}: ${v}`)
+      .join('\n')
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\nnumber: ${n}\n${fmLines}\n---\n\n${sixtyWords}\n`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-premiere-caption-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a caption that restates the literal premiere_date value ("Premiered 2015-02-25, the earliest launch in the franchise")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      premiere_date: '"2015-02-25"',
+      premiere_caption: '"Premiered 2015-02-25, the earliest launch in the franchise"',
+    })
+    const issues = collectPremiereCaptionBareRestatementIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/seasons/01-season-one.md')
+    expect(issues[0]!.message).toMatch(/restates the PREMIERE DATE stat tile/)
+  })
+
+  it('does NOT flag a legitimately distinct caption ("A midseason launch opposite the Super Bowl")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      premiere_date: '"2015-02-25"',
+      premiere_caption: '"A midseason launch opposite the Super Bowl"',
+    })
+    expect(collectPremiereCaptionBareRestatementIssues()).toEqual([])
+  })
+
+  it('does not flag a season with no premiere_caption authored', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      premiere_date: '"2015-02-25"',
+    })
+    expect(collectPremiereCaptionBareRestatementIssues()).toEqual([])
+  })
+
+  it('reports the live catalog at zero offenders (clean at filing — ships STRICT)', () => {
+    // The production content tree is the source of truth — when this
+    // test runs with the default content root (no setContentRoot
+    // override), the live catalog must read zero. A fresh scan at
+    // chunk-build time found zero violations across 931
+    // premiere_date/premiere_caption pairs, so this check ships
+    // STRICT rather than joining its three lax siblings above.
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectPremiereCaptionBareRestatementIssues()).toEqual([])
   })
 })
 

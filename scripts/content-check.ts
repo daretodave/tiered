@@ -2399,6 +2399,35 @@ export function collectFilmingCaptionBareRestatementIssues(): Failure[] {
   return issues
 }
 
+// Spec 48/chunk 48.2: the sibling defect to episodes_caption,
+// cast_size_caption, and filming_caption bare-restatement above, on
+// the PREMIERE DATE stat tile's `premiere_date`/`premiere_caption`
+// pair. `premiere_date` is an ISO date string with no plausible
+// paraphrase, so this checks only whether the caption's trimmed,
+// case-folded text contains the literal ISO string — exact-string
+// restatement only, no date-format parsing/reformatting. See
+// plan/48-stat-tile-caption-literal-duplicate-guard.md.
+function isPremiereCaptionBareRestatement(premiereDate: string, caption: string): boolean {
+  const trimmed = caption.trim().toLowerCase()
+  return trimmed.includes(premiereDate.trim().toLowerCase())
+}
+
+export function collectPremiereCaptionBareRestatementIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    for (const season of getAllSeasons(show.slug)) {
+      if (!season.premiere_date || !season.premiere_caption) continue
+      if (!isPremiereCaptionBareRestatement(season.premiere_date, season.premiere_caption)) continue
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      issues.push({
+        file: seasonFile,
+        message: `premiere_caption "${season.premiere_caption}" restates the PREMIERE DATE stat tile's own value (${season.premiere_date}) instead of adding a distinct fact — the same defect class as the resolved episodes_caption/cast_size_caption/filming_caption drains, on a sibling pair those checks don't cover. Rewrite to lead with a genuinely new detail (a lead-in event, a scheduling note, a companion premiere) the way the corpus's clean examples already do (e.g. naming what happened around the premiere instead of restating its date). See plan/48-stat-tile-caption-literal-duplicate-guard.md.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-47 MED (issue #394): the home featured-cover
 // `card_tagline` and `/shows/<show>` hero `tagline` are read in
 // sequence on the canonical home → /shows/<show> click path
@@ -3532,6 +3561,20 @@ function main(): number {
     failures.push(...filmingCaptionBareRestatementIssues)
   } else {
     for (const issue of filmingCaptionBareRestatementIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Spec 48/chunk 48.2: a fresh catalog scan at chunk-build time found
+  // zero violations across 931 premiere_date/premiere_caption pairs —
+  // ships STRICT, unlike its three lax siblings above.
+  const PREMIERE_CAPTION_BARE_RESTATEMENT_STRICT = true
+  const premiereCaptionBareRestatementIssues =
+    collectPremiereCaptionBareRestatementIssues()
+  if (PREMIERE_CAPTION_BARE_RESTATEMENT_STRICT) {
+    failures.push(...premiereCaptionBareRestatementIssues)
+  } else {
+    for (const issue of premiereCaptionBareRestatementIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
