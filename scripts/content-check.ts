@@ -2469,6 +2469,37 @@ export function collectFormatCaptionBareRestatementIssues(): Failure[] {
   return issues
 }
 
+// Spec 48/chunk 48.4: the sibling defect to episodes_caption,
+// cast_size_caption, filming_caption, and format_caption
+// bare-restatement above, on the HOST stat tile's `host`/
+// `host_caption` pair — the fourth and final pair this spec covers.
+// `host` is free text (a person's name), not a number and not a
+// date, so this mirrors the `location`/`filming_caption` and
+// `format_summary`/`format_caption` checks' opener-only semantics
+// (trim + case-fold, then `startsWith`) rather than the numeric-regex
+// or date-`includes` siblings. See
+// plan/48-stat-tile-caption-literal-duplicate-guard.md.
+function isHostCaptionBareRestatement(host: string, caption: string): boolean {
+  const trimmed = caption.trim().toLowerCase()
+  return trimmed.startsWith(host.trim().toLowerCase())
+}
+
+export function collectHostCaptionBareRestatementIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    for (const season of getAllSeasons(show.slug)) {
+      if (!season.host || !season.host_caption) continue
+      if (!isHostCaptionBareRestatement(season.host, season.host_caption)) continue
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      issues.push({
+        file: seasonFile,
+        message: `host_caption "${season.host_caption}" opens by restating the HOST stat tile's own value (${season.host}) instead of adding a distinct fact — the same defect class as the resolved episodes_caption/cast_size_caption/filming_caption/premiere_caption/format_caption drains, on the one sibling pair those checks don't cover. Rewrite to lead with a genuinely new detail (a returning-host milestone, a co-host pairing, a hosting-debut note) the way the corpus's clean examples already do (e.g. naming what's distinct about this season's hosting instead of restating the host's name). See plan/48-stat-tile-caption-literal-duplicate-guard.md.`,
+      })
+    }
+  }
+  return issues
+}
+
 // Critique pass-47 MED (issue #394): the home featured-cover
 // `card_tagline` and `/shows/<show>` hero `tagline` are read in
 // sequence on the canonical home → /shows/<show> click path
@@ -3633,6 +3664,24 @@ function main(): number {
     failures.push(...formatCaptionBareRestatementIssues)
   } else {
     for (const issue of formatCaptionBareRestatementIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Spec 48/chunk 48.4: ships LAX during the corpus drain — a fresh
+  // catalog scan at chunk-build time found 322 of 698 host/host_caption
+  // pairs tripping this invariant, a far larger drain than any of its
+  // three lax siblings above. A future drain tick flips
+  // HOST_CAPTION_BARE_RESTATEMENT_STRICT to true once the corpus is at
+  // zero, mirroring the filming_caption/cast_size_caption/format_caption
+  // lax→strict precedent.
+  const HOST_CAPTION_BARE_RESTATEMENT_STRICT = false
+  const hostCaptionBareRestatementIssues =
+    collectHostCaptionBareRestatementIssues()
+  if (HOST_CAPTION_BARE_RESTATEMENT_STRICT) {
+    failures.push(...hostCaptionBareRestatementIssues)
+  } else {
+    for (const issue of hostCaptionBareRestatementIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

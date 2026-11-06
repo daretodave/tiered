@@ -30,6 +30,7 @@ import {
   collectFilmingCaptionBareRestatementIssues,
   collectFormatCaptionBareRestatementIssues,
   collectHomeNarratorVoiceIssues,
+  collectHostCaptionBareRestatementIssues,
   collectPremiereCaptionBareRestatementIssues,
   findBrandSpellingMatches,
   collectSeasonEyebrowCalendarIssues,
@@ -6880,6 +6881,80 @@ describe('content-check — format_caption bare format_summary restatement (spec
       format_summary: '"Blind auditions"',
     })
     expect(collectFormatCaptionBareRestatementIssues()).toEqual([])
+  })
+})
+
+describe('content-check — host_caption bare host restatement (spec 48/chunk 48.4)', () => {
+  let tmp: string
+
+  function makeSeasonWithFrontmatter(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    fm: Record<string, string>,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    const fmLines = Object.entries(fm)
+      .map(([k, v]) => `${k}: ${v}`)
+      .join('\n')
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\nnumber: ${n}\n${fmLines}\n---\n\n${sixtyWords}\n`,
+    )
+  }
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-host-caption-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a caption that opens by restating the literal host value ("Alex Trebek returns for a milestone season")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      host: '"Alex Trebek"',
+      host_caption: '"Alex Trebek returns for a milestone season"',
+    })
+    const issues = collectHostCaptionBareRestatementIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe('content/shows/alpha/seasons/01-season-one.md')
+    expect(issues[0]!.message).toMatch(/restating the HOST stat tile/)
+  })
+
+  it('does NOT flag a legitimately distinct caption ("A game-show veteran steps in for the first time")', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      host: '"Alex Trebek"',
+      host_caption: '"A game-show veteran steps in for the first time"',
+    })
+    expect(collectHostCaptionBareRestatementIssues()).toEqual([])
+  })
+
+  it('does not flag a season with no host_caption authored', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithFrontmatter(tmp, 'alpha', 1, 'season-one', {
+      title: 'Season One',
+      host: '"Alex Trebek"',
+    })
+    expect(collectHostCaptionBareRestatementIssues()).toEqual([])
   })
 })
 
