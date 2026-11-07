@@ -68,3 +68,5 @@
 - 2026-11-06 · 48.2 · Premiere-caption bare date restatement is now detected (strict) · fb52b351..fb52b351
 - 2026-11-06 · 48.3 · format_caption now guarded against bare format_summary restatement · 18261b4d..18261b4d
 - 2026-11-06 · 48.4 · host_caption now guarded against bare host restatement (LAX) · d0fede2f..d0fede2f
+- 2026-11-07 · 48.5 · content-curator's brief now documents the six-pair caption bare-restatement convention · f0aecdff..f0aecdff
+- 2026-11-07 · 48 · spec complete: Stat-tile value/caption literal-duplicate guard (six collect*CaptionBareRestatementIssues() gates in content-check.ts, convention documented in content-curator's brief) · 336e8db7

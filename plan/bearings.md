@@ -618,6 +618,20 @@ entries like Survivor S40 "Winners at War"). The `/shows/survivor`
 e2e additionally asserts the rendered tagline word equals
 exactly what the helper reads today.
 
+**Stat-tile caption honesty (spec 48, complete).** The season
+hero's stat strip renders six value/caption pairs
+(`ep_count`/`episodes_caption`, `cast_size`/`cast_size_caption`,
+`location`/`filming_caption`, `premiere_date`/`premiere_caption`,
+`format_summary`/`format_caption`, `host`/`host_caption`). A
+caption must never open by bare-restating its own tile's value —
+lead with a genuinely new fact instead. Enforced by six
+`collect*CaptionBareRestatementIssues()` gates in
+`scripts/content-check.ts` (`episodes_caption`/`premiere_caption`
+strict; `cast_size_caption`/`filming_caption`/`format_caption`/
+`host_caption` LAX pending corpus drain — each flips to strict
+once its drain reaches zero). `content-curator`'s brief documents
+the convention for new season authoring.
+
 ### Rule 3 — themed lists (THE MAIN OBJECTIVE)
 
 **Reset 2026-07-12: themed lists are the loop's main perpetual
