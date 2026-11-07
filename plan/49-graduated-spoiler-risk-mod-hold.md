@@ -140,4 +140,5 @@ that is explicitly out of scope (Decisions, below).
 
 Measure: 6 open · 0 closed · next A7
 
-Not chunked yet.
+- [ ] **49.1** `ended_date` season-frontmatter field · S · closes A1 · needs —
+- [ ] **49.2** `flag_hold_days` config + `getModQueue()` hold-resolution (joins `ai_decisions.verdict`, resolves the target season's `ended_date` via `getSeason()`, flips expired `flag`-tier `pending` rows to `published`) · M · closes A2, A3, A4, A5, A6 · needs 49.1
