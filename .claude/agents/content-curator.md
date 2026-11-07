@@ -223,6 +223,21 @@ host_caption:     "<≤80 chars, e.g. \"{seasonOrdinalWord} season at the helm\"
   # hosts who joined mid-run (Karlie Kloss on Project Runway,
   # Jesse Palmer on Bachelorette), write the ordinal as a literal
   # — the token derives from `number`, not from a host-start offset.
+  #
+  # 48.5 — never open a caption with a bare/near-exact restatement
+  # of its own paired value: ep_count/episodes_caption, cast_size/
+  # cast_size_caption, location/filming_caption, premiere_date/
+  # premiere_caption, format_summary/format_caption, host/
+  # host_caption. Numeric captions shouldn't open with the number;
+  # free-text captions (location/host/format_summary) shouldn't
+  # open by repeating that exact text; premiere_caption shouldn't
+  # include the literal ISO date. Lead with a new fact instead —
+  # e.g. "A soundstage built in six weeks" (not the location
+  # again), or "Eighteen returning queens, three six-queen
+  # brackets" (not the bare cast-size digit). Enforced by the six
+  # collect*CaptionBareRestatementIssues() gates in
+  # scripts/content-check.ts — a violation fails content-check,
+  # not just a style preference.
 
 # Episode-heat bar (one mark per aired ep). Length should match
 # ep_count when both are present.
