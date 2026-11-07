@@ -1,10 +1,40 @@
 # CRITIQUE
 
-> Last pass: 2026-11-06 at commit 3101859c
-> Pass count: 197
+> Last pass: 2026-11-07 at commit b7bd1810
+> Pass count: 198
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 
 ## Pending
+
+### [MED] [anon] /themes — the "Featured this month" badge reads "Featured for October 2026" while the catalog is well into November (4th recurrence of the rotation-staleness bug, closed pass-103/168/178)
+
+- pass: 198 (commit b7bd1810)
+- viewport: desktop
+- category: voice
+- observation: `/themes`' "Featured this month" strip derives its badge month from the latest `last_revised` across the three `featured: true` themes (`plan/LISTS.md`'s standing "Featured rotation" note, by design). The two stalest of the three — `someone-else-held-the-chair-for-a-while` and `the-other-side-of-the-table` — both carry `last_revised: 2026-10-14`, 24 days before this pass, past the standing note's own ~3-week swap threshold. The badge still reads "FEATURED FOR OCTOBER 2026" on a page whose own "LISTS REVISED" stat reads "November 2026."
+- evidence: rendered text: `EDITOR-SELECTED · FEATURED FOR OCTOBER 2026` directly above the three featured cards; `content/themes/someone-else-held-the-chair-for-a-while.md` and `content/themes/the-other-side-of-the-table.md` both `last_revised: 2026-10-14`; catalog max is `last_revised: 2026-11-01` (two themes), so fresher candidates already exist.
+- suggested fix: Swap the two oldest featured themes for two of the catalog's current freshest (`last_revised: 2026-11-01` or `2026-10-30`), authoring a `featured_pull` for each per the pass-168 `FEATURED_THEME_PULL_STRICT` playbook — the same swap pattern pass-103/168/178 each used. Per the standing note's own ask, consider making this a proactive Rule 3 housekeeping check rather than waiting for a 4th critique catch.
+- source: walk
+
+### [MED] [anon] /shows/chopped/season/the-double-first — the season's two structural-first facts restate near-verbatim four times each across the page, including two near-duplicate "What to watch for" entries
+
+- pass: 198 (commit b7bd1810)
+- viewport: desktop
+- category: voice
+- observation: Season 62's two facts (a swapped charity-round order; Ted Allen judging as a guest panelist) are introduced in THE TAKE ("two genuine structural firsts... make it one of the cleanest, most distinctive entries"), restated in THE SHAPE OF THE SEASON ("A No Kid Hungry charity hour swaps the format's usual appetizer-entrée-dessert order for breakfast, lunch, and dessert, and a Ted's Takeover episode puts Ted Allen on the other side of the table as a fourth judge"), restated again in WHERE IT SITS IN THE CANON ("adds real format credit — two structural firsts Season 27 never attempts"), and then restated a fourth time each inside WHAT TO WATCH FOR — which lists 4 "moments" for only 2 facts: "NO KID HUNGRY · SWAPPED ROUND ORDER" and "NO KID HUNGRY HOUR · THE PANTRY PROBLEM" both re-describe the same charity-round swap; "TED'S TAKEOVER · HOST AT THE TABLE" and "TED'S TAKEOVER · JUDGING FROM THE OTHER SIDE" both re-describe the same Ted Allen judging turn. Same single-fact-owner-drift defect class fixed repeatedly elsewhere in the catalog, here compounded by the "4 moments" list itself being only 2 facts doubled.
+- evidence: `content/shows/chopped/seasons/62-the-double-first.md` (take/shape fields) + `canon.md`'s Season 62 slot rationale; rendered "WHAT TO WATCH FOR" section lists exactly 4 entries for 2 underlying facts.
+- suggested fix: Rewrite the "What to watch for" section to either cut to 2 genuinely distinct moments, or add 2 new facts not already stated in THE TAKE/THE SHAPE/THE CANON SLOT (e.g. a specific contestant beat or judging-panel reaction) so the section earns its 4-entry length instead of doubling the same two facts.
+- source: walk
+
+### [MED] [anon] /shows/american-idol/season/the-nashville-round — the single-venue-audition fact restates near-verbatim three times across the page before a fourth restatement opens "What to watch for"
+
+- pass: 198 (commit b7bd1810)
+- viewport: desktop
+- category: voice
+- observation: The season's headline fact — the audition tour compressed into one Nashville venue — opens THE TAKE ("A touring circuit compressed into one Nashville venue..."), is restated in THE SHAPE OF THE SEASON ("Season twenty-four tore up the format's oldest piece of furniture — the multi-city audition tour — for a single stop at Belmont University in Nashville"), restated again in WHERE IT SITS IN THE CANON ("Trading the decades-old multi-city tour for a single stop at Belmont University in Nashville cuts against the usual reward for a wide touring circuit"), and restated a fourth time as the first "What to watch for" entry ("EP 1 · THE NASHVILLE CONSOLIDATION — The premiere that replaces the decades-old multi-city audition tour with a single venue..."). The other 4 "what to watch for" entries are genuinely distinct, so this is a single fact over-anchoring the page rather than full-page templating.
+- evidence: `content/shows/american-idol/seasons/24-the-nashville-round.md` (take/shape fields) + `canon.md`'s Season 24 slot rationale; rendered "EP 1 · THE NASHVILLE CONSOLIDATION" entry.
+- suggested fix: Drop the "EP 1 · THE NASHVILLE CONSOLIDATION" what-to-watch entry (already fully covered by THE TAKE and THE SHAPE above it) and replace it with a moment not already stated elsewhere on the page — e.g. the Luke Bryan/Lionel Richie/Carrie Underwood panel-chemistry beat currently only summarized in the canon-slot paragraph.
+- source: walk
 
 ### [MED] [anon] /shows/survivor — the hero tagline narrates in first person while the canon/community explainer directly below it narrates in third person
 
