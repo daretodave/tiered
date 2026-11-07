@@ -198,6 +198,23 @@ describe('seasonSchema', () => {
       }),
     ).toThrow()
   })
+
+  // Spec 49 / chunk 49.1 (A1): optional ended_date field.
+  it('accepts a season without ended_date (no-regression case)', () => {
+    expect(() =>
+      seasonSchema.parse({ ...base, blurb_md: validSeasonBlurb(60) }),
+    ).not.toThrow()
+  })
+
+  it('accepts a season with a valid ended_date', () => {
+    expect(() =>
+      seasonSchema.parse({
+        ...base,
+        blurb_md: validSeasonBlurb(60),
+        ended_date: '2000-08-23',
+      }),
+    ).not.toThrow()
+  })
 })
 
 describe('themeSchema', () => {

@@ -127,6 +127,11 @@ export const seasonFrontmatterSchema = z.object({
     })
     .optional(),
   premiere_date: isoDate.optional(),
+  // Spec 49: the date the season's finale aired. Absent means "not
+  // ended" (an airing or future season). Never required retroactively
+  // — only populated where a hold decision (spec 49.2) actually needs
+  // it. No code in this chunk reads it yet.
+  ended_date: isoDate.optional(),
   ep_count: z.number().int().positive().optional(),
   location: z.string().min(1).optional(),
   host: z.string().min(1).optional(),
