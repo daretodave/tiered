@@ -101,9 +101,6 @@ that is explicitly out of scope (Decisions, below).
 
 ## Acceptance
 
-- **A1** `seasonFrontmatterSchema` accepts an optional
-  `ended_date: isoDate`; a colocated schema test asserts a season
-  without it still validates.
 - **A2** A `flag`-verdict comment whose season has no `ended_date`
   (or one inside `flag_hold_days`) stays `pending` exactly as
   today — no behavior change for current content.
@@ -138,7 +135,6 @@ that is explicitly out of scope (Decisions, below).
 
 ## Chunks
 
-Measure: 6 open · 0 closed · next A7
+Measure: 5 open · 1 closed · next A7
 
-- [ ] **49.1** `ended_date` season-frontmatter field · S · closes A1 · needs —
-- [ ] **49.2** `flag_hold_days` config + `getModQueue()` hold-resolution (joins `ai_decisions.verdict`, resolves the target season's `ended_date` via `getSeason()`, flips expired `flag`-tier `pending` rows to `published`) · M · closes A2, A3, A4, A5, A6 · needs 49.1
+- [ ] **49.2** `flag_hold_days` config + `getModQueue()` hold-resolution (joins `ai_decisions.verdict`, resolves the target season's `ended_date` via `getSeason()`, flips expired `flag`-tier `pending` rows to `published`) · M · closes A2, A3, A4, A5, A6 · needs —

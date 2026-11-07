@@ -70,3 +70,4 @@
 - 2026-11-06 · 48.4 · host_caption now guarded against bare host restatement (LAX) · d0fede2f..d0fede2f
 - 2026-11-07 · 48.5 · content-curator's brief now documents the six-pair caption bare-restatement convention · f0aecdff..f0aecdff
 - 2026-11-07 · 48 · spec complete: Stat-tile value/caption literal-duplicate guard (six collect*CaptionBareRestatementIssues() gates in content-check.ts, convention documented in content-curator's brief) · 336e8db7
+- 2026-11-07 · 49.1 · Season frontmatter now accepts an optional ended_date field · 3d589a72..3d589a72
