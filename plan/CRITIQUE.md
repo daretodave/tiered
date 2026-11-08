@@ -1,7 +1,7 @@
 # CRITIQUE
 
-> Last pass: 2026-11-07 at commit b7bd1810
-> Pass count: 198
+> Last pass: 2026-11-08 at commit 227cc126
+> Pass count: 199
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 
 ## Pending
@@ -789,6 +789,36 @@
 - evidence: "How I weigh it" panel: "...then how sharply Captain Jason's command had to work in each new context." "Who ranks it" panel (same page): "Captain Jason Chambers a constant throughout." Hero tagline: "Captain Jason Chambers, Australian waters..."
 - suggested fix: Use the full name "Captain Jason Chambers" consistently across the WHO/HOW/WHEN editorial panels. Content-only, `content/shows/below-deck-down-under/canon.md`.
 - source: browser (critique-pass-192, authed)
+
+### [MED] [anon] / — the homepage's "The rest of the index" dumps ~65 remaining shows as one flat, ungrouped list while /shows buckets the identical catalog into S/A/B tiers with editorial framing
+
+- pass: 199 (commit 227cc126)
+- viewport: desktop
+- category: comprehension
+- observation: Below the three highlighted show cards, the homepage's "THE REST OF THE INDEX" section lists the remaining ~65 shows as one flat sequence (genre tag, name, season count only), with no grouping or editorial context — unlike `/shows`, which organizes the same catalog under "S FORMAT-DEFINING," "A DEEP CANON," and "B CANON STILL FORMING" headers with a one-line rationale for each tier. A first-time visitor hits an undifferentiated wall of show names on the homepage itself, before any tier context exists.
+- evidence: Homepage text runs straight from "BROWSE ALL →" into an uninterrupted sequence — "DATING\nThe Bachelorette\n21 SEASONS\n→\nCULINARY COMPETITION\nThe Great British Bake Off\n17 SEASONS\n→\n..." — continuing for dozens of shows with no grouping, while `/shows`'s equivalent list is split under "S FORMAT-DEFINING", "A DEEP CANON", "B CANON STILL FORMING" headers.
+- suggested fix: Either trim the homepage's "rest of the index" to a short curated subset with a single clear CTA to `/shows`, or carry over the same S/A/B tier grouping so the full-catalog dump isn't flat text.
+- source: walk
+
+### [MED] [anon] /shows/survivor/season/heroes-vs-villains — the mobile "ON THIS PAGE" table of contents collapses to a bare section count, losing the jump-to-section titles desktop shows
+
+- pass: 199 (commit 227cc126)
+- viewport: mobile
+- category: navigation
+- observation: Desktop lists all six section titles under "ON THIS PAGE" (The take, The shape of the season, Where it sits in the canon, What to watch for, Adjacent in the canon, Also appears in). Mobile renders only "ON THIS PAGE / 6 SECTIONS" with no titles in the captured text, losing the jump-to-section affordance on the viewport most likely to need it on a long page.
+- evidence: Desktop capture: "ON THIS PAGE\n01\nThe take\n02\nThe shape of the season\n03\nWhere it sits in the canon\n04\nWhat to watch for\n05\nAdjacent in the canon\n06\nAlso appears in". Mobile capture, same page: "ON THIS PAGE\n6 SECTIONS\n01\nTHE TAKE" — titles absent from the summary line.
+- suggested fix: Render the same six section labels on mobile, either inline or behind a tappable summary that still exposes the labels to the text content/accessibility tree, rather than collapsing to a bare count.
+- source: walk
+
+### [LOW] [anon] /shows/survivor/season/heroes-vs-villains — the "Adjacent in the canon" widget names neighboring seasons by bare title only, with no show or season-number cue
+
+- pass: 199 (commit 227cc126)
+- viewport: desktop
+- category: comprehension
+- observation: The "Adjacent in the canon" widget names the prior/next seasons by bare season title only ("Cagayan", "Borneo") with no "Survivor" qualifier or season number, so a reader scanning quickly could misread them as other shows rather than other Survivor seasons.
+- evidence: Rendered text: "05\nADJACENT IN THE CANON\nEither direction.\n← #01 IN CANON\nCagayan\n#03 IN CANON →\nBorneo" — no show name attached to either link label.
+- suggested fix: Add a small season-number or show cue to each adjacent-canon card (e.g. "S28 · Cagayan") so the cross-reference reads unambiguously, matching the pattern used elsewhere on the page (breadcrumbs, stat tiles).
+- source: walk
 
 ## Done
 - [x] [HIGH] [anon] /shows/hells-kitchen — the canon methodology copy says "all twenty-four seasons" / "Twenty-four slots" while the page header reads "25 SEASONS IN CANON" (pass: 194 (commit 37bc90d4)) — RESOLVED 2026-11-01 (local session): `meth_who_p` and `meth_when_p` in `content/shows/hells-kitchen/canon.md` now say twenty-five, matching the S25 backfill (bc748b19) that the methodology copy never followed.
