@@ -44,5 +44,4 @@ condition> · max_age: 14d`, an optional `· fallback: release`):
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
-| 49 | Graduated spoiler-risk hold for the flagged-comment queue | [49-graduated-spoiler-risk-mod-hold.md](49-graduated-spoiler-risk-mod-hold.md) | Ready | 1 left |
 | 50 | Canon-rationale / season-body verbatim-argument echo gate | [50-canon-rationale-season-body-echo-gate.md](50-canon-rationale-season-body-echo-gate.md) | Held (veto window) | Not chunked yet. |

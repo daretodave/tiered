@@ -205,6 +205,26 @@ logged to `ai_decisions`. Editorial AI prose is reviewed by
 `/critique` (fresh-eyes) periodically. No AI decision is
 irreversible.
 
+**Graduated flag-hold on the mod queue (spec 49, complete).** A
+`flag`-verdict pending comment whose target season's `ended_date`
+(optional season frontmatter field, `src/content/schemas.ts`) is
+more than `FLAG_HOLD_DAYS` (30, `src/lib/supabase/mod.ts`) days in
+the past auto-resolves to `published` the next time `getModQueue()`
+runs — no mod click needed. `block`-verdict comments (named
+winners/eliminations/deaths/twists/outcomes) never read
+`ended_date` and never auto-resolve, regardless of season age —
+agents.md §7 stays a permanent, binary gate, full stop.
+Backfilling `ended_date` on existing seasons is ordinary content
+work (`content-curator`), not a blocking migration. Extending this
+graduation to editorial content (season blurbs, canon, themed
+lists) is explicitly deferred — it would need per-episode
+air-progress data the catalog doesn't track and risks softening
+"no spoilers" on the surfaces readers trust most; `/oversight` must
+weigh it explicitly before any follow-up spec touches content
+rather than just comments. `flag_hold_days`'s 30-day default is an
+unevidenced starting guess — revisit once the queue has real
+flagged-volume data to tune against.
+
 ## URL contract (locked)
 
 Permanent surfaces. Add new ones via new phases; don't change

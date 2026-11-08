@@ -71,3 +71,5 @@
 - 2026-11-07 · 48.5 · content-curator's brief now documents the six-pair caption bare-restatement convention · f0aecdff..f0aecdff
 - 2026-11-07 · 48 · spec complete: Stat-tile value/caption literal-duplicate guard (six collect*CaptionBareRestatementIssues() gates in content-check.ts, convention documented in content-curator's brief) · 336e8db7
 - 2026-11-07 · 49.1 · Season frontmatter now accepts an optional ended_date field · 3d589a72..3d589a72
+- 2026-11-08 · 49.2 · Expired flag-tier mod-queue holds now auto-resolve to published · 4d78a719..4d78a719
+- 2026-11-08 · 49 · spec complete: Graduated spoiler-risk hold for the flagged-comment queue (optional season `ended_date` + `FLAG_HOLD_DAYS`-gated auto-resolution in `getModQueue()`, `block` untouched) · e33a605f
