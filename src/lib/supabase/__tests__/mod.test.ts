@@ -20,14 +20,23 @@ type QBResult = { data: unknown; error: unknown }
 
 const H = vi.hoisted(() => {
   const rpcMock = vi.fn()
+  const getSeasonMock = vi.fn()
   // FIFO queue of results, one per `client.from(...)` chain in a single
-  // helper invocation (getModQueue: comments → flags → [comments]).
+  // helper invocation (getModQueue: comments → flags → [comments] →
+  // [ai_decisions, only when there's a pending row] → [update, only
+  // when spec 49.2's hold resolves at least one id]).
   const state: { queue: QBResult[]; calls: unknown[][] } = {
     queue: [],
     calls: [],
   }
-  return { rpcMock, state }
+  return { rpcMock, getSeasonMock, state }
 })
+
+// Spec 49.2: getModQueue resolves a pending flag-verdict comment's
+// season via the content loader, not Supabase — mocked the same way
+// the per-show layout test mocks `@/content/loaders` (tree-inspection
+// / stub-function pattern used across this repo for content loaders).
+vi.mock('@/content/loaders', () => ({ getSeason: H.getSeasonMock }))
 
 // Chainable + thenable query-builder stub. Every chain method records
 // its call and returns the builder; the builder itself is awaitable
@@ -35,7 +44,7 @@ const H = vi.hoisted(() => {
 // `.limit()`, `.gte()`, and `.in()` are all valid await points.
 function makeQB(result: QBResult) {
   const qb: Record<string, unknown> = {}
-  for (const m of ['select', 'eq', 'in', 'order', 'limit', 'gte']) {
+  for (const m of ['select', 'eq', 'in', 'order', 'limit', 'gte', 'update']) {
     qb[m] = (...a: unknown[]) => {
       H.state.calls.push([m, ...a])
       return qb
@@ -98,6 +107,7 @@ async function loadMod() {
   H.state.queue = []
   H.state.calls = []
   H.rpcMock.mockReset()
+  H.getSeasonMock.mockReset()
   return import('../mod')
 }
 
@@ -293,6 +303,92 @@ describe('getModQueue', () => {
     ]
     const e = await caught(mod.getModQueue())
     expect(e.message).toBe('getModQueue flagged: extra-fail')
+  })
+
+  // --- Spec 49.2: graduated hold on `pending` `flag`-verdict season
+  // comments (A2-A6). `comment()` defaults to target_type 'season',
+  // but its default target_id ('survivor-20') has no colon, so it
+  // never parses as a season target by itself — these cases override
+  // target_id to the real `<show-slug>:<number>` shape so
+  // `parseSeasonTarget` actually resolves.
+
+  function daysAgoIso(days: number): string {
+    return new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
+  }
+
+  it('A2: a pending flag row whose season has no ended_date stays pending, no update issued', async () => {
+    const mod = await loadMod()
+    H.getSeasonMock.mockReturnValue({ number: 20 })
+    H.state.queue = [
+      { data: [comment({ id: 'c1', target_id: 'survivor:20' })], error: null }, // comments
+      { data: [], error: null }, // flags
+      { data: [{ comment_id: 'c1', verdict: 'flag' }], error: null }, // ai_decisions
+    ]
+    const out = await mod.getModQueue()
+    expect(out.map((r) => r.id)).toEqual(['c1'])
+    expect(out[0]?.status).toBe('pending')
+    expect(H.state.calls.some((c) => c[0] === 'update')).toBe(false)
+  })
+
+  it('A2: a pending flag row whose season ended inside the hold window stays pending, no update issued', async () => {
+    const mod = await loadMod()
+    H.getSeasonMock.mockReturnValue({ number: 20, ended_date: daysAgoIso(10) })
+    H.state.queue = [
+      { data: [comment({ id: 'c1', target_id: 'survivor:20' })], error: null },
+      { data: [], error: null },
+      { data: [{ comment_id: 'c1', verdict: 'flag' }], error: null },
+    ]
+    const out = await mod.getModQueue()
+    expect(out.map((r) => r.id)).toEqual(['c1'])
+    expect(out[0]?.status).toBe('pending')
+    expect(H.state.calls.some((c) => c[0] === 'update')).toBe(false)
+  })
+
+  it('A3: a pending flag row whose season ended past the hold window auto-resolves to published and leaves the queue', async () => {
+    const mod = await loadMod()
+    H.getSeasonMock.mockReturnValue({ number: 20, ended_date: daysAgoIso(45) })
+    H.state.queue = [
+      { data: [comment({ id: 'c1', target_id: 'survivor:20' })], error: null }, // comments
+      { data: [], error: null }, // flags
+      { data: [{ comment_id: 'c1', verdict: 'flag' }], error: null }, // ai_decisions
+      { data: null, error: null }, // update
+    ]
+    const out = await mod.getModQueue()
+    expect(out).toEqual([])
+    expect(H.state.calls).toContainEqual(['update', { status: 'published' }])
+    expect(H.state.calls).toContainEqual(['in', 'id', ['c1']])
+  })
+
+  it('A4: a hidden (block-verdict) row never auto-resolves, even with a past-window ended_date and an adversarial flag-verdict row', async () => {
+    const mod = await loadMod()
+    H.state.queue = [
+      {
+        data: [
+          comment({ id: 'c1', status: 'hidden', target_id: 'survivor:20' }),
+          comment({ id: 'c2', status: 'pending', target_id: 'other:1' }),
+        ],
+        error: null,
+      }, // comments
+      { data: [], error: null }, // flags
+      // Adversarial: c1 (hidden) is given a 'flag' verdict row even
+      // though it's never a pending row and should never be looked
+      // up — the status gate, not the verdict gate, must protect it.
+      {
+        data: [
+          { comment_id: 'c1', verdict: 'flag' },
+          { comment_id: 'c2', verdict: 'allow' },
+        ],
+        error: null,
+      }, // ai_decisions
+    ]
+    const out = await mod.getModQueue()
+    const byId = Object.fromEntries(out.map((r) => [r.id, r]))
+    expect(byId['c1']?.status).toBe('hidden')
+    expect(byId['c2']?.status).toBe('pending')
+    expect(H.state.calls.some((c) => c[0] === 'update')).toBe(false)
+    // The status gate alone excludes c1 from consideration — the
+    // content loader is never even consulted for it.
+    expect(H.getSeasonMock).not.toHaveBeenCalled()
   })
 })
 
