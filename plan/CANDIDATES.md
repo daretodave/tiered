@@ -190,127 +190,6 @@ one `-L 1` read. Single workflow-file change; no app code touched.
 **Conflicts:** none — CI/ops-only, doesn't touch `spec.md`, the URL
 contract, or any content rule.
 
-### [ ] [score 7.5] Spoiler-language heuristic gate — content-check should flag outcome/twist-coded phrasing, not just a proper-noun blocklist
-- kind: guard
-- proposed: 2026-09-09, v1 candidate #38 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
-
-**Score:** 7.5 (impact: 9, ease: 5 → 4.5 base + 2.0 signal multiplicity (three
-independent critique passes, three different shows, three different surface
-shapes, all converging on the same mechanical gap) + 1.0 cheap-and-impactful
-(single content-check addition, protects the whole-site brand promise going
-forward))
-**Source pass:** 70
-**Filed:** 2026-09-09
-**Why:** `agents.md` §7 makes spoiler discipline P0 — "the seasons, ranked. no
-spoilers" is the brand promise itself, not an editorial nicety. The only
-mechanical defense in `scripts/content-check.ts` today is
-`collectThemedEntrySpoilerIssues` — a hand-curated proper-noun blocklist
-(`Edge of Extinction`, `Redemption Island`, `fire token`), scoped to Survivor
-only and to themed-list `entries[].blurb` only. It has never been extended
-since it shipped (critique pass-13, 2026-05-xx). In the last five weeks,
-`/critique` has independently caught three live, production-shipped spoiler
-leaks this blocklist structurally cannot see, because none of them are a
-blocklisted proper noun: pass-152 named an individual Miss Congeniality
-winner on `dragrace-uk/season/series-7` (a person's name, not a "twist
-mechanic"); pass-155 stated a finale prize-split outcome as settled fact
-across five separate fields on `too-hot-to-handle/season/season-6` (`lede`,
-`episodes_caption`, markdown body, a `watch_list` entry, and `shape_h2` —
-none of them a themed-list entry blurb); pass-156 used spoiler-coded "twist"
-language on a themed-list entry (`too-few-to-call-it-all-stars` #03) whose
-pre-announced status was never verified before shipping. All three were HIGH
-severity, all three reached production before a human-style critique pass
-caught them, and all three were fixed as one-off content rewrites with no
-change to the mechanical gate — the same shape of gap candidate #25
-(verbatim-argument echo) documents for repetition, now showing up for
-spoilers. Three independent instances, three different shows, three
-different field shapes, in five weeks is a pattern, not noise.
-**Scope sketch:** Extend `scripts/content-check.ts` with a second, broader
-spoiler-risk pass distinct from the existing proper-noun blocklist:
-- A curated list of outcome-signaling *phrase patterns* (not proper nouns) —
-  "names the winner", "is crowned", "takes home", "wins the season", "splits
-  the prize", "reveals that" combined with a definitive/past-tense frame,
-  etc. — scanned across every season-page prose field (`lede`, `pull`,
-  `episodes_caption`, `format_caption`, body, `watch_list` entries,
-  `shape_h2`) and every `canon.md` rationale/`slot_argument`, not just
-  themed-list blurbs.
-- Ship as a **warning, not a hard fail** at first (false-positive risk is
-  real — "the format changes for the first time" is fine, "the winner is
-  crowned for the first time" is not, and a regex can't reliably tell them
-  apart) — surface matches in `pnpm content:check` output for
-  `content-curator`/reviewer attention, the same posture
-  `collectThemedEntrySpoilerIssues` could have started at before going
-  strict.
-- Fold the check into `ship-content`'s pre-flight checklist (§2.5) and
-  `/critique`'s own spoiler-check pass so both the authoring and detection
-  sides gain the same net.
-- Leave the existing Survivor proper-noun blocklist as-is — it's a
-  different, complementary defense (named mechanics vs. generic outcome
-  language), not something this replaces.
-**Estimated phases:** 1.
-**Conflicts:** none. Complements — does not duplicate — the pass-13
-themed-entry spoiler blocklist and the general spoiler-discipline language in
-`agents.md` §7 / `ship-content.md` §5.2.
-
-     Window since pass 68 (b68021b8, 2026-09-04): 2 days / 20 commits.
-     Preceding dispatch context: march Step 1 (triage) found 0 unlabeled
-     issues. Step 0.5 finale gate: 17 calendar entries, 0 due. Step 1.5:
-     season-sweep ran earlier this same tick's window (ninth full pass, 0
-     new gaps, gap held at 41 shows/42 gap-slots, all starred); show-add
-     stays LOCKED. Step 2.0's shipping-mode gate stayed lifted (Phase 36
-     `[x]`, no `[ ]` phase rows). The critique gate did not fire: last
-     pass (153) landed the same window at commit dedb99b7, only 6 commits
-     and ~15.5h before this tick — short of both the 12-commit and 24-hour
-     thresholds. Step 3a/3b empty (no pending phase rows, no Pending
-     category:data AUDIT rows). Step 3b.5 matched its usual candidate,
-     the standing Rule 2 season-fill drain row (score 4.5) — but every one
-     of the `plan/CADENCE.md` gap table's 42 slots is starred
-     (confirmed-but-unaired), the same full-board-stall state passes
-     67/68 and this same tick's own sweep documented, so no season was
-     actually actionable. Rule 3 (themed lists) stays locked behind the
-     non-zero gap table. This left the dispatch to fall through to
-     `/expand`'s own gate, which opened independently (posture bold, last
-     pass exactly 20 commits ago — meeting the 20-commit threshold — live
-     AUDIT.md signal present, no phase/data work pending) and fired,
-     reaching this pass.
-     Signals reviewed:
-     - `plan/AUDIT.md` Pending (non-content-gaps): the same 3 real
-       HIGH/MED rows as recent passes — night.yml starvation (HIGH, 6.4),
-       e2e-full duration-ceiling (MED/HIGH-equivalent, 5.4), the-voice
-       factual corruption (HIGH, 4.8) — mapping onto already-filed
-       candidates #35, #34, #36 respectively; no new AUDIT row since
-       pass 68.
-     - `plan/CRITIQUE.md` Pending: passes 152 and 153 (2026-09-05,
-       2026-09-06) both landed since pass 68 and both reproduced the
-       exact cross-field-repetition defect class candidates #25 (season-
-       body/canon-rationale echo) and #28 (stat-tile value/caption
-       duplicate) already track — `below-deck-mediterranean/
-       dubrovnik-ii` (HIGH, still Pending), `naked-and-afraid/
-       the-active-season` (MED, resolved same-day), `dragrace-uk/
-       series-7` and `jersey-shore/the-final-season` (both #28-shape,
-       resolved same-day). Reinforced #25 and #28 in place with this
-       fresh evidence rather than filing a new candidate — both already
-       name these exact shapes in their scope sketches.
-     - `spec.md` / `design/`: no diff since pass 68 (`git log -p
-       --since=2026-09-04 -- spec.md design/` empty on both paths).
-     - GitHub issues: `triage:loop-queued` shows 4 open issues,
-       `triage:needs-user` shows 8 — identical counts to pass 68, no new
-       issue filed since. No new triage-pattern signal.
-     - Workflow health: `gh run list --workflow night.yml` shows 6
-       consecutive `success` runs (09-01 through 09-06), extending
-       pass-68's 4-run streak — reinforced #35 with the extended data
-       while holding score (still a live, unfixed race condition, just
-       currently lucky). `gh run list --workflow e2e-full.yml` shows the
-       same failure cadence already logged by today's digest — no new
-       information beyond what's already in #34's record, left untouched
-       this pass to avoid a content-free reinforcement note.
-     No genuinely new candidate concept surfaced this pass — every live
-     signal traced back to an already-filed, well-scored candidate. #28
-     (8.7) and #25 (8.3) remain the file's two highest-scored unpromoted
-     candidates, both now past 55 days unpromoted despite continuous
-     fresh evidence every 1-2 weeks — the strongest case in the file for
-     `/oversight` promotion at the next session.
--->
-
 ### [ ] [score 5.4] Cloud workflows need a fallback (or at least faster escalation) for org-level Claude access outages
 - kind: guard
 - proposed: 2026-08-20, v1 candidate #37 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
@@ -2670,6 +2549,11 @@ do not re-score it independently — track #06.
 
 <!-- Same format with **Promoted in:** <oversight commit hash>
      and **Build-plan row:** <link to row in plan/README.md> -->
+
+### [promoted 2026-11-09 → spec 51] [score 7.5] Spoiler-language heuristic gate
+- promoted: 2026-11-09, auto (expand pass depth-promotion), veto #843
+
+**Build-plan row:** Spec 51 — Spoiler-language heuristic gate (`plan/README.md`)
 
 ### [promoted 2026-11-07 → spec 50] [score 8.3] Canon-rationale/season-body verbatim-argument echo gate
 - promoted: 2026-11-07, auto (expand pass depth-promotion), veto #839

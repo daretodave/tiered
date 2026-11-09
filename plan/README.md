@@ -38,10 +38,11 @@ line goes; each line is a lock that times out:
 `- **<NN.k>** · <reason> · since: <date> · until: <date or
 condition> · max_age: 14d`, an optional `· fallback: release`):
 
-- (none)
+- 51 · auto-promoted, veto until 2026-11-10 (#843) · max_age: 1d · fallback: release
 
 ## Specs
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
-| 50 | Canon-rationale / season-body verbatim-argument echo gate | [50-canon-rationale-season-body-echo-gate.md](50-canon-rationale-season-body-echo-gate.md) | Held (veto window) | Not chunked yet. |
+| 50 | Canon-rationale / season-body verbatim-argument echo gate | [50-canon-rationale-season-body-echo-gate.md](50-canon-rationale-season-body-echo-gate.md) | Ready | Not chunked yet. |
+| 51 | Spoiler-language heuristic gate | [51-spoiler-language-heuristic-gate.md](51-spoiler-language-heuristic-gate.md) | Held (veto window) | Not chunked yet. |
