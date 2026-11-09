@@ -1,7 +1,7 @@
 # CRITIQUE
 
-> Last pass: 2026-11-08 at commit 227cc126
-> Pass count: 199
+> Last pass: 2026-11-09 at commit c96b6eee
+> Pass count: 200
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 
 ## Pending
