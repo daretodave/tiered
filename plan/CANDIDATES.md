@@ -7,6 +7,16 @@
 
 ## Pending
 
+### [ ] [score 4.8] Veto-issue body text and its Held line can drift on the veto window's own length
+- kind: guard
+- proposed: 2026-11-10 (digest)
+- source signals: digest (2026-11-10): issue #843 (spec 51's auto-promotion, opened 2026-11-09T09:56:40Z) reads "close this issue by 2026-11-12 to veto; left open, the loop builds it" — the 3-day window `skills/expand.md`'s table documents as the default. The Held line minted in the same step (`plan/README.md`: "51 · auto-promoted, veto until 2026-11-10 (#843) · max_age: 1d · fallback: release") instead used the bold posture's actual override, `veto_days: 1` (`plan/bearings.md` line 944, set alongside `promote_per_week: 3` / `promote_prefer: product`). `scripts/plan/promote.mjs`'s `heldLine()` computes its date from the live `k.vetoDays` knob (`addDays(date, k.vetoDays)`), so the Held line is correct; the issue body has no equivalent shared source and was hand-composed using the doc's default instead. Net effect: a human reading #843 believes they have until 2026-11-12 to veto; `decide()` actually releases (builds) the spec once today's date passes `until` — 2026-11-11, a full day earlier than promised.
+- rationale: this is the same class of defect the standing `[needs-user-call]` HIGH row and the first pulse.mjs undercount both belong to — a human-facing promise and the mechanism enforcing it computed from two different sources of truth, so they can silently diverge whenever a posture knob changes after the skill doc's example text was written. A 1-day miss is low-stakes for a Held *spec* (worst case: an unvetoed spec builds a day early), but the same pattern could recur on a higher-stakes veto (e.g. a destructive migration or content policy change) where a day's difference matters more.
+- proposed scope: add a small helper alongside `heldLine()` in `scripts/plan/promote.mjs` (e.g. `vetoIssueBody(title, rationale, specLink, date, vetoDays)`) that returns the issue body text using the same `addDays(date, k.vetoDays)` call `heldLine()` already uses, so the two strings can't drift again; `skills/expand.md` step 3 calls it instead of hand-composing the date. One colocated test asserting the returned body's date string equals `heldLine()`'s own date for the same inputs.
+- estimated chunks: 1 (single script function + test + one skill-doc line change)
+- conflicts: none known — `promote.mjs` is read-only tooling outside the `apply()` write path; this only touches how the issue-body string is generated, not any gate behavior.
+- generator: digest · filed 2026-11-10
+
 ### [x] [score 5.4] `scripts/pulse.mjs` AUDIT pending count always reads 0 — wrong regex for `plan/AUDIT.md`'s row format
 - kind: guard
 - proposed: 2026-10-31 (digest)
