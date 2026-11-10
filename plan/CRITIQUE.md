@@ -1,10 +1,20 @@
 # CRITIQUE
 
-> Last pass: 2026-11-09 at commit c96b6eee
-> Pass count: 200
+> Last pass: 2026-11-10 at commit a80e42d4
+> Pass count: 201
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 
 ## Pending
+
+### [MED] [authed] /shows/survivor/season/heroes-vs-villains — the pass-169 restatement fix just moved the duplicate to a new pair of facts, which now echo each other the same way
+
+- pass: 201 (commit a80e42d4)
+- viewport: desktop
+- category: voice
+- observation: Pass 169 flagged "THE TAKE" and "WHERE IT SITS IN THE CANON" both opening on the same twenty-returnee/two-tribe headcount, and the pass-169 remediation (commit bd897819) rewrote both openers to lead with "structural/canon-placement reasoning" instead — the all-veteran cast giving the season accumulated audience memory, and that memory doing the season's structural pre-merge work. That rewrite is itself now duplicated near-verbatim across the same two sections: the restatement defect moved, it didn't close.
+- evidence: THE TAKE: "The split does the structural work before episode one even starts... The casting team draws from ten prior seasons of accumulated audience memory, so every confessional carries weight a fresh cast cannot generate." WHERE IT SITS IN THE CANON: "A decade of accumulated context means every move lands with the weight of prior seasons of text, and the tribe line down the bench does the season's structural work before the merge ever reshuffles anything." Both on `content/shows/survivor/canon.md` (slot #02) and the season's `pull` field, `content/shows/survivor/seasons/20-heroes-vs-villains.md`.
+- suggested fix: Let "THE TAKE" keep sole ownership of the accumulated-memory/structural-work claim. Rewrite "WHERE IT SITS IN THE CANON" to argue the comparative canon-slot case only (why #02 specifically, relative to #01 and #03) without re-deriving why an all-veteran cast does structural work — the same scoping the pass-169 fix already applied to the cast-size fact, now needed for the claim that replaced it.
+- source: browser (critique-pass-201, authed)
 
 ### [MED] [anon] /themes — the "Featured this month" badge reads "Featured for October 2026" while the catalog is well into November (4th recurrence of the rotation-staleness bug, closed pass-103/168/178)
 
