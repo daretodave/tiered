@@ -169,4 +169,5 @@ between its structural chunks and the ongoing backfill).
 
 Measure: 7 open · 0 closed · next A8
 
-Not chunked yet.
+- [ ] **50.1** `collectCanonRationaleSeasonBodyEchoIssues()` detector, wired into `main()` behind `CANON_RATIONALE_SEASON_BODY_ECHO_STRICT = false`, with colocated unit tests (flagged echo, proper-noun/short overlap, no overlap, missing-field skip) · S · closes A1, A2, A3, A4, A5, A6 · needs —
+- [ ] **50.2** `content-curator`'s brief documents the canon-rationale/season-body echo convention · S · closes A7 · needs 50.1
