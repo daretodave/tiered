@@ -19,6 +19,7 @@ import {
   collectCanonRationaleClosingFormulaIssues,
   collectBrandSpellingIssues,
   collectCanonRationaleDanglingPossessiveIssues,
+  collectCanonRationaleSeasonBodyEchoIssues,
   collectCalendarFailures,
   collectCastSizeCaptionBareRestatementIssues,
   collectClicheRepetitionIssues,
@@ -3762,6 +3763,163 @@ describe('content-check — themed-list within-entry verbatim phrase echo (criti
     setContentRoot(null)
     __resetContentCache()
     expect(collectThemedEntryVerbatimPhraseEchoIssues()).toEqual([])
+  })
+})
+
+// Spec 50: canon.md `rationale` vs. the matching season's `body`
+// verbatim-argument echo. Mirrors the within-entry verbatim-echo
+// invariant above, applied to a different field pair (plan/
+// 50-canon-rationale-season-body-echo-gate.md).
+describe('content-check — canon-rationale / season-body verbatim-argument echo (spec 50)', () => {
+  let tmp: string
+
+  const fillerA = [
+    'alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf',
+    'hotel', 'india', 'juliet',
+  ]
+  const fillerB = [
+    'kilo', 'lima', 'mike', 'november', 'oscar', 'papa', 'quebec',
+    'romeo', 'sierra', 'tango',
+  ]
+  const words = (bank: string[], n: number): string =>
+    Array.from({ length: n }, (_, i) => bank[i % bank.length]).join(' ')
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-canon-echo-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  function makeCanonEntry(
+    root: string,
+    show: string,
+    season: number,
+    title: string,
+    rationale: string,
+  ): void {
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\n---\n\n## ${season}. ${title}\n\n${rationale}\n`,
+    )
+  }
+
+  function makeSeasonWithBody(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    body?: string,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    const bodyLine = body != null ? `\nbody: "${body}"` : ''
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\nnumber: ${n}\ntitle: ${slug}${bodyLine}\n---\n\n${sixtyWords}\n`,
+    )
+  }
+
+  it('flags a rationale and season body sharing a verbatim 5-or-more-word phrase (A2)', () => {
+    makeShow(tmp, 'alpha')
+    const rationale = `${words(fillerA, 74)} the format never repeats itself twice`
+    const body = `the format never repeats itself twice ${words(fillerB, 10)}`
+    makeSeasonWithBody(tmp, 'alpha', 1, 'one', body)
+    makeCanonEntry(tmp, 'alpha', 1, 'One', rationale)
+    const issues = collectCanonRationaleSeasonBodyEchoIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/canon.md (entry #1 rationale)',
+    )
+    expect(issues[0]!.message).toMatch(/verbatim phrase echo/)
+    expect(issues[0]!.message).toMatch(/the format never repeats itself/)
+  })
+
+  function makeSeasonWithLedeAndBlurb(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    lede: string,
+    blurb: string,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\nnumber: ${n}\ntitle: ${slug}\nlede: "${lede}"\n---\n\n${blurb}\n`,
+    )
+  }
+
+  it('flags via the `blurb_md` fallback when no `body` override is authored — the shape every live season file uses (A2, A5)', () => {
+    // Every one of the catalog's 1067 season files authors no
+    // explicit `body:` override; the rendered "shape of the season"
+    // section falls back to `blurb_md` once `lede` is set (mirrors
+    // `effectiveSeasonShapeBody()` / the page's own `bodyOf()`). A
+    // detector that only read `season.body` directly would silently
+    // find nothing on the real corpus.
+    makeShow(tmp, 'alpha')
+    const rationale = `${words(fillerA, 74)} the format never repeats itself twice`
+    const blurb = `the format never repeats itself twice ${words(fillerB, 56)}`
+    makeSeasonWithLedeAndBlurb(tmp, 'alpha', 1, 'one', 'A lede.', blurb)
+    makeCanonEntry(tmp, 'alpha', 1, 'One', rationale)
+    const issues = collectCanonRationaleSeasonBodyEchoIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.message).toMatch(/the format never repeats itself/)
+  })
+
+  it('does not flag a short (<5-word) shared phrase, e.g. shared proper nouns (A3)', () => {
+    makeShow(tmp, 'alpha')
+    const rationale = `${words(fillerA, 76)} Survivor Island Fiji merge`
+    const body = `Survivor Island Fiji merge ${words(fillerB, 10)}`
+    makeSeasonWithBody(tmp, 'alpha', 1, 'one', body)
+    makeCanonEntry(tmp, 'alpha', 1, 'One', rationale)
+    expect(collectCanonRationaleSeasonBodyEchoIssues()).toEqual([])
+  })
+
+  it('does not flag a pair with no shared phrasing at all (A4)', () => {
+    makeShow(tmp, 'alpha')
+    const rationale = words(fillerA, 90)
+    const body = words(fillerB, 20)
+    makeSeasonWithBody(tmp, 'alpha', 1, 'one', body)
+    makeCanonEntry(tmp, 'alpha', 1, 'One', rationale)
+    expect(collectCanonRationaleSeasonBodyEchoIssues()).toEqual([])
+  })
+
+  it('skips a pair whose season has no `body` field (A6)', () => {
+    makeShow(tmp, 'alpha')
+    const rationale = `${words(fillerA, 74)} the format never repeats itself twice`
+    makeSeasonWithBody(tmp, 'alpha', 1, 'one')
+    makeCanonEntry(tmp, 'alpha', 1, 'One', rationale)
+    expect(collectCanonRationaleSeasonBodyEchoIssues()).toEqual([])
+  })
+
+  it('skips a canon entry whose season number has no matching season file (A6)', () => {
+    makeShow(tmp, 'alpha')
+    const rationale = `${words(fillerA, 74)} the format never repeats itself twice`
+    makeCanonEntry(tmp, 'alpha', 99, 'Ghost', rationale)
+    expect(collectCanonRationaleSeasonBodyEchoIssues()).toEqual([])
   })
 })
 

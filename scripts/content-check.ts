@@ -6,6 +6,7 @@ import matter from 'gray-matter'
 import {
   getAllShows,
   getAllSeasons,
+  getSeason,
   getCanon,
   getAllThemes,
   getLegalDoc,
@@ -1300,6 +1301,57 @@ export function collectThemedEntryVerbatimPhraseEchoIssues(): Failure[] {
   return issues
 }
 
+// Spec 50: a canon.md entry's `rationale` ("Where It Sits in the
+// Canon") and its matching season's rendered Section 02 body ("The
+// Shape of the Season" — see `effectiveSeasonShapeBody()` below)
+// argue the same point in near-verbatim phrasing. Caught reactively
+// 21+ times across 19+ shows over four months of critique passes
+// (candidate filed 2026-07-06, score 8.3) before this gate existed —
+// see plan/CANDIDATES.md and
+// plan/50-canon-rationale-season-body-echo-gate.md. Mirrors
+// collectThemedEntryVerbatimPhraseEchoIssues() exactly: same
+// tokenizer, same 5-gram threshold, same shared-phrase flag — applied
+// to a different field pair. Ships LAX (wired behind
+// CANON_RATIONALE_SEASON_BODY_ECHO_STRICT = false in main()) since the
+// corpus already carries 20+ live instances this spec isn't chartered
+// to drain.
+export function collectCanonRationaleSeasonBodyEchoIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const canon = getCanon(show.slug)
+    if (!canon) continue
+    for (const entry of canon.entries) {
+      const rationale = entry.rationale?.trim()
+      if (!rationale) continue
+      const season = getSeason(show.slug, entry.season)
+      const body = season ? effectiveSeasonShapeBody(season) : undefined
+      if (!body) continue
+      const rationaleTokens = tokenizeForVerbatimEcho(rationale)
+      const bodyTokens = tokenizeForVerbatimEcho(body)
+      if (
+        rationaleTokens.length < VERBATIM_PHRASE_ECHO_NGRAM ||
+        bodyTokens.length < VERBATIM_PHRASE_ECHO_NGRAM
+      ) {
+        continue
+      }
+      const rationaleGrams = ngramsOf(rationaleTokens, VERBATIM_PHRASE_ECHO_NGRAM)
+      const bodyGrams = ngramsOf(bodyTokens, VERBATIM_PHRASE_ECHO_NGRAM)
+      const shared: string[] = []
+      for (const g of bodyGrams) {
+        if (rationaleGrams.has(g)) shared.push(g)
+      }
+      if (shared.length > 0) {
+        const phraseList = shared.map((p) => `"${p}"`).join(', ')
+        issues.push({
+          file: `content/shows/${show.slug}/canon.md (entry #${entry.rank} rationale)`,
+          message: `canon-rationale / season-body verbatim phrase echo — entry #${entry.rank}'s rationale and season ${entry.season}'s body (content/shows/${show.slug}/seasons/) share the ${VERBATIM_PHRASE_ECHO_NGRAM}-word phrase${shared.length > 1 ? 's' : ''} ${phraseList}. A reader who scans both "The shape of the season" and "Where it sits in the canon" hits the same argument twice. Rewrite one side so the two sections carry distinct claims — the season body argues the season's own case, the canon rationale argues its placement relative to the rest of the canon.`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 export function collectYearTenureIssues(asOfDate?: Date): Failure[] {
   const issues: Failure[] = []
   for (const show of getAllShows()) {
@@ -2260,6 +2312,19 @@ function seasonShapeSectionRenders(season: Season): boolean {
   if (season.body && season.body.trim().length > 0) return true
   if (season.lede && season.blurb_md.trim().length > 0) return true
   return false
+}
+
+// Spec 50: the actual rendered text of Section 02 ("The shape of the
+// season") — same resolution as the page's own `bodyOf()` /
+// `seasonShapeSectionRenders()` gate above. `body` is a rarely-used
+// frontmatter override (zero live instances in the catalog); almost
+// every season renders this section from `blurb_md`, gated on `lede`
+// being set. Returns undefined when the section wouldn't render at
+// all — nothing to compare the canon rationale against.
+function effectiveSeasonShapeBody(season: Season): string | undefined {
+  if (season.body && season.body.trim().length > 0) return season.body.trim()
+  if (season.lede && season.blurb_md.trim().length > 0) return season.blurb_md.trim()
+  return undefined
 }
 
 export function collectSeasonSectionShapeSubheadIssues(): Failure[] {
@@ -3815,6 +3880,23 @@ function main(): number {
     failures.push(...canonTierBlurbIssues)
   } else {
     for (const issue of canonTierBlurbIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Spec 50: ships LAX during the corpus drain — 20+ live
+  // rationale/season-body echo instances across 19+ shows per
+  // plan/CANDIDATES.md's filed count. A future drain tick (or
+  // ordinary /ship-content rotation) flips
+  // CANON_RATIONALE_SEASON_BODY_ECHO_STRICT to true once the corpus
+  // is at zero, mirroring the caption-pair lax→strict precedent.
+  const CANON_RATIONALE_SEASON_BODY_ECHO_STRICT = false
+  const canonRationaleSeasonBodyEchoIssues =
+    collectCanonRationaleSeasonBodyEchoIssues()
+  if (CANON_RATIONALE_SEASON_BODY_ECHO_STRICT) {
+    failures.push(...canonRationaleSeasonBodyEchoIssues)
+  } else {
+    for (const issue of canonRationaleSeasonBodyEchoIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }
