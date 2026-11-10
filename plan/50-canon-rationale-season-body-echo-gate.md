@@ -128,22 +128,6 @@ between its structural chunks and the ongoing backfill).
 
 ## Acceptance
 
-- **A1** `collectCanonRationaleSeasonBodyEchoIssues()` exists in
-  `scripts/content-check.ts`, exported, following the existing
-  `collectThemedEntryVerbatimPhraseEchoIssues()` shape (tokenize,
-  5-gram, shared-phrase flag).
-- **A2** A synthetic canon-rationale/season-body pair sharing a
-  real duplicated 5-word-or-longer phrase is flagged.
-- **A3** A synthetic pair sharing only proper nouns or a short
-  (<5-word) overlap is not flagged.
-- **A4** A synthetic pair with no shared phrasing is not flagged.
-- **A5** The detector is wired into `main()` behind
-  `CANON_RATIONALE_SEASON_BODY_ECHO_STRICT = false` — hits warn via
-  `console.warn` and `pnpm content:check` stays green on today's
-  corpus despite the known 20+ live instances.
-- **A6** A show/season pair missing `rationale`, missing
-  `season.body`, or with no canon-ranked season produces no
-  finding (colocated test).
 - **A7** `content-curator`'s brief documents the convention: check
   the season body before writing (or re-writing) a canon rationale.
 
@@ -167,7 +151,6 @@ between its structural chunks and the ongoing backfill).
 
 ## Chunks
 
-Measure: 7 open · 0 closed · next A8
+Measure: 1 open · 6 closed · next A8
 
-- [ ] **50.1** `collectCanonRationaleSeasonBodyEchoIssues()` detector, wired into `main()` behind `CANON_RATIONALE_SEASON_BODY_ECHO_STRICT = false`, with colocated unit tests (flagged echo, proper-noun/short overlap, no overlap, missing-field skip) · S · closes A1, A2, A3, A4, A5, A6 · needs —
-- [ ] **50.2** `content-curator`'s brief documents the canon-rationale/season-body echo convention · S · closes A7 · needs 50.1
+- [ ] **50.2** `content-curator`'s brief documents the canon-rationale/season-body echo convention · S · closes A7 · needs —

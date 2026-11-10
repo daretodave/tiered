@@ -73,3 +73,4 @@
 - 2026-11-07 · 49.1 · Season frontmatter now accepts an optional ended_date field · 3d589a72..3d589a72
 - 2026-11-08 · 49.2 · Expired flag-tier mod-queue holds now auto-resolve to published · 4d78a719..4d78a719
 - 2026-11-08 · 49 · spec complete: Graduated spoiler-risk hold for the flagged-comment queue (optional season `ended_date` + `FLAG_HOLD_DAYS`-gated auto-resolution in `getModQueue()`, `block` untouched) · e33a605f
+- 2026-11-10 · 50.1 · content:check now warns on canon-rationale/season-body argument echo · 0fa7f060..0fa7f060
