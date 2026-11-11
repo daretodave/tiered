@@ -1175,68 +1175,6 @@ helper already exists in `src/lib/show-tenure.ts` (or equivalent) from phase 43.
 change. No schema change. Complements candidates #20 and #21 — together the three
 candidates make partial-canon honesty structural rather than one-off.
 
-### [ ] [score 6.4] Prose sentence-capitalization invariant (post-period lowercase-start guard)
-- kind: guard
-- proposed: 2026-07-03, v1 candidate #23 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
-
-**Score:** 6.4 (impact: 6, ease: 9 → 5.4 base + 1.0 signal multiplicity)
-**Source pass:** 40
-**Filed:** 2026-07-03
-**Source signals:**
-- Critique pass-53 [LOW] /shows/below-deck-mediterranean — `blurb` reads "...Captain
-  Sandy Yawn holding the helm. ten years of superyacht drama..." — lowercase "ten" opens
-  a new sentence after a full stop.
-- Critique pass-53 [LOW] /shows/below-deck-sailing-yacht — same pass, same class:
-  "...the Mediterranean underfoot. six years of Glenn Shephard..." — lowercase "six".
-- Critique pass-58 [LOW] /shows — Dancing with the Stars B-tier tile `card_tagline`:
-  "one mirror ball at the end. twenty-one years, 34 seasons." — lowercase "twenty-one"
-  after a full stop; root cause is the `{yearsWord}` token expanding to a lowercase
-  number-word at a sentence-initial position.
-- Critique pass-66 [LOW] /shows/masked-singer — meta description: "...viewers guess
-  along. seven years on the air." — same class, third distinct critique pass.
-- Signal multiplicity: 4 shows, 3 distinct critique passes (53, 58, 66), all in
-  free-text frontmatter fields (`blurb` / `tagline` / `card_tagline`). Every instance
-  is independently filed as "content-only fix" — confirming this is a recurring
-  authoring habit (writing a lowercase number-word or clause fragment, then reusing
-  it at a sentence-initial position elsewhere), not a single shared code bug. It
-  reaches search-engine snippets and social-card previews directly (`descriptionFor()`
-  passes these fields through verbatim), so the defect is reader-visible off-site too.
-
-**Why:** Four independent shows across three separate critique passes exhibit the
-identical copy-error shape: a period is immediately followed by a lowercase word,
-almost always because a `{yearsWord}`-style token or a hand-written clause fragment
-lands at a sentence-initial position without capitalization. This is mechanically
-detectable — a regex over each show's `blurb` / `tagline` / `card_tagline` for
-`/\.\s+[a-z]/` catches every instance in this class before it ships — and matches the
-project's proven `lax→strict` content-check pattern exactly (phases 41/42/43/44/45/46,
-candidates #12/#13/#17 already shipped or awaiting promotion using the identical
-mechanic). `scripts/content-check.ts` already carries 20+ STRICT invariants of this
-exact shape; this is a clean, low-risk extension, not a new pattern.
-
-**Scope sketch:**
-- `scripts/content-check.ts` — add `PROSE_CAPITALIZATION_STRICT` flag +
-  `collectSentenceCapitalizationIssues()`: for each show's `blurb`, `tagline`, and
-  `card_tagline` (and equivalent theme/canon prose fields if present), regex-scan for
-  a period followed by whitespace and a lowercase letter; emit an issue with the
-  offending fragment. Lax mode logs warning; strict mode fails. Exempt known
-  intentional lowercase-continuation styles (e.g. em-dash constructions) by scoping
-  the regex specifically to `. ` + lowercase, not `— ` + lowercase.
-- Drain the 4 known violators: capitalize the lowercase word, or (preferred, per the
-  individual critique findings' own suggested fixes) restructure the clause to use an
-  em dash or comma instead of a period where a `{yearsWord}`-style token would
-  otherwise open a new sentence in lowercase.
-- Flip `PROSE_CAPITALIZATION_STRICT = true` in the same commit (4 violators, small
-  surface, day-one-strict pattern).
-- Update `content-curator` brief: never let a derived token (`{yearsWord}`, `{years}`,
-  etc.) expand at a sentence-initial position — prefer em dash/comma constructions
-  when a clause built from a lowercase-word token needs to follow a completed sentence.
-- Colocated unit tests for `collectSentenceCapitalizationIssues` (violation / clean /
-  em-dash-exempted cases).
-
-**Estimated phases:** 1.
-**Conflicts:** None. No URL change, no schema change, no UI change — content-only +
-one content-check invariant, same shape as candidates #12/#17/#22.
-
 ### [ ] [score 5.5] Chrome revised-date source-of-record: `lastRevised(scope)` helper
 - kind: guard
 - proposed: 2026-06-17, v1 candidate #19 (moved into Pending by the v2 upgrade follow-up, 2026-10-27)
@@ -2559,6 +2497,11 @@ do not re-score it independently — track #06.
 
 <!-- Same format with **Promoted in:** <oversight commit hash>
      and **Build-plan row:** <link to row in plan/README.md> -->
+
+### [promoted 2026-11-11 → spec 52] [score 6.4] Prose sentence-capitalization invariant (post-period lowercase-start guard)
+- promoted: 2026-11-11, auto (expand pass depth-promotion), veto #846
+
+**Build-plan row:** Spec 52 — Prose sentence-capitalization invariant (`plan/README.md`)
 
 ### [promoted 2026-11-09 → spec 51] [score 7.5] Spoiler-language heuristic gate
 - promoted: 2026-11-09, auto (expand pass depth-promotion), veto #843

@@ -38,10 +38,11 @@ line goes; each line is a lock that times out:
 `- **<NN.k>** · <reason> · since: <date> · until: <date or
 condition> · max_age: 14d`, an optional `· fallback: release`):
 
-- (none)
+- 52 · auto-promoted, veto until 2026-11-12 (#846) · max_age: 1d · fallback: release
 
 ## Specs
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
 | 51 | Spoiler-language heuristic gate | [51-spoiler-language-heuristic-gate.md](51-spoiler-language-heuristic-gate.md) | Ready | Not chunked yet. |
+| 52 | Prose sentence-capitalization invariant | [52-prose-sentence-capitalization-guard.md](52-prose-sentence-capitalization-guard.md) | Held (veto window) | Not chunked yet. |
