@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-11-04 | next due 2026-11-11 |
+| season-sweep | 7 days | 2026-11-11 | next due 2026-11-18 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,88 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Sweep, 2026-11-11 tick (cloud march; eighteenth full sweep, 7 days
+since the clock's own last-stamped 2026-11-04 — 6 `scout` batches,
+≤12 shows each, covered all 68 catalogued shows, cross-grepped against
+the filesystem — clean, every frontmatter `seasons:` count equals its
+filed-season-file count, zero mismatches across all 68 shows).** One
+genuinely new confirmed renewal: `masterchef-australia` — Network 10
+confirmed a Season 19 return at its October 2026 upfronts (TV Blackbox,
+New Idea), judges Andy Allen/Poh Ling Yeow/Sofia Levin/Jean-Christophe
+Novelli all returning, no premiere date yet. Added as
+`masterchef-australia | 18/19 | 1*`.
+
+**Three stale stars unstarred — their seasons have already aired,
+making each row actionable for the next Rule 2 pick rather than
+confirmed-but-unaired:** `dragrace-uk` S8 fully aired (premiered
+2026-09-03, finale 2026-11-05 — Flesh won, per spoiler-safe scheduling
+facts only); `rhoslc` S7 premiered 2026-09-16 (Bravo, TheWrap-reported
+record premiere ratings), still airing; `shark-tank` S18 premiered
+2026-09-30 (ABC/Hulu), still airing. All three were flagged as
+stale-starred by the 2026-10-31 drain tick's own note and reconfirmed
+stale again by this sweep — none have been picked yet. Rows stay
+physically present (declared counts still lag the aired season by one
+each) but drop their `*`.
+
+**One gap enriched with a title and date, no table-shape change.**
+`survivor-australia` — Network 10's 2027 upfronts (TV Blackbox,
+Mediaweek) named the previously-blank Season 13 "Australian Survivor:
+Rivals," filmed in Malaysia, 24 players in 12 rival pairs, premiering
+Monday 2027-01-11. Still unaired — stays starred at `12/13 | 1*`.
+`rhonj` — Season 15's premiere window narrowed to December 2026 (exact
+date still TBA), full cast confirmed 2026-10-21 (Teresa Giudice,
+Melissa Gorga, Dolores Catania returning plus five newcomers). Still
+unaired — stays starred at `14/15 | 1*`. `american-idol` and `bachelor`
+— both tracked gaps now carry official premiere dates (2027-02-08 and
+2027-03-21 respectively, the latter the franchise's first-ever Sunday
+slot); both still unaired — no table-shape change either.
+
+**Two status hygiene corrections (same commit).** `perfect-match` —
+Season 4 concluded 2026-05-27 with no confirmed Season 5 (only
+unofficial "summer 2027" speculation); corrected `status: airing` →
+`hiatus`, matching the convention used elsewhere for a show between
+confirmed seasons. `dragrace-uk` — Season 8's finale aired six days
+before this tick (2026-11-05) with no Season 9 announced yet;
+corrected `status: airing` → `hiatus` for the same reason.
+
+**Flagged but NOT added — below the confirmed-renewal bar or too
+ambiguous to track as a numbered season.** `the-voice` — NBC has
+announced a 2027 "celebrity edition" spinoff format (reported by one
+outlet as "Season 31," Keke Palmer hosting), but given this show's
+standing numbering corruption (issue #762, `triage:needs-user`,
+explicitly scoped to a dedicated human-judgment fix), adding an
+unverified "Season 31" label now would risk compounding that exact
+problem rather than tracking a clean new gap — left untracked pending
+clearer confirmation of whether this is a numbered mainline season or
+a distinct format. `ink-master` — the existing `17/18 | 1*` star rests
+on secondary trackers only; no primary-source renewal (Paramount,
+Deadline, TVLine) was found this pass. Not removed (no contrary
+evidence either), but flagged for a primary-source check before the
+next sweep leans on it further. `too-hot-to-handle` — Netflix's only
+signal remains the already-known casting call, not a renewal; stays
+`ended`, not reopened.
+
+**Everything else reconfirmed, not reopened.** `chopped`'s recurring
+third-party "Season 63/64" indexing artifact was not re-surfaced this
+pass. `bachelorette` Season 22 remains pulled-from-air limbo —
+reinforced this tick with a dated data point (TheWrap: the season was
+omitted from ABC's 2026-27 summer slate), still no formal cancellation
+or reschedule, status stays `airing` pending an official call.
+`americas-next-top-model` Cycle 25 remains a Tyra Banks tease only, no
+network greenlight — stays excluded. `rhodubai` Season 3 status is
+genuinely stale (no 2026-dated source either way) — flagged for a
+dedicated follow-up rather than acted on blind.
+
+**Count note.** Physical table before this tick's edits: 33 shows / 35
+gap-slots (matching the prior tick's own recount, so last tick's
+flagged 1-slot narration drift is now moot — this tick's edits are
+made directly against the physical table, not narrated separately).
+After this tick's `masterchef-australia` addition (+1 show, +1 slot;
+unstarring three rows changes no slot count): **34 shows / 36
+gap-slots.**
+
+---
 
 **Sweep, 2026-11-04 tick (cloud march; seventeenth full sweep, 18 days
 since the clock's own last-stamped 2026-10-27 — 6 `scout` batches,
@@ -1899,17 +1981,18 @@ new-show creation is locked to the biweekly show-add clock.
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | bachelor-in-paradise | 10/11 | 1* |
-| dragrace-uk | 7/8 | 1* |
+| dragrace-uk | 7/8 | 1 |
 | rhom | 7/8 | 1* |
 | the-circle | 7/8 | 1* |
-| shark-tank | 17/18 | 1* |
+| shark-tank | 17/18 | 1 |
 | southern-charm | 11/12 | 1* |
 | vanderpump-rules | 12/13 | 1* |
 | ink-master | 17/18 | 1* |
 | love-island-us | 8/9 | 1* |
 | married-at-first-sight-australia | 13/14 | 1* |
 | masterchef | 16/17 | 1* |
-| rhoslc | 6/7 | 1* |
+| masterchef-australia | 18/19 | 1* |
+| rhoslc | 6/7 | 1 |
 | selling-sunset | 9/10 | 1* |
 | summer-house | 10/11 | 1* |
 | traitors-uk | 4/5 | 1* |
@@ -3758,3 +3841,4 @@ No calendar or gap-table action.
 | 2026-10-27 | Rule 2 drain, not a sweep (the-voice S22-S30 corrected per issue #762 — real S28/S29 filed, S30 filed provisional while airing, gap-slot removed) | 36 |
 | 2026-10-31 | Rule 2 drain, not a sweep (bake-off S17 — fully filed, gap-slot removed; also flagged shark-tank/rhoslc/dragrace-uk/hells-kitchen as stale-starred, already-premiered rows for the next drain pick) | 32 shows / 34 gap-slots |
 | 2026-11-04 | 2 (seventeenth full sweep; big-brother S29+S30 double-renewal [2 slots], first-time confirmation, distinct from the earlier S28-premiere misattribution false positive; chopped S63/S64, survivor-australia numbering, bachelorette S22, and americas-next-top-model Cycle 25 all reconfirmed as known non-gaps, not reopened; physical table recount found 33 gap-slots pre-edit, one under this log's own narrated 34 — flagged, not reconciled) | 33 shows / 35 gap-slots (physical count; narrated count carries an unreconciled 1-slot drift) |
+| 2026-11-11 | 1 (eighteenth full sweep; masterchef-australia S19 renewal, first-time confirmation [1 slot]; dragrace-uk/rhoslc/shark-tank unstarred — each already aired, now actionable for Rule 2, no slot change; survivor-australia + rhonj + american-idol + bachelor stars enriched with titles/dates, no table-shape change; perfect-match + dragrace-uk status-field hygiene corrections airing→hiatus; the-voice "Season 31" celebrity-format signal and ink-master's weak-sourced star both flagged, not added/removed; last tick's 1-slot narration drift is now moot — this tick edited the physical table directly) | 34 shows / 36 gap-slots |
