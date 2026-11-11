@@ -452,6 +452,19 @@ from heading order, season numbers from the `<N>.` prefix).>
 <...>
 ```
 
+50.2 — before writing or rewriting a rationale, open the
+matching season file and read its body ("The Shape of the
+Season") first; don't draft the rationale cold. The season
+body argues the season's own case — what it did, what defines
+its run; the rationale ("Where It Sits in the Canon") argues
+its placement relative to the rest of the canon — why it
+ranks above or below its neighbors. Give each surface that
+distinct angle instead of paraphrasing the same sentence
+twice. Enforced LAX today by `content-check`'s
+`collectCanonRationaleSeasonBodyEchoIssues()` — it flags a
+near-verbatim echo between the two fields but doesn't fail the
+gate yet (spec 50's LAX-ships decision, pending a corpus drain).
+
 Per-entry editorial fields (`tag`, `slot_argument`,
 `community_rank_hint`) are optional on the schema and surface
 authoring extends in 31b — the Markdown body parser still
