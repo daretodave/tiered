@@ -74,3 +74,5 @@
 - 2026-11-08 · 49.2 · Expired flag-tier mod-queue holds now auto-resolve to published · 4d78a719..4d78a719
 - 2026-11-08 · 49 · spec complete: Graduated spoiler-risk hold for the flagged-comment queue (optional season `ended_date` + `FLAG_HOLD_DAYS`-gated auto-resolution in `getModQueue()`, `block` untouched) · e33a605f
 - 2026-11-10 · 50.1 · content:check now warns on canon-rationale/season-body argument echo · 0fa7f060..0fa7f060
+- 2026-11-11 · 50.2 · Curator brief now documents the canon-rationale/season-body echo convention · 9dcd566d..9dcd566d
+- 2026-11-11 · 50 · spec complete: Canon-rationale / season-body verbatim-argument echo gate (collectCanonRationaleSeasonBodyEchoIssues() gate in content-check.ts, LAX pending corpus drain, convention documented in content-curator's brief) · 9dcd566d

@@ -44,5 +44,4 @@ condition> · max_age: 14d`, an optional `· fallback: release`):
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
-| 50 | Canon-rationale / season-body verbatim-argument echo gate | [50-canon-rationale-season-body-echo-gate.md](50-canon-rationale-season-body-echo-gate.md) | Ready | 1 left |
 | 51 | Spoiler-language heuristic gate | [51-spoiler-language-heuristic-gate.md](51-spoiler-language-heuristic-gate.md) | Ready | Not chunked yet. |

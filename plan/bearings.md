@@ -652,6 +652,18 @@ strict; `cast_size_caption`/`filming_caption`/`format_caption`/
 once its drain reaches zero). `content-curator`'s brief documents
 the convention for new season authoring.
 
+**Canon-rationale / season-body echo guard (spec 50, complete).**
+A canon.md entry's rationale ("Where It Sits in the Canon") must
+not restate its matching season's body ("The Shape of the
+Season") in near-verbatim phrasing — the season body argues the
+season's own case, the rationale argues its placement relative to
+the rest of the canon; each surface needs its own angle. Enforced
+by `collectCanonRationaleSeasonBodyEchoIssues()` in
+`scripts/content-check.ts` (LAX today — the corpus carries 20+
+live instances pending drain, same lax→strict pattern as spec
+48's caption gates). `content-curator`'s brief documents the
+convention for new canon-rationale authoring.
+
 ### Rule 3 — themed lists (THE MAIN OBJECTIVE)
 
 **Reset 2026-07-12: themed lists are the loop's main perpetual
