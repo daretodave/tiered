@@ -129,24 +129,6 @@ defense) vs. generic outcome language (this gate). Both stay.
 
 ## Acceptance
 
-- **A1** `collectSpoilerLanguageHeuristicIssues()` exists in
-  `scripts/content-check.ts`, exported, scanning `lede`, `pull`,
-  `episodes_caption`, `format_caption`, markdown `body`,
-  `watch_list` entries, and `shape_h2` on every season, plus
-  `rationale`/`slot_argument` on every canon.md entry.
-- **A2** `SPOILER_LANGUAGE_PATTERNS` exists as a curated
-  `ReadonlyArray<{ name: string; re: RegExp }>` with at least the
-  patterns named in Design.
-- **A3** A synthetic season field containing a settled-fact
-  outcome phrase (e.g. "wins the season") is flagged.
-- **A4** A synthetic season field describing a format mechanic
-  without a settled outcome (e.g. "contestants compete to avoid
-  being revealed") is not flagged.
-- **A5** A synthetic canon `rationale` or `slot_argument`
-  containing an outcome phrase is flagged.
-- **A6** The detector is wired into `main()` routing every hit to
-  `console.warn` only — `pnpm content:check` stays green
-  (non-failing) regardless of hits.
 - **A7** `skills/ship-content.md` §2.5 documents the pre-flight
   check.
 - **A8** `skills/critique.md` documents the reader pass picking
@@ -167,7 +149,6 @@ defense) vs. generic outcome language (this gate). Both stay.
 
 ## Chunks
 
-Measure: 8 open · 0 closed · next A9
+Measure: 2 open · 6 closed · next A9
 
-- [ ] **51.1** `collectSpoilerLanguageHeuristicIssues()` detector with `SPOILER_LANGUAGE_PATTERNS`, wired into `main()` routing every hit to `console.warn` only, with colocated unit tests (settled-fact outcome phrase flagged on a season field, format-mechanic phrasing not flagged, outcome phrase flagged on a canon `rationale`/`slot_argument`) · S · closes A1, A2, A3, A4, A5, A6 · needs —
-- [ ] **51.2** `skills/ship-content.md` §2.5 and `skills/critique.md` document the spoiler-language warning, on the authoring and reader sides respectively · S · closes A7, A8 · needs 51.1
+- [ ] **51.2** `skills/ship-content.md` §2.5 and `skills/critique.md` document the spoiler-language warning, on the authoring and reader sides respectively · S · closes A7, A8 · needs —

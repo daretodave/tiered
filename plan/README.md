@@ -44,5 +44,5 @@ condition> · max_age: 14d`, an optional `· fallback: release`):
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
-| 51 | Spoiler-language heuristic gate | [51-spoiler-language-heuristic-gate.md](51-spoiler-language-heuristic-gate.md) | Ready | 2 left |
+| 51 | Spoiler-language heuristic gate | [51-spoiler-language-heuristic-gate.md](51-spoiler-language-heuristic-gate.md) | Ready | 1 left |
 | 52 | Prose sentence-capitalization invariant | [52-prose-sentence-capitalization-guard.md](52-prose-sentence-capitalization-guard.md) | Held (veto window) | Not chunked yet. |
