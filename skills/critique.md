@@ -167,6 +167,14 @@ If no green deploy: defer. Write a one-line entry to CRITIQUE.md
 "deferred at <date>: no green deploy" and exit 0. **Don't commit
 on no-ops.**
 
+**Spoiler-language cross-reference (spec 51).** Also run
+`pnpm content:check` here and note any spoiler-language-heuristic
+warning it emits (a permanent warning, never a hard fail — see
+`plan/51-spoiler-language-heuristic-gate.md`). It's not a
+precondition like `deploy:check`; carry forward which pages it
+flagged so Step 3 can fold them into the reader's own spoiler
+read.
+
 ### Step 1 — Build the page set
 
 Default §3. Adjust based on argument, plan progress (skip
@@ -202,6 +210,14 @@ For each:
 4. **Severity match impact?** Re-rate if needed.
 5. **Suggested fix sane?** If contradicts bearings or contracts,
    replace with compatible fix.
+6. **Spoiler corroboration (spec 51).** If a `content:check`
+   spoiler-language warning (Step 0) lands on a page in this
+   pass, treat it as a signal for that page's spoiler read, not
+   a separate finding: fold it into whatever the reader already
+   flagged there, or — if the reader missed it — file one
+   finding citing the warning directly. Spoilers are P0
+   (`agents.md` §7); don't let a real leak slip because the
+   heuristic caught it and the reader didn't.
 
 After assessment, **3–6 findings**, not 8.
 

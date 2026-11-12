@@ -100,6 +100,14 @@ Pre-flight checklist before committing a content tick:
 [ ] pnpm content:check passes (slug uniqueness + canon-rank
     sync + era-band coverage; lax mode tolerates absence of
     canon / era_bands on small shows)
+[ ] read any `content:check` spoiler-language-heuristic warning
+    in the output before shipping (spec 51 — scans every season
+    prose field plus canon rationale/slot_argument for
+    outcome-phrase patterns like "wins the season" or "is
+    crowned"); it is a permanent warning, never a hard fail, so
+    a human call on format-description vs. actual-outcome
+    decides whether to rewrite — see
+    `plan/51-spoiler-language-heuristic-gate.md`
 ```
 
 ## 3. Autonomy contract
