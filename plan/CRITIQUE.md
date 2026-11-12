@@ -1,7 +1,7 @@
 # CRITIQUE
 
-> Last pass: 2026-11-10 at commit 308aaad0
-> Pass count: 202
+> Last pass: 2026-11-12 at commit d57e957d
+> Pass count: 203
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 
 ## Pending
@@ -76,13 +76,13 @@
 - suggested fix: Surface a visible tab/active-state indicator (e.g. a "Canon | Community" pill) near the top of the mobile layout so the view switch is confirmed without scrolling, matching the desktop experience.
 - source: walk
 
-### [LOW] [anon] /shows/survivor/season/heroes-vs-villains — the anonymous vote widget's "counts more once you sign in" copy doesn't say what an anonymous vote actually does
+### [MED] [anon] /shows/survivor/season/heroes-vs-villains — the anonymous vote widget's "counts more once you sign in" copy doesn't say what an anonymous vote actually does (bumped LOW → MED at pass 203: independently reconfirmed byte-for-byte unaddressed since pass 196, 7 passes later)
 
-- pass: 196 (commit 2051a05b)
+- pass: 196 (commit 2051a05b); reconfirmed pass 203 (commit d57e957d)
 - viewport: desktop
 - category: comprehension
 - observation: The vote widget reads "CAST A VOTE / COUNTS MORE ONCE YOU SIGN IN" next to a live vote counter and up/down arrows. "Counts more" is vague mechanics-speak — it doesn't tell a first-time, signed-out reader whether their vote counts at all, counts as a fraction, or risks being overwritten, which is exactly the information they'd need to decide whether casting an anonymous vote is worth it.
-- evidence: Rendered page (confirmed via `curl https://tiered.tv/shows/survivor/season/heroes-vs-villains`): "Cast a vote" / "counts more once you sign in" directly above the vote counter.
+- evidence: Rendered page (confirmed via `curl https://tiered.tv/shows/survivor/season/heroes-vs-villains`); pass 203's scripted walk independently re-surfaced the identical copy on both desktop and mobile screenshots: "Cast a vote" / "counts more once you sign in" directly above the vote counter.
 - suggested fix: Replace with a concrete statement, e.g. "Anonymous votes count once per session — sign in to make yours permanent," so the signed-out reader knows what they're trading off.
 - source: walk
 
