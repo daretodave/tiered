@@ -556,6 +556,86 @@ export function collectThemedEntrySpoilerIssues(): Failure[] {
   return issues
 }
 
+// Spec 51: three independent critique-pass spoiler leaks (pass-152,
+// pass-155, pass-156) landed in production across five weeks, none of
+// them catchable by THEMED_ENTRY_SPOILER_NAMES above — that blocklist
+// is proper-noun-scoped (named mechanics on themed-list entry blurbs
+// only). pass-155 alone stated a finale prize-split outcome as settled
+// fact across five separate season-page fields (`lede`,
+// `episodes_caption`, markdown body, a `watch_list` entry, `shape_h2`)
+// none of which the proper-noun blocklist can see. This is the
+// complementary, phrase-pattern defense: a curated list of
+// outcome-announcing phrase patterns (not names), scanned across every
+// season-page prose field plus canon.md's `rationale`/`slot_argument`.
+//
+// Ships as a permanent warning, never a hard fail (see
+// plan/51-spoiler-language-heuristic-gate.md "Decisions made
+// upfront") — spoiler-coded phrasing can legitimately describe a
+// season's *format* ("contestants compete to avoid being revealed")
+// without leaking an actual outcome, and a regex can't reliably tell
+// format-description from outcome-statement in every phrasing. A
+// human read (content-curator authoring, or /critique reading) stays
+// load-bearing; this gate only surfaces candidates for that read via
+// `console.warn` in `main()`, never `failures`. Unlike specs 48/50,
+// there is no `_STRICT` flag and none should be added here — do not
+// escalate this gate to a hard fail without a fresh candidate
+// re-justifying it (see the spec's "Decisions made upfront").
+//
+// Pattern list starts small and curated, mirroring how
+// THEMED_ENTRY_SPOILER_NAMES started with exactly three names.
+// Expanding it is ordinary /iterate work once real corpus warnings
+// show what's missing.
+const SPOILER_LANGUAGE_PATTERNS: ReadonlyArray<{ name: string; re: RegExp }> = [
+  { name: 'names the winner', re: /\bnames? the winner\b/i },
+  { name: 'is crowned', re: /\bis crowned\b/i },
+  { name: 'takes home the title', re: /\btakes? home the title\b/i },
+  { name: 'wins the season', re: /\bwins? the season\b/i },
+  { name: 'splits the prize', re: /\bsplits? the prize\b/i },
+  { name: 'the winner is revealed', re: /\bthe winner is revealed\b/i },
+]
+
+export function collectSpoilerLanguageHeuristicIssues(): Failure[] {
+  const issues: Failure[] = []
+  const flag = (where: string, text: string | null | undefined) => {
+    if (!text) return
+    for (const { name, re } of SPOILER_LANGUAGE_PATTERNS) {
+      const match = text.match(re)
+      if (match) {
+        issues.push({
+          file: where,
+          message: `spoiler-language heuristic — "${match[0]}" matches the outcome-signaling pattern "${name}". This may be stating a settled-fact result rather than describing the season's format; confirm a first-time viewer isn't being told the outcome before watching (brand promise "no spoilers"), then rewrite if so. See plan/51-spoiler-language-heuristic-gate.md.`,
+        })
+      }
+    }
+  }
+
+  for (const show of getAllShows()) {
+    for (const season of getAllSeasons(show.slug)) {
+      const seasonFile = `content/shows/${show.slug}/seasons/${String(season.number).padStart(2, '0')}-${season.slug}.md`
+      flag(`${seasonFile} (lede)`, season.lede)
+      flag(`${seasonFile} (pull)`, season.pull)
+      flag(`${seasonFile} (episodes_caption)`, season.episodes_caption)
+      flag(`${seasonFile} (format_caption)`, season.format_caption)
+      flag(`${seasonFile} (body)`, effectiveSeasonShapeBody(season))
+      flag(`${seasonFile} (shape_h2)`, season.shape_h2)
+      if (season.watch_list) {
+        season.watch_list.forEach((item, i) => {
+          flag(`${seasonFile} (watch_list #${i + 1})`, item.body)
+        })
+      }
+    }
+    const canon = getCanon(show.slug)
+    if (canon) {
+      const canonFile = `content/shows/${show.slug}/canon.md`
+      for (const entry of canon.entries) {
+        flag(`${canonFile} (entry #${entry.rank} rationale)`, entry.rationale)
+        flag(`${canonFile} (entry #${entry.rank} slot_argument)`, entry.slot_argument)
+      }
+    }
+  }
+  return issues
+}
+
 // Critique pass-19 HIGH (issue #241): the season-page watch-order
 // chip used to default to "start here, no prerequisites" on every
 // season, including returnees seasons where prior-season recognition
@@ -3899,6 +3979,15 @@ function main(): number {
     for (const issue of canonRationaleSeasonBodyEchoIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
+  }
+
+  // Spec 51: permanent warning, never a hard fail — no `_STRICT`
+  // toggle (see collectSpoilerLanguageHeuristicIssues() above and
+  // plan/51-spoiler-language-heuristic-gate.md "Decisions made
+  // upfront"). Always route hits to console.warn.
+  const spoilerLanguageHeuristicIssues = collectSpoilerLanguageHeuristicIssues()
+  for (const issue of spoilerLanguageHeuristicIssues) {
+    console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
   }
 
   failures.push(...collectCalendarFailures())

@@ -42,6 +42,7 @@ import {
   collectShowCardTaglineVoiceConsistencyIssues,
   collectShowTaglineBandTemplateEchoIssues,
   collectShowTaglinePluralEditorIssues,
+  collectSpoilerLanguageHeuristicIssues,
   collectTaglineTemplatedTailIssues,
   collectThemeBodyPhraseRepetitionIssues,
   collectThemeSynonymClusterIssues,
@@ -3920,6 +3921,134 @@ describe('content-check — canon-rationale / season-body verbatim-argument echo
     const rationale = `${words(fillerA, 74)} the format never repeats itself twice`
     makeCanonEntry(tmp, 'alpha', 99, 'Ghost', rationale)
     expect(collectCanonRationaleSeasonBodyEchoIssues()).toEqual([])
+  })
+})
+
+// Spec 51: outcome-signaling phrase-pattern scan across every
+// season-page prose field plus canon.md's `rationale`/`slot_argument`.
+// Permanent warning, never a hard fail — see
+// plan/51-spoiler-language-heuristic-gate.md "Decisions made upfront".
+describe('content-check — spoiler-language heuristic gate (spec 51)', () => {
+  let tmp: string
+
+  const fillerA = [
+    'alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf',
+    'hotel', 'india', 'juliet',
+  ]
+  const words = (bank: string[], n: number): string =>
+    Array.from({ length: n }, (_, i) => bank[i % bank.length]).join(' ')
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-spoiler-language-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  function makeCanonEntry(
+    root: string,
+    show: string,
+    season: number,
+    title: string,
+    rationale: string,
+    slotArgument?: string,
+  ): void {
+    const file = path.join(root, 'shows', show, 'canon.md')
+    mkdirSync(path.dirname(file), { recursive: true })
+    const slotArgumentLine =
+      slotArgument != null ? `slot_argument: ${slotArgument}\n` : ''
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\n---\n\n## ${season}. ${title}\n\n${slotArgumentLine}${rationale}\n`,
+    )
+  }
+
+  function makeSeasonWithLede(
+    root: string,
+    show: string,
+    n: number,
+    slug: string,
+    lede: string,
+  ): void {
+    const file = path.join(
+      root,
+      'shows',
+      show,
+      'seasons',
+      `${String(n).padStart(2, '0')}-${slug}.md`,
+    )
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(
+      file,
+      `---\nshow: ${show}\nnumber: ${n}\ntitle: ${slug}\nlede: "${lede}"\n---\n\n${sixtyWords}\n`,
+    )
+  }
+
+  it('flags a season field containing a settled-fact outcome phrase (A3)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithLede(
+      tmp,
+      'alpha',
+      1,
+      'one',
+      'The quiet strategist wins the season in a stunning comeback.',
+    )
+    const issues = collectSpoilerLanguageHeuristicIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/seasons/01-one.md (lede)',
+    )
+    expect(issues[0]!.message).toMatch(/wins the season/)
+  })
+
+  it('does not flag a season field describing a format mechanic without a settled outcome (A4)', () => {
+    makeShow(tmp, 'alpha')
+    makeSeasonWithLede(
+      tmp,
+      'alpha',
+      1,
+      'one',
+      'Contestants compete to avoid being revealed by the group each week, and the format changes for the first time this season.',
+    )
+    expect(collectSpoilerLanguageHeuristicIssues()).toEqual([])
+  })
+
+  it('flags a canon rationale containing an outcome phrase (A5)', () => {
+    makeShow(tmp, 'alpha')
+    const rationale = `${words(fillerA, 78)} she is crowned at the final vote`
+    makeCanonEntry(tmp, 'alpha', 1, 'One', rationale)
+    const issues = collectSpoilerLanguageHeuristicIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/canon.md (entry #1 rationale)',
+    )
+    expect(issues[0]!.message).toMatch(/is crowned/)
+  })
+
+  it('flags a canon slot_argument containing an outcome phrase (A5)', () => {
+    makeShow(tmp, 'alpha')
+    const rationale = words(fillerA, 90)
+    makeCanonEntry(
+      tmp,
+      'alpha',
+      1,
+      'One',
+      rationale,
+      'This is the season that takes home the title in a landslide.',
+    )
+    const issues = collectSpoilerLanguageHeuristicIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]!.file).toBe(
+      'content/shows/alpha/canon.md (entry #1 slot_argument)',
+    )
+    expect(issues[0]!.message).toMatch(/takes home the title/)
   })
 })
 
