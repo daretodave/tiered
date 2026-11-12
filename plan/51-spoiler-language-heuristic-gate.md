@@ -169,4 +169,5 @@ defense) vs. generic outcome language (this gate). Both stay.
 
 Measure: 8 open · 0 closed · next A9
 
-Not chunked yet.
+- [ ] **51.1** `collectSpoilerLanguageHeuristicIssues()` detector with `SPOILER_LANGUAGE_PATTERNS`, wired into `main()` routing every hit to `console.warn` only, with colocated unit tests (settled-fact outcome phrase flagged on a season field, format-mechanic phrasing not flagged, outcome phrase flagged on a canon `rationale`/`slot_argument`) · S · closes A1, A2, A3, A4, A5, A6 · needs —
+- [ ] **51.2** `skills/ship-content.md` §2.5 and `skills/critique.md` document the spoiler-language warning, on the authoring and reader sides respectively · S · closes A7, A8 · needs 51.1
