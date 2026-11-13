@@ -1,154 +1,110 @@
-# DIGEST — 2026-11-10
+# DIGEST — 2026-11-13
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-**A ~25-hour quota pause split an otherwise-clean window: spec 50
-shipped its one real chunk, spec 51 moved into Held, and both
-critique passes that bracketed the pause came back light.** Since
-last digest (`f22af644`, 2026-11-08 16:49Z), 8 commits landed.
-Three landed right before the loop ran dry: `4e8dc080` released
-spec 50 from its own Held veto window (09:52Z, no veto filed),
-`c96b6eee` auto-promoted spec 51 into Held behind a fresh veto
-window (10:03Z, issue #843), and critique pass 200 found nothing
-(10:09Z). At 10:13Z the weekly Claude Code quota hit `rejected`
-(utilization 1.0) — issue #844 opened itself, every scheduled
-`march`/`night` tick exited as a no-op skip rather than failing,
-and nothing shipped again until the quota reset and the loop's own
-first post-reset tick closed #844 at 11:04Z on 2026-11-10. From
-there: critique pass 201 (11:19Z) caught one MED finding — the
-Survivor Heroes vs. Villains "THE TAKE"/"WHERE IT SITS IN THE
-CANON" pair re-duplicating the same accumulated-memory claim the
-pass-169 fix already moved once. Spec 50 got chunked (11:28Z) and
-its chunk 50.1 (12:03Z, `0fa7f060`→`308aaad0`) shipped
-`collectCanonRationaleSeasonBodyEchoIssues()` — the same
-tokenize/5-gram/shared-phrase technique the themed-entry echo
-detector already uses, now comparing a canon.md entry's
-`rationale` against its matching season's rendered body, wired in
-LAX (warn-only; 20+ live corpus instances, not blocking). Critique
-pass 202 (12:19Z) found nothing. The nightly `e2e-full`
-(2026-11-10 04:29–05:03Z, before the quota reset even landed — a
-separately-authorized workflow) came back green. Quota is healthy
-now: 0.61 utilization, resets 2026-11-16. Motion pulse reads
-**stalled** (9 shipped vs. 22.5 baseline, floor 11.25) — that's the
-quota pause showing up in the weekly count, not a code or gate
-regression; 2 shipped so far in 2026-W46. One live item needs a
-look before tomorrow: issue #843's own body text promises "close
-by 2026-11-12" to veto spec 51, but the Held line it minted
-alongside that text computes release a full day sooner — see
-Needs you.
+**Three quota-pause cycles this week, each recovery window
+shorter than the last — but a clean stretch of real shipping
+around them.** Specs 50 and 51 closed, spec 52 auto-promoted and
+released from Held same day, a weekly season sweep found one new
+gap, and critique pass 204 (2026-11-13 11:54Z) came back empty.
+Quota utilization sits at 0.89 (allowed_warning), resets
+2026-11-16T08:00:00Z. The night workflow skipped twice this week
+(issues #847, #848) — both clean quota-gate no-ops, not
+failures — but the gap between pauses has been shrinking
+(~25.3h, then ~1.3h), which is worth a look before it becomes a
+recurring stall. The queue work surfaced tonight is counting, not
+shipping: `countRows()` silently excludes 17 finale-shift
+`plan/AUDIT.md` rows from its own pending total (6 reported, 23
+actual), and `plan/CANDIDATES.md` is sitting exactly at its
+15-item pending cap.
 
 ## While you were out
 
 | when (UTC) | verb | outcome |
 |---|---|---|
-| 11-09 09:52 | plan: veto sweep | spec 50 released from Held — its own window closed with no veto filed (`4e8dc080`) |
-| 11-09 10:03 | plan: depth promotion | spec 51 auto-promoted into Held, veto until 2026-11-10 (#843, `c96b6eee`) |
-| 11-09 10:09 | critique pass 200 | no findings (`a80e42d4`) |
-| 11-09 10:13 → 11-10 11:04 | quota pause | weekly cap hit `rejected` (utilization 1.0); issue #844 opened; every scheduled tick in the window exited as a no-op skip, not a failure; #844 closed automatically at the first post-reset tick |
-| 11-10 11:19 | critique pass 201 | 1 finding (0 high, 1 med, 0 low) — Survivor H v V pull/rationale echo (`8b116d39`) |
-| 11-10 11:28 | plan: chunk spec 50 | canon-rationale/season-body echo gate chunked (`34d2f517`) |
-| 11-10 12:03 | ship-a-chunk 50.1 | `collectCanonRationaleSeasonBodyEchoIssues()` shipped LAX; closed + settled (`0fa7f060`→`308aaad0`) |
-| 11-10 12:19 | critique pass 202 | no findings (`efcd1c7d`) |
-| 11-10 04:29–05:03 | e2e-full (nightly) | **green** |
+| 11-10 18:11 | march: content | spec 50 chunk shipped (`eb05071a`) |
+| 11-10 ~22:00 | night | **skipped** — quota paused (issue #847 opened) |
+| 11-11 ~23:20 | night | **skipped** — quota paused (issue #848 opened) |
+| 11-12 | plan: settle | spec 51.2 settled (`4cdd2671`) |
+| 11-12 | plan: close | spec 51.2 closed (`1a68659a`) |
+| 11-12 | ship-a-chunk 51.1 | sentence-capitalization heuristic chunk shipped (`8554113d`) |
+| 11-12 | content: weekly season sweep #18 | masterchef-australia S19 new gap filed (`08bd5a996a`) |
+| 11-13 | plan: document | spec 51 spoiler-language warning documented, 51.2 (`247c1d07`) |
+| 11-13 | plan: depth promotion | spec 52 auto-promoted (`d57e957d`) |
+| 11-13 | plan: veto sweep | spec 52 released from Held — window closed with no veto filed; Held lane bullet removed, leaving the roadmap's Status column text stale (normal pipeline artifact) (`78fcfd1a`) |
+| 11-13 11:54 | critique pass 204 | no findings (`9545e807`) |
 
-8 commits landed on `main` in the ~43.5h window. `gh run list
---workflow march` shows ticks every few hours before and after the
-gap, with the pre-reset run at 11-09 20:11 and 11-10 02:58 almost
-certainly absorbed as quota-gate no-op skips (same shape as this
-digest's own 11-09 20:54 run, confirmed via its log: "Quota gate
-(scheduled run): skip - paused: weekly quota until 2026-11-10T08:00:00Z
-(issue #844)") rather than real ticks — `conclusion: success` on a
-skip looks identical to a real tick from the run list alone.
+Both night-workflow rows are confirmed clean quota-gate skips —
+self-opened/closed `Loop paused: weekly quota` issues #847 and
+#848 — not failures. The recovery window between them
+(2026-11-10 ~22:00 → 2026-11-11 ~23:20, next pause implied by
+#848's own timestamps at ~2026-11-12 ~23:20) narrowed from
+~25.3h to ~1.3h — see Needs you.
 
 ## Shipped
 
-Spec 50 (canon-rationale/season-body verbatim-argument echo gate)
-is chunked with its one real chunk landed: 50.1 added
-`collectCanonRationaleSeasonBodyEchoIssues()` to
-`scripts/content-check.ts`, mirroring
-`collectThemedEntryVerbatimPhraseEchoIssues()` — tokenizes a show's
-canon.md entry `rationale` against that entry's matching season's
-rendered Section 02 body (`effectiveSeasonShapeBody()`: a `body`
-override, or `blurb_md` once `lede` is set), flags any shared
-5-gram. Wired behind `CANON_RATIONALE_SEASON_BODY_ECHO_STRICT =
-false` — warns via `console.warn`, `content:check` stays green
-against the corpus's 20+ existing instances. One chunk remains
-(50.2 — `content-curator`'s brief documents the convention, no
-code). Spec 51 (spoiler-language heuristic gate) was auto-promoted
-into Held, not yet chunked. Two critique passes (200, 202) found
-nothing; pass 201 found one MED echo defect on Survivor's own
-`pull`/canon-rationale pair — the same shape spec 50's new gate
-catches, but on the `pull` field specifically, which spec 50's own
-design doc named as out of scope and deferred.
+- **Spec 51** (sentence-capitalization heuristic gate) — settled,
+  code chunk 51.1 landed, spoiler-language warning documented
+  (51.2), closed.
+- **Spec 52** — auto-promoted via depth promotion, then released
+  from its own Held veto window same day, no veto filed. The
+  roadmap's Held lane is now empty.
+- **Weekly season sweep #18** — one new content gap filed
+  (masterchef-australia S19).
+- **Critique pass 204** — ran clean, zero new findings.
 
 ## Queues now
 
-- **plan:** 1 spec — 50 (Ready, 1 chunk left: 50.2, S, no code) · 1
-  Held — 51 (auto-promoted, veto until 2026-11-10, #843, max_age:
-  1d, fallback: release).
-- **plan/AUDIT.md:** 6 pending (1 standing MED season-fill drain —
-  shark-tank, rhoslc, dragrace-uk remain immediately actionable
-  per the 2026-10-31 drain tick's own flag, unchanged since; 4 LOW
-  — Naked and Afraid PSR-date verification, themed-list description
-  length, `YEAR_TENURE_RE` teen-number gap, heartbeat
-  false-positive hardening; 1 LOW mirror-orphan row for issue
-  #830) + 17 non-counted standing finale-shift rows (tracked via
-  inline HTML-comment markers, outside `/iterate`'s pending count
-  by design) — love-is-blind season 11 is still the newest, still
-  not drained.
-- **plan/CRITIQUE.md:** 83 pending (0 HIGH, 49 MED, 34 LOW), last
-  pass 202 (2026-11-10 12:19Z, ~6h ago) — the finding pass 201
-  added is counted in the totals above; pass 202 added none.
-- **candidates:** 15 pending (14 carried + 1 filed tonight, below
-  — right at the 15-item pending cap), 14 of the 15 >21d old by
-  proposed-date, oldest 181d ("Newsletter subscribe," score 3.0).
-  `promote.mjs sweep` (Held-lane depth promotion): 0 of 1
-  auto-promoted, 1 awaiting (spec 51's own row, still inside its
-  own window as of this read). `cuts --since 2026-11-08` returned
-  none. `pick` (next strongest, were the floor to clear): "Prose
-  sentence-capitalization invariant" (score 6.4, proposed 130d).
-  Support: 0 open user issues · first response 31.9h mean (1 of 1
-  opened in 7d) · close 31.9h mean (1 closed in 7d) — unchanged
-  from last digest.
+- **plan:** 1 spec remaining, 0 chunks left, 0 held.
+- **plan/AUDIT.md:** 6 pending reported, **23 pending actual**.
+  The gap is a bug in `scripts/lib/plan-rows.mjs`'s `countRows()`:
+  17 rows carry a same-line `<!-- finale-shift:<show>:<season>
+  -->` dedup marker, and the counter's `if (opens && closes)
+  continue` branch skips any row where both HTML-comment tags
+  land on one line — not just genuine multi-line comment blocks.
+  These are real, unresolved finale-shift rows, not noise. (Not
+  "by design" as the 2026-11-10 digest assumed — no skill doc or
+  prior candidate actually says this exclusion is intentional;
+  that framing is corrected here. Finale-shift rows *are*
+  editorially autonomous and dispatched through a different lane
+  per `skills/iterate.lanes.md`, but that's a separate, true fact
+  that doesn't justify undercounting them.) Filed as a candidate
+  below.
+- **plan/CRITIQUE.md:** 83 pending (0 HIGH, 50 MED, 33 LOW), last
+  pass 204, ~18h ago.
+- **candidates:** 15 pending (13 >21d), oldest 184d — **exactly at
+  the 15-item pending cap**; `promote.mjs cap` reports clean (not
+  over), but the next new proposal forces a cut. `promote.mjs
+  sweep`: 0 of 1 auto-promotable this read (spec 52 already
+  shipped — see above). `pick`/`due` on the next-strongest
+  candidate ("Archive closed CRITIQUE.md/AUDIT.md rows," score
+  6.4, 127d old, clears the 6.0 floor) returns `ask` rather than
+  `pick` — expected, not a bug: this checkout runs non-owner
+  (`night.yml` never touches `.owner`, unlike `march.yml`'s `touch
+  .owner`), so the digest can see the pick but can't take it. The
+  next owner-mode `/march` tick should auto-promote it.
+- **support:** no open user issues, no activity to report this
+  tick.
 
 ## Needs you
 
-- **oversight needed: candidate queue silting (14 pending >21d,
-  oldest 181d, 15 pending total — at the pending cap).** Same
-  substance as every recent digest — no depth promotion has
-  drained the queue this window (the one Held slot is occupied by
-  spec 51, auto-promoted, not owner-picked), and tonight's own
-  tuning proposal (below) adds a fifteenth row rather than
-  shrinking the backlog. Next strongest candidate per
-  `promote.mjs pick`: "Prose sentence-capitalization invariant"
-  (score 6.4, proposed 130d ago).
-- **Issue #843 (spec 51's veto) tells the reader the wrong
-  deadline.** Its body text reads "close this issue by 2026-11-12
-  to veto; left open, the loop builds it" — the skill's default
-  3-day window. But the Held line minted alongside it reads `veto
-  until 2026-11-10 · max_age: 1d`, matching `bearings.md`'s
-  explicit `veto_days: 1` override (set under the bold posture).
-  `promote.mjs decide()` releases (builds) the spec once today's
-  date is past `until` — so the mechanical release lands
-  2026-11-11, a full day before the promise in the issue text. If
-  spec 51 should get the full 3 days a reader sees in #843, close
-  it now and let `/expand` re-promote properly-windowed, or extend
-  the Held line by hand; if the 1-day override is intended as
-  written, the issue text is the thing that's wrong and whichever
-  step composed it should read the live `veto_days` knob instead
-  of the skill doc's documented default. See Tuning proposals.
-- Promote: aged — `sweep` reads "0 of 1 auto-promoted Held lines
-  due" → auto-promoted none, 1 awaiting (the spec-51 row above).
-- No `cut` lines — `cuts --since 2026-11-08` returned none.
-- **motion stalled: 9 shipped / 22.5 baseline (floor 11.25),
-  2026-W45; 2 so far in 2026-W46.** Fully accounted for by the
-  ~25h quota pause (2026-11-09 10:13Z–2026-11-10 11:04Z, issue
-  #844) documented above — not a code or gate regression. No
-  action needed unless the pattern repeats without a matching
-  quota event.
+- **oversight needed: candidate queue silting (13 pending >21d,
+  oldest 184d) — at the pending cap.** Tonight's own tuning
+  proposal (below) will force a cut unless something is promoted
+  or resolved first; the next owner-mode tick auto-promoting the
+  score-6.4 candidate (above) would create headroom.
+- **Quota pause recovery window is shrinking.** ~25.3h between
+  issue #847 and #848, then an implied ~1.3h before the next
+  cycle per #848's own close/reopen timestamps. Worth checking
+  whether scheduling density or concurrent cloud-tick volume is
+  compounding against the rolling 7-day utilization window before
+  this becomes a recurring stall rather than an occasional one.
+- Promote: aged — `sweep` reads 0 of 1 auto-promoted this read →
+  auto-promoted none, 1 awaiting (see Queues now).
+- No `cut` lines this window.
 - No `rotate` lines — `secrets.mjs audit` read 0 events.
 - No blocked rows, no open `[needs-user-call]` rows, no
   `triage:needs-user` / `loop:do` issues open, nothing else to
@@ -156,31 +112,25 @@ design doc named as out of scope and deferred.
 
 ## Today's intent
 
-Spec 50's one remaining chunk (50.2 — `content-curator` documents
-the canon-rationale/season-body echo convention in its brief; S,
-no code) is the next pickable `/ship-a-chunk` unit. Top standing
-finding: the season-fill drain row (MED, score 4.5) — shark-tank,
-rhoslc, and dragrace-uk remain immediately actionable from the
-2026-10-31 drain tick's own flag. Top non-standing finding:
-pass-201's Survivor `pull`/canon-rationale echo (MED) — the same
-defect shape spec 50 just shipped a detector for, on the one field
-(`pull`) that detector's design doc explicitly deferred; worth a
-look as a direct content fix since the detector itself won't catch
-it.
+No chunk is queued (0 chunks left across the one remaining spec).
+Top finding: the `countRows()` finale-shift undercount (score 5.6
+candidate, filed tonight) — fixing it will surface all 17
+previously-invisible finale-shift rows into `/iterate`'s real
+pending count, which the next audit tick should expect rather
+than treat as a sudden regression.
 
 ## Tuning proposals
 
-Filed one: `scripts/plan/promote.mjs`'s `heldLine()` computes the
-Held-line veto date from the live `veto_days` knob, but the
-human-facing veto-issue body text (composed by hand per
-`skills/expand.md` §Signal, step 3) has no equivalent shared
-source — on 2026-11-09 it was written using the skill doc's
-*documented default* (3 days) instead of the bold posture's
-actual override (1 day, `bearings.md` line 944), so issue #843
-promises a 2026-11-12 veto deadline a full day later than the
-Held line it sits beside actually honors. Proposed scope: add a
-`promote.mjs mint <issue-date>`-style helper (or extend `heldLine`
-callers) that returns both the Held-line text and the veto-body
-date string from the same `addDays(date, k.vetoDays)` call, so the
-two can't drift again — see `plan/CANDIDATES.md` for the full
-row.
+Filed two tonight, both in `plan/CANDIDATES.md`, both proposals
+only — no gate, cadence, or ceiling edited directly:
+
+1. **`countRows()` undercounts `plan/AUDIT.md` pending by skipping
+   same-line `<!-- finale-shift:... -->` dedup markers**
+   (`scripts/lib/plan-rows.mjs`'s `if (opens && closes) continue`
+   branch). New `[score 5.6]` Pending row, with the true-vs-
+   reported counts (23 vs. 6) as evidence.
+2. **Cloud workflow fallback for org-level Claude access
+   outages** — appended an `Update (digest 2026-11-13)` note to
+   the existing `[score 5.4]` Pending row, citing this week's
+   three-pause cycle and the shrinking recovery window as fresh,
+   recurring evidence rather than a one-off.

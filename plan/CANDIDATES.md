@@ -17,6 +17,16 @@
 - conflicts: none known — `promote.mjs` is read-only tooling outside the `apply()` write path; this only touches how the issue-body string is generated, not any gate behavior.
 - generator: digest · filed 2026-11-10
 
+### [ ] [score 5.6] `countRows()`'s inline-comment skip hides real `plan/AUDIT.md` pending rows that carry a trailing anchor tag
+- kind: guard
+- proposed: 2026-11-13 (digest)
+- source signals: digest (2026-11-13): `pulse.mjs` (via `scripts/lib/plan-rows.mjs`'s `countRows()`) reports `plan/AUDIT.md` at 6 pending tonight. Tracing `countRows()`'s own `inComment` state machine line by line found 17 real, unchecked `- [ ]` rows it silently skips — every post-finale ranking-shift note filed since the big-brother entry closed (survivor:50, survivor:48, amazing-race:38, top-chef:22, dragrace:17, love-island-uk:13, the-ultimatum:4, project-runway:22, rhoa:17, married-at-first-sight:20, below-deck-mediterranean:11, alone:13, masterchef-australia:18, 90-day-fiance:12, americas-got-talent:21, masterchef:16, love-is-blind:11). Each row ends with a same-line, self-closed anchor comment (`<!-- finale-shift:<show>:<season> -->`, added by `scripts/finale-gate.mjs` so it never double-files the same finale). `countRows()`'s `if (opens && closes) continue` branch treats any line containing both `<!--` and `-->` as a comment-wrapped template example — correct for the multi-line `Format:` block it was written for (lines 24-26, open/close on separate lines), wrong for a real content row that merely carries a trailing inline tag. True pending count tonight is 23, not 6 — confirmed via a direct trace (`section.forEach` replaying the same opens/closes/inComment logic with per-line output). The 2026-11-10 digest had already surfaced these 17 rows under "Queues now" but described the exclusion as "by design" — no skill doc, code comment, or prior candidate actually states that; the `Format:`-block framing in `countRows()`'s own doc comment is the only documented intent, and it doesn't cover this case. Spot-checked `plan/CRITIQUE.md` and `plan/CANDIDATES.md` for the same pattern: both read 0 inline-tagged pending rows today, so this is scoped to `AUDIT.md`'s finale-shift tagging convention colliding with the comment-skip branch, not a cross-file defect.
+- rationale: this is the same defect class the resolved 2026-10-31 candidate (score 5.4, directly above, checked `[x]`) already caught and fixed once in this exact function three weeks ago — a reporting number silently wrong for every night since the finale-shift convention started appending rows with trailing anchors. It doesn't starve dispatch (an agent reading the raw file via `Read` sees every row regardless of the regex, and these rows are explicitly "editorially autonomous" per `skills/ship-content.md`, picked up through `/march`'s content-gaps lane rather than `/iterate`'s AUDIT-score path) — but every digest and `/oversight` pulse read has materially understated this file's queue depth by a growing margin, and the undercount will keep growing as more finale-shift rows get filed with the same tag shape.
+- proposed scope: in `countRows()` (`scripts/lib/plan-rows.mjs`), drop the single-line `if (opens && closes) continue` early-return — it duplicates no real case once the multi-line `inComment` state machine already handles the only actual comment-wrapped template in these files today (the `Format:` block). Re-run against `plan/AUDIT.md`, `plan/CRITIQUE.md`, `plan/CANDIDATES.md` to confirm no newly-miscounted row (only `AUDIT.md`'s count should move, 6 → 23). One colocated test in `scripts/__tests__/plan-rows.test.mjs` asserting a `- [ ]` row with a trailing same-line `<!-- tag -->` is counted, and the multi-line `Format:`-style template row is still excluded.
+- estimated chunks: 1 (single function edit + test)
+- conflicts: none known — `plan-rows.mjs` is read-only tooling outside any gate's write path; this only changes what `pulse.mjs`/digest report, not any dispatch, scoring, or content-pick behavior.
+- generator: digest · filed 2026-11-13
+
 ### [x] [score 5.4] `scripts/pulse.mjs` AUDIT pending count always reads 0 — wrong regex for `plan/AUDIT.md`'s row format
 - kind: guard
 - proposed: 2026-10-31 (digest)
@@ -290,6 +300,39 @@ being overwritten by the next night's edition — worth the next `/oversight`
 session pulling that proposal back in verbatim rather than re-deriving it.
 No score change — still correctly scored on the org-access evidence alone;
 this update is breadth-of-cause evidence, not fresh urgency.
+**Update (digest 2026-11-13):** the fix this candidate's scope sketch
+item (3) names — a distinct alert/skip for a known exhaustion signature,
+rather than a crash — has since landed (`scripts/cloud/quota.mjs`'s
+`capFromText()`/`capResetAt()`, shipped 2026-11-01 per `plan/AUDIT.md`'s
+resolved HIGH row): the loop now pauses cleanly (opens a `Loop paused:
+weekly quota` issue, skips ticks, auto-closes on reset) instead of
+burning failed runs rediscovering the same exhausted state. That part of
+this candidate is done. But the underlying capacity pattern it was
+originally filed against — multi-day total silence — has a new shape
+worth a fresh look: three *separate* weekly-quota exhaustion cycles hit
+in the 4 days since the last digest, each cleanly paused-and-resumed
+(issue #844: opened 2026-11-09T10:13Z, closed 2026-11-10T11:04Z, ~24.9h;
+issue #847: opened 2026-11-11T12:25Z, closed 2026-11-12T08:54Z, ~20.5h;
+issue #848: opened 2026-11-12T10:10Z, closed 2026-11-13T11:40Z, ~25.5h)
+— but the *productive window between pauses is shrinking fast*: ~25.3h
+of work between #844 closing and #847 opening, then only ~1.3h of work
+between #847 closing (08:54) and #848 opening (10:10). Current reading
+tonight: `seven_day` utilization already back to 0.89 (`allowed_warning`)
+with the reset not due until 2026-11-16T08:00:00Z — three days out, at a
+burn rate that exhausted the prior window in under 90 minutes of actual
+ticks. The quota governor fixed the *symptom* (crash vs. clean pause);
+this is the first direct evidence that the *root cause* — one shared
+subscription-billed quota funding every cloud tick, no throttle on how
+fast a productive burst can spend it — is now the binding constraint on
+loop throughput, not just an occasional multi-day outage. Ties directly
+to this week's `pulse.mjs --motion` reading (9 shipped vs. 22.5 baseline,
+`stalled`): the pauses, not a code or gate regression, account for the
+gap. No score change yet — this is a capacity trend, not a new failure
+mode — but if utilization keeps climbing at this rate before the
+2026-11-16 reset, the next `/oversight` session should weigh the
+scope-sketch item (2) tradeoff (a pay-per-token `ANTHROPIC_API_KEY`
+fallback) against simply narrowing the cadence/ceiling during the
+subscription week's back half.
 
 ### [ ] [score 5.5] content-gaps gate (Step 3b.5) needs a bug-priority carve-out
 - kind: guard
