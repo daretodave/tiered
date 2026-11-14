@@ -38,10 +38,11 @@ line goes; each line is a lock that times out:
 `- **<NN.k>** · <reason> · since: <date> · until: <date or
 condition> · max_age: 14d`, an optional `· fallback: release`):
 
-- (none)
+- 53 · auto-promoted, veto until 2026-11-15 (#850) · max_age: 1d · fallback: release
 
 ## Specs
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
-| 52 | Prose sentence-capitalization invariant | [52-prose-sentence-capitalization-guard.md](52-prose-sentence-capitalization-guard.md) | Held (veto window) | Not chunked yet. |
+| 52 | Prose sentence-capitalization invariant | [52-prose-sentence-capitalization-guard.md](52-prose-sentence-capitalization-guard.md) | Open | Not chunked yet. |
+| 53 | Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger | [53-critique-audit-ledger-archive.md](53-critique-audit-ledger-archive.md) | Held (veto window) | Not chunked yet. |
