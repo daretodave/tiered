@@ -151,4 +151,36 @@ sentence.
 
 Measure: 8 open · 0 closed · next A9
 
-Not chunked yet.
+- [ ] **52.1** Detector + strict gate + corpus drain · M · closes A1, A2, A3, A4, A5, A6, A7 · needs —
+
+  `collectSentenceCapitalizationIssues()` in
+  `scripts/content-check.ts`, scanning every show's `blurb`,
+  `tagline`, `card_tagline` (via `getAllShows()`, so the
+  `{yearsWord}`/`{years}` token substitution that produced the
+  known violators is already materialized) for
+  `/\.\s+[a-z]/`. `PROSE_CAPITALIZATION_STRICT = true` wired
+  into `main()` in the same commit (mirrors
+  `collectTaglineTemplatedTailIssues()` / `TAGLINE_TAIL_STRICT`
+  at `scripts/content-check.ts:410-424` as the closest
+  shipped analog — show-level field scan, strict floor 0, no
+  staged lax rollout). Colocated unit tests in
+  `src/content/__tests__/content-check.test.ts`: a field with
+  `". ten years"` (flags, A3), a field with `" — ten years"`
+  (does not flag, A4), a clean field (does not flag, A5). Drain
+  the 4 known violators in the same commit, preferring the
+  em-dash/comma restructure per the spec's Design: `below-deck-
+  mediterranean.md` and `below-deck-sailing-yacht.md` (`blurb`),
+  `dancing-with-the-stars.md` (`card_tagline`), `masked-singer.md`
+  (`tagline` — the meta-description instance critique pass-66
+  named; confirm which frontmatter field renders there before
+  editing). `pnpm content:check` green after the drain, in the
+  same commit the flag flips strict.
+
+- [ ] **52.2** Curator brief guardrail · S · closes A8 · needs —
+
+  `.claude/agents/content-curator.md` gains a line (near the
+  existing `{yearsWord}`/`{years}` token guidance around line
+  131) warning never to let a derived token or a hand-written
+  clause fragment expand at a sentence-initial position; prefer
+  an em dash or comma construction instead. Independent of
+  52.1's code — can land first or after.
