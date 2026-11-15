@@ -423,6 +423,42 @@ export function collectTaglineTemplatedTailIssues(): Failure[] {
   return issues
 }
 
+// Critique candidate #23 (spec 52): a period followed by whitespace
+// and a lowercase letter in show-level free-text prose — a recurring
+// authoring habit where a `{yearsWord}`-style derived token, or a
+// hand-written clause fragment, lands at a sentence-initial position
+// without capitalization. Three independent critique passes (53, 58,
+// 66) caught four instances of this identical defect shape across
+// `blurb` / `tagline` / `card_tagline` — the three free-text fields
+// `descriptionFor()` passes verbatim into meta descriptions and
+// social-card previews, so the defect is reader-visible off-site too.
+// Scoped specifically to `. ` + lowercase — an em-dash or comma
+// continuation at the same syntactic position (` — ` / `, ` +
+// lowercase) is an intentional style and must never be flagged.
+const SENTENCE_CAPITALIZATION_RE = /\.\s+[a-z]/
+
+export function collectSentenceCapitalizationIssues(): Failure[] {
+  const issues: Failure[] = []
+  for (const show of getAllShows()) {
+    const fields: Array<['blurb' | 'tagline' | 'card_tagline', string | undefined]> = [
+      ['blurb', show.blurb],
+      ['tagline', show.tagline],
+      ['card_tagline', show.card_tagline],
+    ]
+    for (const [field, value] of fields) {
+      if (!value) continue
+      const match = SENTENCE_CAPITALIZATION_RE.exec(value)
+      if (match) {
+        issues.push({
+          file: `content/shows/${show.slug}.md (${field})`,
+          message: `sentence-capitalization — "${match[0]}" is a period followed by a lowercase word, which reads as a run-on or a lowercase-first-word sentence (a derived token like {yearsWord} expanding at a sentence-initial position is the usual cause). Restructure the clause with an em dash or comma instead of a period, or capitalize the word, so the fragment reads as a deliberate continuation.`,
+        })
+      }
+    }
+  }
+  return issues
+}
+
 // Critique pass-12 MED finding (issue #191): eight of ten themed-list
 // `description` fields closed on the same count-of-shows tail —
 // "across <N> different franchises." or "<N> shows, <M> [thing-noun]."
@@ -3213,6 +3249,24 @@ function main(): number {
     failures.push(...taglineTailIssues)
   } else {
     for (const issue of taglineTailIssues) {
+      console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
+    }
+  }
+
+  // Spec 52 (critique candidate #23): ships strict at floor 0 — the
+  // known corpus (4 violators named by critique passes 53/58/66) was
+  // already drained by an unrelated prior fix at the token-
+  // substitution layer (`capitalizeFirst()` in
+  // `renderShowTaglineTokens()`), so the live catalog reads zero
+  // offenders. Same one-line strict toggle as STRICT,
+  // CROSS_SHOW_STRICT, YEAR_TENURE_STRICT, and TAGLINE_TAIL_STRICT
+  // above.
+  const PROSE_CAPITALIZATION_STRICT = true
+  const sentenceCapitalizationIssues = collectSentenceCapitalizationIssues()
+  if (PROSE_CAPITALIZATION_STRICT) {
+    failures.push(...sentenceCapitalizationIssues)
+  } else {
+    for (const issue of sentenceCapitalizationIssues) {
       console.warn(`content-check: warning —\n${fmtFailure(issue)}`)
     }
   }

@@ -42,6 +42,7 @@ import {
   collectShowCardTaglineVoiceConsistencyIssues,
   collectShowTaglineBandTemplateEchoIssues,
   collectShowTaglinePluralEditorIssues,
+  collectSentenceCapitalizationIssues,
   collectSpoilerLanguageHeuristicIssues,
   collectTaglineTemplatedTailIssues,
   collectThemeBodyPhraseRepetitionIssues,
@@ -1770,6 +1771,111 @@ describe('content-check — templated tagline tail (critique pass-12)', () => {
     )
     const issues = collectTaglineTemplatedTailIssues()
     expect(issues.length).toBe(1)
+  })
+})
+
+// Spec 52 (critique candidate #23): a period followed by whitespace
+// and a lowercase letter in show-level free-text prose. Pins the
+// `collectSentenceCapitalizationIssues` invariant — flags the
+// lowercase-sentence-start shape, never an em-dash or comma
+// continuation at the same syntactic position.
+function makeShowWithProseFields(
+  root: string,
+  slug: string,
+  fields: { blurb?: string; tagline?: string; card_tagline?: string },
+): void {
+  const file = path.join(root, 'shows', `${slug}.md`)
+  mkdirSync(path.dirname(file), { recursive: true })
+  const blurb = fields.blurb ?? 'A clean blurb.'
+  const tagline = fields.tagline ?? 'A clean tagline.'
+  const cardLine = fields.card_tagline
+    ? `card_tagline: ${JSON.stringify(fields.card_tagline)}\n`
+    : ''
+  writeFileSync(
+    file,
+    `---
+slug: ${slug}
+name: ${slug}
+palette:
+  primary: "#000000"
+  ink: "#FFFFFF"
+  paper: "#777777"
+seasons: 1
+status: airing
+blurb: ${JSON.stringify(blurb)}
+tagline: ${JSON.stringify(tagline)}
+${cardLine}tier: B
+network: "Test"
+est_year: 2000
+genre_tag: "Reality"
+featured: false
+---
+`,
+  )
+}
+
+describe('content-check — prose sentence-capitalization invariant (spec 52)', () => {
+  let tmp: string
+
+  beforeEach(() => {
+    tmp = mkdtempSync(
+      path.join(tmpdir(), 'tiered-content-check-sentence-cap-'),
+    )
+    setContentRoot(tmp)
+    __resetContentCache()
+  })
+
+  afterEach(() => {
+    setContentRoot(null)
+    __resetContentCache()
+    rmSync(tmp, { recursive: true, force: true })
+  })
+
+  it('flags a period followed by a lowercase word (A3)', () => {
+    makeShowWithProseFields(tmp, 'alpha', {
+      blurb: 'Captain Sandy Yawn holding the helm. ten years of superyacht drama.',
+    })
+    const issues = collectSentenceCapitalizationIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toBe('content/shows/alpha.md (blurb)')
+    expect(issues[0]?.message).toMatch(/sentence-capitalization/i)
+  })
+
+  it('does not flag an em-dash continuation at the same syntactic position (A4)', () => {
+    makeShowWithProseFields(tmp, 'beta', {
+      blurb: 'Captain Sandy Yawn holding the helm — ten years of superyacht drama.',
+    })
+    expect(collectSentenceCapitalizationIssues()).toEqual([])
+  })
+
+  it('does not flag a comma continuation at the same syntactic position', () => {
+    makeShowWithProseFields(tmp, 'gamma', {
+      tagline: 'Strangers on a beach, voting each other off until one is left standing.',
+    })
+    expect(collectSentenceCapitalizationIssues()).toEqual([])
+  })
+
+  it('does not flag a clean field with normal capitalization throughout (A5)', () => {
+    makeShowWithProseFields(tmp, 'delta', {
+      tagline:
+        '47 seasons of strangers on a beach. We have ranked every one. No spoilers, just the truth.',
+    })
+    expect(collectSentenceCapitalizationIssues()).toEqual([])
+  })
+
+  it('scans `card_tagline` as well as `blurb` and `tagline`', () => {
+    makeShowWithProseFields(tmp, 'epsilon', {
+      card_tagline: 'One mirror ball at the end. twenty-one years, 34 seasons.',
+    })
+    const issues = collectSentenceCapitalizationIssues()
+    expect(issues.length).toBe(1)
+    expect(issues[0]?.file).toBe('content/shows/epsilon.md (card_tagline)')
+  })
+
+  it('reports the live catalog at zero offenders (the 4 known violators were already drained at the token-substitution layer)', () => {
+    setContentRoot(null)
+    __resetContentCache()
+    expect(collectSentenceCapitalizationIssues()).toEqual([])
   })
 })
 
