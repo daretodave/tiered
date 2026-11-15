@@ -18,3 +18,12 @@ spec's own contingency ("if the corpus drain shows it's too noisy
 the corpus is unchanged follow-on work (ordinary `/ship-content`
 rotation, same pattern as spec 48's 48.1-48.5 chunks). Chunk 50.2
 (the curator-brief update) is next.
+
+A7 resolved with zero content edits: the 4 named violators
+(below-deck-mediterranean, below-deck-sailing-yacht, dancing-with-the-stars,
+masked-singer) were already fixed at the token-substitution layer by an
+unrelated prior commit (`e335e48c`, 2026-07-04) that capitalizes
+`{yearsWord}` at sentence-initial position before materialization.
+`pnpm content:check` runs with `PROSE_CAPITALIZATION_STRICT` active and
+stays green with no show-file edits — confirmed live-catalog zero-offenders
+test added alongside the unit tests.

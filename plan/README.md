@@ -44,5 +44,5 @@ condition> · max_age: 14d`, an optional `· fallback: release`):
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
-| 52 | Prose sentence-capitalization invariant | [52-prose-sentence-capitalization-guard.md](52-prose-sentence-capitalization-guard.md) | Open | 2 left (52.1, 52.2). |
+| 52 | Prose sentence-capitalization invariant | [52-prose-sentence-capitalization-guard.md](52-prose-sentence-capitalization-guard.md) | Open | 1 left (52.2). |
 | 53 | Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger | [53-critique-audit-ledger-archive.md](53-critique-audit-ledger-archive.md) | Held (veto window) | Not chunked yet. |

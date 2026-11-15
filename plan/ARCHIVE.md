@@ -79,3 +79,4 @@
 - 2026-11-12 · 51.1 · content:check now warns on outcome-phrase spoiler language · e88f84a4..e88f84a4
 - 2026-11-12 · 51.2 · ship-content and critique skills document the spoiler-language warning · ed673c89..ed673c89
 - 2026-11-12 · 51 · spec complete: Spoiler-language heuristic gate (collectSpoilerLanguageHeuristicIssues() permanent-warning gate in content-check.ts across every season prose field + canon rationale/slot_argument, documented in skills/ship-content.md and skills/critique.md) · a27d2e79
+- 2026-11-15 · 52.1 · Prose sentence-capitalization gate added; corpus already clean · aee671c3..aee671c3

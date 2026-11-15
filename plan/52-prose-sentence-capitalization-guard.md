@@ -119,24 +119,6 @@ sentence.
 
 ## Acceptance
 
-- **A1** `collectSentenceCapitalizationIssues()` exists in
-  `scripts/content-check.ts`, exported, scanning `blurb`,
-  `tagline`, and `card_tagline` on every show.
-- **A2** `PROSE_CAPITALIZATION_STRICT` exists as a boolean
-  constant, set to `true`.
-- **A3** A synthetic field containing `". ten years"` (a period
-  followed by a lowercase word) is flagged.
-- **A4** A synthetic field containing `" — ten years"` (an
-  em-dash continuation at the same syntactic position) is not
-  flagged.
-- **A5** A clean field with normal capitalization throughout is
-  not flagged.
-- **A6** The detector is wired into `main()`: with
-  `PROSE_CAPITALIZATION_STRICT = true`, a hit fails `pnpm
-  content:check`.
-- **A7** The 4 known violators (below-deck-mediterranean,
-  below-deck-sailing-yacht, dancing-with-the-stars, masked-singer)
-  are fixed in the same commit; `pnpm content:check` is green.
 - **A8** `content-curator`'s brief documents the derived-token
   sentence-initial-position guidance.
 
@@ -149,32 +131,7 @@ sentence.
 
 ## Chunks
 
-Measure: 8 open · 0 closed · next A9
-
-- [ ] **52.1** Detector + strict gate + corpus drain · M · closes A1, A2, A3, A4, A5, A6, A7 · needs —
-
-  `collectSentenceCapitalizationIssues()` in
-  `scripts/content-check.ts`, scanning every show's `blurb`,
-  `tagline`, `card_tagline` (via `getAllShows()`, so the
-  `{yearsWord}`/`{years}` token substitution that produced the
-  known violators is already materialized) for
-  `/\.\s+[a-z]/`. `PROSE_CAPITALIZATION_STRICT = true` wired
-  into `main()` in the same commit (mirrors
-  `collectTaglineTemplatedTailIssues()` / `TAGLINE_TAIL_STRICT`
-  at `scripts/content-check.ts:410-424` as the closest
-  shipped analog — show-level field scan, strict floor 0, no
-  staged lax rollout). Colocated unit tests in
-  `src/content/__tests__/content-check.test.ts`: a field with
-  `". ten years"` (flags, A3), a field with `" — ten years"`
-  (does not flag, A4), a clean field (does not flag, A5). Drain
-  the 4 known violators in the same commit, preferring the
-  em-dash/comma restructure per the spec's Design: `below-deck-
-  mediterranean.md` and `below-deck-sailing-yacht.md` (`blurb`),
-  `dancing-with-the-stars.md` (`card_tagline`), `masked-singer.md`
-  (`tagline` — the meta-description instance critique pass-66
-  named; confirm which frontmatter field renders there before
-  editing). `pnpm content:check` green after the drain, in the
-  same commit the flag flips strict.
+Measure: 1 open · 7 closed · next A9
 
 - [ ] **52.2** Curator brief guardrail · S · closes A8 · needs —
 
