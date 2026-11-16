@@ -80,3 +80,5 @@
 - 2026-11-12 · 51.2 · ship-content and critique skills document the spoiler-language warning · ed673c89..ed673c89
 - 2026-11-12 · 51 · spec complete: Spoiler-language heuristic gate (collectSpoilerLanguageHeuristicIssues() permanent-warning gate in content-check.ts across every season prose field + canon rationale/slot_argument, documented in skills/ship-content.md and skills/critique.md) · a27d2e79
 - 2026-11-15 · 52.1 · Prose sentence-capitalization gate added; corpus already clean · aee671c3..aee671c3
+- 2026-11-16 · 52.2 · Content-curator brief now warns against sentence-initial lowercase tokens · 9af47ce7..9af47ce7
+- 2026-11-16 · 52 · spec complete: Prose sentence-capitalization invariant (collectSentenceCapitalizationIssues() PROSE_CAPITALIZATION_STRICT gate in content-check.ts scanning blurb/tagline/card_tagline, corpus already clean, convention documented in content-curator's brief) · 9af47ce7
