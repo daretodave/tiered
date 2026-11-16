@@ -136,6 +136,13 @@ tagline: "<longer editorial sentence readers would quote (≤200 chars)>"
   # loader substitutes against `est_year` on every read so the count
   # stays honest as the anniversary rolls. Use a token whenever the
   # surface cites years; never hardcode a literal years count.
+  # Spec 52 — never let a derived token (`{yearsWord}`, `{years}`,
+  # etc.) or a hand-written clause fragment expand at a
+  # sentence-initial position in lowercase ("...the helm. ten years
+  # of..."). The content-check gate fails on it. When a clause built
+  # from a lowercase-word token needs to follow a completed sentence,
+  # prefer an em dash or comma construction instead ("...the helm —
+  # ten years of...").
   # Tick 6 (catalog sweep): the year-tenure invariant also scans
   # every canon-level field (tier_*_blurb, weekly_question, the
   # meth_*_p paragraphs) AND every canon entry's tag /
