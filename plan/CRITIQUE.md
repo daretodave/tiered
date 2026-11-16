@@ -1,10 +1,30 @@
 # CRITIQUE
 
-> Last pass: 2026-11-14 at commit d1abe1d1
-> Pass count: 205
+> Last pass: 2026-11-16 at commit e8336a42
+> Pass count: 206
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 
 ## Pending
+
+### [LOW] [anon] /shows/survivor/season/heroes-vs-villains — the FILMED caption's "S19" shorthand is the page's one unglossed abbreviation
+
+- pass: 206 (commit e8336a42)
+- viewport: desktop
+- category: comprehension
+- observation: The FILMED stat tile's caption uses the bare internal shorthand "S19" for a prior season, with no full "Season 19" spelled out anywhere else on the page for a first-time reader to anchor it to. Every other season reference on the page (the "SEASON 20" breadcrumb) spells it out in full, making "S19" the one unglossed abbreviation on an otherwise fully-spelled-out page.
+- evidence: `content/shows/survivor/seasons/20-heroes-vs-villains.md:17` — `filming_caption: "same beach as S19"`.
+- suggested fix: Expand to "same beach as Season 19" to match the page's otherwise fully-spelled-out register.
+- source: walk
+
+### [LOW] [anon] /shows/survivor/season/heroes-vs-villains — the eyebrow line leaves "Samoa" orphaned on its own line at mobile width
+
+- pass: 206 (commit e8336a42)
+- viewport: mobile
+- category: mobile
+- observation: The eyebrow line wraps to leave a single orphaned word, "Samoa," alone on its own line at 390px width: "AIRED WINTER–SPRING 2010 · FILMED IN" / "SAMOA".
+- evidence: `content/shows/survivor/seasons/20-heroes-vs-villains.md:11` — `eyebrow: "Aired winter–spring 2010 · Filmed in Samoa"`.
+- suggested fix: Add a non-breaking space between "in" and "Samoa" in the eyebrow string so the location doesn't orphan onto its own line at narrow viewports.
+- source: walk
 
 ### [MED] [authed] /shows/survivor/season/heroes-vs-villains — the pass-169 restatement fix just moved the duplicate to a new pair of facts, which now echo each other the same way
 
