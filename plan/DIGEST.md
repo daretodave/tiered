@@ -1,110 +1,116 @@
-# DIGEST — 2026-11-13
+# DIGEST — 2026-11-16
 
 > Overwritten whole each night by `/digest`. History lives in git,
 > not in this file.
 
 ## Headline
 
-**Three quota-pause cycles this week, each recovery window
-shorter than the last — but a clean stretch of real shipping
-around them.** Specs 50 and 51 closed, spec 52 auto-promoted and
-released from Held same day, a weekly season sweep found one new
-gap, and critique pass 204 (2026-11-13 11:54Z) came back empty.
-Quota utilization sits at 0.89 (allowed_warning), resets
-2026-11-16T08:00:00Z. The night workflow skipped twice this week
-(issues #847, #848) — both clean quota-gate no-ops, not
-failures — but the gap between pauses has been shrinking
-(~25.3h, then ~1.3h), which is worth a look before it becomes a
-recurring stall. The queue work surfaced tonight is counting, not
-shipping: `countRows()` silently excludes 17 finale-shift
-`plan/AUDIT.md` rows from its own pending total (6 reported, 23
-actual), and `plan/CANDIDATES.md` is sitting exactly at its
-15-item pending cap.
+**A third straight weekly-quota pause cycle ate most of the window
+since the last digest — but tonight's post-reset stretch is the
+healthiest one yet.** Three "Loop paused: weekly quota" cycles
+(#849, #851, #852) covered roughly 63 of the last 74 hours, leaving
+only two short productive windows (~11 minutes, then ~39 minutes)
+between resets before quota re-exhausted again — a continuation of
+the shrinking-recovery-window trend the 2026-11-13 digest flagged.
+`pulse.mjs --motion` now reads **stalled** (7 shipped this week
+against a baseline of 20, floor 10), the clearest confirmation yet
+that quota, not a code or gate regression, is throttling throughput.
+The one bright spot: the window opened by #852's 08:00Z reset this
+morning has now run **10h23m with no re-exhaustion** (`seven_day`
+utilization reads 0.07, comfortably `allowed`) — a real break from
+the 11-minute and 39-minute windows that preceded it. Inside the
+gaps, the loop still moved: spec 53 was auto-promoted and released
+from Held with no veto filed, spec 52 picked up a shipped chunk (the
+prose sentence-capitalization gate) and one more ready to go, two
+critique passes ran (205 clean, 206 found two new low-severity UI
+issues), and a fresh settle.mjs defect got caught and filed before
+it could silently corrupt the plan tree.
 
 ## While you were out
 
 | when (UTC) | verb | outcome |
 |---|---|---|
-| 11-10 18:11 | march: content | spec 50 chunk shipped (`eb05071a`) |
-| 11-10 ~22:00 | night | **skipped** — quota paused (issue #847 opened) |
-| 11-11 ~23:20 | night | **skipped** — quota paused (issue #848 opened) |
-| 11-12 | plan: settle | spec 51.2 settled (`4cdd2671`) |
-| 11-12 | plan: close | spec 51.2 closed (`1a68659a`) |
-| 11-12 | ship-a-chunk 51.1 | sentence-capitalization heuristic chunk shipped (`8554113d`) |
-| 11-12 | content: weekly season sweep #18 | masterchef-australia S19 new gap filed (`08bd5a996a`) |
-| 11-13 | plan: document | spec 51 spoiler-language warning documented, 51.2 (`247c1d07`) |
-| 11-13 | plan: depth promotion | spec 52 auto-promoted (`d57e957d`) |
-| 11-13 | plan: veto sweep | spec 52 released from Held — window closed with no veto filed; Held lane bullet removed, leaving the roadmap's Status column text stale (normal pipeline artifact) (`78fcfd1a`) |
-| 11-13 11:54 | critique pass 204 | no findings (`9545e807`) |
-
-Both night-workflow rows are confirmed clean quota-gate skips —
-self-opened/closed `Loop paused: weekly quota` issues #847 and
-#848 — not failures. The recovery window between them
-(2026-11-10 ~22:00 → 2026-11-11 ~23:20, next pause implied by
-#848's own timestamps at ~2026-11-12 ~23:20) narrowed from
-~25.3h to ~1.3h — see Needs you.
+| 11-13 ~18:16 | night/march | **quota exhausted** — issue #849 opened, paused until 11-14 08:00 |
+| 11-13 18:48 | march | no-op — quota paused (#849) |
+| 11-14 00:18 | march | no-op — quota paused (#849) |
+| 11-14 07:05 | march | no-op — quota paused (#849) |
+| 11-14 14:07–14:20 | march | reset landed: spec 53 auto-promoted, veto until 11-15 (`d1abe1d1`); critique pass 205 ran clean (`b5636d7f`) — then quota re-exhausted, issue #851 opened (paused until 11-15 08:00), productive window only **~11 min** |
+| 11-14 16:39 | night | no-op — quota paused (#851) |
+| 11-14 19:30 | march | no-op — quota paused (#851) |
+| 11-14 23:25 | march | no-op — quota paused (#851) |
+| 11-15 03:08 | march | no-op — quota paused (#851) |
+| 11-15 11:33–12:14 | march (chain) | reset landed: spec 52 chunked (`78ae26f3`), prose sentence-capitalization gate shipped (`3b80ebbd`), chunk 52.1 closed (`d3fbee2a`) and settled (`ca3e8203`), settle.mjs chunk-removal defect filed to AUDIT (`b3f1b3e4`) — then quota re-exhausted, issue #852 opened (paused until 11-16 08:00), productive window only **~39 min** |
+| 11-15 17:18 | night | no-op — quota paused (#852) |
+| 11-15 17:59 | march | no-op — quota paused (#852) |
+| 11-15 22:45 | march | no-op — quota paused (#852) |
+| 11-16 02:25 | march | no-op — quota paused (#852) |
+| 11-16 10:11–10:31 | march | reset landed: spec 53 released from Held, no veto filed (`e8336a42`); critique pass 206 ran, 2 new LOW findings (`fbe907fb`); issue #852 closed. **No re-exhaustion since** — 10h23m and counting. |
 
 ## Shipped
 
-- **Spec 51** (sentence-capitalization heuristic gate) — settled,
-  code chunk 51.1 landed, spoiler-language warning documented
-  (51.2), closed.
-- **Spec 52** — auto-promoted via depth promotion, then released
-  from its own Held veto window same day, no veto filed. The
-  roadmap's Held lane is now empty.
-- **Weekly season sweep #18** — one new content gap filed
-  (masterchef-australia S19).
-- **Critique pass 204** — ran clean, zero new findings.
+- **Spec 53** (archive closed CRITIQUE.md/AUDIT.md rows out of the
+  live ledger) — auto-promoted via depth promotion (11-14), held
+  one day under bold posture's `veto_days: 1`, released 11-16 with
+  no veto filed. Not chunked yet — the roadmap's Status column
+  still reads "Held (veto window)," a stale-text pipeline artifact
+  (the actual Held bullet line is gone); the next `/next` or
+  `/plot` pass should chunk it.
+- **Spec 52** (prose sentence-capitalization invariant) — chunked
+  into 52.1/52.2, chunk 52.1 shipped (`scripts/content-check.ts`
+  gate + colocated test), closed and settled. One chunk left
+  (52.2, "Curator brief guardrail").
+- **Critique pass 205** — ran clean, zero new findings.
+- **Critique pass 206** — 2 new LOW findings, both on
+  `/shows/survivor/season/heroes-vs-villains`: the FILMED caption's
+  bare "S19" shorthand (the page's one unglossed abbreviation) and
+  the eyebrow line orphaning "Samoa" onto its own line at 390px.
+- **plan/AUDIT.md** — one new MED row filed (score 4.0):
+  `scripts/plan/settle.mjs`'s chunk-removal mishandles a chunk whose
+  body is an indented paragraph (rather than sub-bullets) — caught
+  live while closing 52.1 only because the lead re-read the diff
+  before trusting `--no-commit`'s "tidied" message; also miscounted
+  the README's "N left" cell. `plan-check.mjs` stayed green through
+  both defects.
 
 ## Queues now
 
-- **plan:** 1 spec remaining, 0 chunks left, 0 held.
-- **plan/AUDIT.md:** 6 pending reported, **23 pending actual**.
-  The gap is a bug in `scripts/lib/plan-rows.mjs`'s `countRows()`:
-  17 rows carry a same-line `<!-- finale-shift:<show>:<season>
-  -->` dedup marker, and the counter's `if (opens && closes)
-  continue` branch skips any row where both HTML-comment tags
-  land on one line — not just genuine multi-line comment blocks.
-  These are real, unresolved finale-shift rows, not noise. (Not
-  "by design" as the 2026-11-10 digest assumed — no skill doc or
-  prior candidate actually says this exclusion is intentional;
-  that framing is corrected here. Finale-shift rows *are*
-  editorially autonomous and dispatched through a different lane
-  per `skills/iterate.lanes.md`, but that's a separate, true fact
-  that doesn't justify undercounting them.) Filed as a candidate
-  below.
-- **plan/CRITIQUE.md:** 83 pending (0 HIGH, 50 MED, 33 LOW), last
-  pass 204, ~18h ago.
-- **candidates:** 15 pending (13 >21d), oldest 184d — **exactly at
-  the 15-item pending cap**; `promote.mjs cap` reports clean (not
-  over), but the next new proposal forces a cut. `promote.mjs
-  sweep`: 0 of 1 auto-promotable this read (spec 52 already
-  shipped — see above). `pick`/`due` on the next-strongest
-  candidate ("Archive closed CRITIQUE.md/AUDIT.md rows," score
-  6.4, 127d old, clears the 6.0 floor) returns `ask` rather than
-  `pick` — expected, not a bug: this checkout runs non-owner
-  (`night.yml` never touches `.owner`, unlike `march.yml`'s `touch
-  .owner`), so the digest can see the pick but can't take it. The
-  next owner-mode `/march` tick should auto-promote it.
-- **support:** no open user issues, no activity to report this
-  tick.
+- **plan:** 2 specs, 1 chunk left (52.2), 0 held (53 released,
+  not yet chunked).
+- **plan/AUDIT.md:** 7 pending reported. The known undercount bug
+  (candidate score 5.6, still unfixed — `countRows()`'s
+  comment-skip branch hides same-line `<!-- finale-shift:... -->`
+  tagged rows) means the true count is still materially higher,
+  same class of row the 2026-11-13 digest already named.
+- **plan/CRITIQUE.md:** 85 pending (0 HIGH, 50 MED, 35 LOW), last
+  pass 206, ~10h ago.
+- **candidates:** 14 pending (12 >21d), oldest 187d —
+  `promote.mjs cap` reads clean (14 of 15, one slot of headroom).
+  `promote.mjs sweep`: clean, 0 held lines to act on. `pick`/`due`:
+  both `none` tonight — the strongest Pending candidate (score 5.6)
+  still sits under bold posture's 6.0 floor, and `due`'s own
+  depth gate (2 open specs, `promote_queue_depth: 2`) would block
+  it regardless of score.
+- **support:** 0 open user issues, no activity to report this tick.
 
 ## Needs you
 
-- **oversight needed: candidate queue silting (13 pending >21d,
-  oldest 184d) — at the pending cap.** Tonight's own tuning
-  proposal (below) will force a cut unless something is promoted
-  or resolved first; the next owner-mode tick auto-promoting the
-  score-6.4 candidate (above) would create headroom.
-- **Quota pause recovery window is shrinking.** ~25.3h between
-  issue #847 and #848, then an implied ~1.3h before the next
-  cycle per #848's own close/reopen timestamps. Worth checking
-  whether scheduling density or concurrent cloud-tick volume is
-  compounding against the rolling 7-day utilization window before
-  this becomes a recurring stall rather than an occasional one.
-- Promote: aged — `sweep` reads 0 of 1 auto-promoted this read →
-  auto-promoted none, 1 awaiting (see Queues now).
-- No `cut` lines this window.
+- **motion stalled: shipped 7 / baseline 20 (2026-W46 against
+  2026-W42..2026-W45), floor 10.** Three consecutive weekly-quota
+  pause cycles (#849, #851, #852) are the documented cause, not a
+  gate or code regression — see Tuning proposals below for the
+  update filed against the existing cloud-reliability candidate.
+  `stall_action: promote` (bold posture) should have march react on
+  its own next tick; no motion-stall issue is open yet
+  (`motion.mjs react` reads `none`).
+- **oversight needed: candidate queue silting (12 pending >21d,
+  oldest 187d).** Not yet over the 15-item cap (14/15), but
+  climbing with nothing promoted tonight (`pick`/`due` both `none`).
+- Promote: aged — `sweep` reads clean (0 held), `pick`/`due` both
+  `none` (no Pending candidate clears the 6.0 floor; the 2-open-
+  spec depth gate would block one even if it did) →
+  **auto-promoted none, 0 awaiting**.
+- No `cut` lines this window (candidates sit at 14/15, not over
+  cap).
 - No `rotate` lines — `secrets.mjs audit` read 0 events.
 - No blocked rows, no open `[needs-user-call]` rows, no
   `triage:needs-user` / `loop:do` issues open, nothing else to
@@ -112,25 +118,33 @@ self-opened/closed `Loop paused: weekly quota` issues #847 and
 
 ## Today's intent
 
-No chunk is queued (0 chunks left across the one remaining spec).
-Top finding: the `countRows()` finale-shift undercount (score 5.6
-candidate, filed tonight) — fixing it will surface all 17
-previously-invisible finale-shift rows into `/iterate`'s real
-pending count, which the next audit tick should expect rather
-than treat as a sudden regression.
+Next ready chunk: **52.2** ("Curator brief guardrail," size S,
+closes A8, no blockers). Top finding on `/iterate`'s actual
+dispatch path: the settle.mjs chunk-removal defect (score 4.0,
+filed 11-15) — the tied score-4.5 finale-shift rows (18 of them,
+plus the standing season-fill-drain row) route through
+`/ship-content`'s own lane rather than `/iterate`'s AUDIT-score
+path, per the existing undercount candidate's own note, so they
+don't compete for this slot.
 
 ## Tuning proposals
 
-Filed two tonight, both in `plan/CANDIDATES.md`, both proposals
-only — no gate, cadence, or ceiling edited directly:
+One tonight, evidence appended to an existing `plan/CANDIDATES.md`
+row — no gate, cadence, or ceiling edited directly:
 
-1. **`countRows()` undercounts `plan/AUDIT.md` pending by skipping
-   same-line `<!-- finale-shift:... -->` dedup markers**
-   (`scripts/lib/plan-rows.mjs`'s `if (opens && closes) continue`
-   branch). New `[score 5.6]` Pending row, with the true-vs-
-   reported counts (23 vs. 6) as evidence.
-2. **Cloud workflow fallback for org-level Claude access
-   outages** — appended an `Update (digest 2026-11-13)` note to
-   the existing `[score 5.4]` Pending row, citing this week's
-   three-pause cycle and the shrinking recovery window as fresh,
-   recurring evidence rather than a one-off.
+1. **Cloud workflows need a fallback for org-level Claude access
+   outages** (`[score 5.4]`, pending since 2026-08-20, already
+   carrying three prior update notes). Appended an `Update (digest
+   2026-11-16)` citing this week's third consecutive weekly-quota
+   cycle: productive windows between pauses compressed to ~11
+   minutes then ~39 minutes (down from last week's 25.3h → 1.3h),
+   and `pulse.mjs --motion` now confirms `stalled` (7/20, floor 10)
+   — the shrinking-recovery-window trend the 2026-11-13 digest
+   flagged as "worth a look" has continued. Also noted the
+   nuance: the window opened by this morning's reset has run
+   10h23m clean so far (`seven_day` utilization 0.07, `allowed`),
+   the healthiest post-reset stretch in the trend's history — not
+   enough data yet to call it a reversal, but it isn't
+   monotonically worsening either. No score change — evidence
+   only, consistent with how this row already tracks its three
+   prior updates (2026-09-21, 2026-10-24, 2026-11-13).

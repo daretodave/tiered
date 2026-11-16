@@ -333,6 +333,30 @@ mode — but if utilization keeps climbing at this rate before the
 scope-sketch item (2) tradeoff (a pay-per-token `ANTHROPIC_API_KEY`
 fallback) against simply narrowing the cadence/ceiling during the
 subscription week's back half.
+**Update (digest 2026-11-16):** the trend kept compressing, then
+partly broke. Three more separate weekly-quota cycles hit since the
+last digest (issue #849: opened 2026-11-13T18:16Z, closed
+2026-11-14T14:09Z, ~19h53m paused; #851: opened 2026-11-14T14:20Z,
+closed 2026-11-15T11:35Z, ~21h14m paused; #852: opened
+2026-11-15T12:14Z, closed 2026-11-16T10:14Z, ~21h59m paused) — of
+the ~74h since the last digest, roughly 63h were paused. The
+productive windows between pauses shrank further than the 11-13
+digest's own data (25.3h → 1.3h that week): this week ran only ~11
+minutes between #849 closing and #851 opening, then ~39 minutes
+between #851 closing and #852 opening. `pulse.mjs --motion` now
+confirms the pattern's real-world effect directly: 7 shipped this
+week against a 20 baseline, under the 10 floor, reading `stalled` —
+worse than the 9-vs-22.5 reading the 11-13 digest cited. But the
+window opened by #852's 2026-11-16T08:00Z reset has, unusually, run
+10h23m with no re-exhaustion so far (`seven_day` utilization reads
+0.07, `allowed`) — a sharp contrast to the 11-minute and 39-minute
+windows immediately before it, and the healthiest post-reset
+stretch in this candidate's update history. Too early to call it a
+structural reversal (one window isn't a trend), but it's evidence
+the rolling 7-day window can still clear enough historical usage to
+buy a full productive day back, not just minutes. No score change —
+still evidence accumulation on an already-filed, already-scoped
+candidate, per the pattern of the three prior updates.
 
 ### [ ] [score 5.5] content-gaps gate (Step 3b.5) needs a bug-priority carve-out
 - kind: guard
