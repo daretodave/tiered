@@ -3,7 +3,7 @@
 > Posture: **bold** (per `plan/bearings.md`).
 > Last pass: 2026-10-27 at commit 212a55dd
 > Pass count: 76
-> Last field research: 2026-10-27
+> Last field research: 2026-11-17
 
 ## Pending
 
@@ -869,6 +869,8 @@ keeps growing — this gets more valuable every tick, not less.
 across-show) though both extend the same toolbar interaction pattern —
 worth a shared-component pass if both ship close together, not a blocker
 to either shipping alone.
+- re-evidence:
+  - 2026-11-17 · field · +0 · A ranking-focused fan site lets visitors filter one list by several independent facets — rank, vote count, social signal, search relevance — plus a broad-versus-narrow topic grouping, instead of one…
 
 ### [ ] [score 5.5] meth_who_p misleading-completeness guard + content-check gate
 - kind: guard
@@ -1179,6 +1181,24 @@ or similar makes the sign-up trust signal real.
 **Estimated phases:** 1.
 **Conflicts:** depends on S1 (custom domain) for a credible
 sender identity; can ship before but trust signal will be weak.
+
+### [ ] [score 6.0] Open running vote tallies invite early-mover bias; phased or hidden results resist it
+- proposed: 2026-11-17 (research)
+- source signals: field (2026-11-17): A community voting feature that shows a running tally openly tends to lock in whatever already leads, since later voters anchor on the visible count; the common mitigation is a closed voting window w…
+- rationale: the project's own vote pair surfaces a live running count to every viewer immediately; if a vote count ever feeds a ranking rather than staying a separate signal alongside editorial canon, the always-open tally would carry the same early-mover bias this wider pattern warns about. No internal signal yet shows this happening — flagged for if one does.
+- proposed scope: no code change proposed now; worth a look only once an internal signal (e.g. a season whose early vote swing visibly anchors its final tally) makes the bias concrete rather than theoretical.
+- estimated chunks: unknown until specced
+- conflicts: none known.
+- generator: research · filed 2026-11-17
+
+### [ ] [score 6.0] Wagering markets on unaired competition outcomes are a new spoiler-leak channel
+- proposed: 2026-11-17 (research)
+- source signals: field (2026-11-17): Betting-style prediction markets that let the public wager on a reality-competition's outcome can surface or imply the real result of an already-filmed, not-yet-aired season through the market's own…
+- rationale: every outcome fact this project files is already gated on broadcast air date; this names a leak channel outside that gate's current scope (text-pattern matching on published copy) so a future spoiler-safety review has it on the list, not a reason to change any gate today.
+- proposed scope: no code change proposed; a note for whoever next revisits the spoiler-language heuristic gate's list of leak channels, not an action now.
+- estimated chunks: unknown until specced
+- conflicts: none known.
+- generator: research · filed 2026-11-17
 
 ## Considered (awaiting promotion)
 
