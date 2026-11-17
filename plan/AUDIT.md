@@ -140,3 +140,11 @@
 
 - [x] [HIGH] **Nightly `E2E_FULL=1` crawl red against `c0d6d584` ("perf: make show and season pages static, narrow middleware"), auto-filed as issue #837 (2026-11-05T03:48:16Z, run 41959855733).** Two regressions, both caught only by the exhaustive crawl (the per-commit archetype sample doesn't cover these specific non-sampled URLs): (1) season alias/digit redirects (the-voice/the-anchor, survivor's heroes-villains, etc.) intermittently emitted a duplicated `Location` header once Next.js's ISR fallback cache warmed for a non-pregenerated dynamic param, producing a malformed redirect; (2) the community-page 308 (`/shows/<show>/community` → `/shows/<show>?view=community`) landed but the ranking pane rendered `data-view="canon"` instead of `"community"` — `CanonTabSwitch`'s client-side pickup of `?view=` raced the page-load assertion. RESOLVED before this digest ran: commit `32718757` (2026-11-05T10:16:11Z, local/human, not a loop tick) reverted `c0d6d584` outright rather than patching around it — the perf change (forcing show/season pages fully static, narrowing middleware) isn't salvageable in place without re-solving both races, so the revert restores the known-good dynamic-rendering behavior. HEAD (`2051a05b`) no longer carries the regression; no further AUDIT action needed. Housekeeping still owed: issue #837 is still open and unlabeled (no comment linking it to the revert) — next `/triage` tick (or a direct close) should close it citing `32718757`. (category: bug, source: self, score: n/a — already resolved, filed for the record) — filed 2026-11-05 via digest, citing run 41959855733 and revert commit 32718757
 
+### [loop] [HIGH] motion stalled in 2026-W46: 7 shipped against a 4-week baseline of 20
+- category: loop
+- impact: 8
+- ease: 5
+- evidence: node scripts/pulse.mjs --motion: shipped 7 / baseline 20 · 2026-W46 against 2026-W42..2026-W45 (1 so far in 2026-W47); floor 10 · stalled (7 is under 50% of the baseline).
+- next: /iterate: find what keeps the loop from shipping (no ready chunk, a silted candidates queue, a lock with no fallback) and move it: build the top Pending row, ask /oversight to promote a candidate, or name the plan/bearings.md lever (Motion floor, stall_action, Promote) to retune.
+- generator: motion · filed 2026-11-17
+
