@@ -891,41 +891,41 @@ Caramoan forty-eighth, just below a settled new-era run,
 because the premise revival is the hardest editorial weight to
 carry, and the season carries it honestly rather than well.
 
+## 50. Survivor 50
+
+tag: The milestone bench that split critics on everything built around it.
+slot_argument: A full discourse cycle later, the returnee bench's depth earned credit while the production around it — the twist stack, the fan-voted format — stayed a live argument; that split clears the provisional tail without climbing further.
+community_rank_hint: rank=49 delta=1 sentiment=up
+
+Survivor 50 has had its full discourse cycle, and the verdict is
+split. The twenty-four-castaway returnee bench delivered on its
+premise — four tribes drawing from every era of the game at
+once, with no single-generation shorthand to lean on — and that
+depth is the season's real strength. What critics and fans
+argued about all season was everything built around it: a
+twist-heavy stretch several reviews called overproduced, and a
+fan-voted format whose influence on the actual game never read
+as fully embraced by production. That split clears the tail slot
+a freshly aired season defaults to, since the premise earned
+real weight, but keeps it below the field's settled,
+cleaner-running years.
+
 ## 49. Survivor 49
 
 tag: The provisional new-era tail, awaiting its discourse cycle.
-slot_argument: The fall-2025 new-era run on the fully settled 26-day format. The canon holds it at the tail pending its first full replay read; the milestone closer below is a different kind of placeholder.
-community_rank_hint: rank=49 delta=0 sentiment=hold
-
-Survivor 49 is the new era running on the fully settled format,
-slotted one rung above the milestone closer. By the fall of 2025
-the 26-day clock is default grammar — three tribes of new
-players on the Mamanucas, the compressed clock and its journeys
-and advantages all settled at this point. The season's texture
-follows the casting bench it brings rather than any structural
-argument the format still needs to make. The canon holds it at
-forty-ninth provisionally, pending its first full replay read:
-the milestone below earns its own kind of placeholder slot,
-while this season waits for the discourse cycle to settle around
-the casting and the season's standing.
-
-## 50. Survivor 50
-
-tag: The milestone closer, provisionally placed.
-slot_argument: The canon takes the tail slot provisionally — freshly aired seasons hold pending the next discourse cycle.
+slot_argument: The fall-2025 new-era run on the fully settled 26-day format. The canon holds it at the tail pending its first full replay read — the milestone season above has already cleared its own discourse cycle; this one hasn't.
 community_rank_hint: rank=50 delta=0 sentiment=hold
 
-Survivor 50 sits at the bottom of the canon for a plain reason:
-it's brand new. This season ran through spring 2026 on the same
-26-day format the franchise settled into years ago, so there's
-no structural argument driving the placement — just a fresh
-cast and a round-number milestone. The canon hasn't had time to
-see how this season holds up against the rest of the field, and
-the order revisits its bottom slots less often than its top
-ones. The round number is a placeholder here, not a verdict: it
-holds until the next full canon pass revisits the bottom slots,
-then it's weighed on its own merits instead of just landing
-where every brand-new season starts out.
+Survivor 49 holds the tail slot provisionally, pending its own
+first full replay read. Fall 2025's new-era run plays out on
+ground the format settled seasons ago, with nothing in the
+season arguing a structural case for itself one way or the
+other. Its texture follows the casting bench it brought to the
+marooning rather than any open format question — a season judged
+on who showed up, not on what the game itself was still proving.
+The milestone season just above it has already had a full
+discourse cycle to argue over; this one is still waiting on its
+own.
 
 ## 51. Survivor 51
 

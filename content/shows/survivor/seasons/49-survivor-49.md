@@ -1,7 +1,7 @@
 ---
 show: survivor
 number: 49
-canonical_position: 49
+canonical_position: 50
 title: Survivor 49
 take_h2: "Provisional, pending its verdict."
 premiere_date: 2025-09-24
@@ -10,8 +10,8 @@ location: Mamanuca Islands, Fiji
 host: Jeff Probst
 format_changes: [twenty-six-day-format]
 eyebrow: "Aired fall 2025 · Filmed in Fiji"
-lede: "A new-era run on the 26-day clock, with three tribes of new players on the Mamanucas. The format is fully settled by now — the season lives on the casting bench it brings to the marooning, slotted one rung above the milestone closer."
-pull: "Survivor 49 is the new era running clean, one rung above the milestone closer. The format is no longer the question; the bench is, and the canon holds the slot provisional until the next post-finale revisit."
+lede: "A new-era run on the 26-day clock, with three tribes of new players on the Mamanucas. The format is fully settled by now — the season lives on the casting bench it brings to the marooning, holding the tail slot provisionally until its own discourse cycle settles."
+pull: "Survivor 49 is the new era running clean on a fully settled format. The format is no longer the question; the bench is, and the canon holds the slot provisional until the next post-finale revisit."
 shape_h2: "Season forty-nine, same three tribes."
 filming_caption: "Mamanuca · fifteenth consecutive Fiji shoot"
 premiere_caption: "CBS · Wednesday 8/7c"
@@ -33,7 +33,7 @@ watch_list:
 ---
 
 Survivor 49 is the new era running on the fully settled format,
-slotted one rung above the milestone closer. By fall 2025 the
+holding the tail slot provisionally. By fall 2025 the
 26-day clock is default grammar: three tribes of new players on
 the Mamanucas, the compressed clock and its journeys and
 advantages all settled by now. The season's texture follows the

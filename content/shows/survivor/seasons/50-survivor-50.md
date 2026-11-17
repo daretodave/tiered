@@ -1,7 +1,7 @@
 ---
 show: survivor
 number: 50
-canonical_position: 50
+canonical_position: 49
 title: Survivor 50
 take_h2: "The milestone, still unweighed."
 premiere_date: 2026-02-25
