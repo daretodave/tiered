@@ -1,10 +1,20 @@
 # CRITIQUE
 
-> Last pass: 2026-11-16 at commit e8336a42
-> Pass count: 206
+> Last pass: 2026-11-17 at commit 4764639c
+> Pass count: 207
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 
 ## Pending
+
+### [LOW] [anon] /shows/survivor/season/heroes-vs-villains — the episode-heat strip has no visible legend for what the color shading means
+
+- pass: 207 (commit 4764639c)
+- viewport: desktop
+- category: comprehension
+- observation: The "Episode heat" strip renders one color-coded bar per episode (cold/med/hot, mapped to editor heat reading) with a caption that only summarizes the overall range ("peak run · eps 7-14"). Each bar carries a `title` tooltip ("Ep N") and the strip has an `aria-label` summarizing the episode count, but neither is visible without a mouse hover — there is no persistent on-page legend telling a reader what the three shades mean or which episode number a given bar is.
+- evidence: `src/components/composition/SeasonEpStrip.tsx:23-38` — the only persistent text is `<div className="ep-key">Episode heat</div>` plus the optional caption; per-bar `title={Ep ${i + 1}}` is hover-only. Screenshot: `.nexus/walk/2026-11-17T12-36-01-633Z/url--desktop--shows-survivor-season-heroes-vs-villains.png`.
+- suggested fix: Add a short inline legend near the strip (e.g. "cold → hot" with matching swatches) so the color scale reads without a hover, keeping the bars themselves untouched (no removal of the color treatment — `UI magic: keep`).
+- source: walk
 
 ### [LOW] [anon] /shows/survivor/season/heroes-vs-villains — the FILMED caption's "S19" shorthand is the page's one unglossed abbreviation
 
