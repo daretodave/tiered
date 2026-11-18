@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-11-11 | next due 2026-11-18 |
+| season-sweep | 7 days | 2026-11-18 | next due 2026-11-25 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,92 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Sweep, 2026-11-18 tick (cloud march; nineteenth full sweep, 7 days
+since the clock's own last-stamped 2026-11-11 — 6 `scout` batches,
+≤12 shows each, covered all 68 catalogued shows, cross-grepped against
+the filesystem — clean, every frontmatter `seasons:` count equals its
+filed-season-file count, zero mismatches across all 68 shows).** One
+genuinely new confirmed renewal: `alone-australia` — SBS opened casting
+for Season 5 (confirmed renewal, premiere expected 2027, no exact date
+yet), per SBS's own casting announcement and TV Blackbox. Added as
+`alone-australia | 4/5 | 1*`.
+
+**Two stale stars unstarred — their seasons have already aired, making
+each row actionable for the next Rule 2 pick rather than confirmed-but-
+unaired:** `southern-charm` S12 premiered 2026-11-12 (Bravo, confirmed
+by TVInsider and EntertainmentNow); `the-circle` S8 premiered 2026-11-17
+on Hulu (TVLine, ABC30) — its first season on the new platform after
+the franchise's Netflix-to-Hulu move. Both were still starred as
+confirmed-but-unaired as of last week's sweep; both have since aired.
+
+**Four status hygiene corrections (same commit).** `love-is-blind` —
+Season 11 finale aired 2026-11-04, reunion 2026-11-08, no next season
+airing; corrected `status: airing` → `hiatus`. `love-island-uk` —
+Series 13's live final aired 2026-07-27, long since concluded; corrected
+`status: airing` → `hiatus`. `love-island-us` — Season 8 finale aired
+2026-07-12, reunion 2026-08-31, Season 9 not yet dated; corrected
+`status: airing` → `hiatus`. `married-at-first-sight-australia` —
+Season 13 concluded by ~May 2026, Season 14 in production for 2027 but
+unaired; corrected `status: airing` → `hiatus`.
+
+**One status + network correction (the-circle, same commit as its
+unstar above).** The Netflix-to-Hulu move (firmed last sweep) has now
+happened: Season 8 premiered on Hulu 2026-11-17, hosted by Tinx
+(replacing Michelle Buteau). Corrected `status: hiatus` → `airing` and
+`network: Netflix` → `Hulu`; the show-level tagline's "Netflix's
+sharpest social-strategy format" line (now inaccurate) reworded to drop
+the network name. Season 1-7 frontmatter/season files correctly keep
+their Netflix references — those seasons genuinely aired there.
+
+**Two finale dates, `content/calendar.yml`.** `dancing-with-the-stars`
+S35's 2026-11-24 finale was already filed last sweep, reconfirmed
+(semifinals aired 2026-11-17). `the-voice` S30's two-hour live finale is
+now confirmed for 2026-12-14 (NBC/Peacock schedule, EntertainmentNow) —
+newly added. Note: a 2026-07-12-era frontmatter discrepancy on
+`the-voice` (then `status: ended`, flagged unresolved) was already
+corrected to `airing` by an earlier tick — the frontmatter is accurate
+this sweep, no further status action needed there.
+
+**One signal upgraded, still not added.** `the-voice` "Season 31
+celebrity edition" — flagged weak-sourced last sweep — is now
+corroborated by multiple trade outlets (Keke Palmer hosting, Queen
+Latifah/Riley Green/Joe Jonas coaching, targeted spring 2027). Still
+not added to the gap table: issue #762 (`triage:needs-user`) scopes
+this show's numbering corruption to a dedicated human-judgment fix, and
+a spinoff "celebrity edition" format is exactly the ambiguous case that
+issue is meant to resolve before any new season label gets added here.
+
+**Flagged but NOT added — below the confirmed-renewal bar or
+unresolved status questions carried forward.** `bachelorette` Season 22
+remains pulled-from-air limbo, still no official cancellation or
+reschedule — status stays `airing` pending an official call.
+`dragrace-uk` — BBC's move of the franchise to WOW Presents Plus
+(reported last sweep) has no series-9 particulars yet; `network: BBC`
+stays accurate for all 8 filed series, platform change is forward-
+looking only. `below-deck-down-under` S5 and `ink-master` S18 both rest
+on secondary-source-only renewals, same as last sweep — not removed,
+not upgraded. `vanderpump-rules` S13's TMZ-reported early renewal
+remains uncorroborated by Bravo — unchanged. `americas-next-top-model`,
+`the-apprentice`, `too-hot-to-handle` — revival chatter stays below the
+confirmed-signal bar.
+
+**Enrichment only, no table-shape change.** `american-idol` (S25
+premiere confirmed 2027-02-08) and `bachelor` (S30 premiere confirmed
+2027-03-21, lead revealed) both narrowed their already-starred gaps to
+exact dates. `survivor` S52's premiere refined to 2027-02-24 with
+2-hour episodes. `survivor-australia`'s Season 13 "Rivals" date
+reconfirmed at 2027-01-11. `rhonj` S15's premiere window narrowed
+further to 2027-01-19. `traitors` (US) S6's date corrected from last
+sweep's overly-specific "January 2027" to "early 2027, exact date
+unconfirmed" per Peacock's own blog.
+
+**Count note.** Physical table before this tick's edits: 34 shows / 36
+gap-slots. After this tick's `alone-australia` addition (+1 show, +1
+slot; the two unstars change no slot count): **35 shows / 37
+gap-slots.**
+
+---
 
 **Sweep, 2026-11-11 tick (cloud march; eighteenth full sweep, 7 days
 since the clock's own last-stamped 2026-11-04 — 6 `scout` batches,
@@ -1983,9 +2069,9 @@ new-show creation is locked to the biweekly show-add clock.
 | bachelor-in-paradise | 10/11 | 1* |
 | dragrace-uk | 7/8 | 1 |
 | rhom | 7/8 | 1* |
-| the-circle | 7/8 | 1* |
+| the-circle | 7/8 | 1 |
 | shark-tank | 17/18 | 1 |
-| southern-charm | 11/12 | 1* |
+| southern-charm | 11/12 | 1 |
 | vanderpump-rules | 12/13 | 1* |
 | ink-master | 17/18 | 1* |
 | love-island-us | 8/9 | 1* |
@@ -2006,6 +2092,7 @@ new-show creation is locked to the biweekly show-add clock.
 | survivor | 51/52 | 1* |
 | below-deck-mediterranean | 11/12 | 1* |
 | big-brother | 28/30 | 2* |
+| alone-australia | 4/5 | 1* |
 
 **Table correction, 2026-08-28 tick (cloud march):** `married-at-
 first-sight`'s row (carried at `19/20, 1*` since the 2026-08-23
@@ -3842,3 +3929,4 @@ No calendar or gap-table action.
 | 2026-10-31 | Rule 2 drain, not a sweep (bake-off S17 — fully filed, gap-slot removed; also flagged shark-tank/rhoslc/dragrace-uk/hells-kitchen as stale-starred, already-premiered rows for the next drain pick) | 32 shows / 34 gap-slots |
 | 2026-11-04 | 2 (seventeenth full sweep; big-brother S29+S30 double-renewal [2 slots], first-time confirmation, distinct from the earlier S28-premiere misattribution false positive; chopped S63/S64, survivor-australia numbering, bachelorette S22, and americas-next-top-model Cycle 25 all reconfirmed as known non-gaps, not reopened; physical table recount found 33 gap-slots pre-edit, one under this log's own narrated 34 — flagged, not reconciled) | 33 shows / 35 gap-slots (physical count; narrated count carries an unreconciled 1-slot drift) |
 | 2026-11-11 | 1 (eighteenth full sweep; masterchef-australia S19 renewal, first-time confirmation [1 slot]; dragrace-uk/rhoslc/shark-tank unstarred — each already aired, now actionable for Rule 2, no slot change; survivor-australia + rhonj + american-idol + bachelor stars enriched with titles/dates, no table-shape change; perfect-match + dragrace-uk status-field hygiene corrections airing→hiatus; the-voice "Season 31" celebrity-format signal and ink-master's weak-sourced star both flagged, not added/removed; last tick's 1-slot narration drift is now moot — this tick edited the physical table directly) | 34 shows / 36 gap-slots |
+| 2026-11-18 | 1 (nineteenth full sweep; alone-australia S5 renewal, first-time confirmation [1 slot]; southern-charm/the-circle unstarred — each already aired, now actionable for Rule 2, no slot change; love-is-blind/love-island-uk/love-island-us/married-at-first-sight-australia status-field hygiene corrections airing→hiatus; the-circle status+network correction hiatus→airing, Netflix→Hulu; the-voice S31 "celebrity edition" signal upgraded to multi-source but still not added, per issue #762's scoped numbering fix; dancing-with-the-stars + the-voice finale dates in content/calendar.yml, the-voice's one newly added) | 35 shows / 37 gap-slots |

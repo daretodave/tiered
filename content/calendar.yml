@@ -108,3 +108,7 @@ finales:
     season: 11
     finale_date: 2026-11-04
     status: scheduled
+  - show: the-voice
+    season: 30
+    finale_date: 2026-12-14
+    status: scheduled

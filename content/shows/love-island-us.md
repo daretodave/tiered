@@ -6,7 +6,7 @@ palette:
   ink: "#3A1A0B"
   primary: "#FF6A3D"
 seasons: 8
-status: airing
+status: hiatus
 blurb: "8 seasons. Sunscreen, recoupling, repeat."
 tagline: "Singles in a Fiji villa, voting each other into and out of couples while a narrator quietly judges every move. The American port that finally found its footing on Peacock."
 card_tagline: "8 seasons in, this island format finally clicked for American audiences — a Fiji villa full of singles pairing off and breaking up on Peacock's watch."
