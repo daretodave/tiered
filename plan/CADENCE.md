@@ -24,6 +24,45 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-11-19 tick (cloud march): shark-tank 17/18 → 18/18,
+gap row removed.** Picked off the prior tick's unstarred quintet
+(`dragrace-uk`, `the-circle`, `shark-tank`, `southern-charm`, `rhoslc`, all
+gap=1, all tier B) via the tie-break rule — oldest `est_year` wins, and
+shark-tank's 2009 debut predates all four siblings (dragrace-uk 2019,
+the-circle 2020, southern-charm 2014, rhoslc 2020). Scout-verified (ABC
+press release via detpress.com, corroborated by ABC-affiliate coverage):
+Season 18 premiered 2026-09-30 (two-episode event, 9/8c), moved to a
+regular Wednesday 10/9c slot with next-day Hulu streaming. The season's
+defining structural story: Kendra Scott and Rashaun Williams, both
+recurring guest sharks, are promoted to full-time seats together,
+growing the panel from six to eight full-time sharks — the biggest
+single panel move in the show's history, bigger than Season 16's lone
+Lubetzky promotion. Guest sharks this season include MrBeast, Mindy
+Kaling, J.J. Watt, the Foster sisters, and Steven Bartlett (UK Dragons'
+Den). Episode count not yet confirmed by any primary source as of this
+tick — field omitted rather than guessed, following the precedent set by
+`the-challenge` S42. Filed Season 18
+(`content/shows/shark-tank/seasons/18-season-18.md`) — premise/format
+only per spoiler discipline P0, no pitch-outcome or deal-result content
+anywhere. Canon rebased: Season 18 slots at the new canon tail (rank
+18) — this canon's established logic ranks disruption to the classic
+panel's long-held stability below a season that simply runs the format
+well, and a double guest-to-full-time promotion is a bigger disruption
+than Season 16's single one (now rank 17, unchanged — nothing shifts
+above it since 18 lands at the tail). `era_bands`' existing
+`new-panel-era` [2024, 2026] already covers the new season's year, no
+widening needed. Show frontmatter bumped `seasons: 17→18`, blurb
+corrected to "18 seasons." Shark Tank fully drained — row removed below.
+The remaining unstarred quartet (`dragrace-uk`, `the-circle`,
+`southern-charm`, `rhoslc`, all gap=1) stays queued for the next Rule 2
+pick.
+
+**Count note.** Physical table before this tick's edit: 35 shows / 37
+gap-slots (per the 2026-11-18 sweep below). After shark-tank's removal:
+**34 shows / 36 gap-slots.**
+
+---
+
 **Sweep, 2026-11-18 tick (cloud march; nineteenth full sweep, 7 days
 since the clock's own last-stamped 2026-11-11 — 6 `scout` batches,
 ≤12 shows each, covered all 68 catalogued shows, cross-grepped against
@@ -2070,7 +2109,6 @@ new-show creation is locked to the biweekly show-add clock.
 | dragrace-uk | 7/8 | 1 |
 | rhom | 7/8 | 1* |
 | the-circle | 7/8 | 1 |
-| shark-tank | 17/18 | 1 |
 | southern-charm | 11/12 | 1 |
 | vanderpump-rules | 12/13 | 1* |
 | ink-master | 17/18 | 1* |

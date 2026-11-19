@@ -1,13 +1,13 @@
 ---
 show: shark-tank
 editor: "tiered.tv editor"
-last_revised: 2026-07-14
+last_revised: 2026-11-19
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. Seventeen seasons of Shark Tank are ranked, weighed for how confidently the panel and pitch format hold up — a stable lineup, a hard pitch clock, real money changing hands on camera. I'm not claiming to be objective. I'm trying to be honest."
+meth_who_p: "tiered.tv's editor. Eighteen seasons of Shark Tank are ranked, weighed for how confidently the panel and pitch format hold up — a stable lineup, a hard pitch clock, real money changing hands on camera. I'm not claiming to be objective. I'm trying to be honest."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things matter most here — whether the pitch itself stays tight and legible, whether the panel's questioning generates real tension rather than a rehearsed back-and-forth, and whether the season's format decisions (panel size, pitch structure, round length) hold up as choices worth keeping."
 meth_when_h: "When I revisit"
-meth_when_p: "All seventeen aired seasons are ranked now, covering the panel's founding years through the classic six settling in, the guest-seat era's slow buildup, and the pandemic-era and post-Lubetzky stretches since. Each new season still earns its slot fresh, including how later format experiments read against a lineup that took years to find its footing."
+meth_when_p: "All eighteen aired seasons are ranked now, covering the panel's founding years through the classic six settling in, the guest-seat era's slow buildup, and the pandemic-era and post-Lubetzky stretches since. Each new season still earns its slot fresh, including how later format experiments read against a lineup that took years to find its footing."
 tier_s_blurb: "Seasons where the format's core tension — real money, a hard clock, a panel with nothing rehearsed — lands without a single wasted beat."
 tier_a_blurb: "Confident seasons that run the pitch format well, even if a specific panel or round decision keeps them a half-step short of the ceiling."
 tier_b_blurb: "The show's steady middle — competent pitches, competent panel chemistry, nothing that redefines what the format can do."
@@ -339,3 +339,21 @@ held for well over a decade. That's a bigger disruption to the
 show's settled identity than anything since the earliest seasons,
 and this canon ranks disruption to long-held stability below a
 shaky freshman run.
+
+## 18. Season 18
+
+tag: The biggest panel expansion in the show's history — two guest sharks promoted to full-time seats at once.
+slot_argument: Season sixteen's single promotion was already the panel's biggest shake-up in years; season eighteen doubles it, promoting two guest sharks at once and pushing the full-time bench from six seats to eight.
+community_rank_hint: rank=18 delta=0 sentiment=hold
+
+Season eighteen earns the canon's new bottom slot for the same
+reason season sixteen held it before: disruption to the panel's
+long-held stability ranks below a season that simply runs the
+format well, even when nothing here is poorly executed. Kendra
+Scott and Rashaun Williams, both recurring guest sharks, move
+into full-time seats together, growing the bench from six to
+eight — a bigger single move than season sixteen's one
+promotion, since it changes two seats at once rather than one.
+The guest chair keeps pulling high-profile names and the rest of
+the format holds steady, but the panel is now further from the
+classic six than it has ever been.
