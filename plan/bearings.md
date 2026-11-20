@@ -961,7 +961,7 @@ unless it has its own line below (`nexus/customization/improvement-dial.md`;
 
 **UI:** `url https://tiered.tv`
 
-**UI routes:** `/`, `/shows`, `/lists`, `/shows/survivor`, `/shows/survivor?view=community`, `/shows/survivor/season/heroes-vs-villains`
+**UI routes:** `/`, `/shows`, `/themes`, `/shows/survivor`, `/shows/survivor?view=community`, `/shows/survivor/season/heroes-vs-villains`
 
 ## Generators
 

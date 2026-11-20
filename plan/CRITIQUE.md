@@ -1,7 +1,7 @@
 # CRITIQUE
 
-> Last pass: 2026-11-18 at commit e67b7d50
-> Pass count: 208
+> Last pass: 2026-11-20 at commit 8ff153c2
+> Pass count: 209
 > Gated: NO — shipping-mode gate remains lifted (Phase 36 `[x]`).
 
 ## Pending
@@ -454,16 +454,15 @@
 - issue: #816
 - RESOLVED (2026-09-25, cloud march tick, commit b72e97f2): rewrote the access-denied copy from "ask the admin to grant the mod role in the Auth0 dashboard" to "ask a tiered.tv admin to add mod access to your account" — drops the vendor name and console reference entirely, same instruction. Content-only, one file. Verify gate green: fast gate (199 test files/3693 unit tests, content:check ok), build clean (1519 static pages), e2e 4898/4898 passed (32.4m).
 
-### [MED] [anon] /shows/top-chef/season/carolinas, /shows/bachelor/season/grant-ellis — the zero-vote community block reads as an abandoned feature months after the season aired (bumped LOW → MED at pass 187: second occurrence, second flagship show)
+### [HIGH] [anon] /shows/top-chef/season/carolinas, /shows/bachelor/season/grant-ellis, /shows/survivor/season/heroes-vs-villains — the near-zero-vote community block reads as an abandoned feature long after the season aired (bumped MED → HIGH at pass 209: third occurrence, third flagship show, oldest season yet)
 
-- pass: 170 (commit 7d6424d1); reconfirmed + extended pass 187 (commit c8fc6b43)
+- pass: 170 (commit 7d6424d1); reconfirmed + extended pass 187 (commit c8fc6b43); reconfirmed + extended pass 209 (walk 2026-11-20T09-17-29-739Z)
 - viewport: desktop
 - category: comprehension
-- observation: Top Chef Carolinas premiered 2026-03-09 (roughly six months before pass 170) yet its community vote block still reads "0 / BE THE FIRST TO VOTE," which sits oddly against the homepage's framing of community rank as "live, restless, real numbers per season." Pass 187 found the identical shape on a second flagship show: Bachelor Season 29 ("Grant Ellis," aired winter 2025, well over a year before this pass) renders the same "0 / BE THE FIRST TO VOTE" block. Two independent instances on two separate flagship franchises is strong enough signal that this isn't a one-off stale page — it's a systemic gap in how community vote counts get seeded (or how the empty state reads) for any back-catalog season.
-- evidence: Top Chef Carolinas rendered vote block: "0 / BE THE FIRST TO VOTE / one vote per reader; change your mind within 72h. community rank updates weekly." Bachelor Grant Ellis rendered vote block: "Does this belong in the community top 10? CAST A VOTE COUNTS MORE ONCE YOU SIGN IN 0 BE THE FIRST TO VOTE." Homepage lede: "One you vote — live, restless, real numbers per season."
-- suggested fix: Content/product question, not a code bug per se — either seed early community votes before a season page ships, or soften the empty-state copy specifically for seasons that have been live for months/years so "be the first" doesn't read as stale on well-aged pages. Flagging for iterate/editorial judgment rather than prescribing the fix. Given two instances now, worth considering a systemic empty-state copy change (e.g. age-aware copy swap past some threshold) rather than per-page patches.
-- source: browser (critique-pass-170, anon; critique-pass-187, anon)
-- source: browser (critique-pass-170, anon)
+- observation: Top Chef Carolinas premiered 2026-03-09 (roughly six months before pass 170) yet its community vote block still reads "0 / BE THE FIRST TO VOTE," which sits oddly against the homepage's framing of community rank as "live, restless, real numbers per season." Pass 187 found the identical shape on a second flagship show: Bachelor Season 29 ("Grant Ellis," aired winter 2025, well over a year before this pass). Pass 209's scripted walk found a third instance on a season this canon treats as the flagship's best entry: Survivor "Heroes vs. Villains" (Editor's Canon #02 of 51, aired 2010) renders "1 VOTE SO FAR" — a single-digit count on the single most-promoted season on the site, sixteen years after it aired. Three independent instances across three separate flagship franchises, worsening rather than improving, is strong enough signal that this isn't a one-off stale page — it's a systemic gap in how community vote counts get seeded (or how the near-empty state reads) for any back-catalog season, including the ones the site itself links to most.
+- evidence: Top Chef Carolinas rendered vote block: "0 / BE THE FIRST TO VOTE / one vote per reader; change your mind within 72h. community rank updates weekly." Bachelor Grant Ellis rendered vote block: "Does this belong in the community top 10? CAST A VOTE COUNTS MORE ONCE YOU SIGN IN 0 BE THE FIRST TO VOTE." Heroes vs. Villains vote block (`url--desktop--shows-survivor-season-heroes-vs-villains.png`, walk `2026-11-20T09-17-29-739Z`): "Does this belong in the community top 10?" directly above a counter reading "1" labeled "VOTE SO FAR." Homepage lede: "One you vote — live, restless, real numbers per season."
+- suggested fix: Content/product question, not a code bug per se — either seed early community votes before a season page ships, or soften the empty-state copy specifically for seasons that have been live for months/years so "be the first"/a bare single-digit count doesn't read as stale or abandoned on well-aged, heavily-promoted pages. Flagging for iterate/editorial judgment rather than prescribing the fix. Three instances now, including the site's own most-featured season — worth prioritizing a systemic empty-state copy change (e.g. age-aware qualitative framing past some threshold, or suppressing the raw counter below a minimum sample size) over per-page patches.
+- source: browser (critique-pass-170, anon; critique-pass-187, anon); walk (critique-pass-209, anon)
 
 ### [MED] [anon] /shows/survivor/season/survivor-50 — the "fiftieth season" milestone fact is restated near-verbatim four times on one page
 
