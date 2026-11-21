@@ -3,7 +3,7 @@
 > Posture: **bold** (per `plan/bearings.md`).
 > Last pass: 2026-10-27 at commit 212a55dd
 > Pass count: 76
-> Last field research: 2026-11-17
+> Last field research: 2026-11-21
 
 ## Pending
 
@@ -1199,6 +1199,24 @@ sender identity; can ship before but trust signal will be weak.
 - estimated chunks: unknown until specced
 - conflicts: none known.
 - generator: research · filed 2026-11-17
+
+### [ ] [score 6.0] Open community voting features are vulnerable to coordinated vote-spam without a validation layer
+- proposed: 2026-11-21 (research)
+- source signals: field (2026-11-21): Fan-voting features that run an open seasonal ballot alongside incremental weekly results are seeing very high invalidation rates from coordinated vote spam, prompting operators to publish after-the-…
+- rationale: Validates that an open voting feature needs a spam-detection and blended-scoring posture, not a raw tally, once volume grows; comparable fan-ranking products are being gamed at scale under a pure open-ballot model.
+- proposed scope: A review of the vote widget's anti-abuse posture: rate limiting, invalidation heuristics, and whether a blended incremental-plus-period model is worth adopting if voting volume grows beyond lightweight sentiment.
+- estimated chunks: unknown until specced
+- conflicts: none known.
+- generator: research · filed 2026-11-21
+
+### [ ] [score 6.0] Spoiler-free framing stays a real competitive gap in weekly reality-TV coverage
+- proposed: 2026-11-21 (research)
+- source signals: field (2026-11-21): Weekly viewing-guide posts without outcome language are the one recurring format on recap-heavy entertainment sites that reliably avoids spoiler headlines, while ordinary recap and news posts in the…
+- rationale: Reinforces that a strict no-spoiler guarantee stays differentiated rather than catching up to an existing norm; competitor coverage in this genre defaults to spoiler-forward headlines even in otherwise light weekly roundups.
+- proposed scope: No action item; a positioning confirmation worth keeping in mind for homepage and marketing copy, not a feature to spec.
+- estimated chunks: unknown until specced
+- conflicts: none known.
+- generator: research · filed 2026-11-21
 
 ## Considered (awaiting promotion)
 
