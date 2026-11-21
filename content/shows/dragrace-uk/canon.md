@@ -19,7 +19,7 @@ era_bands:
     range: [2019, 2021]
   - key: four-chair-era
     label: "Four-chair era"
-    range: [2022, 2025]
+    range: [2022, 2026]
 ---
 
 # Editor's Canon — RuPaul's Drag Race UK
@@ -64,11 +64,19 @@ community_rank_hint: rank=5 delta=-3 sentiment=hold
 
 Series 3 settles into the fifth slot on the strength of its own expansion, even as four other seasons in the canon now edge ahead of it on structural ambition. The show leaves London for the first time, relocating production to Manchester, and the move gives the season a texture distinct from the two series before it. RuPaul Charles and Michelle Visage anchor a fully settled panel, with the RuPeter Badge tradition now an established fixture rather than a new addition. The ten-episode run carries a confident regional energy, proof the format could travel inside its own country. It's a strong, polished season — just not one built around a genuine format first.
 
+## 8. Series 8 (2026)
+
+tag: The broadcaster's goodbye — the BBC's eighth and final series before the franchise moves on.
+slot_argument: Ranks below Series 3's Manchester move, but above Series 5's steady run, because ending an eight-year broadcaster partnership outweighs a season with no format first of its own.
+community_rank_hint: rank=6 delta=0 sentiment=hold
+
+Series 8 settles into the sixth slot on the strength of a fact that has nothing to do with the workroom: the season on screen keeps faith with what Series 4 through 7 already established, judges unchanged, incentive unchanged, format unchanged. What moves it past Series 5's conventional run is what happens around it — the partnership that built this edition for eight years ends while the season is still mid-broadcast, with no warning baked into the footage itself. That's a weightier fact for the format's history than a steady season with nothing new to argue for, even though neither season breaks real ground on camera.
+
 ## 5. Series 5 (2023)
 
 tag: The steady one — no format first, just the panel doing what it does well.
 slot_argument: Ten queens, two built-in no-elimination weeks, and a smaller cast than the series around it. The most conventional entry in this run, arriving right before the show found its biggest swing.
-community_rank_hint: rank=6 delta=0 sentiment=hold
+community_rank_hint: rank=7 delta=-1 sentiment=hold
 
 Series 5 sits sixth as the most conventional entry in the run, arriving the year before the show found its biggest structural swing. The cast trims to ten, and the season builds in a pair of no-elimination weeks early on, a cushion that keeps the workroom fuller for longer but doesn't reshape the format around it. A new weekly aftershow gives eliminated queens a place to keep talking after their episode airs, extending the conversation without changing the competition itself. Pre-air chatter noted the UK edition still lacked the cash prize its sibling franchises offered, a gap the very next series would close. Solid, well-produced, and the least essential watch of this batch.
 
@@ -76,6 +84,6 @@ Series 5 sits sixth as the most conventional entry in the run, arriving the year
 
 tag: The pilot — BBC Three's iPlayer-only launch, foundational and unmistakably rough.
 slot_argument: Eight episodes, a small studio at 3 Mills, and a panel still finding its footing without the scale the later series would carry. Historically essential, and the roughest draft in the young canon.
-community_rank_hint: rank=7 delta=-4 sentiment=hold
+community_rank_hint: rank=8 delta=-5 sentiment=hold
 
 Series 1 sits last, honestly. It's the series that started the UK edition, filmed at 3 Mills Studios on an eight-episode run considerably shorter than what followed, and released only on iPlayer while BBC Three operated as a streaming-only channel. RuPaul Charles and Michelle Visage anchor a panel still working out how a British Drag Race should sound and look, distinct from the US flagship it descends from. The cast is compact and the production visibly smaller than Series 2 or 3. We rank it here not as a dismissal but as an honest read: it's the sketch the following two series drew from at a larger scale, essential to understand, less rewarding to revisit on its own.

@@ -24,6 +24,48 @@ that.
 
 ## Season gap table
 
+**Table correction, 2026-11-21 tick (cloud march, second this day): the prior
+tick's own commit (`09296d33`) claimed "southern-charm fully drained — row
+removed below" but the diff only added narration text — the physical
+`| southern-charm | 11/12 | 1 |` row was never actually removed, same drift
+class as the 2026-10-14 love-is-blind/traitors correction and the
+2026-09-27 american-ninja-warrior/survivor-australia restoration documented
+further down this file. Verified via the filesystem, not narration:
+`content/shows/southern-charm.md` reads `seasons: 12` and
+`content/shows/southern-charm/seasons/` has 12 filed files (01 through 12) —
+the show genuinely is fully drained, so the row removal (not a revert) is
+correct; removed now.
+
+**Rule 2 drain, 2026-11-21 tick (cloud march, second this day): dragrace-uk
+7/8 → 8/8, gap row removed.** Picked off the remaining unstarred trio
+(`dragrace-uk`, `the-circle`, `rhoslc`, all gap=1, all tier B) via the
+tie-break rule — oldest `est_year` wins, and dragrace-uk's 2019 debut
+predates both siblings (the-circle 2020, rhoslc 2020). Scout-verified
+(Wikipedia's series article, corroborated by Attitude and PinkNews):
+Series 8 premiered 2026-09-03 on BBC Three/iPlayer, finale 2026-11-05,
+twelve queens, ten episodes, filmed at Pinewood Studios. The season's
+defining structural story has nothing to do with the workroom: the same
+four-chair panel (RuPaul, Michelle Visage, Alan Carr, Graham Norton) and
+the same twenty-five-thousand-pound cash prize Series 6 introduced carry
+over unchanged, but the BBC confirmed in September 2026 — only after the
+season was already airing — that it is ending its eight-year run with the
+format, with the franchise's future moving to WOW Presents Plus. Filed
+Season 8 (`content/shows/dragrace-uk/seasons/08-series-8.md`) —
+premise/format only per spoiler discipline P0, no elimination or finale
+outcome anywhere. Canon rebased: Series 8 slots at rank 6 — ending an
+eight-year broadcaster partnership outweighs a season with no format first
+of its own (the existing "steady" Series 5), but doesn't out-argue a
+genuine on-screen structural first (Series 3's Manchester move); Series 5
+and Series 1 each shift down one rank to 7 and 8. `era_bands`'
+`four-chair-era` widened to `[2022, 2026]` to cover the new season's year.
+Show frontmatter bumped `seasons: 7→8`, blurb/tagline corrected to "8
+series." Dragrace-uk fully drained — row removed below, alongside the
+southern-charm correction above. Gap table now 32 shows / 34 gap-slots.
+The remaining unstarred pair (`the-circle`, `rhoslc`, both gap=1) stays
+queued for the next Rule 2 pick.
+
+---
+
 **Rule 2 drain, 2026-11-21 tick (cloud march): southern-charm 11/12 → 12/12,
 gap row removed.** Picked off the prior tick's unstarred quartet
 (`dragrace-uk`, `the-circle`, `southern-charm`, `rhoslc`, all gap=1, all
@@ -2145,10 +2187,8 @@ new-show creation is locked to the biweekly show-add clock.
 | masked-singer | 14/15 | 1* |
 | below-deck-down-under | 4/5 | 1* |
 | bachelor-in-paradise | 10/11 | 1* |
-| dragrace-uk | 7/8 | 1 |
 | rhom | 7/8 | 1* |
 | the-circle | 7/8 | 1 |
-| southern-charm | 11/12 | 1 |
 | vanderpump-rules | 12/13 | 1* |
 | ink-master | 17/18 | 1* |
 | love-island-us | 8/9 | 1* |

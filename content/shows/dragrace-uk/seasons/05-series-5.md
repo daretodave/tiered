@@ -3,7 +3,7 @@ show: dragrace-uk
 number: 5
 slug: series-5
 title: "Series 5 (2023)"
-canonical_position: 6
+canonical_position: 7
 premiere_date: 2023-09-28
 ep_count: 10
 location: "Pinewood Studios, Buckinghamshire, England"
