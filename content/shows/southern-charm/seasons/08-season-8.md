@@ -3,7 +3,7 @@ show: southern-charm
 number: 8
 slug: season-8
 title: "Season 8"
-canonical_position: 10
+canonical_position: 11
 premiere_date: "2022-06-23"
 location: "Charleston, South Carolina"
 ep_count: 17

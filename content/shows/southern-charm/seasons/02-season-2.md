@@ -3,7 +3,7 @@ show: southern-charm
 number: 2
 slug: season-2
 title: "Season 2"
-canonical_position: 6
+canonical_position: 7
 premiere_date: "2015-03-16"
 location: "Charleston, South Carolina"
 ep_count: 12

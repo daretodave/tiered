@@ -3,7 +3,7 @@ show: southern-charm
 number: 7
 slug: season-7
 title: "Season 7"
-canonical_position: 9
+canonical_position: 10
 premiere_date: "2020-10-29"
 location: "Charleston, South Carolina"
 ep_count: 13

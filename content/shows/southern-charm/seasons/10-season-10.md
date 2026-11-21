@@ -3,7 +3,7 @@ show: southern-charm
 number: 10
 slug: season-10
 title: "Season 10"
-canonical_position: 11
+canonical_position: 12
 premiere_date: "2024-12-05"
 location: "Charleston, South Carolina"
 ep_count: 17

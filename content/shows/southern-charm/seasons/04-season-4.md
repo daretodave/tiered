@@ -3,7 +3,7 @@ show: southern-charm
 number: 4
 slug: season-4
 title: "Season 4"
-canonical_position: 7
+canonical_position: 8
 premiere_date: "2017-04-03"
 location: "Charleston, South Carolina"
 ep_count: 15

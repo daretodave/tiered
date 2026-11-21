@@ -3,7 +3,7 @@ show: southern-charm
 number: 9
 slug: season-9
 title: "Season 9"
-canonical_position: 8
+canonical_position: 9
 premiere_date: "2023-09-14"
 location: "Charleston, South Carolina"
 ep_count: 17

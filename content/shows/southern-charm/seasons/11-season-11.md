@@ -3,7 +3,7 @@ show: southern-charm
 number: 11
 slug: season-11
 title: "Season 11"
-canonical_position: 5
+canonical_position: 6
 premiere_date: "2025-11-19"
 location: "Charleston, South Carolina"
 ep_count: 17

@@ -24,6 +24,45 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-11-21 tick (cloud march): southern-charm 11/12 → 12/12,
+gap row removed.** Picked off the prior tick's unstarred quartet
+(`dragrace-uk`, `the-circle`, `southern-charm`, `rhoslc`, all gap=1, all
+tier B) via the tie-break rule — oldest `est_year` wins, and
+southern-charm's 2014 debut predates all three siblings (dragrace-uk
+2019, the-circle 2020, rhoslc 2020). Scout-verified (Bravo's own show
+page, corroborated by TVInsider and EntertainmentNow): Season 12
+premiered 2026-11-12, 9pm ET on Bravo, streaming next-day on Peacock.
+The season's defining structural story: nine of the ten season-11
+main-cast regulars return, with only Allie Newman joining as new — Charley
+Manley (one of season 11's two new faces) steps back to a recurring role
+rather than exiting outright — continuing and tightening season 11's
+post-reset stabilization (which ran 8 returning to 2 new) to the calmest
+ratio since the show's heaviest-turnover season. Episode count not yet
+confirmed by any primary source as of this tick — field omitted rather
+than guessed, following the precedent set by `the-challenge` S42 and
+`shark-tank` S18. Filed Season 12
+(`content/shows/southern-charm/seasons/12-season-12.md`) — premise/cast/
+format only per spoiler discipline P0, no reunion-outcome or
+relationship-resolution content anywhere. Canon rebased: Season 12 slots
+at rank 5 — this canon's established logic rewards accumulated history
+and penalizes turnover, and a 9-of-10 returner ratio (the cleanest since
+the reshuffle era began) edges out season 11's 4-to-1 ratio (now rank 6)
+without yet matching the deeper shared history of the founding-era
+seasons and season 6's veteran holdovers ranked above it; every rank
+from 6 through 12 shifted down one, each shifted season's
+`canonical_position` rewritten to match. `era_bands`' existing
+`reshuffle-era` [2024, 2026] already covers the new season's year, no
+widening needed. Show frontmatter bumped `seasons: 11→12`, blurb
+corrected to "12 seasons." Southern Charm fully drained — row removed
+below. The remaining unstarred trio (`dragrace-uk`, `the-circle`,
+`rhoslc`, all gap=1) stays queued for the next Rule 2 pick.
+
+**Count note.** Physical table before this tick's edit: 34 shows / 36
+gap-slots (per the 2026-11-18 sweep below). After southern-charm's
+removal: **33 shows / 35 gap-slots.**
+
+---
+
 **Rule 2 drain, 2026-11-19 tick (cloud march): shark-tank 17/18 → 18/18,
 gap row removed.** Picked off the prior tick's unstarred quintet
 (`dragrace-uk`, `the-circle`, `shark-tank`, `southern-charm`, `rhoslc`, all
