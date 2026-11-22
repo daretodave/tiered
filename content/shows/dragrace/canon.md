@@ -246,42 +246,42 @@ We rank it here because the premiere experiment is a genuine
 format argument, even though the contest behind it stays solid
 rather than sharp — the swing outranks the execution.
 
-## 18. Season 18
-
-tag: The record-premiere finale rewrite — a genuine structural swing undercut by uneven judging.
-slot_argument: The franchise's highest-rated MTV premiere yet, built on a veteran-heavy cast and a rebuilt finale trading the top-two lip sync for an eliminated-cast tournament. Split judging reception keeps it below the premiere experiment above it.
-community_rank_hint: rank=14 delta=0 sentiment=hold
-
-Season 18 sits between two structural-argument seasons, and the
-placement comes down to execution. It lands below Season 13
-because the same premiere-record credit that earns its slot
-also draws split reception — the judging pushback Season 13's
-contained, solid run never had to answer for. That gap in
-reception, not the size of the swing, is what costs Season 18
-the higher spot. It lands above Season 17 because a rewritten
-finale still outranks a season with no structural swing at all,
-however cleanly Season 17 runs the settled format. The
-veteran-heavy cast and the Dion-family pairing color the
-season; the finale rewrite and the premiere record are what
-actually earn the rank.
-
 ## 17. Season 17
 
-tag: The most recent flagship — the settled grammar run clean, no format swing to carry it past the structural seasons.
-slot_argument: A standard-format MTV-era season at the franchise's settled production scale with a fresh modern cast. The contest runs clean, but carries no structural experiment — the canon's argument lens seats it under the seasons that do.
-community_rank_hint: rank=15 delta=0 sentiment=hold
+tag: The reprieve lever — a structural swing the earlier read missed, aging well against the year that followed it.
+slot_argument: A producer-triggered reprieve mechanic that can pull a losing queen off the usual lip-sync path is a genuine format argument, not settled-grammar execution — the prior placement undersold it. The season's reputation has firmed up since.
+community_rank_hint: rank=14 delta=1 sentiment=up
 
-Season 17 settles at fifteenth on a full post-finale read. It
-plays a standard MTV-era competition at the production scale
-the franchise has settled into, with RuPaul Charles and
-Michelle Visage anchoring a familiar panel and a fresh modern
-cast. The workroom-and-runway shape is intact and confident
-across the run. What it lacks is a structural argument — there
-is no format experiment reshaping the season the way the
-entries above it carry one. On a settled read it sits just
-below the restructured-premiere seasons directly above: a
-clean, competent flagship year whose case is execution rather
-than invention.
+Season 17 moves up a slot on a corrected read: this is not a
+season that ran the settled format with no swing of its own — it
+introduced a reprieve lever that could pull a losing queen off
+the usual path to the lip sync, a structural wrinkle that
+recurred through the run. RuPaul Charles and Michelle Visage
+anchor a familiar panel over a fresh cast, and the
+workroom-and-runway shape holds underneath the twist. The
+mechanic split opinion at the time, but the season's standing
+has firmed up since, set against the flagship year that
+followed it. We rank it here because the structural argument is
+real, even short of the premiere-night scale above it.
+
+## 18. Season 18
+
+tag: The record-premiere finale rewrite — a genuine structural swing whose shine has dimmed next to the run it followed.
+slot_argument: The franchise's highest-rated MTV premiere yet, a veteran-heavy cast and a rebuilt finale trading the top-two lip sync for an eliminated-cast tournament. Retrospective reads treat it as where the flagship's hot streak cooled off.
+community_rank_hint: rank=15 delta=-1 sentiment=down
+
+Season 18 drops a slot now that its neighbor's own structural
+case is properly credited. The premiere-record and finale-rewrite
+argument still stands on its own terms — a veteran-heavy cast,
+the franchise's first drag grandmother-and-granddaughter pairing,
+and a genuine finale-format swing. But the judging-consistency
+pushback that followed the premiere high was sharper than the
+grumbling its neighbor drew for handing the room discretion, and
+retrospective framing has settled on this season as the one where
+a run of strong flagship years lost its footing rather than kept
+it going. The veteran-heavy cast and the Dion-family pairing still
+color the season; the finale rewrite and the premiere record earn
+the rank, just one slot lower than the initial read gave it.
 
 ## 2. Season 2
 

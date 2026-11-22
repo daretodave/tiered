@@ -6,7 +6,7 @@ slug: season-18
 premiere_date: 2026-01-02
 location: Los Angeles, California
 host: RuPaul Charles
-canonical_position: 14
+canonical_position: 15
 eyebrow: "Aired winter 2026 · MTV · the franchise's biggest premiere yet"
 take_h2: "The finale rewrites itself."
 lede: "A veteran-heavy cast pulls the franchise's highest-rated MTV premiere on record, and a rebuilt finale trades the usual top-two lip sync for a full eliminated-cast tournament."

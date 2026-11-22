@@ -6,22 +6,22 @@ slug: season-17
 premiere_date: 2025-01-03
 location: Los Angeles, California
 host: RuPaul Charles
-canonical_position: 15
-eyebrow: "Aired winter 2025 · MTV · the most recent flagship"
-take_h2: "Clean execution, no invention."
-lede: "The newest U.S.-flagship run, a standard-format MTV-era season carrying the franchise's settled production scale and a fresh modern cast through the familiar workroom-and-runway shape."
-shape_h2: "No structural swing this year."
+canonical_position: 14
+eyebrow: "Aired winter 2025 · MTV · a reprieve mechanic reshapes elimination night"
+take_h2: "A twist earns its keep."
+lede: "A modern-cast MTV-era run built around a producer-triggered reprieve mechanic that can pull a losing queen off the usual path to the lip sync, debuting early and recurring through the season."
+shape_h2: "A reprieve lever, not a bigger room."
 premiere_caption: "MTV · Friday 8/7c"
-format_summary: "Standard format · modern era"
-format_caption: "current production scale"
+format_summary: "Reprieve-mechanic format · modern era"
+format_caption: "a producer-discretion reprieve lever debuts"
+format_changes: [elimination-reprieve-lever]
 host_caption: "Michelle Visage anchors the panel"
 ---
 
-The most recent flagship. Season 17 runs a standard MTV-era
-competition at the production scale the franchise has settled
-into, with RuPaul Charles and Michelle Visage anchoring a
-familiar panel and a fresh modern cast. The workroom-and-runway
-shape is intact and confident across the run. There is no
-structural experiment here — and on a settled read that is what
-places it just below the restructured-premiere season above it:
-a clean year whose case is execution, not invention.
+A modern MTV-era run with a genuine structural wrinkle: a
+reprieve lever that can pull a losing queen off the usual path
+to the lip sync, recurring through the season. RuPaul Charles
+and Michelle Visage anchor a familiar panel over a fresh cast,
+and the workroom-and-runway shape stays intact underneath the
+twist. The mechanic split opinion in the moment, but the
+season's reputation has settled since as a solid entry.
