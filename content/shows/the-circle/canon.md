@@ -1,17 +1,24 @@
 ---
 show: the-circle
 editor: "tiered.tv editor"
-last_revised: 2026-07-14
+last_revised: 2026-11-23
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor, now ranking The Circle US's complete seven-season Netflix run. Each entry is weighed for how clearly the show's core mechanic — rating strangers you never meet — generates real strategy, and for whether that season's twist lands as more than a marketing hook. The point isn't to be right. It's to be honest about what's on screen."
+meth_who_p: "tiered.tv's editor, ranking The Circle US across its Netflix run and the Hulu revival. Each entry is weighed for how clearly the core mechanic — rating strangers you never meet — generates real strategy, and whether that season's twist lands as more than a marketing hook. The point isn't to be right. It's to be honest about what's on screen."
 meth_how_h: "How I weigh it"
 meth_how_p: "Weighing centers on three things: whether the format's core tension — rating people you'll never meet in person — produces genuine strategy, whether the cast commits fully to either playing themselves or building a persona, and whether the season's shape holds up as a season of television, not just a premise."
 meth_when_h: "When I revisit"
-meth_when_p: "All seven seasons are ranked now that Netflix's run has closed and the format moves to Hulu for a future reimagining. The canon stays open to revision — a twist that looked bigger at premiere, or smaller, can always shift once weighed fresh against the full run's mechanics."
+meth_when_p: "All eight seasons are now ranked, including the Hulu revival moving mid-run. Season 8's ranking stays provisional — it's still airing, and the canon revisits any season whose twist read bigger or smaller than it has once judged against the full run's mechanics."
 tier_s_blurb: "Seasons where the app's rating system and the personas players choose collide into something genuinely strategic — the format at its sharpest."
 tier_a_blurb: "Confident seasons that use the rate-and-block mechanic with real purpose, even without reaching the format-defining bar."
 tier_b_blurb: "The show's default tier — a season that runs the app-and-ratings format competently, without yet setting the standard."
-weekly_question: "With the full seven-season run now ranked, does Season 7's smaller cast still deserve the top slot?"
+weekly_question: "With all eight seasons now ranked, does Season 7's smaller cast still deserve the top slot?"
+era_bands:
+  - key: netflix-era
+    label: "Netflix years"
+    range: [2020, 2025]
+  - key: hulu-era
+    label: "Hulu revival"
+    range: [2026, 2026]
 ---
 
 # Editor's Canon — The Circle
@@ -71,3 +78,11 @@ slot_argument: Max, an AI-generated contestant, is a real marketing coup and the
 community_rank_hint: rank=7 delta=0 sentiment=hold
 
 Season 6 closes out the ranking, and it's the clearest case of a twist that photographs better than it plays. Max, an AI-generated contestant trained on prior seasons' chat data, is a genuinely inventive idea, and it earned the season real press attention. But the mechanic doesn't sustain across thirteen episodes the way the marketing promised: the "how human do you seem" rating angle resolves faster than the hook suggests it should, and the format's core rate-and-block strategy doesn't get meaningfully sharper because of it. The move to a purpose-built Atlanta set is a real production milestone, ending the show's UK-set era, but the headline twist ranks as the season's weakest link, not its strongest.
+
+## 8. Season 8
+
+tag: Celebrities join the cast, not just the cameo booth, and the premise bends furthest yet.
+slot_argument: Season 4 was already penalized for letting celebrities play guest catfish; Season 8 puts celebrities in the cast outright, and the season is still airing with nothing proven yet.
+community_rank_hint: rank=8 delta=0 sentiment=hold
+
+Season 8 closes out the ranking because it goes further than any season before it in testing what the format can survive. Season 4 already took a hit for using celebrities as guest cameos; here, celebrities are full cast members, rating and getting rated alongside everyday players, which cuts straight at the "strangers behind an app" premise the whole format runs on. The live, audience-facing voting layer is a genuine structural swing, and the move to Hulu under new host Tinx makes this the biggest reset the franchise has had since Season 1. But with the season still airing, there's no evidence yet that any of it sharpens the strategy rather than complicating it.
