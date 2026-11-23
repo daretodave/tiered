@@ -24,6 +24,47 @@ that.
 
 ## Season gap table
 
+**Rule 2 drain, 2026-11-23 tick (cloud march): the-circle 7/8 → 8/8, gap row
+removed.** Picked off the remaining unstarred pair (`the-circle`, `rhoslc`,
+both gap=1, both tier B, both `est_year: 2020`) — tier and est_year both tied,
+so this tick broke the tie by picking the row with the fuller sourcing
+already on record in this file (the premiere date, host, and format-change
+details were already scout-verified across the 2026-11-04 through 2026-11-18
+sweeps above, reducing re-verification risk). Confirmed facts (Deadline
+2026-10-21, reconfirmed across three prior sweeps): Season 8 premiered
+2026-11-17 on Hulu — the franchise's first season off Netflix — with new
+host Tinx replacing Michelle Buteau (all seven Netflix seasons), and a
+structural format change folding celebrity contestants into the cast
+alongside everyday players for the first time, plus a live, audience-facing
+voting layer on top of the usual in-app ratings. Still airing — finale
+confirmed 2026-12-18, a month after this tick — so filed premise/format-only
+per spoiler discipline P0, no blocking outcomes. Filed Season 8
+(`content/shows/the-circle/seasons/08-the-hulu-revival.md`). Canon rebased:
+Season 8 lands at the new tail (rank 8) — this canon's established logic
+already penalized Season 4 (rank 6) for diluting the "strangers behind an
+app" premise with celebrity guest cameos; Season 8 goes further by making
+celebrities full cast members, a bigger premise dilution than anything
+ranked before it, and the season is unproven while still airing. No existing
+rank shifts — a pure tail append, Season 6 stays rank 7. `era_bands` added
+to the show's canon for the first time (it crosses the 8-seeded-season
+threshold with this addition): `netflix-era` `[2020, 2025]`, `hulu-era`
+`[2026, 2026]` — abutting, full-span-covering. Show frontmatter bumped
+`seasons: 7→8`, blurb corrected to "8 seasons." The-circle fully drained —
+row removed below. Gap table now 31 shows / 33 gap-slots. The remaining
+unstarred row (`rhoslc`, gap=1) stays queued for the next Rule 2 pick.
+
+**Housekeeping note, same tick.** `skills/ship-content.md` Step 2's mirror
+command (`node scripts/loop-issue.mjs content-open ...`) no longer exists —
+the `content-open` subcommand was dropped in the nexus v2 upgrade
+(`a4fa6242`, 2026-10-27) that cut `scripts/loop-issue.mjs` from ~800 to
+~300 lines. The mirror step is best-effort per its own contract, so this
+tick skipped it and proceeded; flagging here rather than filing a full audit
+row since the fix is small (either restore a `content-open` subcommand or
+retire the Step 2 instruction) and low-urgency (no mirror issue has ever
+blocked a ship-content tick).
+
+---
+
 **Table correction, 2026-11-21 tick (cloud march, second this day): the prior
 tick's own commit (`09296d33`) claimed "southern-charm fully drained — row
 removed below" but the diff only added narration text — the physical
@@ -2188,7 +2229,6 @@ new-show creation is locked to the biweekly show-add clock.
 | below-deck-down-under | 4/5 | 1* |
 | bachelor-in-paradise | 10/11 | 1* |
 | rhom | 7/8 | 1* |
-| the-circle | 7/8 | 1 |
 | vanderpump-rules | 12/13 | 1* |
 | ink-master | 17/18 | 1* |
 | love-island-us | 8/9 | 1* |
@@ -4046,4 +4086,7 @@ No calendar or gap-table action.
 | 2026-10-31 | Rule 2 drain, not a sweep (bake-off S17 — fully filed, gap-slot removed; also flagged shark-tank/rhoslc/dragrace-uk/hells-kitchen as stale-starred, already-premiered rows for the next drain pick) | 32 shows / 34 gap-slots |
 | 2026-11-04 | 2 (seventeenth full sweep; big-brother S29+S30 double-renewal [2 slots], first-time confirmation, distinct from the earlier S28-premiere misattribution false positive; chopped S63/S64, survivor-australia numbering, bachelorette S22, and americas-next-top-model Cycle 25 all reconfirmed as known non-gaps, not reopened; physical table recount found 33 gap-slots pre-edit, one under this log's own narrated 34 — flagged, not reconciled) | 33 shows / 35 gap-slots (physical count; narrated count carries an unreconciled 1-slot drift) |
 | 2026-11-11 | 1 (eighteenth full sweep; masterchef-australia S19 renewal, first-time confirmation [1 slot]; dragrace-uk/rhoslc/shark-tank unstarred — each already aired, now actionable for Rule 2, no slot change; survivor-australia + rhonj + american-idol + bachelor stars enriched with titles/dates, no table-shape change; perfect-match + dragrace-uk status-field hygiene corrections airing→hiatus; the-voice "Season 31" celebrity-format signal and ink-master's weak-sourced star both flagged, not added/removed; last tick's 1-slot narration drift is now moot — this tick edited the physical table directly) | 34 shows / 36 gap-slots |
-| 2026-11-18 | 1 (nineteenth full sweep; alone-australia S5 renewal, first-time confirmation [1 slot]; southern-charm/the-circle unstarred — each already aired, now actionable for Rule 2, no slot change; love-is-blind/love-island-uk/love-island-us/married-at-first-sight-australia status-field hygiene corrections airing→hiatus; the-circle status+network correction hiatus→airing, Netflix→Hulu; the-voice S31 "celebrity edition" signal upgraded to multi-source but still not added, per issue #762's scoped numbering fix; dancing-with-the-stars + the-voice finale dates in content/calendar.yml, the-voice's one newly added) | 35 shows / 37 gap-slots |
+| 2026-11-18 | 1 (nineteenth full sweep; alone-australia S5 renewal, first-time confirmation [1 slot]; southern-charm/the-circle unstarred — each already aired, now actionable for Rule 2, no slot change; the-circle status+network correction hiatus→airing, Netflix→Hulu; the-voice S31 "celebrity edition" signal upgraded to multi-source but still not added, per issue #762's scoped numbering fix; dancing-with-the-stars + the-voice finale dates in content/calendar.yml, the-voice's one newly added) | 35 shows / 37 gap-slots |
+| 2026-11-21 | Rule 2 drain, not a sweep (southern-charm — fully filed, gap-slot removed) | — |
+| 2026-11-21 | Rule 2 drain, not a sweep (dragrace-uk — fully filed, gap-slot removed) | 32 shows / 34 gap-slots (per that tick's own narration; two ticks' worth of removal from the 2026-11-18 count land 1 show short of the arithmetic — pre-existing drift, not reconciled here, same class as other unreconciled counts in this log) |
+| 2026-11-23 | Rule 2 drain, not a sweep (the-circle — fully filed, gap-slot removed; tie-broken against rhoslc on fuller existing sourcing, since tier/est_year both tied) | 31 shows / 33 gap-slots (physical count, verified by direct table count this tick) |
