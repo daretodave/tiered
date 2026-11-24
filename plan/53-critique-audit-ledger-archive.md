@@ -137,4 +137,59 @@ are triaged.
 
 Measure: 8 open · 0 closed · next A9
 
-Not chunked yet.
+- [ ] **53.1** Archive script + archive files + colocated tests · M · closes A1, A2, A3, A4, A5 · needs —
+
+  `scripts/plan/ledger-archive.mjs`: dry-run by default
+  (prints each `archived <id>` it would move, then `archived N`
+  or `clean`), `--write` performs the move for both
+  `plan/CRITIQUE.md` and `plan/AUDIT.md` against their
+  respective archive files. Parses each file's `## Pending` /
+  closed rows (same row-boundary logic as `scripts/lib/
+  plan-rows.mjs`'s existing section/row scanning — reuse it,
+  don't re-derive), finds rows already marked `[x]` whose
+  closing date (the `RESOLVED (<date>, ...)` or equivalent
+  closing-date line already present on every closed row in this
+  repo's two files — confirm the exact literal pattern against
+  today's `plan/CRITIQUE.md`/`AUDIT.md` content before coding
+  the regex, per the spec's Design) is `archive_after_days` (a
+  module constant, default 30) days old or more, moves each
+  matching row verbatim (exact original text, no rewriting)
+  from the live file to the matching archive file (appended),
+  and removes it from the live file in the same `--write` pass.
+  `plan/CRITIQUE_ARCHIVE.md` and `plan/AUDIT_ARCHIVE.md`: new
+  files, each opening with the same one-line "Append-only: ...
+  Never edited or reordered." header convention as
+  `plan/ARCHIVE.md`. Colocated test
+  (`scripts/plan/__tests__/ledger-archive.test.mjs` or the
+  repo's matching convention for `scripts/plan/*.mjs` tests):
+  a closed row older than the cutoff moves (A3); a closed row
+  younger than the cutoff stays (A4); an open (non-`[x]`) row
+  never moves regardless of age (A5); a moved row's text is
+  byte-identical to its original (A3).
+
+- [ ] **53.2** Critique close-out wiring + skill-doc notes · S · closes A6, A7 · needs 53.1
+
+  `skills/critique.md`: its close-out step (the step that
+  already walks closed rows to confirm they're still closed)
+  gains a call to `node scripts/plan/ledger-archive.mjs --write`
+  immediately after that confirmation and before the pass's own
+  commit — so a closed-and-confirmed row from this pass is
+  eligible for archiving the same tick it ages past the
+  threshold, not the next one. Both `skills/critique.md` and
+  `skills/iterate.md` gain a one-line note, wherever each scans
+  `plan/CRITIQUE.md` / `plan/AUDIT.md` for open or recently-
+  closed findings, stating the archive files exist, hold
+  historical closed rows, and are out of scope for a normal
+  tick's read (no behavior change — documentation only).
+
+- [ ] **53.3** One-time drain of the existing backlog · S · closes A8 · needs 53.1
+
+  Run `node scripts/plan/ledger-archive.mjs --write` against
+  this repo's current `plan/CRITIQUE.md` and `plan/AUDIT.md` in
+  the same commit, moving every already-aged `[x]` row into the
+  two new archive files. Confirm `node scripts/plan-check.mjs`
+  stays green after the move (row counts in both live files drop
+  accordingly; `## Pending` / still-open rows are untouched and
+  verified byte-identical before/after). This is the chunk that
+  actually relieves the read-ceiling problem the spec exists to
+  fix — commit it only once 53.1's script round-trips cleanly.
