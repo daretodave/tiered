@@ -1182,15 +1182,6 @@ or similar makes the sign-up trust signal real.
 **Conflicts:** depends on S1 (custom domain) for a credible
 sender identity; can ship before but trust signal will be weak.
 
-### [ ] [score 6.0] Open running vote tallies invite early-mover bias; phased or hidden results resist it
-- proposed: 2026-11-17 (research)
-- source signals: field (2026-11-17): A community voting feature that shows a running tally openly tends to lock in whatever already leads, since later voters anchor on the visible count; the common mitigation is a closed voting window w…
-- rationale: the project's own vote pair surfaces a live running count to every viewer immediately; if a vote count ever feeds a ranking rather than staying a separate signal alongside editorial canon, the always-open tally would carry the same early-mover bias this wider pattern warns about. No internal signal yet shows this happening — flagged for if one does.
-- proposed scope: no code change proposed now; worth a look only once an internal signal (e.g. a season whose early vote swing visibly anchors its final tally) makes the bias concrete rather than theoretical.
-- estimated chunks: unknown until specced
-- conflicts: none known.
-- generator: research · filed 2026-11-17
-
 ### [ ] [score 6.0] Wagering markets on unaired competition outcomes are a new spoiler-leak channel
 - proposed: 2026-11-17 (research)
 - source signals: field (2026-11-17): Betting-style prediction markets that let the public wager on a reality-competition's outcome can surface or imply the real result of an already-filmed, not-yet-aired season through the market's own…
@@ -2566,6 +2557,22 @@ work that is already live.
 ### 05. Critique-harness repair (anon clean-profile + authed cookie-injection)
 **Reason:** Reviewed live during the 2026-05-17 oversight pass at user request. Neither blocker reproduces: a fresh Chrome MCP tab group is genuinely logged-out (anon pass clean), and on that clean profile `document.cookie`-injecting `CRITIQUE_SESSION_COOKIE` as `__session` is accepted by the server (`/api/auth/me` → `signedIn:true`; chrome shows `@e2e / Sign out`). No code or environment change was needed — the 2026-05-16 `httpOnly` reasoning was wrong for a clean profile. Working harness contract recorded in `plan/bearings.md` → "Critique cadence" and the two `CRITIQUE.md` rows moved to Done. Nothing to ship; closing rather than promoting.
 **Rejected at:** oversight 2026-05-17.
+
+### Open running vote tallies invite early-mover bias; phased or hidden results resist it
+**Reason:** Reality-checked during the 2026-11-24 march Step 0 depth
+promotion (`promote.mjs due` picked it at score 6.0, proposed 2026-11-17 via
+the `research` generator) before writing it as a spec. The candidate's own
+`proposed scope` line says it plainly: "no code change proposed now; worth a
+look only once an internal signal... makes the bias concrete rather than
+theoretical." It cites one field-research signal about community voting UX
+in general and explicitly states "no internal signal yet shows this
+happening" on tiered.tv itself — no season's vote tally has been observed
+anchoring its outcome. Writing a spec now would mean inventing a Design and
+Acceptance for a problem this product hasn't confirmed it has. Nothing to
+ship; rejecting rather than promoting a spec with no real scope. Re-propose
+once an internal signal (a season whose early vote swing visibly anchors its
+final tally) makes the bias concrete.
+**Rejected at:** march 2026-11-24 (Step 0 depth promotion).
 
 ## Seed candidates (pre-loaded for /expand to evaluate)
 
