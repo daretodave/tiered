@@ -1182,15 +1182,6 @@ or similar makes the sign-up trust signal real.
 **Conflicts:** depends on S1 (custom domain) for a credible
 sender identity; can ship before but trust signal will be weak.
 
-### [ ] [score 6.0] Wagering markets on unaired competition outcomes are a new spoiler-leak channel
-- proposed: 2026-11-17 (research)
-- source signals: field (2026-11-17): Betting-style prediction markets that let the public wager on a reality-competition's outcome can surface or imply the real result of an already-filmed, not-yet-aired season through the market's own…
-- rationale: every outcome fact this project files is already gated on broadcast air date; this names a leak channel outside that gate's current scope (text-pattern matching on published copy) so a future spoiler-safety review has it on the list, not a reason to change any gate today.
-- proposed scope: no code change proposed; a note for whoever next revisits the spoiler-language heuristic gate's list of leak channels, not an action now.
-- estimated chunks: unknown until specced
-- conflicts: none known.
-- generator: research · filed 2026-11-17
-
 ### [ ] [score 6.0] Open community voting features are vulnerable to coordinated vote-spam without a validation layer
 - proposed: 2026-11-21 (research)
 - source signals: field (2026-11-21): Fan-voting features that run an open seasonal ballot alongside incremental weekly results are seeing very high invalidation rates from coordinated vote spam, prompting operators to publish after-the-…
@@ -2573,6 +2564,22 @@ ship; rejecting rather than promoting a spec with no real scope. Re-propose
 once an internal signal (a season whose early vote swing visibly anchors its
 final tally) makes the bias concrete.
 **Rejected at:** march 2026-11-24 (Step 0 depth promotion).
+
+### Wagering markets on unaired competition outcomes are a new spoiler-leak channel
+**Reason:** Reality-checked during the 2026-11-25 march Step 0 depth
+promotion (`promote.mjs due` picked it at score 6.0, proposed 2026-11-17 via
+the `research` generator) before writing it as a spec. The candidate's own
+`proposed scope` line says it plainly: "no code change proposed; a note for
+whoever next revisits the spoiler-language heuristic gate's list of leak
+channels, not an action now." It cites one field-research signal about
+betting-style prediction markets as a leak channel in general, with no
+internal signal that any tiered.tv outcome fact has ever leaked through a
+wagering market — the rationale itself calls it "not a reason to change any
+gate today." Writing a spec now would mean inventing a Design and
+Acceptance for a gate change this product hasn't shown it needs. Nothing to
+ship; rejecting rather than promoting a spec with no real scope. Re-propose
+if a wagering-market leak is ever observed against a tiered.tv show.
+**Rejected at:** march 2026-11-25 (Step 0 depth promotion).
 
 ## Seed candidates (pre-loaded for /expand to evaluate)
 
