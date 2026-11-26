@@ -11,7 +11,7 @@
 
 | clock | cadence | last run | state |
 |---|---|---|---|
-| season-sweep | 7 days | 2026-11-18 | next due 2026-11-25 |
+| season-sweep | 7 days | 2026-11-26 | next due 2026-12-03 |
 | show-add | 14 days from drain-completed | n/a | LOCKED until the gap table reads zero |
 
 **Show-add arming rule.** A new show may be added only when the
@@ -23,6 +23,142 @@ drain-completed date — the next 14-day window measures from
 that.
 
 ## Season gap table
+
+**Twentieth full weekly sweep, 2026-11-26 tick (cloud march; 8 days since the
+clock's own last-stamped 2026-11-18 — 6 `scout` batches, ≤12 shows each,
+covered all 68 catalogued shows, cross-grepped against the filesystem —
+clean, every frontmatter `seasons:` count equals its filed-season-file
+count, zero mismatches across all 68 shows).**
+
+**One genuine new gap found.** `bake-off` — Channel 4 confirmed a Series 18
+renewal the same day Series 17's finale aired (2026-11-24, per Wikipedia's
+own series article); no premiere date yet. Added as `bake-off | 17/18 | 1*`.
+
+**Eight status hygiene corrections (same commit), all with a confirmed
+finale/reunion date already in the past and no next season currently
+airing.** `dancing-with-the-stars` — Season 35 finale aired 2026-11-24
+(HollywoodLife, TVInsider); corrected `status: airing` → `hiatus`.
+`bake-off` — Series 17 finale aired the same date (Wikipedia); corrected
+`status: airing` → `hiatus` (the new Series 18 star above stays unaired).
+`americas-got-talent` — Season 21's two-night finale aired 2026-09-22/23
+(BroadwayWorld, TVInsider; also already `status: aired` in
+`content/calendar.yml`); corrected `status: airing` → `hiatus`.
+`project-runway` — Season 22 finale aired 2026-09-10 (JustJared; also
+`content/calendar.yml`); corrected `status: airing` → `hiatus`.
+`rhoa` — Season 17's three-part reunion wrapped 2026-08-23 (Bravo; finale
+2026-08-02 per `content/calendar.yml`); corrected `status: airing` →
+`hiatus`. `alone` — Season 13 finale aired 2026-09-09 (`content/calendar.yml`,
+already `status: aired`), no Season 14 announced; corrected `status: airing`
+→ `hiatus`. `big-brother` — Season 28 finale aired 2026-10-01
+(`content/calendar.yml`, already `status: aired`), and the already-starred
+Season 29/30 double-renewal remains unaired; corrected `status: airing` →
+`hiatus`. `summer-house` — Season 10 finale aired 2026-05-19, reunion wrapped
+2026-06-09 (Bravo), Season 11 filmed through September 2026 with no premiere
+date yet (already starred `10/11 | 1*`); corrected `status: airing` →
+`hiatus`.
+
+**Five further status corrections, same class, flagged by this sweep but
+held to a dedicated follow-up rather than bundled above (each already
+starred confirmed-but-unaired for a genuinely long stretch — this is a
+backlog item, not new information from this tick):** `bachelor` (dark since
+its Season 29 run concluded March 2025; Season 30 confirmed 2027-03-21,
+host revealed 2026-11-13), `bachelor-in-paradise` (dark since Season 10
+concluded ~September 2025; Season 11 confirmed for 2027), `american-idol`
+(dark since Season 24's finale 2026-05-11; Season 25 renewed 2026-07-29,
+2027), `american-ninja-warrior` (dark since Season 18's finale 2026-08-31;
+Seasons 19/20 double-renewed, 2027) and `traitors` (between seasons; the
+next one is confirmed 2027-01-14 per NBCUniversal's own press release) were
+each corrected `status: airing` → `hiatus` in this same commit — the
+evidence bar (a confirmed air/finale date already past, or an explicit
+"next season, 2027" renewal with nothing airing now) is identical to the
+eight above, so there was no reason to defer these into a second tick.
+
+**Three more, found by cross-checking `content/calendar.yml`'s own `aired`
+flags against each show's frontmatter directly (a systematic check this
+sweep ran after the scout batches, since the scout prompts hadn't thought
+to surface these) rather than by any scout batch.** `survivor` — Season 51
+(this show's declared/filed season, matching the already-starred `51/52`
+row) has visibly concluded since Season 52 isn't due until 2027-02-24;
+corrected `status: airing` → `hiatus`. This show is `featured: true` (the
+home-hero anchor) and feeds `computeYearsOnAir` (`src/lib/show-format.ts`)
+— the hiatus branch there renders a fixed year range instead of
+"2000–present," the same already-established convention used by two
+dozen other hiatus shows in this catalog, so there's no new display risk.
+`below-deck-mediterranean` — Season 11's finale aired 2026-09-14 per
+`content/calendar.yml`, over two months before this tick, with no Season
+12 signal found; corrected `status: airing` → `hiatus`. `90-day-fiance` —
+Season 12's finale (`content/calendar.yml`, 2026-09-27) is also well past,
+with no Season 13 signal beyond speculative cadence-based projections (the
+calendar row's own `status: scheduled` lagging the date is a separate,
+cosmetic drift — that field is the content drain's to flip, not this
+sweep's); corrected `status: airing` → `hiatus`.
+
+**Two calendar additions, `content/calendar.yml`.** `the-circle` — the
+already-known, already-filed Hulu revival's Season 8 finale is confirmed
+for 2026-12-18 (Deadline, TVLine) — added as `scheduled`; was never added to
+the calendar by the sweeps that tracked its premiere. `traitors` (US) — the
+next flagship season's finale/reunion is now confirmed for 2027-03-18
+(NBCUniversal's own press release, alongside its 2027-01-14 premiere date);
+added as `scheduled` under `season: 6` to match this file's own gap-table
+convention for the row (`traitors | 5/6 | 1*`) — note the press materials
+themselves are inconsistent, with Peacock's own copy calling the upcoming
+season "Season 5" while TVLine calls it "Season 6"; this numbering
+discrepancy is flagged, not resolved, here.
+
+**Two weak-sourced stars reconfirmed weak, not removed (same open items as
+the 2026-11-11 sweep).** `ink-master` — the existing `17/18 | 1*` star still
+rests on secondary trackers only; no primary-source (Paramount+, Deadline)
+renewal statement found this pass either. `love-island-uk` — the existing
+`13/14 | 1*` star likewise found no primary confirmation this pass beyond
+"expected next summer" chatter. Neither removed (no contrary evidence
+either), both flagged again for a primary-source check before the next
+sweep leans on them further.
+
+**Two conflicting signals, no table action.** `rhom` — a trade-only report
+(TVDeets, unnamed sources) claims a Season 8 renewal with a January 2026
+filming start, but other coverage describes filming as stalled with active
+cancellation chatter and no Bravo-official confirmation; the existing
+`7/8 | 1*` star (filed by an earlier sweep on stronger sourcing) stays as-is
+pending a cleaner read. `vanderpump-rules` — TMZ reported an early Season 13
+renewal (2026-02-21), but a later May 2026 upfronts report suggested the
+show was left off Bravo's renewal slate in favor of the "Lisa Las Vegas"
+spinoff; the existing `12/13 | 1*` star stays as-is, flagged for
+verification directly against Bravo before the next sweep relies on it.
+
+**One signal explicitly not actioned, per standing instruction.** `the-voice`
+— NBC's already-known "Celebrity" edition (Keke Palmer hosting, Queen
+Latifah/Riley Green/Joe Jonas coaching, targeting 2027) is now closer to
+air, with the finale of the current numbered season (30) confirmed for
+2026-12-14 (already in `content/calendar.yml`, unchanged). The Celebrity
+edition's bare facts are noted here only — per issue #762
+(`triage:needs-user`), this show's standing numbering corruption (seasons
+22-29) is scoped to a dedicated human-judgment fix, and mapping an
+ambiguous new edition into the existing numbering is explicitly not this
+sweep's (or any autonomous tick's) call to make.
+
+**Two items reconfirmed, no table action.** `bachelorette` — Season 22
+remains pulled-from-air limbo, still no official cancellation or
+reschedule; status stays `airing` pending an official ABC call (unchanged
+from every sweep since the first flag). `dragrace-uk` — the already-known
+BBC-to-WOW-Presents-Plus franchise move has a newly-confirmed detail (a UK
+All Stars edition slated for autumn 2027), but that is a distinct spinoff
+format, not a new numbered core series, and new-show creation stays locked
+to the biweekly show-add clock; `network: BBC` stays accurate for all 8
+filed series exactly as the prior sweep decided, platform change remains
+forward-looking only.
+
+**Enrichment only, no table-shape change.** `survivor` — Season 52's
+premiere narrowed to a firm date, 2027-02-24, with all episodes expanding
+to two hours for the first time (TV Insider, EntertainmentNow). `selling-sunset`
+— Season 10 (carried at `9/10 | 1*`) now has a provisional premiere date,
+2026-12-04, per one outlet citing Variety — not yet corroborated directly by
+Netflix/Tudum, so treated as a refinement, not a firm date.
+
+**Count note.** Physical table before this tick's edit: 31 shows / 33
+gap-slots (per the 2026-11-23 the-circle drain above). After this tick's
+`bake-off` addition: **32 shows / 34 gap-slots.**
+
+---
 
 **Rule 2 drain, 2026-11-23 tick (cloud march): the-circle 7/8 → 8/8, gap row
 removed.** Picked off the remaining unstarred pair (`the-circle`, `rhoslc`,
@@ -2250,6 +2386,7 @@ new-show creation is locked to the biweekly show-add clock.
 | below-deck-mediterranean | 11/12 | 1* |
 | big-brother | 28/30 | 2* |
 | alone-australia | 4/5 | 1* |
+| bake-off | 17/18 | 1* |
 
 **Table correction, 2026-08-28 tick (cloud march):** `married-at-
 first-sight`'s row (carried at `19/20, 1*` since the 2026-08-23

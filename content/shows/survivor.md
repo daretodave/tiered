@@ -6,7 +6,7 @@ palette:
   ink: "#EFE2BD"
   primary: "#D55E36"
 seasons: 51
-status: airing
+status: hiatus
 blurb: "51 seasons. One torch at a time."
 tagline: "Strangers on a beach, voting each other off until one is left standing. The format that invented itself in episode one, and has spent {yearsWord} years rediscovering what it is. I've ranked every single one."
 card_tagline: "Still finding new ways to ask who you really are, {yearsWord} years in."

@@ -6,7 +6,7 @@ palette:
   ink:     "#16233F"
   primary: "#1E6E5B"
 seasons: 12
-status: airing
+status: hiatus
 blurb: "12 seasons. One visa. Ninety days to say yes or no."
 tagline: "For {yearsWord} years, couples have raced the K-1 fiancé visa's 90-day clock — one partner arriving from abroad, one already home, and a government deadline standing between the airport and a wedding decision made on camera."
 card_tagline: "A government visa clock forces couples to decide, on camera, whether a relationship built abroad can survive at home."

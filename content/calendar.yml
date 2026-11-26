@@ -112,3 +112,11 @@ finales:
     season: 30
     finale_date: 2026-12-14
     status: scheduled
+  - show: the-circle
+    season: 8
+    finale_date: 2026-12-18
+    status: scheduled
+  - show: traitors
+    season: 6
+    finale_date: 2027-03-18
+    status: scheduled

@@ -147,4 +147,5 @@
 - evidence: node scripts/pulse.mjs --motion: shipped 7 / baseline 20 · 2026-W46 against 2026-W42..2026-W45 (1 so far in 2026-W47); floor 10 · stalled (7 is under 50% of the baseline).
 - next: /iterate: find what keeps the loop from shipping (no ready chunk, a silted candidates queue, a lock with no fallback) and move it: build the top Pending row, ask /oversight to promote a candidate, or name the plan/bearings.md lever (Motion floor, stall_action, Promote) to retune.
 - generator: motion · filed 2026-11-17
+- [ ] [MED] post-finale ranking-shift note owed for dancing-with-the-stars season 35 (finale aired 2026-11-24) — write the spoiler-safe shift note and adjust canonical_position if the editorial rationale warrants it (category: content-gaps, source: self, score: 4.5) <!-- finale-shift:dancing-with-the-stars:35 -->
 

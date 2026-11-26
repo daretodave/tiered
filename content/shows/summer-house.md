@@ -6,7 +6,7 @@ palette:
   ink:     "#16302E"
   primary: "#2C4A8C"
 seasons: 10
-status: airing
+status: hiatus
 blurb: "10 seasons. One Hamptons share house, every summer."
 tagline: "Bravo's Hamptons share-house docusoap has spent {yearsWord} years following a fixed group of New York City friends who trade the work week for a shared summer rental, letting friction and friendship carry the format instead of any competition."
 card_tagline: "No host, no elimination, no prize — just one shared roof and a whole summer of house dynamics."

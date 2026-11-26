@@ -6,7 +6,7 @@ palette:
   ink: "#2E3B1F"
   primary: "#9CC07A"
 seasons: 17
-status: airing
+status: hiatus
 blurb: "17 seasons. A tent, a field, a sponge."
 tagline: "Amateur bakers in a white tent on a country estate, racing the clock through signature, technical, and showstopper. The gentlest competition on television, and somehow the most watchable."
 card_tagline: "17 seasons of home bakers under canvas, working three rounds a week toward a cake stand and a handshake. Impossibly gentle, never boring."

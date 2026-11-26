@@ -6,7 +6,7 @@ palette:
   ink: "#E8E2D6"
   primary: "#3FB8C9"
 seasons: 28
-status: airing
+status: hiatus
 blurb: "28 seasons. The house is always watching."
 tagline: "Houseguests locked in a wired-up soundstage in Studio City, voting each other out one Thursday at a time. The American version of the format that invented the genre, and still the loudest room on summer television."
 card_tagline: "The alliance game that turns strangers into full-time strategists, one live eviction at a time."

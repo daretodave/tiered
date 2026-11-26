@@ -6,7 +6,7 @@ palette:
   ink:   "#F5E8DC"
   primary: "#D4A84B"
 seasons: 17
-status: airing
+status: hiatus
 blurb: "17 seasons. Atlanta's social world, unfiltered."
 tagline: "The Housewives franchise's biggest ratings engine — {yearsWord} years of Atlanta opulence, confrontational chemistry, and a cast that never let the cameras catch them at less than full volume."
 card_tagline: "Atlanta's highest-rated Bravo cast never once dialed the volume down for a camera."
