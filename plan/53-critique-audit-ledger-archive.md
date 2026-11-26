@@ -108,15 +108,6 @@ are triaged.
 
 ## Acceptance
 
-- **A1** `scripts/plan/ledger-archive.mjs` exists, dry-run by
-  default, `--write` performs the move.
-- **A2** `plan/CRITIQUE_ARCHIVE.md` and `plan/AUDIT_ARCHIVE.md`
-  exist with the append-only header convention.
-- **A3** A closed row older than `archive_after_days` moves from
-  the live file to the archive file, verbatim.
-- **A4** A closed row younger than the cutoff stays in the live
-  file.
-- **A5** An open (non-`[x]`) row never moves regardless of age.
 - **A6** `skills/critique.md`'s close-out step calls the archive
   script with `--write` after confirming closed rows, before its
   own commit.
@@ -135,9 +126,8 @@ are triaged.
 
 ## Chunks
 
-Measure: 8 open · 0 closed · next A9
+Measure: 3 open · 5 closed · next A9
 
-- [ ] **53.1** Archive script + archive files + colocated tests · M · closes A1, A2, A3, A4, A5 · needs —
 
   `scripts/plan/ledger-archive.mjs`: dry-run by default
   (prints each `archived <id>` it would move, then `archived N`
@@ -167,7 +157,7 @@ Measure: 8 open · 0 closed · next A9
   never moves regardless of age (A5); a moved row's text is
   byte-identical to its original (A3).
 
-- [ ] **53.2** Critique close-out wiring + skill-doc notes · S · closes A6, A7 · needs 53.1
+- [ ] **53.2** Critique close-out wiring + skill-doc notes · S · closes A6, A7 · needs —
 
   `skills/critique.md`: its close-out step (the step that
   already walks closed rows to confirm they're still closed)
@@ -182,7 +172,7 @@ Measure: 8 open · 0 closed · next A9
   historical closed rows, and are out of scope for a normal
   tick's read (no behavior change — documentation only).
 
-- [ ] **53.3** One-time drain of the existing backlog · S · closes A8 · needs 53.1
+- [ ] **53.3** One-time drain of the existing backlog · S · closes A8 · needs —
 
   Run `node scripts/plan/ledger-archive.mjs --write` against
   this repo's current `plan/CRITIQUE.md` and `plan/AUDIT.md` in
