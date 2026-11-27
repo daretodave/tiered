@@ -1,13 +1,13 @@
 ---
 show: rhoslc
 editor: "tiered.tv editor"
-last_revised: 2026-07-13
+last_revised: 2026-11-27
 meth_who_h: "Who ranks it"
-meth_who_p: "tiered.tv's editor. RHOSLC's full six-season run is ranked here, weighed for how clearly the show's specific social world — and the tension between faith and public life inside it — comes through, season after season. This isn't objective. It's one honest read."
+meth_who_p: "tiered.tv's editor. RHOSLC's full seven-season run is ranked here, weighed for how clearly the show's specific social world — and the tension between faith and public life inside it — comes through, season after season. This isn't objective. It's one honest read."
 meth_how_h: "How I weigh it"
 meth_how_p: "Three things matter most here — whether the Salt Lake City social circle reads as genuinely specific rather than a generic Housewives backdrop, whether the LDS-adjacent culture generates real dynamic rather than sitting as scenery, and whether each season's cast brings enough friction and stability to sustain it."
 meth_when_h: "When I revisit"
-meth_when_p: "All six seasons are ranked here, but the show is still airing — a renewed season is already in production. Expect this canon to shift again once new episodes premiere and the ensemble's next chapter earns its own slot in the order."
+meth_when_p: "All seven seasons are ranked here, including season seven, which is still airing and holds the bottom slot until its run finishes. Expect this canon to shift once the season's full shape is known and it earns a settled position in the order."
 tier_s_blurb: "Seasons where the LDS-adjacent social backdrop and a stable, chemistry-rich cast combine at full intensity — the show at its most distinct and its most settled."
 tier_a_blurb: "Confident seasons that expand or rebuild the ensemble with real purpose, even without setting the format-defining standard."
 tier_b_blurb: "The show's default tier — a season that runs the format competently on a strong cast, without yet reaching the standard above it."
@@ -64,3 +64,11 @@ slot_argument: Season three loses two founding voices and trims to a core four, 
 community_rank_hint: rank=6 delta=0 sentiment=hold
 
 Season three is the show absorbing its biggest cast hit. Two voices from the founding era don't return, Mary Cosby steps back to a reduced presence, and what's left is a core four carrying a season built around real turbulence rather than a chosen creative direction. The tight sixteen-episode order and a two-part reunion that's still widely referenced keep the season from feeling thin, and the remaining four women prove they can anchor a season on their own. But a show ranked on how well its cast holds together has to put the season where that cast came apart at the bottom, even with strong material around the edges.
+
+## 7. Season 7
+
+tag: Second straight zero-turnover season for the same seven-woman core — still airing, unresolved, so it holds the floor.
+slot_argument: Season six won stability points for zero turnover; season seven repeats it for a second year, the only move at the friend-of-the-show tier. Still airing with no finale yet, so it sits below five seasons whose full arcs are already settled.
+community_rank_hint: rank=7 delta=0 sentiment=hold
+
+Season seven matches season six's biggest achievement and then some — this is the second consecutive year the full seven-woman cast returns with zero turnover, the first time this show has managed that two years running. The only roster change at all sits at the friend-of-the-show tier, where Britani Bateman is joined by a new face. That's a real format fact: this show has found a stable version of itself. But stability on paper isn't the same as a finished argument. The season is still airing, with no finale date confirmed, and this canon can't weigh an unresolved run against five seasons whose full shape is already settled. It holds the bottom slot until it finishes.

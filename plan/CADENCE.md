@@ -160,6 +160,31 @@ gap-slots (per the 2026-11-23 the-circle drain above). After this tick's
 
 ---
 
+**Rule 2 drain, 2026-11-27 tick (cloud march): rhoslc 6/7 → 7/7, gap row
+removed.** Picked off the sole unstarred, actionable row (`rhoslc`, gap=1,
+left queued since the 2026-11-23 tick drained its tied sibling `the-circle`
+instead). Confirmed facts (Bravo, Peacock, TheWrap, SLTrib): Season 7
+premiered 2026-09-16 on Bravo (Wednesdays 8pm ET, next-day on Peacock) with
+a supersized premiere episode, still airing as of this tick (at least 10
+episodes aired, no finale date or total episode count confirmed anywhere —
+filed without `ep_count` rather than guess it). All seven full housewives
+return unchanged from Season 6 (Barlow, Cosby, Gay, Katsanevas, Marks,
+Newport, Rose) — the second consecutive season with zero turnover among the
+core cast. The only roster movement sits at the friend-of-the-show tier:
+Ashley Quai joins, Britani Bateman continues, Meili Workman (friend-of since
+Season 5) does not return in that role. Filed Season 7
+(`content/shows/rhoslc/seasons/07-season-7.md`) premise/format-only per
+spoiler discipline P0 — no outcome, dispute, or reunion content, since the
+season hasn't finished airing. Canon rebased: Season 7 lands at the new tail
+(rank 7), framed on the continuity-but-unresolved argument (mirrors
+the-circle Season 8's "still airing, nothing proven yet" pattern) — no
+existing rank shifts, a pure tail append. Below the 8-seeded-season
+`era_bands` threshold, so none added. Show frontmatter bumped `seasons:
+6→7`, blurb corrected to "7 seasons." rhoslc fully drained — row removed
+above. Gap table now 31 shows / 33 gap-slots.
+
+---
+
 **Rule 2 drain, 2026-11-23 tick (cloud march): the-circle 7/8 → 8/8, gap row
 removed.** Picked off the remaining unstarred pair (`the-circle`, `rhoslc`,
 both gap=1, both tier B, both `est_year: 2020`) — tier and est_year both tied,
@@ -2371,7 +2396,6 @@ new-show creation is locked to the biweekly show-add clock.
 | married-at-first-sight-australia | 13/14 | 1* |
 | masterchef | 16/17 | 1* |
 | masterchef-australia | 18/19 | 1* |
-| rhoslc | 6/7 | 1 |
 | selling-sunset | 9/10 | 1* |
 | summer-house | 10/11 | 1* |
 | traitors-uk | 4/5 | 1* |
@@ -4227,3 +4251,5 @@ No calendar or gap-table action.
 | 2026-11-21 | Rule 2 drain, not a sweep (southern-charm — fully filed, gap-slot removed) | — |
 | 2026-11-21 | Rule 2 drain, not a sweep (dragrace-uk — fully filed, gap-slot removed) | 32 shows / 34 gap-slots (per that tick's own narration; two ticks' worth of removal from the 2026-11-18 count land 1 show short of the arithmetic — pre-existing drift, not reconciled here, same class as other unreconciled counts in this log) |
 | 2026-11-23 | Rule 2 drain, not a sweep (the-circle — fully filed, gap-slot removed; tie-broken against rhoslc on fuller existing sourcing, since tier/est_year both tied) | 31 shows / 33 gap-slots (physical count, verified by direct table count this tick) |
+| 2026-11-26 | 1 (twentieth full sweep; bake-off Series 18 renewal, first-time confirmation [1 slot]; eight status hygiene corrections airing→hiatus on confirmed-past finale/reunion dates — dancing-with-the-stars, bake-off, americas-got-talent, project-runway, rhoa, alone, big-brother, summer-house; five further deferred status corrections same class — bachelor, bachelor-in-paradise, american-idol, american-ninja-warrior, traitors; three more via a calendar.yml cross-check — survivor, below-deck-mediterranean, 90-day-fiance; two calendar.yml additions — the-circle S8 finale, traitors (US) next-season finale/premiere; two weak-sourced stars reconfirmed weak, not removed — ink-master, love-island-uk; rhoslc stayed the sole unstarred, actionable row, picked up the next tick) | 32 shows / 34 gap-slots |
+| 2026-11-27 | Rule 2 drain, not a sweep (rhoslc — fully filed, gap-slot removed) | 31 shows / 33 gap-slots |
