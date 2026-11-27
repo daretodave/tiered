@@ -3,7 +3,7 @@
 > Posture: **bold** (per `plan/bearings.md`).
 > Last pass: 2026-10-27 at commit 212a55dd
 > Pass count: 76
-> Last field research: 2026-11-21
+> Last field research: 2026-11-27
 
 ## Pending
 
@@ -1190,6 +1190,8 @@ sender identity; can ship before but trust signal will be weak.
 - estimated chunks: unknown until specced
 - conflicts: none known.
 - generator: research · filed 2026-11-21
+- re-evidence:
+  - 2026-11-27 · field · +0 · Open up/down voting on public content sites draws a continual stream of manipulation attempts once stakes rise, pushing some operators toward a closed, time-boxed window (vote for a set period, then…
 
 ### [ ] [score 6.0] Spoiler-free framing stays a real competitive gap in weekly reality-TV coverage
 - proposed: 2026-11-21 (research)
@@ -1199,6 +1201,8 @@ sender identity; can ship before but trust signal will be weak.
 - estimated chunks: unknown until specced
 - conflicts: none known.
 - generator: research · filed 2026-11-21
+- re-evidence:
+  - 2026-11-27 · field · +0 · Entertainment sites covering weekly episodic competition formats default to outcome-revealing headlines and recap framing even in otherwise light roundups, relying on inline spoiler tags rather than…
 
 ## Considered (awaiting promotion)
 
