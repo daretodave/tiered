@@ -84,3 +84,5 @@
 - 2026-11-16 · 52 · spec complete: Prose sentence-capitalization invariant (collectSentenceCapitalizationIssues() PROSE_CAPITALIZATION_STRICT gate in content-check.ts scanning blurb/tagline/card_tagline, corpus already clean, convention documented in content-curator's brief) · 9af47ce7
 - 2026-11-26 · 53.1 · Ledger rows can now archive out of CRITIQUE.md and AUDIT.md · fbfbeca5..bbefd0eb
 - 2026-11-27 · 53.2 · Critique close-out now archives aged rows; skills note the archive scope · ec269120..ec269120
+- 2026-11-27 · 53.3 · Backlog drained — 56 aged closed rows moved into the two archive files · 2e340cf3..2e340cf3
+- 2026-11-27 · 53 · spec complete: Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger (ledger-archive.mjs + CRITIQUE_ARCHIVE.md / AUDIT_ARCHIVE.md, wired into critique's close-out, documented in skills/critique.md and skills/iterate.md, 56-row backlog drained) · 2e340cf3
