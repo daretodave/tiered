@@ -357,6 +357,40 @@ the rolling 7-day window can still clear enough historical usage to
 buy a full productive day back, not just minutes. No score change —
 still evidence accumulation on an already-filed, already-scoped
 candidate, per the pattern of the three prior updates.
+**Update (digest 2026-11-27):** the 2026-11-16 digest's "healthiest
+post-reset stretch" read as a possible reversal; it wasn't. Eleven
+more weekly-quota cycles followed in the eleven days since (#853
+opened 2026-11-16T20:46Z through #864 closed 2026-11-27T09:11Z) —
+essentially one full pause-and-reset cycle every single day, with
+recovery windows between a closing issue and the next one opening
+running mostly 11–50 minutes (11-25: ~11min; 11-19/11-20: ~16-17min;
+11-22: ~16min; 11-23/11-24: ~22-23min; 11-17/11-18: ~31-38min;
+11-21/11-26: ~47-49min) — no day broke meaningfully past the
+sub-hour band the 11-16 digest hoped might be opening up. The
+`night`/`/digest` workflow itself was caught by the same pattern:
+every single scheduled run from 2026-11-17 through 2026-11-26 (10
+consecutive nights) hit the quota gate's pre-flight skip before
+Claude Code ever started, leaving `plan/DIGEST.md` frozen on its
+2026-11-16 snapshot for 11 days straight — the first time this
+candidate's own reporting mechanism has been silenced by the exact
+failure mode it tracks. `pulse.mjs --motion` confirms the throughput
+effect held, not just the pause mechanics: this week reads 6 shipped
+against a 19.5 baseline (floor 9.75), `stalled` again, a third
+straight stalled week. Despite this, the loop still shipped 38
+commits across the eleven days inside the short windows (two specs
+closed end-to-end, four season backfills, two finale-shift notes, a
+HIGH critique escalation picked up, three critique passes, two
+season sweeps) — the throttling compresses throughput, it does not
+zero it out. Tonight's window (opened by #864's 2026-11-27T09:11Z
+close) has run ~10h with no re-exhaustion yet, same shape as the
+11-16 "healthy stretch" that did not hold — not treating this one
+differently without more data. No score change — eleven more days of
+the same evidence, not a new failure mode; this is the fourth update
+on this candidate (2026-09-21, 2026-10-24, 2026-11-13, 2026-11-16)
+and the most direct demonstration yet that the fix sketch's item (2)
+(a pay-per-token fallback) or a cadence/ceiling change are the only
+two levers that change this pattern — the quota governor itself is
+working as designed and cannot fix a funding-source problem.
 
 ### [ ] [score 5.5] content-gaps gate (Step 3b.5) needs a bug-priority carve-out
 - kind: guard
