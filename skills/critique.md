@@ -249,20 +249,44 @@ Update metadata header (`Last pass`, `Pass count`, nothing
 else: what the pass found goes in the commit body, and the
 header stays at 20 lines or fewer).
 
+### Step 4.5 — Archive aged rows
+
+Now that this pass's findings are filed and confirmed-closed
+rows are settled, drain anything that's aged past the archive
+threshold (spec 53) — a row closed and confirmed this pass is
+eligible the same tick, not the next one:
+
+```bash
+node scripts/plan/ledger-archive.mjs --write
+```
+
+Reports `archived <label>` per row moved, then `archived N` or
+`clean`. It may touch `plan/CRITIQUE.md` +
+`plan/CRITIQUE_ARCHIVE.md`, and/or `plan/AUDIT.md` +
+`plan/AUDIT_ARCHIVE.md` — check its actual output and stage
+whichever files it reports.
+
 ### Step 5 — Commit + land
 
 ```bash
 git add plan/CRITIQUE.md
+# also: git add plan/CRITIQUE_ARCHIVE.md plan/AUDIT.md plan/AUDIT_ARCHIVE.md
+#       if Step 4.5 reported moves against them
 git commit -m "$(cat <<'EOF'
 critique: pass <N> — <K> findings (<H> high, <M> medium, <L> low)
 
 Visited: <list of URLs>.
 Findings filed to plan/CRITIQUE.md Pending.
 Address loop: /iterate will pick the highest-scoring finding.
+archived <N> aged rows (or: archive clean, nothing to move)
 EOF
 )"
 # land per owner mode: skills/next/land.md §6
 ```
+
+One commit per pass still holds (Hard rule 6) — the archive
+move lands in the same commit as the pass's findings, not a
+separate one.
 
 If **zero** findings (rare): still update metadata, commit
 `critique: pass <N> — no findings`. Pass counter is the signal
@@ -308,7 +332,9 @@ Return 3-line summary.
 
 ## 8. Address loop contract (how `/iterate` consumes findings)
 
-`plan/CRITIQUE.md` `## Pending` is `/iterate`'s queue:
+`plan/CRITIQUE.md` `## Pending` is `/iterate`'s queue. (Its
+sibling `plan/CRITIQUE_ARCHIVE.md` holds historical closed rows
+aged out by Step 4.5 and is out of scope for this read.)
 - Each finding has severity + ease (from suggested-fix
   complexity).
 - `/iterate` §4 maps to category `external-critique`:

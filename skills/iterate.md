@@ -91,6 +91,9 @@ maps to category `external-critique`. Severity → impact:
 HIGH 8–10, MED 5–7, LOW 2–4. Ease scored from suggested-fix
 complexity. When you ship a fix, **move row Pending → Done**
 in CRITIQUE.md with `[x]` + commit hash.
+(`plan/CRITIQUE_ARCHIVE.md` holds historical closed rows aged
+out by `/critique`'s Step 4.5 and is out of scope for a normal
+read.)
 
 #### A. Content gaps
 
@@ -451,6 +454,13 @@ never move them to `ARCHIVE.md`):
 ```bash
 node scripts/plan/state.mjs compact --write
 ```
+
+(This deletes aged Done rows outright — a separate mechanism
+from `/critique`'s own `ledger-archive.mjs --write`, which
+*moves* aged closed rows into `plan/CRITIQUE_ARCHIVE.md` /
+`plan/AUDIT_ARCHIVE.md` instead of deleting them. Those archive
+files hold historical closed rows and are out of scope for this
+step's normal read.)
 
 Commit:
 
