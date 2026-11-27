@@ -44,4 +44,4 @@ condition> · max_age: 14d`, an optional `· fallback: release`):
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
-| 53 | Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger | [53-critique-audit-ledger-archive.md](53-critique-audit-ledger-archive.md) | Ready | 2 left |
+| 53 | Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger | [53-critique-audit-ledger-archive.md](53-critique-audit-ledger-archive.md) | Ready | 1 left |

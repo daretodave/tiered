@@ -83,3 +83,4 @@
 - 2026-11-16 · 52.2 · Content-curator brief now warns against sentence-initial lowercase tokens · 9af47ce7..9af47ce7
 - 2026-11-16 · 52 · spec complete: Prose sentence-capitalization invariant (collectSentenceCapitalizationIssues() PROSE_CAPITALIZATION_STRICT gate in content-check.ts scanning blurb/tagline/card_tagline, corpus already clean, convention documented in content-curator's brief) · 9af47ce7
 - 2026-11-26 · 53.1 · Ledger rows can now archive out of CRITIQUE.md and AUDIT.md · fbfbeca5..bbefd0eb
+- 2026-11-27 · 53.2 · Critique close-out now archives aged rows; skills note the archive scope · ec269120..ec269120

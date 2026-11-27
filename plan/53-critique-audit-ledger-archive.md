@@ -108,11 +108,6 @@ are triaged.
 
 ## Acceptance
 
-- **A6** `skills/critique.md`'s close-out step calls the archive
-  script with `--write` after confirming closed rows, before its
-  own commit.
-- **A7** `skills/critique.md` and `skills/iterate.md` each
-  document the archive files' existence and out-of-scope status.
 - **A8** Running the script against the current `plan/CRITIQUE.md`
   and `plan/AUDIT.md` moves their existing aged `[x]` rows (the
   360-of-385 already closed at filing time) into the archive
@@ -126,7 +121,7 @@ are triaged.
 
 ## Chunks
 
-Measure: 3 open · 5 closed · next A9
+Measure: 1 open · 7 closed · next A9
 
 
   `scripts/plan/ledger-archive.mjs`: dry-run by default
@@ -157,7 +152,6 @@ Measure: 3 open · 5 closed · next A9
   never moves regardless of age (A5); a moved row's text is
   byte-identical to its original (A3).
 
-- [ ] **53.2** Critique close-out wiring + skill-doc notes · S · closes A6, A7 · needs —
 
   `skills/critique.md`: its close-out step (the step that
   already walks closed rows to confirm they're still closed)
