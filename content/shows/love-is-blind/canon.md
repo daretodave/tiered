@@ -1,13 +1,13 @@
 ---
 show: love-is-blind
 editor: tiered.tv editor
-last_revised: 2026-10-14
+last_revised: 2026-11-28
 meth_who_h: "Who ranks it"
 meth_who_p: "tiered.tv's editor. I've watched all eleven seasons from the Atlanta original through Boston. The ranking weighs the pod experiment, the casting energy, and the production confidence — never the altar outcomes. One editor's honest read, open to revision when the room argues convincingly."
 meth_how_h: "How I weigh it"
 meth_how_p: "I rank on how cleanly the pod experiment runs, how engaged the cast is with the format, and how much each season advances or tests the show's premise. A season where the connection-building phase feels earned outranks one where the pods feel like a formality. Altar results carry zero weight here — only how well the hour runs getting there."
 meth_when_h: "When I revisit"
-meth_when_p: "This is the full eleven-season canon, founding batch through the established era. The order will shift as later seasons settle into the conversation and when the community vote argues loudly enough for a reorder. S11 just premiered and holds provisionally; the rest of the established-era rankings remain the most fluid."
+meth_when_p: "This is the full eleven-season canon, founding batch through the established era. The order will shift as later seasons settle into the conversation and when the community vote argues loudly enough for a reorder. S11's post-finale read has now settled in; the rest of the established-era rankings remain the most fluid."
 tier_s_blurb: "Seattle's cleanest pod run, Chicago's polish, D.C.'s established-era peak, the Atlanta original that built the format, and Columbus's late-run bounce-back — five seasons where the experiment felt genuinely earned."
 tier_a_blurb: "The cities where the pods still produced real chemistry even when the season around them ran uneven — proof the experiment holds up away from its strongest casts."
 tier_b_blurb: "Eleven seasons that prove the pod experiment is a durable format — from the Atlanta original that built the blueprint through the Columbus season that reminded the established era what the show is capable of."
@@ -65,11 +65,11 @@ Fifth places Columbus above Houston and Minneapolis but short of the founding ba
 
 ## 11. Boston
 
-tag: The eleventh city, ranked provisionally on premise alone.
-slot_argument: Boston brings the standard thirty-person cast and no announced twist — nothing yet to distinguish it, but none of Charlotte's or Denver's documented weaknesses either. The slot holds provisionally.
+tag: The eleventh city, settled: entertaining, divisive, and not a bounce-back.
+slot_argument: Boston split critics down the middle after the finale — the most watchable stretch of the run and one of the hardest on its own cast. Real discourse, not demonstrated execution.
 community_rank_hint: rank=6 delta=0 sentiment=hold
 
-Sixth ranks Boston on premise, not execution — only the first episode batch is out as of this writing. The thirty-person cast and standard pod-to-altar format mirror what the established era has been running since Seattle, with an unusually wide spread of casting professions as the one notable pre-air signal. That's not enough to place it near Columbus's demonstrated bounce-back, but there's also no sign yet of the inconsistency that sank Charlotte or the subdued energy that defines Denver. It sits just below Columbus, ahead of the established era's more proven middle tier, and the slot is explicitly a hold — due for a real re-rank once the season plays out.
+Sixth holds once the season played out, not before. Reception broke in two directions at once: some outlets singled this stretch out as the easiest season of the run to watch, others flagged it as one of the hardest on the people living through it. That split is a real signal, more attention than Houston draws from its quieter slot below, but it is not the clean turnaround that earned Columbus its spot above; commitment on camera read as shakier here, not stronger. What did land cleanly was the bond among the cast members themselves, outpacing any romantic thread the season produced. Boston earns sixth on how much it got talked about, not on how well it executed the premise.
 
 ## 5. Houston
 

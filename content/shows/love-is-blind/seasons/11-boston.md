@@ -8,9 +8,9 @@ premiere_date: "2026-10-14"
 location: "Boston, Massachusetts"
 host: "Nick Lachey and Vanessa Lachey"
 eyebrow: "Premiered October 14, 2026 · Netflix"
-lede: "Season eleven moves the pods to Boston, the franchise's eleventh U.S. city, with the standard thirty-person cast and no announced twist to the format. Five episodes are out at launch, with the rest arriving in weekly batches through early November."
-pull: "No new mechanic, no new wrinkle — just a new city and thirty strangers betting on the same question the show always asks."
-take_h2: "A new city, the format left alone."
+lede: "Boston's run through the pods split critics down the middle — the most entertaining stretch of the current run, by multiple accounts, and also one of the hardest on its own cast, with red-flag dynamics the format never resolved."
+pull: "The format didn't change — thirty singles, pods, a proposal, a wedding sprint — but the verdict did: critics split between calling Boston the most watchable season of the current run and one of its roughest on the people actually living it. The one thread nearly everyone agreed on was the friendships that formed along the way, which outlasted the romantic pairings as the season's most consistently praised element."
+take_h2: "A new city, a split verdict."
 shape_h2: "Batch-and-weekly, same as the recent run."
 format_summary: "Pod dating · altar reveal"
 cast_size: 30
@@ -23,4 +23,4 @@ watch_list:
     body: "Episodes 1 through 5 drop at once on premiere day, then the season splits into weekly batches through the November 4 finale. Watch for how the pacing of that rollout shapes the conversation compared to the all-at-once founding seasons."
 ---
 
-Boston becomes the eleventh U.S. city for the pod experiment, with Nick and Vanessa Lachey back at the helm and the format unchanged from recent seasons: thirty singles, pods, proposal, a first meeting, and a wedding sprint toward the altar. No structural twist has been announced going in. It's too early to call how the cast's chemistry plays out — this entry holds provisionally until more episodes land.
+Boston became the eleventh city for the pod experiment, Nick and Vanessa Lachey again at the helm, the format unchanged: thirty singles, pods, a proposal, a first meeting, a wedding sprint. The post-finale read split: critics called it the most watchable stretch of the current run and also one of the toughest on its cast, with the group's platonic friendships landing as the season's most consistently praised thread, ahead of any romantic pairing.
