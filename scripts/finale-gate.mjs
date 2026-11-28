@@ -10,10 +10,20 @@
 // block. The next content drain picks the row up.
 //
 // Idempotent: a finale already represented by its marker anywhere
-// in AUDIT.md (Pending OR Done) is skipped, so re-running the gate
-// — or running it after a shift note has shipped — never
+// in AUDIT.md (Pending OR Done) OR AUDIT_ARCHIVE.md is skipped, so
+// re-running the gate — or running it after a shift note has
+// shipped and later aged into the archive (spec 53's
+// ledger-archive.mjs moves closed rows out of AUDIT.md) — never
 // double-files. A clean no-op when nothing is due (and when the
 // calendar file is absent).
+//
+// Bug history: before this archive check existed, a resolved
+// finale-shift row that left AUDIT.md (first via the 2026-11-01
+// nexus-adoption trim, later via any ordinary archive sweep) had
+// its marker vanish from the only text this gate read, so the next
+// run re-filed it as brand-new unresolved work even though the
+// canon shift had already shipped. Fixed by widening the
+// idempotency check to the archive file too.
 //
 // Usage:
 //   node scripts/finale-gate.mjs            # apply (write AUDIT.md)
@@ -52,7 +62,9 @@ function main(argv = process.argv.slice(2)) {
     return 1
   }
   const auditText = fs.readFileSync(auditPath, 'utf8')
-  const due = dueFinales(entries, today, auditText)
+  const archivePath = path.join(root, 'plan', 'AUDIT_ARCHIVE.md')
+  const archiveText = fs.existsSync(archivePath) ? fs.readFileSync(archivePath, 'utf8') : ''
+  const due = dueFinales(entries, today, auditText + archiveText)
 
   if (due.length === 0) {
     process.stdout.write(

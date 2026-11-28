@@ -1,4 +1,9 @@
 import assert from 'node:assert/strict'
+import fs from 'node:fs'
+import os from 'node:os'
+import path from 'node:path'
+import { spawnSync } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
 import test from 'node:test'
 import {
   appendRowsToAudit,
@@ -130,6 +135,40 @@ test('appendRowsToAudit appends after existing pending rows', () => {
 test('appendRowsToAudit is a no-op for zero rows', () => {
   const audit = '## Pending\n_(empty)_\n## Done\n'
   assert.equal(appendRowsToAudit(audit, []), audit)
+})
+
+test('CLI: a marker only present in plan/AUDIT_ARCHIVE.md still blocks re-filing', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'finale-gate-cli-'))
+  try {
+    fs.mkdirSync(path.join(dir, 'content'))
+    fs.mkdirSync(path.join(dir, 'plan'))
+    fs.writeFileSync(
+      path.join(dir, 'content', 'calendar.yml'),
+      'finales:\n  - show: survivor\n    season: 48\n    finale_date: 2025-05-21\n    status: aired\n',
+    )
+    // The live AUDIT.md carries no marker at all — exactly the
+    // post-trim state that caused the original duplicate-filing bug.
+    fs.writeFileSync(path.join(dir, 'plan', 'AUDIT.md'), '# AUDIT\n\n## Pending\n\n_(empty)_\n')
+    // The marker survives only in the archive, where a closed row
+    // ages out to per spec 53's ledger-archive.mjs.
+    fs.writeFileSync(
+      path.join(dir, 'plan', 'AUDIT_ARCHIVE.md'),
+      `# Audit archive\n\n- [x] old ${auditMarker('survivor', 48)} already shipped\n`,
+    )
+    const r = spawnSync(
+      process.execPath,
+      [fileURLToPath(new URL('../finale-gate.mjs', import.meta.url))],
+      { cwd: dir, encoding: 'utf-8' },
+    )
+    assert.equal(r.status, 0, r.stdout + r.stderr)
+    assert.match(r.stdout, /0 due/)
+    assert.equal(
+      fs.readFileSync(path.join(dir, 'plan', 'AUDIT.md'), 'utf-8'),
+      '# AUDIT\n\n## Pending\n\n_(empty)_\n',
+    )
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true })
+  }
 })
 
 test('full idempotency: second run files nothing new', () => {
