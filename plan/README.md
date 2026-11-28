@@ -38,9 +38,10 @@ line goes; each line is a lock that times out:
 `- **<NN.k>** · <reason> · since: <date> · until: <date or
 condition> · max_age: 14d`, an optional `· fallback: release`):
 
-- (none)
+- 54 · auto-promoted, veto until 2026-11-29 (#866) · max_age: 1d · fallback: release
 
 ## Specs
 
 | # | Initiative | Spec | Status | Progress |
 |---|---|---|---|---|
+| 54 | IP-level rate-limit backstop for guest votes | [54-vote-ip-rate-limit.md](54-vote-ip-rate-limit.md) | Held (veto window) | Not chunked yet. |

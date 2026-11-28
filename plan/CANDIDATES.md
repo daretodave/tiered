@@ -1216,17 +1216,6 @@ or similar makes the sign-up trust signal real.
 **Conflicts:** depends on S1 (custom domain) for a credible
 sender identity; can ship before but trust signal will be weak.
 
-### [ ] [score 6.0] Open community voting features are vulnerable to coordinated vote-spam without a validation layer
-- proposed: 2026-11-21 (research)
-- source signals: field (2026-11-21): Fan-voting features that run an open seasonal ballot alongside incremental weekly results are seeing very high invalidation rates from coordinated vote spam, prompting operators to publish after-the-…
-- rationale: Validates that an open voting feature needs a spam-detection and blended-scoring posture, not a raw tally, once volume grows; comparable fan-ranking products are being gamed at scale under a pure open-ballot model.
-- proposed scope: A review of the vote widget's anti-abuse posture: rate limiting, invalidation heuristics, and whether a blended incremental-plus-period model is worth adopting if voting volume grows beyond lightweight sentiment.
-- estimated chunks: unknown until specced
-- conflicts: none known.
-- generator: research · filed 2026-11-21
-- re-evidence:
-  - 2026-11-27 · field · +0 · Open up/down voting on public content sites draws a continual stream of manipulation attempts once stakes rise, pushing some operators toward a closed, time-boxed window (vote for a set period, then…
-
 ### [ ] [score 6.0] Spoiler-free framing stays a real competitive gap in weekly reality-TV coverage
 - proposed: 2026-11-21 (research)
 - source signals: field (2026-11-21): Weekly viewing-guide posts without outcome language are the one recurring format on recap-heavy entertainment sites that reliably avoids spoiler headlines, while ordinary recap and news posts in the…
@@ -2354,6 +2343,11 @@ do not re-score it independently — track #06.
 
 <!-- Same format with **Promoted in:** <oversight commit hash>
      and **Build-plan row:** <link to row in plan/README.md> -->
+
+### [promoted 2026-11-28 → spec 54] [score 6.0] Open community voting features are vulnerable to coordinated vote-spam without a validation layer
+- promoted: 2026-11-28, auto (expand pass depth-promotion), veto #866
+
+**Build-plan row:** Spec 54 — IP-level rate-limit backstop for guest votes (`plan/README.md`)
 
 ### [promoted 2026-11-14 → spec 53] [score 6.4] Archive closed CRITIQUE.md / AUDIT.md rows out of the live ledger
 - promoted: 2026-11-14, auto (expand pass depth-promotion), veto #850
